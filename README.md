@@ -6,6 +6,8 @@
 
 Magic Hour provides an API (beta) that can be integrated into your own application to generate videos using AI.
 
+Webhook documentation can be found [here](http://localhost:3000/docs/webhook).
+
 If you have any questions, please reach out to us via [discord](https://discord.gg/JX5rgsZaJp).
 
 # Authentication
