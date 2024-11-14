@@ -1,10 +1,12 @@
+
 # Magic Hour API Go SDK
+
 
 ## Overview
 
-# Introduction
+# Introduction 
 
-Magic Hour provides an API (beta) that can be integrated into your own application to generate videos using AI.
+Magic Hour provides an API (beta) that can be integrated into your own application to generate videos using AI. 
 
 Webhook documentation can be found [here](https://magichour.ai/docs/webhook).
 
@@ -18,11 +20,13 @@ To get started, first generate your API key [here](https://magichour.ai/settings
 
 Then, add the `Authorization` header to the request.
 
-| Key           | Value                  |
-| ------------- | ---------------------- |
+| Key | Value |
+|-|-|
 | Authorization | Bearer mhk_live_apikey |
 
 > **Warning**: any API call that renders a video will utilize frames in your account.
+
+
 
 ### Example Client Initialization
 
@@ -35,6 +39,5 @@ import (
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
 ```
 
-### SDK Usage
-
-See [SDK Examples](SDK_EXAMPLES.md) for example usage of all SDK functionality
+### SDK Usage 
+ See [SDK Examples](SDK_EXAMPLES.md) for example usage of all SDK functionality
