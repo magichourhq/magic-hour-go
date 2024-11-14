@@ -8,6 +8,7 @@ import (
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
 	ai_headshot_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_headshot_generator"
 	ai_image_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_image_generator"
+	ai_qr_code_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_qr_code_generator"
 	face_swap "github.com/magichourhq/magic-hour-go/resources/v1/face_swap"
 	face_swap_photo "github.com/magichourhq/magic-hour-go/resources/v1/face_swap_photo"
 	files "github.com/magichourhq/magic-hour-go/resources/v1/files"
@@ -25,6 +26,7 @@ type Client struct {
 	VideoProjects       *video_projects.Client
 	AiHeadshotGenerator *ai_headshot_generator.Client
 	AiImageGenerator    *ai_image_generator.Client
+	AiQrCodeGenerator   *ai_qr_code_generator.Client
 	FaceSwap            *face_swap.Client
 	FaceSwapPhoto       *face_swap_photo.Client
 	Files               *files.Client
@@ -43,6 +45,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 		VideoProjects:       video_projects.NewClient(coreClient),
 		AiHeadshotGenerator: ai_headshot_generator.NewClient(coreClient),
 		AiImageGenerator:    ai_image_generator.NewClient(coreClient),
+		AiQrCodeGenerator:   ai_qr_code_generator.NewClient(coreClient),
 		FaceSwap:            face_swap.NewClient(coreClient),
 		FaceSwapPhoto:       face_swap_photo.NewClient(coreClient),
 		Files:               files.NewClient(coreClient),
