@@ -6,6 +6,7 @@ import (
 	http "net/http"
 
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
+	ai_image_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_image_generator"
 	face_swap "github.com/magichourhq/magic-hour-go/resources/v1/face_swap"
 	face_swap_photo "github.com/magichourhq/magic-hour-go/resources/v1/face_swap_photo"
 	files "github.com/magichourhq/magic-hour-go/resources/v1/files"
@@ -18,32 +19,34 @@ import (
 )
 
 type Client struct {
-	coreClient    *sdkcore.CoreClient
-	ImageProjects *image_projects.Client
-	VideoProjects *video_projects.Client
-	FaceSwap      *face_swap.Client
-	FaceSwapPhoto *face_swap_photo.Client
-	Files         *files.Client
-	ImageToVideo  *image_to_video.Client
-	LipSync       *lip_sync.Client
-	TextToVideo   *text_to_video.Client
-	VideoToVideo  *video_to_video.Client
+	coreClient       *sdkcore.CoreClient
+	ImageProjects    *image_projects.Client
+	VideoProjects    *video_projects.Client
+	AiImageGenerator *ai_image_generator.Client
+	FaceSwap         *face_swap.Client
+	FaceSwapPhoto    *face_swap_photo.Client
+	Files            *files.Client
+	ImageToVideo     *image_to_video.Client
+	LipSync          *lip_sync.Client
+	TextToVideo      *text_to_video.Client
+	VideoToVideo     *video_to_video.Client
 }
 type RequestModifier = func(req *http.Request) error
 
 // Instantiate a new resource client
 func NewClient(coreClient *sdkcore.CoreClient) *Client {
 	client := Client{
-		coreClient:    coreClient,
-		ImageProjects: image_projects.NewClient(coreClient),
-		VideoProjects: video_projects.NewClient(coreClient),
-		FaceSwap:      face_swap.NewClient(coreClient),
-		FaceSwapPhoto: face_swap_photo.NewClient(coreClient),
-		Files:         files.NewClient(coreClient),
-		ImageToVideo:  image_to_video.NewClient(coreClient),
-		LipSync:       lip_sync.NewClient(coreClient),
-		TextToVideo:   text_to_video.NewClient(coreClient),
-		VideoToVideo:  video_to_video.NewClient(coreClient),
+		coreClient:       coreClient,
+		ImageProjects:    image_projects.NewClient(coreClient),
+		VideoProjects:    video_projects.NewClient(coreClient),
+		AiImageGenerator: ai_image_generator.NewClient(coreClient),
+		FaceSwap:         face_swap.NewClient(coreClient),
+		FaceSwapPhoto:    face_swap_photo.NewClient(coreClient),
+		Files:            files.NewClient(coreClient),
+		ImageToVideo:     image_to_video.NewClient(coreClient),
+		LipSync:          lip_sync.NewClient(coreClient),
+		TextToVideo:      text_to_video.NewClient(coreClient),
+		VideoToVideo:     video_to_video.NewClient(coreClient),
 	}
 
 	return &client

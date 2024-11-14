@@ -45,7 +45,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 //
 //	curl -X PUT -H 'Content-Type: application/octet-stream' \
 //	  --data '@/path/to/file/video.mp4' \
-//	  https://videos.staging.magichour.ai/api-assets/id/video.mp4?auth-value=1234567890
+//	  https://videos.magichour.ai/api-assets/id/video.mp4?auth-value=1234567890
 //
 // ```
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1FilesUploadUrlsResponse, error) {
