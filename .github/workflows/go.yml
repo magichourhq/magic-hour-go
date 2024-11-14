@@ -1,0 +1,15 @@
+name: Run Go List on Release
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  go-list:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Go List with GOPROXY
+        run: |
+          VERSION=${{ github.event.release.tag_name }}
+          GOPROXY=proxy.golang.org go list -m github.com/magichourhq/magic-hour-go@$VERSION
