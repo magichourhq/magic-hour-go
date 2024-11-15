@@ -1,4 +1,4 @@
-name: Run Go List on Release
+name: publish
 
 on:
   release:
