@@ -14,7 +14,6 @@ The image can be one of the following status
 - `complete` - the image is successful created
 - `error` - an error occurred during rendering
 - `canceled` - image render is canceled by the user
-s
 
 **API Endpoint**: `GET /v1/image-projects/{id}`
 
