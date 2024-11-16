@@ -8,7 +8,7 @@ import (
 
 type PostV1AiImageUpscalerBody struct {
 	Assets      PostV1AiImageUpscalerBodyAssets `json:"assets"`
-	Name        nullable.Nullable[string]       `json:"name"`
+	Name        nullable.Nullable[string]       `json:"name,omitempty"`
 	ScaleFactor float64                         `json:"scale_factor"`
 	Style       PostV1AiImageUpscalerBodyStyle  `json:"style"`
 }

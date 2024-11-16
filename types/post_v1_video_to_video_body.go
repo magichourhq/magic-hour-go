@@ -11,7 +11,7 @@ type PostV1VideoToVideoBody struct {
 	EndSeconds    float64                                                    `json:"end_seconds"`
 	FpsResolution nullable.Nullable[PostV1VideoToVideoBodyFpsResolutionEnum] `json:"fps_resolution,omitempty"`
 	Height        float64                                                    `json:"height"`
-	Name          nullable.Nullable[string]                                  `json:"name"`
+	Name          nullable.Nullable[string]                                  `json:"name,omitempty"`
 	StartSeconds  float64                                                    `json:"start_seconds"`
 	Style         PostV1VideoToVideoBodyStyle                                `json:"style"`
 	Width         float64                                                    `json:"width"`

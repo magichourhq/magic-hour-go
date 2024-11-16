@@ -10,7 +10,7 @@ type PostV1ImageToVideoBody struct {
 	Assets     PostV1ImageToVideoBodyAssets `json:"assets"`
 	EndSeconds float64                      `json:"end_seconds"`
 	Height     float64                      `json:"height"`
-	Name       nullable.Nullable[string]    `json:"name"`
+	Name       nullable.Nullable[string]    `json:"name,omitempty"`
 	Style      PostV1ImageToVideoBodyStyle  `json:"style"`
 	Width      float64                      `json:"width"`
 }
