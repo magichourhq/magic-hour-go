@@ -8,6 +8,6 @@ import (
 
 type PostV1AiQrCodeGeneratorBody struct {
 	Content string                           `json:"content"`
-	Name    nullable.Nullable[string]        `json:"name"`
+	Name    nullable.Nullable[string]        `json:"name,omitempty"`
 	Style   PostV1AiQrCodeGeneratorBodyStyle `json:"style"`
 }

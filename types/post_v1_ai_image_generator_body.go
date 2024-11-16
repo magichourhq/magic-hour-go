@@ -8,7 +8,7 @@ import (
 
 type PostV1AiImageGeneratorBody struct {
 	ImageCount  float64                                   `json:"image_count"`
-	Name        nullable.Nullable[string]                 `json:"name"`
+	Name        nullable.Nullable[string]                 `json:"name,omitempty"`
 	Orientation PostV1AiImageGeneratorBodyOrientationEnum `json:"orientation"`
 	Style       PostV1AiImageGeneratorBodyStyle           `json:"style"`
 }

@@ -8,5 +8,5 @@ import (
 
 type PostV1AiHeadshotGeneratorBody struct {
 	Assets PostV1AiHeadshotGeneratorBodyAssets `json:"assets"`
-	Name   nullable.Nullable[string]           `json:"name"`
+	Name   nullable.Nullable[string]           `json:"name,omitempty"`
 }

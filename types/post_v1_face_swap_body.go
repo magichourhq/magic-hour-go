@@ -10,7 +10,7 @@ type PostV1FaceSwapBody struct {
 	Assets       PostV1FaceSwapBodyAssets  `json:"assets"`
 	EndSeconds   float64                   `json:"end_seconds"`
 	Height       float64                   `json:"height"`
-	Name         nullable.Nullable[string] `json:"name"`
+	Name         nullable.Nullable[string] `json:"name,omitempty"`
 	StartSeconds float64                   `json:"start_seconds"`
 	Width        float64                   `json:"width"`
 }

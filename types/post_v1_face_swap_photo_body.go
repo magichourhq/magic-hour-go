@@ -8,5 +8,5 @@ import (
 
 type PostV1FaceSwapPhotoBody struct {
 	Assets PostV1FaceSwapPhotoBodyAssets `json:"assets"`
-	Name   nullable.Nullable[string]     `json:"name"`
+	Name   nullable.Nullable[string]     `json:"name,omitempty"`
 }

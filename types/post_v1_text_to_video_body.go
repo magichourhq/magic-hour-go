@@ -8,7 +8,7 @@ import (
 
 type PostV1TextToVideoBody struct {
 	EndSeconds  float64                              `json:"end_seconds"`
-	Name        nullable.Nullable[string]            `json:"name"`
+	Name        nullable.Nullable[string]            `json:"name,omitempty"`
 	Orientation PostV1TextToVideoBodyOrientationEnum `json:"orientation"`
 	Style       PostV1TextToVideoBodyStyle           `json:"style"`
 }

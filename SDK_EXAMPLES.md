@@ -15,6 +15,7 @@ The image can be one of the following status
 - `error` - an error occurred during rendering
 - `canceled` - image render is canceled by the user
 
+
 **API Endpoint**: `GET /v1/image-projects/{id}`
 
 
