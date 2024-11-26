@@ -2,6 +2,7 @@
 
 package types
 
+// Determines the orientation of the output video
 type PostV1TextToVideoBodyOrientationEnum string
 
 const (

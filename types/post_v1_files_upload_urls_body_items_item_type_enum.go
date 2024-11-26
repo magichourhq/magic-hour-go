@@ -2,6 +2,7 @@
 
 package types
 
+// The type of asset to upload
 type PostV1FilesUploadUrlsBodyItemsItemTypeEnum string
 
 const (

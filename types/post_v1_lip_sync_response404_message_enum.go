@@ -2,6 +2,7 @@
 
 package types
 
+// PostV1LipSyncResponse404MessageEnum
 type PostV1LipSyncResponse404MessageEnum string
 
 const (

@@ -2,6 +2,7 @@
 
 package types
 
+// PostV1FilesUploadUrlsResponseItemsItem
 type PostV1FilesUploadUrlsResponseItemsItem struct {
 	ExpiresAt string `json:"expires_at"`
 	FilePath  string `json:"file_path"`

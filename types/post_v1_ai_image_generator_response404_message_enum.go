@@ -2,6 +2,7 @@
 
 package types
 
+// PostV1AiImageGeneratorResponse404MessageEnum
 type PostV1AiImageGeneratorResponse404MessageEnum string
 
 const (

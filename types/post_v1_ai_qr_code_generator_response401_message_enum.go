@@ -2,6 +2,7 @@
 
 package types
 
+// PostV1AiQrCodeGeneratorResponse401MessageEnum
 type PostV1AiQrCodeGeneratorResponse401MessageEnum string
 
 const (

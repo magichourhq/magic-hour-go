@@ -28,6 +28,8 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 }
 
 // Create a face swap photo. Each photo costs 5 frames. The height/width of the output image depends on your subscription. Please refer to our [pricing](/pricing) page for more details
+//
+// POST /v1/face-swap-photo
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1FaceSwapPhotoResponse, error) {
 	// URL formatting
 	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"face-swap-photo")

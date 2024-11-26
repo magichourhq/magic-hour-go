@@ -2,6 +2,7 @@
 
 package types
 
+// PostV1AiImageUpscalerBodyStyleEnhancementEnum
 type PostV1AiImageUpscalerBodyStyleEnhancementEnum string
 
 const (

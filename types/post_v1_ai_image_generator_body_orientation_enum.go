@@ -2,6 +2,7 @@
 
 package types
 
+// PostV1AiImageGeneratorBodyOrientationEnum
 type PostV1AiImageGeneratorBodyOrientationEnum string
 
 const (

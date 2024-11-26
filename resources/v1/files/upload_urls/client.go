@@ -48,6 +48,8 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 //	  https://videos.magichour.ai/api-assets/id/video.mp4?auth-value=1234567890
 //
 // ```
+//
+// POST /v1/files/upload-urls
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1FilesUploadUrlsResponse, error) {
 	// URL formatting
 	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"files/"+"upload-urls")

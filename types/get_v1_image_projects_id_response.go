@@ -6,13 +6,19 @@ import (
 	nullable "github.com/magichourhq/magic-hour-go/nullable"
 )
 
+// Success
 type GetV1ImageProjectsIdResponse struct {
-	CreatedAt      string                                      `json:"created_at"`
-	Downloads      []GetV1ImageProjectsIdResponseDownloadsItem `json:"downloads"`
-	Id             string                                      `json:"id"`
-	ImageCount     float64                                     `json:"image_count"`
-	Name           nullable.Nullable[string]                   `json:"name"`
-	Status         GetV1ImageProjectsIdResponseStatusEnum      `json:"status"`
-	TotalFrameCost float64                                     `json:"total_frame_cost"`
-	Type           GetV1ImageProjectsIdResponseTypeEnum        `json:"type"`
+	CreatedAt string                                      `json:"created_at"`
+	Downloads []GetV1ImageProjectsIdResponseDownloadsItem `json:"downloads"`
+	// Unique ID of the image. This value can be used in the [get image project API](/api/tag/image-projects/get/v1/image-projects/{id}) to fetch additional details such as status
+	Id string `json:"id"`
+	// Number of images generated
+	ImageCount float64 `json:"image_count"`
+	// The name of the image.
+	Name nullable.Nullable[string] `json:"name"`
+	// The status of the image.
+	Status GetV1ImageProjectsIdResponseStatusEnum `json:"status"`
+	// The amount of frames used to generate the image.
+	TotalFrameCost float64                              `json:"total_frame_cost"`
+	Type           GetV1ImageProjectsIdResponseTypeEnum `json:"type"`
 }

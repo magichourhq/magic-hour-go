@@ -2,6 +2,7 @@
 
 package types
 
+// The status of the video.
 type GetV1VideoProjectsIdResponseStatusEnum string
 
 const (

@@ -2,6 +2,7 @@
 
 package types
 
+// PostV1FaceSwapBodyAssetsVideoSourceEnum
 type PostV1FaceSwapBodyAssetsVideoSourceEnum string
 
 const (

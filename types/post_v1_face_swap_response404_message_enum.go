@@ -2,6 +2,7 @@
 
 package types
 
+// PostV1FaceSwapResponse404MessageEnum
 type PostV1FaceSwapResponse404MessageEnum string
 
 const (

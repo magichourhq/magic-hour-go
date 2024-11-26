@@ -2,6 +2,7 @@
 
 package types
 
+// GetV1VideoProjectsIdResponse404MessageEnum
 type GetV1VideoProjectsIdResponse404MessageEnum string
 
 const (

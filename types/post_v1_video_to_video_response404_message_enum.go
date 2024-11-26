@@ -2,6 +2,7 @@
 
 package types
 
+// PostV1VideoToVideoResponse404MessageEnum
 type PostV1VideoToVideoResponse404MessageEnum string
 
 const (

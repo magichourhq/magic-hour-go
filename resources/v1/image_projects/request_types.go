@@ -2,6 +2,7 @@
 
 package image_projects
 
+// GetRequest
 type GetRequest struct {
 	Id string `json:"id"`
 }

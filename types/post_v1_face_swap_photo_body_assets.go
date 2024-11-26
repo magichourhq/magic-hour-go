@@ -2,7 +2,10 @@
 
 package types
 
+// Provide the assets for face swap photo
 type PostV1FaceSwapPhotoBodyAssets struct {
+	// This is the image from which the face is extracted. This is the `file_path` field from the response of the [upload urls API](/docs/api/tag/files/post/v1/files/upload-urls)
 	SourceFilePath string `json:"source_file_path"`
+	// This is the image where the face from the source image will be placed. This is the `file_path` field from the response of the [upload urls API](/docs/api/tag/files/post/v1/files/upload-urls)
 	TargetFilePath string `json:"target_file_path"`
 }
