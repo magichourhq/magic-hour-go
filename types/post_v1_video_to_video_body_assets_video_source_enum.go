@@ -2,6 +2,7 @@
 
 package types
 
+// PostV1VideoToVideoBodyAssetsVideoSourceEnum
 type PostV1VideoToVideoBodyAssetsVideoSourceEnum string
 
 const (

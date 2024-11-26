@@ -6,6 +6,7 @@ import (
 	types "github.com/magichourhq/magic-hour-go/types"
 )
 
+// CreateRequest
 type CreateRequest struct {
 	Data types.PostV1AiQrCodeGeneratorBody `json:"data"`
 }

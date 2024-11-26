@@ -2,7 +2,10 @@
 
 package types
 
+// Success
 type PostV1VideoToVideoResponse struct {
+	// Estimated cost of the video in terms of number of frames needed to render the video. Frames will be adjusted when the video completes
 	EstimatedFrameCost float64 `json:"estimated_frame_cost"`
-	Id                 string  `json:"id"`
+	// Unique ID of the video. This value can be used in the [get video project API](/api/tag/video-projects/get/v1/video-projects/{id}) to fetch additional details such as status
+	Id string `json:"id"`
 }

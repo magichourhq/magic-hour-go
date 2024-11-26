@@ -2,6 +2,7 @@
 
 package types
 
+// PostV1LipSyncBodyAssetsVideoSourceEnum
 type PostV1LipSyncBodyAssetsVideoSourceEnum string
 
 const (

@@ -2,6 +2,7 @@
 
 package types
 
+// GetV1ImageProjectsIdResponseTypeEnum
 type GetV1ImageProjectsIdResponseTypeEnum string
 
 const (

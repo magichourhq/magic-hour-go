@@ -6,11 +6,20 @@ import (
 	nullable "github.com/magichourhq/magic-hour-go/nullable"
 )
 
+// PostV1LipSyncBody
 type PostV1LipSyncBody struct {
-	Assets       PostV1LipSyncBodyAssets   `json:"assets"`
-	EndSeconds   float64                   `json:"end_seconds"`
-	Height       float64                   `json:"height"`
-	Name         nullable.Nullable[string] `json:"name,omitempty"`
-	StartSeconds float64                   `json:"start_seconds"`
-	Width        float64                   `json:"width"`
+	// Provide the assets for lip-sync. For video, The `video_source` field determines whether `video_file_path` or `youtube_url` field is used
+	Assets PostV1LipSyncBodyAssets `json:"assets"`
+	// The end time of the input video in seconds
+	EndSeconds float64 `json:"end_seconds"`
+	// The height of the final output video. The maximum height depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
+	Height float64 `json:"height"`
+	// Defines the maximum FPS (frames per second) for the output video. If the input video's FPS is lower than this limit, the output video will retain the input FPS. This is useful for reducing unnecessary frame usage in scenarios where high FPS is not required.
+	MaxFpsLimit nullable.Nullable[float64] `json:"max_fps_limit,omitempty"`
+	// The name of video
+	Name nullable.Nullable[string] `json:"name,omitempty"`
+	// The start time of the input video in seconds
+	StartSeconds float64 `json:"start_seconds"`
+	// The width of the final output video. The maximum width depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
+	Width float64 `json:"width"`
 }

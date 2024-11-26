@@ -2,6 +2,7 @@
 
 package types
 
+// PostV1FilesUploadUrlsResponse404MessageEnum
 type PostV1FilesUploadUrlsResponse404MessageEnum string
 
 const (

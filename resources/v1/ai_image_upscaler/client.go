@@ -28,6 +28,8 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 }
 
 // Upscale your image using AI. Each 2x upscale costs 50 frames, and 4x upscale costs 200 frames.
+//
+// POST /v1/ai-image-upscaler
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1AiImageUpscalerResponse, error) {
 	// URL formatting
 	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-image-upscaler")

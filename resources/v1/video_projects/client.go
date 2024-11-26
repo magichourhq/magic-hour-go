@@ -35,6 +35,8 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // - `complete` - the video is successful created
 // - `error` - an error occurred during rendering
 // - `canceled` - video render is canceled by the user
+//
+// GET /v1/video-projects/{id}
 func (c *Client) Get(request GetRequest, reqModifiers ...RequestModifier) (types.GetV1VideoProjectsIdResponse, error) {
 	// URL formatting
 	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"video-projects/"+sdkcore.FmtStringParam(request.Id))

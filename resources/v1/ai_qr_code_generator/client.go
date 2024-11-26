@@ -28,6 +28,8 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 }
 
 // Create an AI QR code. Each QR code costs 20 frames.
+//
+// POST /v1/ai-qr-code-generator
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1AiQrCodeGeneratorResponse, error) {
 	// URL formatting
 	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-qr-code-generator")

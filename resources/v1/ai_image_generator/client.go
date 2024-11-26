@@ -28,6 +28,8 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 }
 
 // Create an AI image. Each image costs 5 frames.
+//
+// POST /v1/ai-image-generator
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1AiImageGeneratorResponse, error) {
 	// URL formatting
 	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-image-generator")

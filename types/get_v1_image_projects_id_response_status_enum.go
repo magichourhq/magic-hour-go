@@ -2,6 +2,7 @@
 
 package types
 
+// The status of the image.
 type GetV1ImageProjectsIdResponseStatusEnum string
 
 const (
