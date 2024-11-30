@@ -10,5 +10,6 @@ const (
 	GetV1ImageProjectsIdResponseTypeEnumAiImage       GetV1ImageProjectsIdResponseTypeEnum = "AI_IMAGE"
 	GetV1ImageProjectsIdResponseTypeEnumFaceSwap      GetV1ImageProjectsIdResponseTypeEnum = "FACE_SWAP"
 	GetV1ImageProjectsIdResponseTypeEnumImageUpscaler GetV1ImageProjectsIdResponseTypeEnum = "IMAGE_UPSCALER"
+	GetV1ImageProjectsIdResponseTypeEnumPhotoEditor   GetV1ImageProjectsIdResponseTypeEnum = "PHOTO_EDITOR"
 	GetV1ImageProjectsIdResponseTypeEnumQrCode        GetV1ImageProjectsIdResponseTypeEnum = "QR_CODE"
 )
