@@ -51,6 +51,10 @@ client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
 
 * [create](resources/v1/ai_image_upscaler/README.md#create) - Create Upscaled Image
 
+### [v1.ai_photo_editor](resources/v1/ai_photo_editor/README.md)
+
+* [create](resources/v1/ai_photo_editor/README.md#create) - AI Photo Editor
+
 ### [v1.ai_qr_code_generator](resources/v1/ai_qr_code_generator/README.md)
 
 * [create](resources/v1/ai_qr_code_generator/README.md#create) - Create AI QR Code
