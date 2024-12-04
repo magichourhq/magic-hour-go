@@ -26,6 +26,60 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 	return &client
 }
 
+// Permanently delete the rendered image. This action is not reversible, please be sure before deleting.
+//
+// DELETE /v1/image-projects/{id}
+func (c *Client) Delete(request DeleteRequest, reqModifiers ...RequestModifier) error {
+	// URL formatting
+	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"image-projects/"+sdkcore.FmtStringParam(request.Id))
+	if err != nil {
+		return err
+	}
+	url, err := url.Parse(joined)
+	if err != nil {
+		return err
+	}
+
+	// Init request
+	req, err := http.NewRequest("DELETE", url.String(), nil)
+	if err != nil {
+		return err
+	}
+
+	// Add headers
+	req.Header.Add("x-sideko-sdk-language", "Go")
+
+	// Add auth
+	c.coreClient.AddAuth([]string{"bearerAuth"}, req)
+
+	// Add base client & request level modifiers
+	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
+		return err
+	}
+
+	// Dispatch request
+	resp, err := c.coreClient.HttpClient.Do(req)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+
+	// Handle response
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
+
+	// Check status
+	if resp.StatusCode >= 300 {
+		return sdkcore.NewApiError(*req, *resp, body)
+	}
+
+	// No expected response data
+	return nil
+
+}
+
 // Get the details of a image project. The `download` field will be `null` unless the image was successfully rendered.
 //
 // The image can be one of the following status
