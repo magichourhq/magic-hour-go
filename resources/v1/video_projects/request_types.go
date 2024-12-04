@@ -2,6 +2,11 @@
 
 package video_projects
 
+// DeleteRequest
+type DeleteRequest struct {
+	Id string `json:"id"`
+}
+
 // GetRequest
 type GetRequest struct {
 	Id string `json:"id"`

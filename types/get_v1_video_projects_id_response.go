@@ -11,8 +11,12 @@ type GetV1VideoProjectsIdResponse struct {
 	CreatedAt string `json:"created_at"`
 	// The download url and expiration date of the video project
 	Download nullable.Nullable[GetV1VideoProjectsIdResponseDownload] `json:"download"`
+	// Indicates whether the resource is deleted
+	Enabled bool `json:"enabled"`
 	// The end time of the input video in seconds
 	EndSeconds float64 `json:"end_seconds"`
+	// In the case of an error, this object will contain the error encountered during video render
+	Error nullable.Nullable[GetV1VideoProjectsIdResponseError] `json:"error"`
 	// Frame rate of the video. If the status is not 'complete', the frame rate is an estimate and will be adjusted when the video completes.
 	Fps float64 `json:"fps"`
 	// The height of the final output video. The maximum height depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details

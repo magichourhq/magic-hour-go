@@ -10,6 +10,10 @@ import (
 type GetV1ImageProjectsIdResponse struct {
 	CreatedAt string                                      `json:"created_at"`
 	Downloads []GetV1ImageProjectsIdResponseDownloadsItem `json:"downloads"`
+	// Indicates whether the resource is deleted
+	Enabled bool `json:"enabled"`
+	// In the case of an error, this object will contain the error encountered during video render
+	Error nullable.Nullable[GetV1ImageProjectsIdResponseError] `json:"error"`
 	// Unique ID of the image. This value can be used in the [get image project API](/api/tag/image-projects/get/v1/image-projects/{id}) to fetch additional details such as status
 	Id string `json:"id"`
 	// Number of images generated
