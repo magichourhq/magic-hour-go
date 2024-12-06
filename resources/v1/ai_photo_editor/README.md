@@ -21,7 +21,7 @@ import (
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
 
-res, err := client.V1.AiPhotoEditor.Create(ai_photo_editor.CreateRequest { Data: types.PostV1AiPhotoEditorBody { Assets: types.PostV1AiPhotoEditorBodyAssets { ImageFilePath: "image/id/1234.png" }, Name: nullable.NewValue("Photo Editor image"), Resolution: 768, Steps: 4, Style: types.PostV1AiPhotoEditorBodyStyle { ImageDescription: "A photo of a person", LikenessStrength: 5.2, NegativePrompt: nullable.NewValue("painting, cartoon, sketch"), Prompt: "A photo portrait of a person wearing a hat", PromptStrength: 3.75 } } })
+res, err := client.V1.AiPhotoEditor.Create(ai_photo_editor.CreateRequest { Data: types.PostV1AiPhotoEditorBody { Assets: types.PostV1AiPhotoEditorBodyAssets { ImageFilePath: "image/id/1234.png" }, Name: nullable.NewValue("Photo Editor image"), Resolution: 768, Steps: nullable.NewValue(123.45), Style: types.PostV1AiPhotoEditorBodyStyle { ImageDescription: "A photo of a person", LikenessStrength: 5.2, NegativePrompt: nullable.NewValue("painting, cartoon, sketch"), Prompt: "A photo portrait of a person wearing a hat", PromptStrength: 3.75, Steps: nullable.NewValue(4) } } })
 ```
 
 **Upgrade to see all examples**
