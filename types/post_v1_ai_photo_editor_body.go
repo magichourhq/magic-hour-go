@@ -13,8 +13,8 @@ type PostV1AiPhotoEditorBody struct {
 	// The name of image
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// The resolution of the final output image. The allowed value is based on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
-	Resolution float64 `json:"resolution"`
+	Resolution int `json:"resolution"`
 	// Deprecated: Please use `.style.steps` instead. Number of iterations used to generate the output. Higher values improve quality and increase the strength of the prompt but increase processing time.
-	Steps nullable.Nullable[float64]   `json:"steps,omitempty"`
+	Steps nullable.Nullable[int]       `json:"steps,omitempty"`
 	Style PostV1AiPhotoEditorBodyStyle `json:"style"`
 }

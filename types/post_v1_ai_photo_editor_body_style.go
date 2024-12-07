@@ -19,5 +19,5 @@ type PostV1AiPhotoEditorBodyStyle struct {
 	// Determines the prompt's influence. Higher values align the output more with the prompt.
 	PromptStrength float64 `json:"prompt_strength"`
 	// Number of iterations used to generate the output. Higher values improve quality and increase the strength of the prompt but increase processing time.
-	Steps nullable.Nullable[float64] `json:"steps,omitempty"`
+	Steps nullable.Nullable[int] `json:"steps,omitempty"`
 }
