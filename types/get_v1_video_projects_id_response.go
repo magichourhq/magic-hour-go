@@ -20,7 +20,7 @@ type GetV1VideoProjectsIdResponse struct {
 	// Frame rate of the video. If the status is not 'complete', the frame rate is an estimate and will be adjusted when the video completes.
 	Fps float64 `json:"fps"`
 	// The height of the final output video. The maximum height depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
-	Height float64 `json:"height"`
+	Height int `json:"height"`
 	// Unique ID of the video. This value can be used in the [get video project API](/api/tag/video-projects/get/v1/video-projects/{id}) to fetch additional details such as status
 	Id string `json:"id"`
 	// The name of the video.
@@ -30,8 +30,8 @@ type GetV1VideoProjectsIdResponse struct {
 	// The status of the video.
 	Status GetV1VideoProjectsIdResponseStatusEnum `json:"status"`
 	// The amount of frames used to generate the video. If the status is not 'complete', the cost is an estimate and will be adjusted when the video completes.
-	TotalFrameCost float64                              `json:"total_frame_cost"`
+	TotalFrameCost int                                  `json:"total_frame_cost"`
 	Type           GetV1VideoProjectsIdResponseTypeEnum `json:"type"`
 	// The width of the final output video. The maximum width depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
-	Width float64 `json:"width"`
+	Width int `json:"width"`
 }

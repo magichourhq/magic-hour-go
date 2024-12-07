@@ -16,13 +16,13 @@ type PostV1VideoToVideoBody struct {
 	// * `FULL` - the result video will have the same FPS as the input video
 	// * `HALF` - the result video will have half the FPS as the input video
 	FpsResolution nullable.Nullable[PostV1VideoToVideoBodyFpsResolutionEnum] `json:"fps_resolution,omitempty"`
-	// The height of the final output video. Must be divisible by 64. The maximum height depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
-	Height float64 `json:"height"`
+	// The height of the final output video. The maximum height depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
+	Height int `json:"height"`
 	// The name of video
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// The start time of the input video in seconds
 	StartSeconds float64                     `json:"start_seconds"`
 	Style        PostV1VideoToVideoBodyStyle `json:"style"`
-	// The width of the final output video. Must be divisible by 64. The maximum width depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
-	Width float64 `json:"width"`
+	// The width of the final output video. The maximum width depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
+	Width int `json:"width"`
 }

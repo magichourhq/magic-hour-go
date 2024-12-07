@@ -17,12 +17,12 @@ type GetV1ImageProjectsIdResponse struct {
 	// Unique ID of the image. This value can be used in the [get image project API](/api/tag/image-projects/get/v1/image-projects/{id}) to fetch additional details such as status
 	Id string `json:"id"`
 	// Number of images generated
-	ImageCount float64 `json:"image_count"`
+	ImageCount int `json:"image_count"`
 	// The name of the image.
 	Name nullable.Nullable[string] `json:"name"`
 	// The status of the image.
 	Status GetV1ImageProjectsIdResponseStatusEnum `json:"status"`
 	// The amount of frames used to generate the image.
-	TotalFrameCost float64                              `json:"total_frame_cost"`
+	TotalFrameCost int                                  `json:"total_frame_cost"`
 	Type           GetV1ImageProjectsIdResponseTypeEnum `json:"type"`
 }

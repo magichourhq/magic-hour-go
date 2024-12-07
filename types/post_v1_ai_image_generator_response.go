@@ -4,7 +4,7 @@ package types
 
 // Success
 type PostV1AiImageGeneratorResponse struct {
-	FrameCost float64 `json:"frame_cost"`
+	FrameCost int `json:"frame_cost"`
 	// Unique ID of the image. This value can be used in the [get image project API](/api/tag/image-projects/get/v1/image-projects/{id}) to fetch additional details such as status
 	Id string `json:"id"`
 }

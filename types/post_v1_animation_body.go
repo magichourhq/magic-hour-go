@@ -15,11 +15,11 @@ type PostV1AnimationBody struct {
 	// The desire output video frame rate
 	Fps float64 `json:"fps"`
 	// The height of the final output video. The maximum height depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
-	Height float64 `json:"height"`
+	Height int `json:"height"`
 	// The name of video
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// Defines the style of the output video
 	Style PostV1AnimationBodyStyle `json:"style"`
 	// The width of the final output video. The maximum width depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
-	Width float64 `json:"width"`
+	Width int `json:"width"`
 }
