@@ -13,11 +13,11 @@ type PostV1FaceSwapBody struct {
 	// The end time of the input video in seconds
 	EndSeconds float64 `json:"end_seconds"`
 	// The height of the final output video. The maximum height depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
-	Height float64 `json:"height"`
+	Height int `json:"height"`
 	// The name of video
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// The start time of the input video in seconds
 	StartSeconds float64 `json:"start_seconds"`
 	// The width of the final output video. The maximum width depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
-	Width float64 `json:"width"`
+	Width int `json:"width"`
 }
