@@ -32,24 +32,28 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // POST /v1/ai-image-upscaler
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1AiImageUpscalerResponse, error) {
 	// URL formatting
-	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-image-upscaler")
+	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-image-upscaler")
 	if err != nil {
 		return types.PostV1AiImageUpscalerResponse{}, err
 	}
-	url, err := url.Parse(joined)
+	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
 		return types.PostV1AiImageUpscalerResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(request.Data)
+	reqBody, err := json.Marshal(types.PostV1AiImageUpscalerBody{
+		Name:        request.Name,
+		Assets:      request.Assets,
+		ScaleFactor: request.ScaleFactor,
+		Style:       request.Style})
 	if err != nil {
 		return types.PostV1AiImageUpscalerResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
-	req, err := http.NewRequest("POST", url.String(), reqBodyBuf)
+	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
 		return types.PostV1AiImageUpscalerResponse{}, err
 	}

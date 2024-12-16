@@ -8,5 +8,5 @@ import (
 
 // CreateRequest
 type CreateRequest struct {
-	Data types.PostV1FilesUploadUrlsBody `json:"data"`
+	Items []types.PostV1FilesUploadUrlsBodyItemsItem `json:"items"`
 }

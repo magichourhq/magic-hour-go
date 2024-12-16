@@ -34,24 +34,31 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // POST /v1/lip-sync
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1LipSyncResponse, error) {
 	// URL formatting
-	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"lip-sync")
+	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"lip-sync")
 	if err != nil {
 		return types.PostV1LipSyncResponse{}, err
 	}
-	url, err := url.Parse(joined)
+	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
 		return types.PostV1LipSyncResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(request.Data)
+	reqBody, err := json.Marshal(types.PostV1LipSyncBody{
+		MaxFpsLimit:  request.MaxFpsLimit,
+		Name:         request.Name,
+		Assets:       request.Assets,
+		EndSeconds:   request.EndSeconds,
+		Height:       request.Height,
+		StartSeconds: request.StartSeconds,
+		Width:        request.Width})
 	if err != nil {
 		return types.PostV1LipSyncResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
-	req, err := http.NewRequest("POST", url.String(), reqBodyBuf)
+	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
 		return types.PostV1LipSyncResponse{}, err
 	}

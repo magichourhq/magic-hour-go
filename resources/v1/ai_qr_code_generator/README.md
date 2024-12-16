@@ -14,12 +14,11 @@ import (
 	os "os"
 	ai_qr_code_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_qr_code_generator"
 	types "github.com/magichourhq/magic-hour-go/types"
-	nullable "github.com/magichourhq/magic-hour-go/nullable"
 )
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
 
-res, err := client.V1.AiQrCodeGenerator.Create(ai_qr_code_generator.CreateRequest { Data: types.PostV1AiQrCodeGeneratorBody { Content: "https://magichour.ai", Name: nullable.NewValue("Qr Code image"), Style: types.PostV1AiQrCodeGeneratorBodyStyle { ArtStyle: "Watercolor" } } })
+res, err := client.V1.AiQrCodeGenerator.Create(ai_qr_code_generator.CreateRequest { Content: "https://magichour.ai", Style: types.PostV1AiQrCodeGeneratorBodyStyle { ArtStyle: "Watercolor" } })
 ```
 
 **Upgrade to see all examples**

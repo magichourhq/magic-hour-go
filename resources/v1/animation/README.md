@@ -19,7 +19,7 @@ import (
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
 
-res, err := client.V1.Animation.Create(animation.CreateRequest { Data: types.PostV1AnimationBody { Assets: types.PostV1AnimationBodyAssets { AudioFilePath: nullable.NewValue("api-assets/id/1234.mp3"), AudioSource: types.PostV1AnimationBodyAssetsAudioSourceEnumFile, ImageFilePath: nullable.NewValue("api-assets/id/1234.png"), YoutubeUrl: nullable.NewValue("http://www.example.com") }, EndSeconds: 15, Fps: 12, Height: 960, Name: nullable.NewValue("Animation video"), Style: types.PostV1AnimationBodyStyle { ArtStyle: types.PostV1AnimationBodyStyleArtStyleEnumPainterlyIllustration, ArtStyleCustom: nullable.NewValue("string"), CameraEffect: types.PostV1AnimationBodyStyleCameraEffectEnumAccelerate, Prompt: nullable.NewValue("Cyberpunk city"), PromptType: types.PostV1AnimationBodyStylePromptTypeEnumAiChoose, TransitionSpeed: 5 }, Width: 512 } })
+res, err := client.V1.Animation.Create(animation.CreateRequest { Assets: types.PostV1AnimationBodyAssets { AudioSource: types.PostV1AnimationBodyAssetsAudioSourceEnumFile }, EndSeconds: 15, Fps: 12, Height: 960, Style: types.PostV1AnimationBodyStyle { ArtStyle: types.PostV1AnimationBodyStyleArtStyleEnumPainterlyIllustration, CameraEffect: types.PostV1AnimationBodyStyleCameraEffectEnumAccelerate, Prompt: nullable.NewValue("Cyberpunk city"), PromptType: types.PostV1AnimationBodyStylePromptTypeEnumAiChoose, TransitionSpeed: 5 }, Width: 512 })
 ```
 
 **Upgrade to see all examples**

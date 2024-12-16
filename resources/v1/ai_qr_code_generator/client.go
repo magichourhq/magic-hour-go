@@ -32,24 +32,27 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // POST /v1/ai-qr-code-generator
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1AiQrCodeGeneratorResponse, error) {
 	// URL formatting
-	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-qr-code-generator")
+	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-qr-code-generator")
 	if err != nil {
 		return types.PostV1AiQrCodeGeneratorResponse{}, err
 	}
-	url, err := url.Parse(joined)
+	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
 		return types.PostV1AiQrCodeGeneratorResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(request.Data)
+	reqBody, err := json.Marshal(types.PostV1AiQrCodeGeneratorBody{
+		Name:    request.Name,
+		Content: request.Content,
+		Style:   request.Style})
 	if err != nil {
 		return types.PostV1AiQrCodeGeneratorResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
-	req, err := http.NewRequest("POST", url.String(), reqBodyBuf)
+	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
 		return types.PostV1AiQrCodeGeneratorResponse{}, err
 	}

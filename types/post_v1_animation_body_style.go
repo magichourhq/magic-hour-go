@@ -14,7 +14,7 @@ type PostV1AnimationBodyStyle struct {
 	ArtStyleCustom nullable.Nullable[string]                `json:"art_style_custom,omitempty"`
 	CameraEffect   PostV1AnimationBodyStyleCameraEffectEnum `json:"camera_effect"`
 	// The prompt used for the video. Prompt is required if `prompt_type` is `custom`. Otherwise this value is ignored
-	Prompt nullable.Nullable[string] `json:"prompt"`
+	Prompt nullable.Nullable[string] `json:"prompt,omitempty"`
 	//
 	// * `custom` - use your own prompt for the video.
 	// * `use_lyrics` - Use the lyrics of the audio to create the prompt. If this option is selected, then `assets.audio_source` must be `file` or `youtube`.

@@ -17,12 +17,11 @@ import (
 	os "os"
 	text_to_video "github.com/magichourhq/magic-hour-go/resources/v1/text_to_video"
 	types "github.com/magichourhq/magic-hour-go/types"
-	nullable "github.com/magichourhq/magic-hour-go/nullable"
 )
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
 
-res, err := client.V1.TextToVideo.Create(text_to_video.CreateRequest { Data: types.PostV1TextToVideoBody { EndSeconds: 5, Name: nullable.NewValue("Text To Video video"), Orientation: types.PostV1TextToVideoBodyOrientationEnumLandscape, Style: types.PostV1TextToVideoBodyStyle { Prompt: "string" } } })
+res, err := client.V1.TextToVideo.Create(text_to_video.CreateRequest { EndSeconds: 5, Orientation: types.PostV1TextToVideoBodyOrientationEnumLandscape, Style: types.PostV1TextToVideoBodyStyle { Prompt: "string" } })
 ```
 
 **Upgrade to see all examples**
