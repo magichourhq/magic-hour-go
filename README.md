@@ -82,7 +82,7 @@ client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
 ### [v1.image_projects](resources/v1/image_projects/README.md)
 
 * [delete](resources/v1/image_projects/README.md#delete) - Delete image
-* [get](resources/v1/image_projects/README.md#get) - Get image project details
+* [get](resources/v1/image_projects/README.md#get) - Get image details
 
 ### [v1.image_to_video](resources/v1/image_to_video/README.md)
 

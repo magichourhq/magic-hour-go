@@ -9,8 +9,9 @@ import (
 // Success
 type GetV1VideoProjectsIdResponse struct {
 	CreatedAt string `json:"created_at"`
-	// The download url and expiration date of the video project
-	Download nullable.Nullable[GetV1VideoProjectsIdResponseDownload] `json:"download,omitempty"`
+	// Deprecated: Please use `.downloads` instead. The download url and expiration date of the video project
+	Download  nullable.Nullable[GetV1VideoProjectsIdResponseDownload] `json:"download,omitempty"`
+	Downloads []GetV1VideoProjectsIdResponseDownloadsItem             `json:"downloads"`
 	// Indicates whether the resource is deleted
 	Enabled bool `json:"enabled"`
 	// The end time of the input video in seconds
