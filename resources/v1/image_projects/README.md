@@ -21,7 +21,7 @@ err := client.V1.ImageProjects.Delete(image_projects.DeleteRequest { Id: "string
 ```
 
 ### get <a name="get"></a>
-Get image project details
+Get image details
 
 Get the details of a image project. The `download` field will be `null` unless the image was successfully rendered.
 
