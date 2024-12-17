@@ -32,24 +32,26 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // POST /v1/face-swap-photo
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1FaceSwapPhotoResponse, error) {
 	// URL formatting
-	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"face-swap-photo")
+	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"face-swap-photo")
 	if err != nil {
 		return types.PostV1FaceSwapPhotoResponse{}, err
 	}
-	url, err := url.Parse(joined)
+	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
 		return types.PostV1FaceSwapPhotoResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(request.Data)
+	reqBody, err := json.Marshal(types.PostV1FaceSwapPhotoBody{
+		Name:   request.Name,
+		Assets: request.Assets})
 	if err != nil {
 		return types.PostV1FaceSwapPhotoResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
-	req, err := http.NewRequest("POST", url.String(), reqBodyBuf)
+	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
 		return types.PostV1FaceSwapPhotoResponse{}, err
 	}

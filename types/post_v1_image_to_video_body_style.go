@@ -9,5 +9,5 @@ import (
 // PostV1ImageToVideoBodyStyle
 type PostV1ImageToVideoBodyStyle struct {
 	// The prompt used for the video.
-	Prompt nullable.Nullable[string] `json:"prompt"`
+	Prompt nullable.Nullable[string] `json:"prompt,omitempty"`
 }

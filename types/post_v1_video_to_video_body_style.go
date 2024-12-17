@@ -15,7 +15,7 @@ type PostV1VideoToVideoBodyStyle struct {
 	// * `default` - use the default recommended model for the selected art style.
 	Model PostV1VideoToVideoBodyStyleModelEnum `json:"model"`
 	// The prompt used for the video. Prompt is required if `prompt_type` is `custom` or `append_default`. If `prompt_type` is `default`, then the `prompt` value passed will be ignored.
-	Prompt nullable.Nullable[string] `json:"prompt"`
+	Prompt nullable.Nullable[string] `json:"prompt,omitempty"`
 	// * `default` - Use the default recommended prompt for the art style.
 	// * `custom` - Only use the prompt passed in the API. Note: for v1, lora prompt will still be auto added to apply the art style properly.
 	// * `append_default` - Add the default recommended prompt to the end of the prompt passed in the API.

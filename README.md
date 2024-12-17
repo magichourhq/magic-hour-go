@@ -75,6 +75,10 @@ client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
 
 * [create](resources/v1/files/upload_urls/README.md#create) - Generate asset upload urls
 
+### [v1.image_background_remover](resources/v1/image_background_remover/README.md)
+
+* [create](resources/v1/image_background_remover/README.md#create) - Image Background Remover
+
 ### [v1.image_projects](resources/v1/image_projects/README.md)
 
 * [delete](resources/v1/image_projects/README.md#delete) - Delete image

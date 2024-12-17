@@ -31,17 +31,17 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // DELETE /v1/image-projects/{id}
 func (c *Client) Delete(request DeleteRequest, reqModifiers ...RequestModifier) error {
 	// URL formatting
-	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"image-projects/"+sdkcore.FmtStringParam(request.Id))
+	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"image-projects/"+sdkcore.FmtStringParam(request.Id))
 	if err != nil {
 		return err
 	}
-	url, err := url.Parse(joined)
+	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
 		return err
 	}
 
 	// Init request
-	req, err := http.NewRequest("DELETE", url.String(), nil)
+	req, err := http.NewRequest("DELETE", targetUrl.String(), nil)
 	if err != nil {
 		return err
 	}
@@ -93,17 +93,17 @@ func (c *Client) Delete(request DeleteRequest, reqModifiers ...RequestModifier) 
 // GET /v1/image-projects/{id}
 func (c *Client) Get(request GetRequest, reqModifiers ...RequestModifier) (types.GetV1ImageProjectsIdResponse, error) {
 	// URL formatting
-	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"image-projects/"+sdkcore.FmtStringParam(request.Id))
+	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"image-projects/"+sdkcore.FmtStringParam(request.Id))
 	if err != nil {
 		return types.GetV1ImageProjectsIdResponse{}, err
 	}
-	url, err := url.Parse(joined)
+	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
 		return types.GetV1ImageProjectsIdResponse{}, err
 	}
 
 	// Init request
-	req, err := http.NewRequest("GET", url.String(), nil)
+	req, err := http.NewRequest("GET", targetUrl.String(), nil)
 	if err != nil {
 		return types.GetV1ImageProjectsIdResponse{}, err
 	}

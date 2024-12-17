@@ -32,24 +32,31 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // POST /v1/animation
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1AnimationResponse, error) {
 	// URL formatting
-	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"animation")
+	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"animation")
 	if err != nil {
 		return types.PostV1AnimationResponse{}, err
 	}
-	url, err := url.Parse(joined)
+	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
 		return types.PostV1AnimationResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(request.Data)
+	reqBody, err := json.Marshal(types.PostV1AnimationBody{
+		Name:       request.Name,
+		Assets:     request.Assets,
+		EndSeconds: request.EndSeconds,
+		Fps:        request.Fps,
+		Height:     request.Height,
+		Style:      request.Style,
+		Width:      request.Width})
 	if err != nil {
 		return types.PostV1AnimationResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
-	req, err := http.NewRequest("POST", url.String(), reqBodyBuf)
+	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
 		return types.PostV1AnimationResponse{}, err
 	}

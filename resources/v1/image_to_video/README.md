@@ -22,7 +22,7 @@ import (
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
 
-res, err := client.V1.ImageToVideo.Create(image_to_video.CreateRequest { Data: types.PostV1ImageToVideoBody { Assets: types.PostV1ImageToVideoBodyAssets { ImageFilePath: "image/id/1234.png" }, EndSeconds: 5, Height: 960, Name: nullable.NewValue("Image To Video video"), Style: types.PostV1ImageToVideoBodyStyle { Prompt: nullable.NewValue("string") }, Width: 512 } })
+res, err := client.V1.ImageToVideo.Create(image_to_video.CreateRequest { Assets: types.PostV1ImageToVideoBodyAssets { ImageFilePath: "image/id/1234.png" }, EndSeconds: 5, Height: 960, Style: types.PostV1ImageToVideoBodyStyle { Prompt: nullable.NewNull[string]() }, Width: 512 })
 ```
 
 **Upgrade to see all examples**

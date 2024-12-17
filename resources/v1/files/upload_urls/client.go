@@ -52,24 +52,25 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // POST /v1/files/upload-urls
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1FilesUploadUrlsResponse, error) {
 	// URL formatting
-	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"files/"+"upload-urls")
+	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"files/"+"upload-urls")
 	if err != nil {
 		return types.PostV1FilesUploadUrlsResponse{}, err
 	}
-	url, err := url.Parse(joined)
+	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
 		return types.PostV1FilesUploadUrlsResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(request.Data)
+	reqBody, err := json.Marshal(types.PostV1FilesUploadUrlsBody{
+		Items: request.Items})
 	if err != nil {
 		return types.PostV1FilesUploadUrlsResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
-	req, err := http.NewRequest("POST", url.String(), reqBodyBuf)
+	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
 		return types.PostV1FilesUploadUrlsResponse{}, err
 	}

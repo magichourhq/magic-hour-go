@@ -3,10 +3,14 @@
 package face_swap_photo
 
 import (
+	nullable "github.com/magichourhq/magic-hour-go/nullable"
 	types "github.com/magichourhq/magic-hour-go/types"
 )
 
 // CreateRequest
 type CreateRequest struct {
-	Data types.PostV1FaceSwapPhotoBody `json:"data"`
+	// Provide the assets for face swap photo
+	Assets types.PostV1FaceSwapPhotoBodyAssets `json:"assets"`
+	// The name of image
+	Name nullable.Nullable[string] `json:"name,omitempty"`
 }

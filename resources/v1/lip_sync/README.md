@@ -17,12 +17,11 @@ import (
 	os "os"
 	lip_sync "github.com/magichourhq/magic-hour-go/resources/v1/lip_sync"
 	types "github.com/magichourhq/magic-hour-go/types"
-	nullable "github.com/magichourhq/magic-hour-go/nullable"
 )
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
 
-res, err := client.V1.LipSync.Create(lip_sync.CreateRequest { Data: types.PostV1LipSyncBody { Assets: types.PostV1LipSyncBodyAssets { AudioFilePath: "audio/id/1234.mp3", VideoFilePath: nullable.NewValue("video/id/1234.mp4"), VideoSource: types.PostV1LipSyncBodyAssetsVideoSourceEnumFile, YoutubeUrl: nullable.NewValue("http://www.example.com") }, EndSeconds: 15, Height: 960, MaxFpsLimit: nullable.NewValue(12), Name: nullable.NewValue("Lip Sync video"), StartSeconds: 0, Width: 512 } })
+res, err := client.V1.LipSync.Create(lip_sync.CreateRequest { Assets: types.PostV1LipSyncBodyAssets { AudioFilePath: "audio/id/1234.mp3", VideoSource: types.PostV1LipSyncBodyAssetsVideoSourceEnumFile }, EndSeconds: 15, Height: 960, StartSeconds: 0, Width: 512 })
 ```
 
 **Upgrade to see all examples**

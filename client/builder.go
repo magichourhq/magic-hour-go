@@ -31,10 +31,10 @@ func WithModifiers(modifiers ...RequestModifier) func(*sdkcore.CoreClient) {
 	}
 }
 
-func WithBearerAuth(val string) func(*sdkcore.CoreClient) {
+func WithBearerAuth(token string) func(*sdkcore.CoreClient) {
 	return func(c *sdkcore.CoreClient) {
 		c.Auth["bearerAuth"] = func(request *http.Request) {
-			request.Header.Add("Authorization", "Bearer "+val)
+			request.Header.Add("Authorization", "Bearer "+token)
 		}
 	}
 }

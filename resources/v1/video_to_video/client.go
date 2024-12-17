@@ -34,24 +34,32 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // POST /v1/video-to-video
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1VideoToVideoResponse, error) {
 	// URL formatting
-	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"video-to-video")
+	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"video-to-video")
 	if err != nil {
 		return types.PostV1VideoToVideoResponse{}, err
 	}
-	url, err := url.Parse(joined)
+	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
 		return types.PostV1VideoToVideoResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(request.Data)
+	reqBody, err := json.Marshal(types.PostV1VideoToVideoBody{
+		FpsResolution: request.FpsResolution,
+		Name:          request.Name,
+		Assets:        request.Assets,
+		EndSeconds:    request.EndSeconds,
+		Height:        request.Height,
+		StartSeconds:  request.StartSeconds,
+		Style:         request.Style,
+		Width:         request.Width})
 	if err != nil {
 		return types.PostV1VideoToVideoResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
-	req, err := http.NewRequest("POST", url.String(), reqBodyBuf)
+	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
 		return types.PostV1VideoToVideoResponse{}, err
 	}

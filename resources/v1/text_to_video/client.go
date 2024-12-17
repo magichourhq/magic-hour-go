@@ -34,24 +34,28 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // POST /v1/text-to-video
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1TextToVideoResponse, error) {
 	// URL formatting
-	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"text-to-video")
+	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"text-to-video")
 	if err != nil {
 		return types.PostV1TextToVideoResponse{}, err
 	}
-	url, err := url.Parse(joined)
+	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
 		return types.PostV1TextToVideoResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(request.Data)
+	reqBody, err := json.Marshal(types.PostV1TextToVideoBody{
+		Name:        request.Name,
+		EndSeconds:  request.EndSeconds,
+		Orientation: request.Orientation,
+		Style:       request.Style})
 	if err != nil {
 		return types.PostV1TextToVideoResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
-	req, err := http.NewRequest("POST", url.String(), reqBodyBuf)
+	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
 		return types.PostV1TextToVideoResponse{}, err
 	}

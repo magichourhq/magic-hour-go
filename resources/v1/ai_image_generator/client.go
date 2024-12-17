@@ -32,24 +32,28 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // POST /v1/ai-image-generator
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1AiImageGeneratorResponse, error) {
 	// URL formatting
-	joined, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-image-generator")
+	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-image-generator")
 	if err != nil {
 		return types.PostV1AiImageGeneratorResponse{}, err
 	}
-	url, err := url.Parse(joined)
+	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
 		return types.PostV1AiImageGeneratorResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(request.Data)
+	reqBody, err := json.Marshal(types.PostV1AiImageGeneratorBody{
+		Name:        request.Name,
+		ImageCount:  request.ImageCount,
+		Orientation: request.Orientation,
+		Style:       request.Style})
 	if err != nil {
 		return types.PostV1AiImageGeneratorResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
-	req, err := http.NewRequest("POST", url.String(), reqBodyBuf)
+	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
 		return types.PostV1AiImageGeneratorResponse{}, err
 	}
