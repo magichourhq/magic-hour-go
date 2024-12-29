@@ -20,7 +20,7 @@ import (
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
 
-res, err := client.V1.AiPhotoEditor.Create(ai_photo_editor.CreateRequest { Assets: types.PostV1AiPhotoEditorBodyAssets { ImageFilePath: "image/id/1234.png" }, Resolution: 768, Style: types.PostV1AiPhotoEditorBodyStyle { ImageDescription: "A photo of a person", LikenessStrength: 5.2, Prompt: "A photo portrait of a person wearing a hat", PromptStrength: 3.75 } })
+res, err := client.V1.AiPhotoEditor.Create(ai_photo_editor.CreateRequest { Assets: types.PostV1AiPhotoEditorBodyAssets { ImageFilePath: "api-assets/id/1234.png" }, Resolution: 768, Style: types.PostV1AiPhotoEditorBodyStyle { ImageDescription: "A photo of a person", LikenessStrength: 5.2, Prompt: "A photo portrait of a person wearing a hat", PromptStrength: 3.75 } })
 ```
 
 **Upgrade to see all examples**
