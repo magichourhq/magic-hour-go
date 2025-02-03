@@ -25,7 +25,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 	return &client
 }
 
-// Create AI Images
+// AI Images
 //
 // Create an AI image. Each image costs 5 frames.
 //

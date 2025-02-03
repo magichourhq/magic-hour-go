@@ -25,7 +25,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 	return &client
 }
 
-// Create Image-to-Video
+// Image-to-Video
 //
 // Create a Image To Video video. The estimated frame cost is calculated using 30 FPS. This amount is deducted from your account balance when a video is queued. Once the video is complete, the cost will be updated based on the actual number of frames rendered.
 //

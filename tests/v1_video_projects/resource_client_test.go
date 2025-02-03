@@ -10,7 +10,7 @@ import (
 
 func TestDelete204GeneratedSuccess(t *testing.T) {
 	// Success case test
-	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.7.2"))
+	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.0"))
 	err := client.V1.VideoProjects.Delete(video_projects.DeleteRequest{Id: "string"})
 
 	if err != nil {
@@ -21,7 +21,7 @@ func TestDelete204GeneratedSuccess(t *testing.T) {
 
 func TestGet200GeneratedSuccess(t *testing.T) {
 	// Success case test
-	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.7.2"))
+	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.0"))
 	res, err := client.V1.VideoProjects.Get(video_projects.GetRequest{Id: "string"})
 
 	if err != nil {

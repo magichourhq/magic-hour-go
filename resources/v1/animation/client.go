@@ -25,7 +25,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 	return &client
 }
 
-// Create Animation
+// Animation
 //
 // Create a Animation video. The estimated frame cost is calculated based on the `fps` and `end_seconds` input.
 //

@@ -7,6 +7,7 @@ const (
 	GetV1ImageProjectsIdResponseTypeEnumAiHeadshot        GetV1ImageProjectsIdResponseTypeEnum = "AI_HEADSHOT"
 	GetV1ImageProjectsIdResponseTypeEnumAiImage           GetV1ImageProjectsIdResponseTypeEnum = "AI_IMAGE"
 	GetV1ImageProjectsIdResponseTypeEnumBackgroundRemover GetV1ImageProjectsIdResponseTypeEnum = "BACKGROUND_REMOVER"
+	GetV1ImageProjectsIdResponseTypeEnumClothesChanger    GetV1ImageProjectsIdResponseTypeEnum = "CLOTHES_CHANGER"
 	GetV1ImageProjectsIdResponseTypeEnumFaceSwap          GetV1ImageProjectsIdResponseTypeEnum = "FACE_SWAP"
 	GetV1ImageProjectsIdResponseTypeEnumImageUpscaler     GetV1ImageProjectsIdResponseTypeEnum = "IMAGE_UPSCALER"
 	GetV1ImageProjectsIdResponseTypeEnumPhotoEditor       GetV1ImageProjectsIdResponseTypeEnum = "PHOTO_EDITOR"
