@@ -36,8 +36,5 @@ import (
 )
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-
 res, err := client.V1.Files.UploadUrls.Create(upload_urls.CreateRequest { Items: []types.PostV1FilesUploadUrlsBodyItemsItem{types.PostV1FilesUploadUrlsBodyItemsItem { Extension: "mp4", Type: types.PostV1FilesUploadUrlsBodyItemsItemTypeEnumVideo }, types.PostV1FilesUploadUrlsBodyItemsItem { Extension: "mp3", Type: types.PostV1FilesUploadUrlsBodyItemsItemTypeEnumAudio }} })
 ```
-
-**Upgrade to see all examples**

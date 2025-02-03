@@ -17,11 +17,9 @@ import (
 	os "os"
 	face_swap "github.com/magichourhq/magic-hour-go/resources/v1/face_swap"
 	types "github.com/magichourhq/magic-hour-go/types"
+	nullable "github.com/magichourhq/magic-hour-go/nullable"
 )
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-
-res, err := client.V1.FaceSwap.Create(face_swap.CreateRequest { Assets: types.PostV1FaceSwapBodyAssets { ImageFilePath: "image/id/1234.png", VideoSource: types.PostV1FaceSwapBodyAssetsVideoSourceEnumFile }, EndSeconds: 15, Height: 960, StartSeconds: 0, Width: 512 })
+res, err := client.V1.FaceSwap.Create(face_swap.CreateRequest { Assets: types.PostV1FaceSwapBodyAssets { ImageFilePath: "image/id/1234.png", VideoFilePath: nullable.NewValue("video/id/1234.mp4"), VideoSource: types.PostV1FaceSwapBodyAssetsVideoSourceEnumFile }, EndSeconds: 15, Height: 960, StartSeconds: 0, Width: 512 })
 ```
-
-**Upgrade to see all examples**

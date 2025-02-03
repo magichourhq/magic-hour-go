@@ -21,8 +21,5 @@ import (
 )
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-
 res, err := client.V1.ImageToVideo.Create(image_to_video.CreateRequest { Assets: types.PostV1ImageToVideoBodyAssets { ImageFilePath: "image/id/1234.png" }, EndSeconds: 5, Height: 960, Style: types.PostV1ImageToVideoBodyStyle { Prompt: nullable.NewNull[string]() }, Width: 512 })
 ```
-
-**Upgrade to see all examples**

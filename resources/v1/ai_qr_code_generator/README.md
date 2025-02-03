@@ -17,8 +17,5 @@ import (
 )
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-
 res, err := client.V1.AiQrCodeGenerator.Create(ai_qr_code_generator.CreateRequest { Content: "https://magichour.ai", Style: types.PostV1AiQrCodeGeneratorBodyStyle { ArtStyle: "Watercolor" } })
 ```
-
-**Upgrade to see all examples**

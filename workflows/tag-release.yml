@@ -1,0 +1,36 @@
+# This workflow will tag the go package on release
+
+name: Tag Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      #---------------------------
+      #  -----  checkout -----
+      #---------------------------
+      - name: checkout repository
+        uses: actions/checkout@v4
+      #--------------------------------------------------
+      #  -----  read version from VERSION file  -----
+      #--------------------------------------------------
+      - name: extract version
+        run: |
+          echo "SDK_TAG=v$(cat VERSION)" >> $GITHUB_ENV
+          echo "tagging version v$(cat VERSION)..."
+      #---------------------------------------
+      #  -----  create and push tag  -----
+      #---------------------------------------
+      - name: create tag
+        uses: actions/github-script@v7.0.1
+        with:
+          script: |
+            github.rest.git.createRef({owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `refs/tags/${process.env.SDK_TAG}`,
+              sha: context.sha
+            })

@@ -17,8 +17,5 @@ import (
 )
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-
 res, err := client.V1.AiImageGenerator.Create(ai_image_generator.CreateRequest { ImageCount: 1, Orientation: types.PostV1AiImageGeneratorBodyOrientationEnumLandscape, Style: types.PostV1AiImageGeneratorBodyStyle { Prompt: "Cool image" } })
 ```
-
-**Upgrade to see all examples**
