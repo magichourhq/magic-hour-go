@@ -1,18 +1,18 @@
-package test_ai_image_generator_client
+package test_ai_clothes_changer_client
 
 import (
 	fmt "fmt"
 	testing "testing"
 
 	sdk "github.com/magichourhq/magic-hour-go/client"
-	ai_image_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_image_generator"
+	ai_clothes_changer "github.com/magichourhq/magic-hour-go/resources/v1/ai_clothes_changer"
 	types "github.com/magichourhq/magic-hour-go/types"
 )
 
 func TestCreate200SuccessDefault(t *testing.T) {
 	// Success test for Default body
 	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.0"))
-	res, err := client.V1.AiImageGenerator.Create(ai_image_generator.CreateRequest{ImageCount: 1, Orientation: types.PostV1AiImageGeneratorBodyOrientationEnumLandscape, Style: types.PostV1AiImageGeneratorBodyStyle{Prompt: "Cool image"}})
+	res, err := client.V1.AiClothesChanger.Create(ai_clothes_changer.CreateRequest{Assets: types.PostV1AiClothesChangerBodyAssets{GarmentFilePath: "api-assets/id/outfit.png", GarmentType: types.PostV1AiClothesChangerBodyAssetsGarmentTypeEnumDresses, PersonFilePath: "api-assets/id/model.png"}})
 
 	if err != nil {
 		t.Fatalf("TestCreate200SuccessDefault - failed making request with error: %#v", err)

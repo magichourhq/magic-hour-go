@@ -11,7 +11,7 @@ import (
 
 func TestCreate200SuccessDefault(t *testing.T) {
 	// Success test for Default body
-	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.7.2"))
+	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.0"))
 	res, err := client.V1.Files.UploadUrls.Create(upload_urls.CreateRequest{Items: []types.PostV1FilesUploadUrlsBodyItemsItem{types.PostV1FilesUploadUrlsBodyItemsItem{Extension: "mp4", Type: types.PostV1FilesUploadUrlsBodyItemsItemTypeEnumVideo}, types.PostV1FilesUploadUrlsBodyItemsItem{Extension: "mp3", Type: types.PostV1FilesUploadUrlsBodyItemsItemTypeEnumAudio}}})
 
 	if err != nil {

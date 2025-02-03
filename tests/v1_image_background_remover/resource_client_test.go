@@ -11,7 +11,7 @@ import (
 
 func TestCreate200SuccessDefault(t *testing.T) {
 	// Success test for Default body
-	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.7.2"))
+	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.0"))
 	res, err := client.V1.ImageBackgroundRemover.Create(image_background_remover.CreateRequest{Assets: types.PostV1ImageBackgroundRemoverBodyAssets{ImageFilePath: "image/id/1234.png"}})
 
 	if err != nil {

@@ -1,4 +1,4 @@
-package ai_image_upscaler
+package ai_clothes_changer
 
 import (
 	bytes "bytes"
@@ -25,37 +25,35 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 	return &client
 }
 
-// AI Image Upscaler
+// AI Clothes Changer
 //
-// Upscale your image using AI. Each 2x upscale costs 50 frames, and 4x upscale costs 200 frames.
+// Change outfits in photos in seconds with just a photo reference. Each photo costs 25 frames.
 //
-// POST /v1/ai-image-upscaler
-func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1AiImageUpscalerResponse, error) {
+// POST /v1/ai-clothes-changer
+func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1AiClothesChangerResponse, error) {
 	// URL formatting
-	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-image-upscaler")
+	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-clothes-changer")
 	if err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.PostV1AiClothesChangerResponse{}, err
 	}
 	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.PostV1AiClothesChangerResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(types.PostV1AiImageUpscalerBody{
-		Name:        request.Name,
-		Assets:      request.Assets,
-		ScaleFactor: request.ScaleFactor,
-		Style:       request.Style})
+	reqBody, err := json.Marshal(types.PostV1AiClothesChangerBody{
+		Name:   request.Name,
+		Assets: request.Assets})
 	if err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.PostV1AiClothesChangerResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.PostV1AiClothesChangerResponse{}, err
 	}
 
 	// Add headers
@@ -67,30 +65,30 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.PostV1AiClothesChangerResponse{}, err
 	}
 
 	// Dispatch request
 	resp, err := c.coreClient.HttpClient.Do(req)
 	if err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.PostV1AiClothesChangerResponse{}, err
 	}
 	defer resp.Body.Close()
 
 	// Handle response
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.PostV1AiClothesChangerResponse{}, err
 	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return types.PostV1AiImageUpscalerResponse{}, sdkcore.NewApiError(*req, *resp, body)
+		return types.PostV1AiClothesChangerResponse{}, sdkcore.NewApiError(*req, *resp, body)
 	}
-	var bodyData types.PostV1AiImageUpscalerResponse
+	var bodyData types.PostV1AiClothesChangerResponse
 	err = json.Unmarshal(body, &bodyData)
 	if err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.PostV1AiClothesChangerResponse{}, err
 	}
 	return bodyData, nil
 

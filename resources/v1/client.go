@@ -4,6 +4,7 @@ import (
 	http "net/http"
 
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
+	ai_clothes_changer "github.com/magichourhq/magic-hour-go/resources/v1/ai_clothes_changer"
 	ai_headshot_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_headshot_generator"
 	ai_image_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_image_generator"
 	ai_image_upscaler "github.com/magichourhq/magic-hour-go/resources/v1/ai_image_upscaler"
@@ -26,6 +27,7 @@ type Client struct {
 	coreClient             *sdkcore.CoreClient
 	ImageProjects          *image_projects.Client
 	VideoProjects          *video_projects.Client
+	AiClothesChanger       *ai_clothes_changer.Client
 	AiHeadshotGenerator    *ai_headshot_generator.Client
 	AiImageGenerator       *ai_image_generator.Client
 	AiImageUpscaler        *ai_image_upscaler.Client
@@ -49,6 +51,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 		coreClient:             coreClient,
 		ImageProjects:          image_projects.NewClient(coreClient),
 		VideoProjects:          video_projects.NewClient(coreClient),
+		AiClothesChanger:       ai_clothes_changer.NewClient(coreClient),
 		AiHeadshotGenerator:    ai_headshot_generator.NewClient(coreClient),
 		AiImageGenerator:       ai_image_generator.NewClient(coreClient),
 		AiImageUpscaler:        ai_image_upscaler.NewClient(coreClient),
