@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: Run Go List with GOPROXY
         run: |
-          VERSION=${{ github.event.release.tag_name }}	
+          VERSION=${{ github.event.release.tag_name }}
           GOPROXY=proxy.golang.org go list -m github.com/magichourhq/magic-hour-go@$VERSION
