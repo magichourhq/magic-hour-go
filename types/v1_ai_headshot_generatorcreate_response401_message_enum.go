@@ -1,0 +1,8 @@
+package types
+
+// V1AiHeadshotGeneratorcreateResponse401MessageEnum
+type V1AiHeadshotGeneratorcreateResponse401MessageEnum string
+
+const (
+	V1AiHeadshotGeneratorcreateResponse401MessageEnumUnauthorized V1AiHeadshotGeneratorcreateResponse401MessageEnum = "Unauthorized"
+)

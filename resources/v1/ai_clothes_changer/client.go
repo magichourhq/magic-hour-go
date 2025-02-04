@@ -30,15 +30,15 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // Change outfits in photos in seconds with just a photo reference. Each photo costs 25 frames.
 //
 // POST /v1/ai-clothes-changer
-func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1AiClothesChangerResponse, error) {
+func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiClothesChangercreateResponse, error) {
 	// URL formatting
 	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-clothes-changer")
 	if err != nil {
-		return types.PostV1AiClothesChangerResponse{}, err
+		return types.V1AiClothesChangercreateResponse{}, err
 	}
 	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
-		return types.PostV1AiClothesChangerResponse{}, err
+		return types.V1AiClothesChangercreateResponse{}, err
 	}
 
 	// Prep body
@@ -46,14 +46,14 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 		Name:   request.Name,
 		Assets: request.Assets})
 	if err != nil {
-		return types.PostV1AiClothesChangerResponse{}, err
+		return types.V1AiClothesChangercreateResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
-		return types.PostV1AiClothesChangerResponse{}, err
+		return types.V1AiClothesChangercreateResponse{}, err
 	}
 
 	// Add headers
@@ -65,30 +65,30 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
-		return types.PostV1AiClothesChangerResponse{}, err
+		return types.V1AiClothesChangercreateResponse{}, err
 	}
 
 	// Dispatch request
 	resp, err := c.coreClient.HttpClient.Do(req)
 	if err != nil {
-		return types.PostV1AiClothesChangerResponse{}, err
-	}
-	defer resp.Body.Close()
-
-	// Handle response
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return types.PostV1AiClothesChangerResponse{}, err
+		return types.V1AiClothesChangercreateResponse{}, err
 	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return types.PostV1AiClothesChangerResponse{}, sdkcore.NewApiError(*req, *resp, body)
+		return types.V1AiClothesChangercreateResponse{}, sdkcore.NewApiError(*req, *resp)
 	}
-	var bodyData types.PostV1AiClothesChangerResponse
+
+	// Handle response
+	defer resp.Body.Close()
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return types.V1AiClothesChangercreateResponse{}, err
+	}
+	var bodyData types.V1AiClothesChangercreateResponse
 	err = json.Unmarshal(body, &bodyData)
 	if err != nil {
-		return types.PostV1AiClothesChangerResponse{}, err
+		return types.V1AiClothesChangercreateResponse{}, err
 	}
 	return bodyData, nil
 

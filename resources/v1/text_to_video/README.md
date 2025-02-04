@@ -20,5 +20,5 @@ import (
 )
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-res, err := client.V1.TextToVideo.Create(text_to_video.CreateRequest { EndSeconds: 5, Orientation: types.PostV1TextToVideoBodyOrientationEnumLandscape, Style: types.PostV1TextToVideoBodyStyle { Prompt: "string" } })
+res, err := client.V1.TextToVideo.Create(text_to_video.CreateRequest { EndSeconds: 5.0, Orientation: types.PostV1TextToVideoBodyOrientationEnumLandscape, Style: types.PostV1TextToVideoBodyStyle { Prompt: "string" } })
 ```

@@ -1,0 +1,8 @@
+package types
+
+// V1FilesUploadUrlscreateResponse401MessageEnum
+type V1FilesUploadUrlscreateResponse401MessageEnum string
+
+const (
+	V1FilesUploadUrlscreateResponse401MessageEnumUnauthorized V1FilesUploadUrlscreateResponse401MessageEnum = "Unauthorized"
+)

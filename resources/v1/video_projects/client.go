@@ -62,17 +62,10 @@ func (c *Client) Delete(request DeleteRequest, reqModifiers ...RequestModifier) 
 	if err != nil {
 		return err
 	}
-	defer resp.Body.Close()
-
-	// Handle response
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return err
-	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return sdkcore.NewApiError(*req, *resp, body)
+		return sdkcore.NewApiError(*req, *resp)
 	}
 
 	// No expected response data
@@ -93,21 +86,21 @@ func (c *Client) Delete(request DeleteRequest, reqModifiers ...RequestModifier) 
 // - `canceled` - video render is canceled by the user
 //
 // GET /v1/video-projects/{id}
-func (c *Client) Get(request GetRequest, reqModifiers ...RequestModifier) (types.GetV1VideoProjectsIdResponse, error) {
+func (c *Client) Get(request GetRequest, reqModifiers ...RequestModifier) (types.V1VideoProjectsgetResponse, error) {
 	// URL formatting
 	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"video-projects/"+sdkcore.FmtStringParam(request.Id))
 	if err != nil {
-		return types.GetV1VideoProjectsIdResponse{}, err
+		return types.V1VideoProjectsgetResponse{}, err
 	}
 	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
-		return types.GetV1VideoProjectsIdResponse{}, err
+		return types.V1VideoProjectsgetResponse{}, err
 	}
 
 	// Init request
 	req, err := http.NewRequest("GET", targetUrl.String(), nil)
 	if err != nil {
-		return types.GetV1VideoProjectsIdResponse{}, err
+		return types.V1VideoProjectsgetResponse{}, err
 	}
 
 	// Add headers
@@ -118,30 +111,30 @@ func (c *Client) Get(request GetRequest, reqModifiers ...RequestModifier) (types
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
-		return types.GetV1VideoProjectsIdResponse{}, err
+		return types.V1VideoProjectsgetResponse{}, err
 	}
 
 	// Dispatch request
 	resp, err := c.coreClient.HttpClient.Do(req)
 	if err != nil {
-		return types.GetV1VideoProjectsIdResponse{}, err
-	}
-	defer resp.Body.Close()
-
-	// Handle response
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return types.GetV1VideoProjectsIdResponse{}, err
+		return types.V1VideoProjectsgetResponse{}, err
 	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return types.GetV1VideoProjectsIdResponse{}, sdkcore.NewApiError(*req, *resp, body)
+		return types.V1VideoProjectsgetResponse{}, sdkcore.NewApiError(*req, *resp)
 	}
-	var bodyData types.GetV1VideoProjectsIdResponse
+
+	// Handle response
+	defer resp.Body.Close()
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return types.V1VideoProjectsgetResponse{}, err
+	}
+	var bodyData types.V1VideoProjectsgetResponse
 	err = json.Unmarshal(body, &bodyData)
 	if err != nil {
-		return types.GetV1VideoProjectsIdResponse{}, err
+		return types.V1VideoProjectsgetResponse{}, err
 	}
 	return bodyData, nil
 

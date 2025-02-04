@@ -1,0 +1,8 @@
+package types
+
+// V1VideoToVideocreateResponse401MessageEnum
+type V1VideoToVideocreateResponse401MessageEnum string
+
+const (
+	V1VideoToVideocreateResponse401MessageEnumUnauthorized V1VideoToVideocreateResponse401MessageEnum = "Unauthorized"
+)

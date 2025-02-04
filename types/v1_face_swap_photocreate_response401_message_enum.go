@@ -1,0 +1,8 @@
+package types
+
+// V1FaceSwapPhotocreateResponse401MessageEnum
+type V1FaceSwapPhotocreateResponse401MessageEnum string
+
+const (
+	V1FaceSwapPhotocreateResponse401MessageEnumUnauthorized V1FaceSwapPhotocreateResponse401MessageEnum = "Unauthorized"
+)

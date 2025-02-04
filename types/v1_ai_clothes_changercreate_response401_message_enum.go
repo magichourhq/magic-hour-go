@@ -1,0 +1,8 @@
+package types
+
+// V1AiClothesChangercreateResponse401MessageEnum
+type V1AiClothesChangercreateResponse401MessageEnum string
+
+const (
+	V1AiClothesChangercreateResponse401MessageEnumUnauthorized V1AiClothesChangercreateResponse401MessageEnum = "Unauthorized"
+)

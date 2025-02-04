@@ -39,73 +39,73 @@ client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
 
 ## Module Documentation and Snippets
 
-### [v1.ai_clothes_changer](resources/v1/ai_clothes_changer/README.md)
+### [V1.AiClothesChanger](resources/v1/ai_clothes_changer/README.md)
 
 * [create](resources/v1/ai_clothes_changer/README.md#create) - AI Clothes Changer
 
-### [v1.ai_headshot_generator](resources/v1/ai_headshot_generator/README.md)
+### [V1.AiHeadshotGenerator](resources/v1/ai_headshot_generator/README.md)
 
 * [create](resources/v1/ai_headshot_generator/README.md#create) - AI Headshots
 
-### [v1.ai_image_generator](resources/v1/ai_image_generator/README.md)
+### [V1.AiImageGenerator](resources/v1/ai_image_generator/README.md)
 
 * [create](resources/v1/ai_image_generator/README.md#create) - AI Images
 
-### [v1.ai_image_upscaler](resources/v1/ai_image_upscaler/README.md)
+### [V1.AiImageUpscaler](resources/v1/ai_image_upscaler/README.md)
 
 * [create](resources/v1/ai_image_upscaler/README.md#create) - AI Image Upscaler
 
-### [v1.ai_photo_editor](resources/v1/ai_photo_editor/README.md)
+### [V1.AiPhotoEditor](resources/v1/ai_photo_editor/README.md)
 
 * [create](resources/v1/ai_photo_editor/README.md#create) - AI Photo Editor
 
-### [v1.ai_qr_code_generator](resources/v1/ai_qr_code_generator/README.md)
+### [V1.AiQrCodeGenerator](resources/v1/ai_qr_code_generator/README.md)
 
 * [create](resources/v1/ai_qr_code_generator/README.md#create) - AI QR Code
 
-### [v1.animation](resources/v1/animation/README.md)
+### [V1.Animation](resources/v1/animation/README.md)
 
 * [create](resources/v1/animation/README.md#create) - Animation
 
-### [v1.face_swap](resources/v1/face_swap/README.md)
+### [V1.FaceSwap](resources/v1/face_swap/README.md)
 
 * [create](resources/v1/face_swap/README.md#create) - Face Swap video
 
-### [v1.face_swap_photo](resources/v1/face_swap_photo/README.md)
+### [V1.FaceSwapPhoto](resources/v1/face_swap_photo/README.md)
 
 * [create](resources/v1/face_swap_photo/README.md#create) - Face Swap Photo
 
-### [v1.files.upload_urls](resources/v1/files/upload_urls/README.md)
+### [V1.Files.UploadUrls](resources/v1/files/upload_urls/README.md)
 
 * [create](resources/v1/files/upload_urls/README.md#create) - Generate asset upload urls
 
-### [v1.image_background_remover](resources/v1/image_background_remover/README.md)
+### [V1.ImageBackgroundRemover](resources/v1/image_background_remover/README.md)
 
 * [create](resources/v1/image_background_remover/README.md#create) - Image Background Remover
 
-### [v1.image_projects](resources/v1/image_projects/README.md)
+### [V1.ImageProjects](resources/v1/image_projects/README.md)
 
 * [delete](resources/v1/image_projects/README.md#delete) - Delete image
 * [get](resources/v1/image_projects/README.md#get) - Get image details
 
-### [v1.image_to_video](resources/v1/image_to_video/README.md)
+### [V1.ImageToVideo](resources/v1/image_to_video/README.md)
 
 * [create](resources/v1/image_to_video/README.md#create) - Image-to-Video
 
-### [v1.lip_sync](resources/v1/lip_sync/README.md)
+### [V1.LipSync](resources/v1/lip_sync/README.md)
 
 * [create](resources/v1/lip_sync/README.md#create) - Lip Sync
 
-### [v1.text_to_video](resources/v1/text_to_video/README.md)
+### [V1.TextToVideo](resources/v1/text_to_video/README.md)
 
 * [create](resources/v1/text_to_video/README.md#create) - Text-to-Video
 
-### [v1.video_projects](resources/v1/video_projects/README.md)
+### [V1.VideoProjects](resources/v1/video_projects/README.md)
 
 * [delete](resources/v1/video_projects/README.md#delete) - Delete video
 * [get](resources/v1/video_projects/README.md#get) - Get video details
 
-### [v1.video_to_video](resources/v1/video_to_video/README.md)
+### [V1.VideoToVideo](resources/v1/video_to_video/README.md)
 
 * [create](resources/v1/video_to_video/README.md#create) - Video-to-Video
 

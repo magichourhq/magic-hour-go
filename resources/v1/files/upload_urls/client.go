@@ -50,29 +50,29 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // ```
 //
 // POST /v1/files/upload-urls
-func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1FilesUploadUrlsResponse, error) {
+func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1FilesUploadUrlscreateResponse, error) {
 	// URL formatting
 	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"files/"+"upload-urls")
 	if err != nil {
-		return types.PostV1FilesUploadUrlsResponse{}, err
+		return types.V1FilesUploadUrlscreateResponse{}, err
 	}
 	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
-		return types.PostV1FilesUploadUrlsResponse{}, err
+		return types.V1FilesUploadUrlscreateResponse{}, err
 	}
 
 	// Prep body
 	reqBody, err := json.Marshal(types.PostV1FilesUploadUrlsBody{
 		Items: request.Items})
 	if err != nil {
-		return types.PostV1FilesUploadUrlsResponse{}, err
+		return types.V1FilesUploadUrlscreateResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
-		return types.PostV1FilesUploadUrlsResponse{}, err
+		return types.V1FilesUploadUrlscreateResponse{}, err
 	}
 
 	// Add headers
@@ -84,30 +84,30 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
-		return types.PostV1FilesUploadUrlsResponse{}, err
+		return types.V1FilesUploadUrlscreateResponse{}, err
 	}
 
 	// Dispatch request
 	resp, err := c.coreClient.HttpClient.Do(req)
 	if err != nil {
-		return types.PostV1FilesUploadUrlsResponse{}, err
-	}
-	defer resp.Body.Close()
-
-	// Handle response
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return types.PostV1FilesUploadUrlsResponse{}, err
+		return types.V1FilesUploadUrlscreateResponse{}, err
 	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return types.PostV1FilesUploadUrlsResponse{}, sdkcore.NewApiError(*req, *resp, body)
+		return types.V1FilesUploadUrlscreateResponse{}, sdkcore.NewApiError(*req, *resp)
 	}
-	var bodyData types.PostV1FilesUploadUrlsResponse
+
+	// Handle response
+	defer resp.Body.Close()
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return types.V1FilesUploadUrlscreateResponse{}, err
+	}
+	var bodyData types.V1FilesUploadUrlscreateResponse
 	err = json.Unmarshal(body, &bodyData)
 	if err != nil {
-		return types.PostV1FilesUploadUrlsResponse{}, err
+		return types.V1FilesUploadUrlscreateResponse{}, err
 	}
 	return bodyData, nil
 
