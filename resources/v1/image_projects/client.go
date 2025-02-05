@@ -62,17 +62,10 @@ func (c *Client) Delete(request DeleteRequest, reqModifiers ...RequestModifier) 
 	if err != nil {
 		return err
 	}
-	defer resp.Body.Close()
-
-	// Handle response
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return err
-	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return sdkcore.NewApiError(*req, *resp, body)
+		return sdkcore.NewApiError(*req, *resp)
 	}
 
 	// No expected response data
@@ -126,17 +119,17 @@ func (c *Client) Get(request GetRequest, reqModifiers ...RequestModifier) (types
 	if err != nil {
 		return types.GetV1ImageProjectsIdResponse{}, err
 	}
-	defer resp.Body.Close()
-
-	// Handle response
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return types.GetV1ImageProjectsIdResponse{}, err
-	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return types.GetV1ImageProjectsIdResponse{}, sdkcore.NewApiError(*req, *resp, body)
+		return types.GetV1ImageProjectsIdResponse{}, sdkcore.NewApiError(*req, *resp)
+	}
+
+	// Handle response
+	defer resp.Body.Close()
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return types.GetV1ImageProjectsIdResponse{}, err
 	}
 	var bodyData types.GetV1ImageProjectsIdResponse
 	err = json.Unmarshal(body, &bodyData)
