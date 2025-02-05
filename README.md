@@ -1,5 +1,7 @@
 # Magic Hour Go SDK
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/magichourhq/magic-hour-go.svg)](https://pkg.go.dev/github.com/magichourhq/magic-hour-go)
+
 Magic Hour provides an API (beta) that can be integrated into your own application to generate videos and images using AI.
 
 Webhook documentation can be found [here](https://magichour.ai/docs/webhook).
@@ -8,7 +10,7 @@ If you have any questions, please reach out to us via [discord](https://discord.
 
 ## Install
 
-```
+```sh
 go get -u github.com/magichourhq/magic-hour-go
 ```
 
