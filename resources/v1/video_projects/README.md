@@ -16,7 +16,7 @@ import (
 )
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-err := client.V1.VideoProjects.Delete(video_projects.DeleteRequest { Id: "string" })
+err := client.V1.VideoProjects.Delete(video_projects.DeleteRequest { Id: "cm6pvghix03bvyz0zwash6noj" })
 ```
 
 ### get <a name="get"></a>
@@ -45,5 +45,5 @@ import (
 )
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-res, err := client.V1.VideoProjects.Get(video_projects.GetRequest { Id: "string" })
+res, err := client.V1.VideoProjects.Get(video_projects.GetRequest { Id: "cm6pvghix03bvyz0zwash6noj" })
 ```

@@ -2,6 +2,7 @@ package core
 
 import (
 	fmt "fmt"
+	io "io"
 	http "net/http"
 )
 
@@ -18,7 +19,9 @@ func (e ApiError) Error() string {
 	return fmt.Sprintf("Unexpected status code received %d from %s %s", e.StatusCode, e.Method, e.Url)
 }
 
-func NewApiError(req http.Request, res http.Response, body []byte) ApiError {
+func NewApiError(req http.Request, res http.Response) ApiError {
+	body, _ := io.ReadAll(res.Body)
+
 	return ApiError{
 		StatusCode: res.StatusCode,
 		Method:     req.Method,

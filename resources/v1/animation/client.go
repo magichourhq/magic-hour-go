@@ -78,17 +78,17 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	if err != nil {
 		return types.PostV1AnimationResponse{}, err
 	}
-	defer resp.Body.Close()
-
-	// Handle response
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return types.PostV1AnimationResponse{}, err
-	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return types.PostV1AnimationResponse{}, sdkcore.NewApiError(*req, *resp, body)
+		return types.PostV1AnimationResponse{}, sdkcore.NewApiError(*req, *resp)
+	}
+
+	// Handle response
+	defer resp.Body.Close()
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return types.PostV1AnimationResponse{}, err
 	}
 	var bodyData types.PostV1AnimationResponse
 	err = json.Unmarshal(body, &bodyData)
