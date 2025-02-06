@@ -17,5 +17,5 @@ import (
 )
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-res, err := client.V1.ImageBackgroundRemover.Create(image_background_remover.CreateRequest { Assets: types.PostV1ImageBackgroundRemoverBodyAssets { ImageFilePath: "image/id/1234.png" } })
+res, err := client.V1.ImageBackgroundRemover.Create(image_background_remover.CreateRequest { Assets: types.PostV1ImageBackgroundRemoverBodyAssets { ImageFilePath: "api-assets/id/1234.png" } })
 ```

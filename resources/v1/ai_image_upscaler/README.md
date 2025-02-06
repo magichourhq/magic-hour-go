@@ -17,5 +17,5 @@ import (
 )
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-res, err := client.V1.AiImageUpscaler.Create(ai_image_upscaler.CreateRequest { Assets: types.PostV1AiImageUpscalerBodyAssets { ImageFilePath: "image/id/1234.png" }, ScaleFactor: 123.45, Style: types.PostV1AiImageUpscalerBodyStyle { Enhancement: types.PostV1AiImageUpscalerBodyStyleEnhancementEnumBalanced } })
+res, err := client.V1.AiImageUpscaler.Create(ai_image_upscaler.CreateRequest { Assets: types.PostV1AiImageUpscalerBodyAssets { ImageFilePath: "api-assets/id/1234.png" }, ScaleFactor: 123.45, Style: types.PostV1AiImageUpscalerBodyStyle { Enhancement: types.PostV1AiImageUpscalerBodyStyleEnhancementEnumBalanced } })
 ```

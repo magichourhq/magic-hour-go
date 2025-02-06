@@ -11,7 +11,7 @@ import (
 
 func TestCreate200SuccessDefault(t *testing.T) {
 	// Success test for Default body
-	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.3"))
+	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.4"))
 	res, err := client.V1.TextToVideo.Create(text_to_video.CreateRequest{EndSeconds: 5.0, Orientation: types.PostV1TextToVideoBodyOrientationEnumLandscape, Style: types.PostV1TextToVideoBodyStyle{Prompt: "string"}})
 
 	if err != nil {
