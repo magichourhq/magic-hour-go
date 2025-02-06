@@ -11,7 +11,7 @@ import (
 
 func TestCreate200SuccessDefault(t *testing.T) {
 	// Success test for Default body
-	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.3"))
+	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.4"))
 	res, err := client.V1.AiClothesChanger.Create(ai_clothes_changer.CreateRequest{Assets: types.PostV1AiClothesChangerBodyAssets{GarmentFilePath: "api-assets/id/outfit.png", GarmentType: types.PostV1AiClothesChangerBodyAssetsGarmentTypeEnumDresses, PersonFilePath: "api-assets/id/model.png"}})
 
 	if err != nil {

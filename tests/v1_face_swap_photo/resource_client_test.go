@@ -11,7 +11,7 @@ import (
 
 func TestCreate200SuccessDefault(t *testing.T) {
 	// Success test for Default body
-	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.3"))
+	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.4"))
 	res, err := client.V1.FaceSwapPhoto.Create(face_swap_photo.CreateRequest{Assets: types.PostV1FaceSwapPhotoBodyAssets{SourceFilePath: "api-assets/id/1234.png", TargetFilePath: "api-assets/id/1234.png"}})
 
 	if err != nil {
