@@ -12,8 +12,8 @@ import (
 
 func TestCreate200SuccessDefault(t *testing.T) {
 	// Success test for Default body
-	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.4"))
-	res, err := client.V1.LipSync.Create(lip_sync.CreateRequest{Assets: types.PostV1LipSyncBodyAssets{AudioFilePath: "audio/id/1234.mp3", VideoFilePath: nullable.NewValue("video/id/1234.mp4"), VideoSource: types.PostV1LipSyncBodyAssetsVideoSourceEnumFile}, EndSeconds: 15.0, Height: 960, StartSeconds: 0.0, Width: 512})
+	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.5"))
+	res, err := client.V1.LipSync.Create(lip_sync.CreateRequest{Assets: types.PostV1LipSyncBodyAssets{AudioFilePath: "api-assets/id/1234.mp3", VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"), VideoSource: types.PostV1LipSyncBodyAssetsVideoSourceEnumFile}, EndSeconds: 15.0, Height: 960, StartSeconds: 0.0, Width: 512})
 
 	if err != nil {
 		t.Fatalf("TestCreate200SuccessDefault - failed making request with error: %#v", err)

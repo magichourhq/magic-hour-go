@@ -21,5 +21,5 @@ import (
 )
 
 client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-res, err := client.V1.LipSync.Create(lip_sync.CreateRequest { Assets: types.PostV1LipSyncBodyAssets { AudioFilePath: "audio/id/1234.mp3", VideoFilePath: nullable.NewValue("video/id/1234.mp4"), VideoSource: types.PostV1LipSyncBodyAssetsVideoSourceEnumFile }, EndSeconds: 15.0, Height: 960, StartSeconds: 0.0, Width: 512 })
+res, err := client.V1.LipSync.Create(lip_sync.CreateRequest { Assets: types.PostV1LipSyncBodyAssets { AudioFilePath: "api-assets/id/1234.mp3", VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"), VideoSource: types.PostV1LipSyncBodyAssetsVideoSourceEnumFile }, EndSeconds: 15.0, Height: 960, StartSeconds: 0.0, Width: 512 })
 ```

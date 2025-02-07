@@ -11,7 +11,7 @@ import (
 
 func TestCreate200SuccessDefault(t *testing.T) {
 	// Success test for Default body
-	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.4"))
+	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.5"))
 	res, err := client.V1.AiQrCodeGenerator.Create(ai_qr_code_generator.CreateRequest{Content: "https://magichour.ai", Style: types.PostV1AiQrCodeGeneratorBodyStyle{ArtStyle: "Watercolor"}})
 
 	if err != nil {
