@@ -9,13 +9,26 @@ Create an AI QR code. Each QR code costs 20 frames.
 #### Example Snippet
 
 ```go
+package main
+
 import (
-	sdk "github.com/magichourhq/magic-hour-go/client"
 	os "os"
+
+	sdk "github.com/magichourhq/magic-hour-go/client"
 	ai_qr_code_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_qr_code_generator"
 	types "github.com/magichourhq/magic-hour-go/types"
 )
 
-client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-res, err := client.V1.AiQrCodeGenerator.Create(ai_qr_code_generator.CreateRequest { Content: "https://magichour.ai", Style: types.PostV1AiQrCodeGeneratorBodyStyle { ArtStyle: "Watercolor" } })
+func main() {
+	client := sdk.NewClient(
+		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
+	)
+	res, err := client.V1.AiQrCodeGenerator.Create(ai_qr_code_generator.CreateRequest{
+		Content: "https://magichour.ai",
+		Style: types.PostV1AiQrCodeGeneratorBodyStyle{
+			ArtStyle: "Watercolor",
+		},
+	})
+}
+
 ```

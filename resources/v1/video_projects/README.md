@@ -9,14 +9,24 @@ Permanently delete the rendered video. This action is not reversible, please be 
 #### Example Snippet
 
 ```go
+package main
+
 import (
-	sdk "github.com/magichourhq/magic-hour-go/client"
 	os "os"
+
+	sdk "github.com/magichourhq/magic-hour-go/client"
 	video_projects "github.com/magichourhq/magic-hour-go/resources/v1/video_projects"
 )
 
-client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-err := client.V1.VideoProjects.Delete(video_projects.DeleteRequest { Id: "cm6pvghix03bvyz0zwash6noj" })
+func main() {
+	client := sdk.NewClient(
+		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
+	)
+	err := client.V1.VideoProjects.Delete(video_projects.DeleteRequest{
+		Id: "cm6pvghix03bvyz0zwash6noj",
+	})
+}
+
 ```
 
 ### get <a name="get"></a>
@@ -38,12 +48,22 @@ The video can be one of the following status
 #### Example Snippet
 
 ```go
+package main
+
 import (
-	sdk "github.com/magichourhq/magic-hour-go/client"
 	os "os"
+
+	sdk "github.com/magichourhq/magic-hour-go/client"
 	video_projects "github.com/magichourhq/magic-hour-go/resources/v1/video_projects"
 )
 
-client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-res, err := client.V1.VideoProjects.Get(video_projects.GetRequest { Id: "cm6pvghix03bvyz0zwash6noj" })
+func main() {
+	client := sdk.NewClient(
+		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
+	)
+	res, err := client.V1.VideoProjects.Get(video_projects.GetRequest{
+		Id: "cm6pvghix03bvyz0zwash6noj",
+	})
+}
+
 ```

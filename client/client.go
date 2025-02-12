@@ -12,8 +12,8 @@ type Client struct {
 
 // Instantiate a new API client
 func NewClient(builders ...func(*sdkcore.CoreClient)) *Client {
-	baseURL := `https://api.magichour.ai`
-	coreClient := sdkcore.NewCoreClient(baseURL)
+	defaultEnv := Environment
+	coreClient := sdkcore.NewCoreClient(string(defaultEnv))
 	for _, b := range builders {
 		b(coreClient)
 	}

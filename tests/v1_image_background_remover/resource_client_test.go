@@ -11,8 +11,15 @@ import (
 
 func TestCreate200SuccessDefault(t *testing.T) {
 	// Success test for Default body
-	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.5"))
-	res, err := client.V1.ImageBackgroundRemover.Create(image_background_remover.CreateRequest{Assets: types.PostV1ImageBackgroundRemoverBodyAssets{ImageFilePath: "api-assets/id/1234.png"}})
+	client := sdk.NewClient(
+		sdk.WithBearerAuth("API_TOKEN"),
+		sdk.WithEnv(sdk.MockServer),
+	)
+	res, err := client.V1.ImageBackgroundRemover.Create(image_background_remover.CreateRequest{
+		Assets: types.PostV1ImageBackgroundRemoverBodyAssets{
+			ImageFilePath: "api-assets/id/1234.png",
+		},
+	})
 
 	if err != nil {
 		t.Fatalf("TestCreate200SuccessDefault - failed making request with error: %#v", err)

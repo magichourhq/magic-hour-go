@@ -13,6 +13,12 @@ func WithHTTPClient(httpClient *http.Client) func(*sdkcore.CoreClient) {
 	}
 }
 
+func WithEnv(env Env) func(*sdkcore.CoreClient) {
+	return func(c *sdkcore.CoreClient) {
+		c.BaseURL = string(env)
+	}
+}
+
 // Provide non-default baseURL for all requests
 func WithBaseURL(baseURL string) func(*sdkcore.CoreClient) {
 	return func(c *sdkcore.CoreClient) {
