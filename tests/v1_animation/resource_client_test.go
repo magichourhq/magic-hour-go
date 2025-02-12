@@ -12,8 +12,28 @@ import (
 
 func TestCreate200SuccessDefault(t *testing.T) {
 	// Success test for Default body
-	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.5"))
-	res, err := client.V1.Animation.Create(animation.CreateRequest{Assets: types.PostV1AnimationBodyAssets{AudioFilePath: nullable.NewValue("api-assets/id/1234.mp3"), AudioSource: types.PostV1AnimationBodyAssetsAudioSourceEnumFile, ImageFilePath: nullable.NewValue("api-assets/id/1234.png")}, EndSeconds: 15.0, Fps: 12.0, Height: 960, Style: types.PostV1AnimationBodyStyle{ArtStyle: types.PostV1AnimationBodyStyleArtStyleEnumPainterlyIllustration, CameraEffect: types.PostV1AnimationBodyStyleCameraEffectEnumAccelerate, Prompt: nullable.NewValue("Cyberpunk city"), PromptType: types.PostV1AnimationBodyStylePromptTypeEnumAiChoose, TransitionSpeed: 5}, Width: 512})
+	client := sdk.NewClient(
+		sdk.WithBearerAuth("API_TOKEN"),
+		sdk.WithEnv(sdk.MockServer),
+	)
+	res, err := client.V1.Animation.Create(animation.CreateRequest{
+		Assets: types.PostV1AnimationBodyAssets{
+			AudioFilePath: nullable.NewValue("api-assets/id/1234.mp3"),
+			AudioSource:   types.PostV1AnimationBodyAssetsAudioSourceEnumFile,
+			ImageFilePath: nullable.NewValue("api-assets/id/1234.png"),
+		},
+		EndSeconds: 15.0,
+		Fps:        12.0,
+		Height:     960,
+		Style: types.PostV1AnimationBodyStyle{
+			ArtStyle:        types.PostV1AnimationBodyStyleArtStyleEnumPainterlyIllustration,
+			CameraEffect:    types.PostV1AnimationBodyStyleCameraEffectEnumAccelerate,
+			Prompt:          nullable.NewValue("Cyberpunk city"),
+			PromptType:      types.PostV1AnimationBodyStylePromptTypeEnumAiChoose,
+			TransitionSpeed: 5,
+		},
+		Width: 512,
+	})
 
 	if err != nil {
 		t.Fatalf("TestCreate200SuccessDefault - failed making request with error: %#v", err)

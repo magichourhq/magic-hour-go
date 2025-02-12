@@ -28,13 +28,32 @@ curl -X PUT -H 'Content-Type: application/octet-stream' \
 #### Example Snippet
 
 ```go
+package main
+
 import (
-	sdk "github.com/magichourhq/magic-hour-go/client"
 	os "os"
+
+	sdk "github.com/magichourhq/magic-hour-go/client"
 	upload_urls "github.com/magichourhq/magic-hour-go/resources/v1/files/upload_urls"
 	types "github.com/magichourhq/magic-hour-go/types"
 )
 
-client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-res, err := client.V1.Files.UploadUrls.Create(upload_urls.CreateRequest { Items: []types.PostV1FilesUploadUrlsBodyItemsItem{types.PostV1FilesUploadUrlsBodyItemsItem { Extension: "mp4", Type: types.PostV1FilesUploadUrlsBodyItemsItemTypeEnumVideo }, types.PostV1FilesUploadUrlsBodyItemsItem { Extension: "mp3", Type: types.PostV1FilesUploadUrlsBodyItemsItemTypeEnumAudio }} })
+func main() {
+	client := sdk.NewClient(
+		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
+	)
+	res, err := client.V1.Files.UploadUrls.Create(upload_urls.CreateRequest{
+		Items: []types.PostV1FilesUploadUrlsBodyItemsItem{
+			types.PostV1FilesUploadUrlsBodyItemsItem{
+				Extension: "mp4",
+				Type:      types.PostV1FilesUploadUrlsBodyItemsItemTypeEnumVideo,
+			},
+			types.PostV1FilesUploadUrlsBodyItemsItem{
+				Extension: "mp3",
+				Type:      types.PostV1FilesUploadUrlsBodyItemsItemTypeEnumAudio,
+			},
+		},
+	})
+}
+
 ```

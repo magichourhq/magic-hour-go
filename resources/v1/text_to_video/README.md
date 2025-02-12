@@ -12,13 +12,27 @@ Get more information about this mode at our [product page](/products/text-to-vid
 #### Example Snippet
 
 ```go
+package main
+
 import (
-	sdk "github.com/magichourhq/magic-hour-go/client"
 	os "os"
+
+	sdk "github.com/magichourhq/magic-hour-go/client"
 	text_to_video "github.com/magichourhq/magic-hour-go/resources/v1/text_to_video"
 	types "github.com/magichourhq/magic-hour-go/types"
 )
 
-client := sdk.NewClient(sdk.WithBearerAuth(os.Getenv("API_TOKEN")))
-res, err := client.V1.TextToVideo.Create(text_to_video.CreateRequest { EndSeconds: 5.0, Orientation: types.PostV1TextToVideoBodyOrientationEnumLandscape, Style: types.PostV1TextToVideoBodyStyle { Prompt: "string" } })
+func main() {
+	client := sdk.NewClient(
+		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
+	)
+	res, err := client.V1.TextToVideo.Create(text_to_video.CreateRequest{
+		EndSeconds:  5.0,
+		Orientation: types.PostV1TextToVideoBodyOrientationEnumLandscape,
+		Style: types.PostV1TextToVideoBodyStyle{
+			Prompt: "string",
+		},
+	})
+}
+
 ```

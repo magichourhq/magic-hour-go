@@ -10,8 +10,13 @@ import (
 
 func TestDelete204GeneratedSuccess(t *testing.T) {
 	// Success case test
-	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.5"))
-	err := client.V1.ImageProjects.Delete(image_projects.DeleteRequest{Id: "cm6pvghix03bvyz0zwash6noj"})
+	client := sdk.NewClient(
+		sdk.WithBearerAuth("API_TOKEN"),
+		sdk.WithEnv(sdk.MockServer),
+	)
+	err := client.V1.ImageProjects.Delete(image_projects.DeleteRequest{
+		Id: "cm6pvghix03bvyz0zwash6noj",
+	})
 
 	if err != nil {
 		t.Fatalf("TestDelete204GeneratedSuccess - failed making request with error: %#v", err)
@@ -21,8 +26,13 @@ func TestDelete204GeneratedSuccess(t *testing.T) {
 
 func TestGet200GeneratedSuccess(t *testing.T) {
 	// Success case test
-	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.5"))
-	res, err := client.V1.ImageProjects.Get(image_projects.GetRequest{Id: "cm6pvghix03bvyz0zwash6noj"})
+	client := sdk.NewClient(
+		sdk.WithBearerAuth("API_TOKEN"),
+		sdk.WithEnv(sdk.MockServer),
+	)
+	res, err := client.V1.ImageProjects.Get(image_projects.GetRequest{
+		Id: "cm6pvghix03bvyz0zwash6noj",
+	})
 
 	if err != nil {
 		t.Fatalf("TestGet200GeneratedSuccess - failed making request with error: %#v", err)

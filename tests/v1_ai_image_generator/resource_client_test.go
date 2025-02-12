@@ -11,8 +11,17 @@ import (
 
 func TestCreate200SuccessDefault(t *testing.T) {
 	// Success test for Default body
-	client := sdk.NewClient(sdk.WithBearerAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko.dev/v1/mock/magichour/magic-hour/0.8.5"))
-	res, err := client.V1.AiImageGenerator.Create(ai_image_generator.CreateRequest{ImageCount: 1, Orientation: types.PostV1AiImageGeneratorBodyOrientationEnumLandscape, Style: types.PostV1AiImageGeneratorBodyStyle{Prompt: "Cool image"}})
+	client := sdk.NewClient(
+		sdk.WithBearerAuth("API_TOKEN"),
+		sdk.WithEnv(sdk.MockServer),
+	)
+	res, err := client.V1.AiImageGenerator.Create(ai_image_generator.CreateRequest{
+		ImageCount:  1,
+		Orientation: types.PostV1AiImageGeneratorBodyOrientationEnumLandscape,
+		Style: types.PostV1AiImageGeneratorBodyStyle{
+			Prompt: "Cool image",
+		},
+	})
 
 	if err != nil {
 		t.Fatalf("TestCreate200SuccessDefault - failed making request with error: %#v", err)
