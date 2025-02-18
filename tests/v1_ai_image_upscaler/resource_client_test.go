@@ -19,7 +19,7 @@ func TestCreate200SuccessDefault(t *testing.T) {
 		Assets: types.PostV1AiImageUpscalerBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
-		ScaleFactor: 123.45,
+		ScaleFactor: 2.0,
 		Style: types.PostV1AiImageUpscalerBodyStyle{
 			Enhancement: types.PostV1AiImageUpscalerBodyStyleEnhancementEnumBalanced,
 		},
