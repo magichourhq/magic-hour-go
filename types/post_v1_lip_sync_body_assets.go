@@ -6,9 +6,9 @@ import (
 
 // Provide the assets for lip-sync. For video, The `video_source` field determines whether `video_file_path` or `youtube_url` field is used
 type PostV1LipSyncBodyAssets struct {
-	// The path of the audio file. This value can be either the `file_path` field from the response of the [upload urls API](/docs/api/tag/files/post/v1/files/upload-urls), or the url of the file.
+	// The path of the audio file. This value can be either the `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls), or the url of the file.
 	AudioFilePath string `json:"audio_file_path"`
-	// The path of the input video. This field is required if `video_source` is `file`. This value can be either the `file_path` field from the response of the [upload urls API](/docs/api/tag/files/post/v1/files/upload-urls), or the url of the file.
+	// The path of the input video. This field is required if `video_source` is `file`. This value can be either the `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls), or the url of the file.
 	VideoFilePath nullable.Nullable[string]              `json:"video_file_path,omitempty"`
 	VideoSource   PostV1LipSyncBodyAssetsVideoSourceEnum `json:"video_source"`
 	// Using a youtube video as the input source. This field is required if `video_source` is `youtube`

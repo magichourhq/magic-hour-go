@@ -1,8 +1,8 @@
-
 ### create <a name="create"></a>
+
 AI Photo Editor
 
-> **NOTE**: this API is still in early development stages, and should be avoided. Please reach out to us if you're interested in this API. 
+> **NOTE**: this API is still in early development stages, and should be avoided. Please reach out to us if you're interested in this API.
 
 Edit photo using AI. Each photo costs 10 frames.
 
@@ -41,5 +41,4 @@ func main() {
 		},
 	})
 }
-
 ```

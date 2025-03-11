@@ -1,9 +1,8 @@
 package client
 
 import (
-	http "net/http"
-
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
+	http "net/http"
 )
 
 // Provide your own http.Client to be used for all requests

@@ -2,11 +2,10 @@ package test_ai_image_generator_client
 
 import (
 	fmt "fmt"
-	testing "testing"
-
 	sdk "github.com/magichourhq/magic-hour-go/client"
 	ai_image_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_image_generator"
 	types "github.com/magichourhq/magic-hour-go/types"
+	testing "testing"
 )
 
 func TestCreate200SuccessDefault(t *testing.T) {

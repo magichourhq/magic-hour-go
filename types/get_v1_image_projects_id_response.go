@@ -12,7 +12,7 @@ type GetV1ImageProjectsIdResponse struct {
 	Enabled bool `json:"enabled"`
 	// In the case of an error, this object will contain the error encountered during video render
 	Error nullable.Nullable[GetV1ImageProjectsIdResponseError] `json:"error,omitempty"`
-	// Unique ID of the image. This value can be used in the [get image project API](/api/tag/image-projects/get/v1/image-projects/{id}) to fetch additional details such as status
+	// Unique ID of the image. This value can be used in the [get image project API](https://docs.magichour.ai/api-reference/image-projects/get-image-details) to fetch additional details such as status
 	Id string `json:"id"`
 	// Number of images generated
 	ImageCount int `json:"image_count"`

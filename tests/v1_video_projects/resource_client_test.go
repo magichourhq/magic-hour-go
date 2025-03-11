@@ -2,10 +2,9 @@ package test_video_projects_client
 
 import (
 	fmt "fmt"
-	testing "testing"
-
 	sdk "github.com/magichourhq/magic-hour-go/client"
 	video_projects "github.com/magichourhq/magic-hour-go/resources/v1/video_projects"
+	testing "testing"
 )
 
 func TestDelete204GeneratedSuccess(t *testing.T) {

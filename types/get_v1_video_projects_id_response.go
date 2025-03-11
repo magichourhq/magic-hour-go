@@ -20,7 +20,7 @@ type GetV1VideoProjectsIdResponse struct {
 	Fps float64 `json:"fps"`
 	// The height of the final output video. The maximum height depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
 	Height int `json:"height"`
-	// Unique ID of the video. This value can be used in the [get video project API](/api/tag/video-projects/get/v1/video-projects/{id}) to fetch additional details such as status
+	// Unique ID of the video. This value can be used in the [get video project API](https://docs.magichour.ai/api-reference/video-projects/get-video-details) to fetch additional details such as status
 	Id string `json:"id"`
 	// The name of the video.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
