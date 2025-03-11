@@ -13,31 +13,27 @@ Get more information about this mode at our [product page](/products/image-to-vi
 
 ```go
 package main
-
 import (
-	os "os"
-
 	sdk "github.com/magichourhq/magic-hour-go/client"
-	nullable "github.com/magichourhq/magic-hour-go/nullable"
+	os "os"
 	image_to_video "github.com/magichourhq/magic-hour-go/resources/v1/image_to_video"
 	types "github.com/magichourhq/magic-hour-go/types"
+	nullable "github.com/magichourhq/magic-hour-go/nullable"
 )
-
-func main() {
-	client := sdk.NewClient(
-		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
-	)
-	res, err := client.V1.ImageToVideo.Create(image_to_video.CreateRequest{
-		Assets: types.PostV1ImageToVideoBodyAssets{
-			ImageFilePath: "api-assets/id/1234.png",
-		},
-		EndSeconds: 5.0,
-		Height:     960,
-		Style: types.PostV1ImageToVideoBodyStyle{
-			Prompt: nullable.NewNull[string](),
-		},
-		Width: 512,
-	})
+func main(){
+client := sdk.NewClient(
+sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
+)
+res, err := client.V1.ImageToVideo.Create(image_to_video.CreateRequest {
+Assets: types.PostV1ImageToVideoBodyAssets {
+ImageFilePath: "api-assets/id/1234.png",
+},
+EndSeconds: 5.0,
+Height: 960,
+Style: types.PostV1ImageToVideoBodyStyle {
+Prompt: nullable.NewNull[string](),
+},
+Width: 512,
+})
 }
-
 ```

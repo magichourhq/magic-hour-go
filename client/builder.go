@@ -1,9 +1,7 @@
 package client
-
 import (
-	http "net/http"
-
-	sdkcore "github.com/magichourhq/magic-hour-go/core"
+http "net/http"
+sdkcore "github.com/magichourhq/magic-hour-go/core"
 )
 
 // Provide your own http.Client to be used for all requests
@@ -35,10 +33,9 @@ func WithModifiers(modifiers ...RequestModifier) func(*sdkcore.CoreClient) {
 	}
 }
 
+
 func WithBearerAuth(token string) func(*sdkcore.CoreClient) {
-	return func(c *sdkcore.CoreClient) {
-		c.Auth["bearerAuth"] = func(request *http.Request) {
-			request.Header.Add("Authorization", "Bearer "+token)
-		}
-	}
-}
+return func(c *sdkcore.CoreClient) {
+c.Auth["bearerAuth"] = func(request *http.Request) {
+request.Header.Add("Authorization", "Bearer "+token)
+}}}

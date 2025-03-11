@@ -13,31 +13,27 @@ Get more information about this mode at our [product page](/products/face-swap).
 
 ```go
 package main
-
 import (
-	os "os"
-
 	sdk "github.com/magichourhq/magic-hour-go/client"
-	nullable "github.com/magichourhq/magic-hour-go/nullable"
+	os "os"
 	face_swap "github.com/magichourhq/magic-hour-go/resources/v1/face_swap"
 	types "github.com/magichourhq/magic-hour-go/types"
+	nullable "github.com/magichourhq/magic-hour-go/nullable"
 )
-
-func main() {
-	client := sdk.NewClient(
-		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
-	)
-	res, err := client.V1.FaceSwap.Create(face_swap.CreateRequest{
-		Assets: types.PostV1FaceSwapBodyAssets{
-			ImageFilePath: "image/id/1234.png",
-			VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"),
-			VideoSource:   types.PostV1FaceSwapBodyAssetsVideoSourceEnumFile,
-		},
-		EndSeconds:   15.0,
-		Height:       960,
-		StartSeconds: 0.0,
-		Width:        512,
-	})
+func main(){
+client := sdk.NewClient(
+sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
+)
+res, err := client.V1.FaceSwap.Create(face_swap.CreateRequest {
+Assets: types.PostV1FaceSwapBodyAssets {
+ImageFilePath: "image/id/1234.png",
+VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"),
+VideoSource: types.PostV1FaceSwapBodyAssetsVideoSourceEnumFile,
+},
+EndSeconds: 15.0,
+Height: 960,
+StartSeconds: 0.0,
+Width: 512,
+})
 }
-
 ```

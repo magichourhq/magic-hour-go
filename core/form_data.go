@@ -7,7 +7,6 @@ import (
 	"os"
 	"path"
 	"reflect"
-
 	"github.com/magichourhq/magic-hour-go/nullable"
 )
 
