@@ -1,5 +1,5 @@
-
 ### delete <a name="delete"></a>
+
 Delete video
 
 Permanently delete the rendered video. This action is not reversible, please be sure before deleting.
@@ -10,27 +10,32 @@ Permanently delete the rendered video. This action is not reversible, please be 
 
 ```go
 package main
+
 import (
-	sdk "github.com/magichourhq/magic-hour-go/client"
 	os "os"
+
+	sdk "github.com/magichourhq/magic-hour-go/client"
 	video_projects "github.com/magichourhq/magic-hour-go/resources/v1/video_projects"
 )
-func main(){
-client := sdk.NewClient(
-sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
-)
-err := client.V1.VideoProjects.Delete(video_projects.DeleteRequest {
-Id: "cm6pvghix03bvyz0zwash6noj",
-})
+
+func main() {
+	client := sdk.NewClient(
+		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
+	)
+	err := client.V1.VideoProjects.Delete(video_projects.DeleteRequest{
+		Id: "cm6pvghix03bvyz0zwash6noj",
+	})
 }
 ```
 
 ### get <a name="get"></a>
+
 Get video details
 
 Get the details of a video project. The `download` field will be `null` unless the video was successfully rendered.
 
 The video can be one of the following status
+
 - `draft` - not currently used
 - `queued` - the job is queued and waiting for a GPU
 - `rendering` - the generation is in progress
@@ -38,24 +43,26 @@ The video can be one of the following status
 - `error` - an error occurred during rendering
 - `canceled` - video render is canceled by the user
 
-
 **API Endpoint**: `GET /v1/video-projects/{id}`
 
 #### Example Snippet
 
 ```go
 package main
+
 import (
-	sdk "github.com/magichourhq/magic-hour-go/client"
 	os "os"
+
+	sdk "github.com/magichourhq/magic-hour-go/client"
 	video_projects "github.com/magichourhq/magic-hour-go/resources/v1/video_projects"
 )
-func main(){
-client := sdk.NewClient(
-sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
-)
-res, err := client.V1.VideoProjects.Get(video_projects.GetRequest {
-Id: "cm6pvghix03bvyz0zwash6noj",
-})
+
+func main() {
+	client := sdk.NewClient(
+		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
+	)
+	res, err := client.V1.VideoProjects.Get(video_projects.GetRequest{
+		Id: "cm6pvghix03bvyz0zwash6noj",
+	})
 }
 ```

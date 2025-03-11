@@ -1,5 +1,5 @@
-
 ### create <a name="create"></a>
+
 Generate asset upload urls
 
 Create a list of urls used to upload the assets needed to generate a video. Each video type has their own requirements on what assets are required. Please refer to the specific mode API for more details. The response array will be in the same order as the request body.
@@ -22,34 +22,37 @@ curl -X PUT -H 'Content-Type: application/octet-stream' \
   https://videos.magichour.ai/api-assets/id/video.mp4?auth-value=1234567890
 ```
 
-
 **API Endpoint**: `POST /v1/files/upload-urls`
 
 #### Example Snippet
 
 ```go
 package main
+
 import (
-	sdk "github.com/magichourhq/magic-hour-go/client"
 	os "os"
+
+	sdk "github.com/magichourhq/magic-hour-go/client"
 	upload_urls "github.com/magichourhq/magic-hour-go/resources/v1/files/upload_urls"
 	types "github.com/magichourhq/magic-hour-go/types"
 )
-func main(){
-client := sdk.NewClient(
-sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
-)
-res, err := client.V1.Files.UploadUrls.Create(upload_urls.CreateRequest {
-Items: []types.PostV1FilesUploadUrlsBodyItemsItem{
-types.PostV1FilesUploadUrlsBodyItemsItem {
-Extension: "mp4",
-Type: types.PostV1FilesUploadUrlsBodyItemsItemTypeEnumVideo,
-},
-types.PostV1FilesUploadUrlsBodyItemsItem {
-Extension: "mp3",
-Type: types.PostV1FilesUploadUrlsBodyItemsItemTypeEnumAudio,
-},
-},
-})
+
+func main() {
+	client := sdk.NewClient(
+		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
+	)
+	res, err := client.V1.Files.UploadUrls.Create(upload_urls.CreateRequest{
+		Items: []types.PostV1FilesUploadUrlsBodyItemsItem{
+			types.PostV1FilesUploadUrlsBodyItemsItem{
+				Extension: "mp4",
+				Type:      types.PostV1FilesUploadUrlsBodyItemsItemTypeEnumVideo,
+			},
+			types.PostV1FilesUploadUrlsBodyItemsItem{
+				Extension: "mp3",
+				Type:      types.PostV1FilesUploadUrlsBodyItemsItemTypeEnumAudio,
+			},
+		},
+	})
 }
+
 ```
