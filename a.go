@@ -1,14 +1,3 @@
-### create <a name="create"></a>
-
-AI Headshots
-
-Create an AI headshot. Each headshot costs 50 frames.
-
-**API Endpoint**: `POST /v1/ai-headshot-generator`
-
-#### Example Snippet
-
-```go
 package main
 
 import (
@@ -29,4 +18,3 @@ func main() {
 		},
 	})
 }
-```
