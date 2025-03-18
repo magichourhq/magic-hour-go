@@ -44,6 +44,7 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	// Prep body
 	reqBody, err := json.Marshal(types.PostV1AiHeadshotGeneratorBody{
 		Name:   request.Name,
+		Style:  request.Style,
 		Assets: request.Assets})
 	if err != nil {
 		return types.PostV1AiHeadshotGeneratorResponse{}, err
