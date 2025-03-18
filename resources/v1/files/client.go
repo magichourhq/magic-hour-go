@@ -1,9 +1,10 @@
 package files
 
 import (
+	http "net/http"
+
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
 	upload_urls "github.com/magichourhq/magic-hour-go/resources/v1/files/upload_urls"
-	http "net/http"
 )
 
 type Client struct {

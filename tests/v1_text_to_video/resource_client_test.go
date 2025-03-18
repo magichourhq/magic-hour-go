@@ -2,10 +2,11 @@ package test_text_to_video_client
 
 import (
 	fmt "fmt"
+	testing "testing"
+
 	sdk "github.com/magichourhq/magic-hour-go/client"
 	text_to_video "github.com/magichourhq/magic-hour-go/resources/v1/text_to_video"
 	types "github.com/magichourhq/magic-hour-go/types"
-	testing "testing"
 )
 
 func TestCreate200SuccessDefault(t *testing.T) {

@@ -2,11 +2,12 @@ package image_projects
 
 import (
 	json "encoding/json"
-	sdkcore "github.com/magichourhq/magic-hour-go/core"
-	types "github.com/magichourhq/magic-hour-go/types"
 	io "io"
 	http "net/http"
 	url "net/url"
+
+	sdkcore "github.com/magichourhq/magic-hour-go/core"
+	types "github.com/magichourhq/magic-hour-go/types"
 )
 
 type Client struct {
@@ -74,7 +75,7 @@ func (c *Client) Delete(request DeleteRequest, reqModifiers ...RequestModifier) 
 
 // Get image details
 //
-// Get the details of a image project. The `download` field will be `null` unless the image was successfully rendered.
+// Get the details of a image project. The `downloads` field will be empty unless the image was successfully rendered.
 //
 // The image can be one of the following status
 // - `draft` - not currently used

@@ -2,10 +2,11 @@ package test_ai_qr_code_generator_client
 
 import (
 	fmt "fmt"
+	testing "testing"
+
 	sdk "github.com/magichourhq/magic-hour-go/client"
 	ai_qr_code_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_qr_code_generator"
 	types "github.com/magichourhq/magic-hour-go/types"
-	testing "testing"
 )
 
 func TestCreate200SuccessDefault(t *testing.T) {

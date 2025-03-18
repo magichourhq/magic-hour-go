@@ -1,5 +1,5 @@
-### create <a name="create"></a>
 
+### create <a name="create"></a>
 AI Headshots
 
 Create an AI headshot. Each headshot costs 50 frames.
@@ -29,4 +29,5 @@ func main() {
 		},
 	})
 }
+
 ```

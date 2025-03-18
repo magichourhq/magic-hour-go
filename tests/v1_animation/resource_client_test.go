@@ -2,11 +2,12 @@ package test_animation_client
 
 import (
 	fmt "fmt"
+	testing "testing"
+
 	sdk "github.com/magichourhq/magic-hour-go/client"
 	nullable "github.com/magichourhq/magic-hour-go/nullable"
 	animation "github.com/magichourhq/magic-hour-go/resources/v1/animation"
 	types "github.com/magichourhq/magic-hour-go/types"
-	testing "testing"
 )
 
 func TestCreate200SuccessDefault(t *testing.T) {
