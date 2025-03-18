@@ -2,10 +2,11 @@ package test_face_swap_photo_client
 
 import (
 	fmt "fmt"
+	testing "testing"
+
 	sdk "github.com/magichourhq/magic-hour-go/client"
 	face_swap_photo "github.com/magichourhq/magic-hour-go/resources/v1/face_swap_photo"
 	types "github.com/magichourhq/magic-hour-go/types"
-	testing "testing"
 )
 
 func TestCreate200SuccessDefault(t *testing.T) {

@@ -1,5 +1,5 @@
-### create <a name="create"></a>
 
+### create <a name="create"></a>
 Generate asset upload urls
 
 Create a list of urls used to upload the assets needed to generate a video. Each video type has their own requirements on what assets are required. Please refer to the specific mode API for more details. The response array will be in the same order as the request body.
@@ -21,6 +21,7 @@ curl -X PUT -H 'Content-Type: application/octet-stream' \
   --data '@/path/to/file/video.mp4' \
   https://videos.magichour.ai/api-assets/id/video.mp4?auth-value=1234567890
 ```
+
 
 **API Endpoint**: `POST /v1/files/upload-urls`
 

@@ -1,6 +1,8 @@
 package v1
 
 import (
+	http "net/http"
+
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
 	ai_clothes_changer "github.com/magichourhq/magic-hour-go/resources/v1/ai_clothes_changer"
 	ai_headshot_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_headshot_generator"
@@ -19,7 +21,6 @@ import (
 	text_to_video "github.com/magichourhq/magic-hour-go/resources/v1/text_to_video"
 	video_projects "github.com/magichourhq/magic-hour-go/resources/v1/video_projects"
 	video_to_video "github.com/magichourhq/magic-hour-go/resources/v1/video_to_video"
-	http "net/http"
 )
 
 type Client struct {

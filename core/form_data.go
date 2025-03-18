@@ -2,12 +2,13 @@ package core
 
 import (
 	"fmt"
-	"github.com/magichourhq/magic-hour-go/nullable"
 	"io"
 	"mime/multipart"
 	"os"
 	"path"
 	"reflect"
+
+	"github.com/magichourhq/magic-hour-go/nullable"
 )
 
 // Utility to open file that you are certain exists

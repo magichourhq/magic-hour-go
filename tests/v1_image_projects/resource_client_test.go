@@ -2,9 +2,10 @@ package test_image_projects_client
 
 import (
 	fmt "fmt"
+	testing "testing"
+
 	sdk "github.com/magichourhq/magic-hour-go/client"
 	image_projects "github.com/magichourhq/magic-hour-go/resources/v1/image_projects"
-	testing "testing"
 )
 
 func TestDelete204GeneratedSuccess(t *testing.T) {

@@ -3,11 +3,12 @@ package upload_urls
 import (
 	bytes "bytes"
 	json "encoding/json"
-	sdkcore "github.com/magichourhq/magic-hour-go/core"
-	types "github.com/magichourhq/magic-hour-go/types"
 	io "io"
 	http "net/http"
 	url "net/url"
+
+	sdkcore "github.com/magichourhq/magic-hour-go/core"
+	types "github.com/magichourhq/magic-hour-go/types"
 )
 
 type Client struct {
