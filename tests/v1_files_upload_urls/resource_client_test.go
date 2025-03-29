@@ -16,14 +16,14 @@ func TestCreate200SuccessDefault(t *testing.T) {
 		sdk.WithEnv(sdk.MockServer),
 	)
 	res, err := client.V1.Files.UploadUrls.Create(upload_urls.CreateRequest{
-		Items: []types.PostV1FilesUploadUrlsBodyItemsItem{
-			types.PostV1FilesUploadUrlsBodyItemsItem{
+		Items: []types.V1FilesUploadUrlsCreateBodyItemsItem{
+			types.V1FilesUploadUrlsCreateBodyItemsItem{
 				Extension: "mp4",
-				Type:      types.PostV1FilesUploadUrlsBodyItemsItemTypeEnumVideo,
+				Type:      types.V1FilesUploadUrlsCreateBodyItemsItemTypeEnumVideo,
 			},
-			types.PostV1FilesUploadUrlsBodyItemsItem{
+			types.V1FilesUploadUrlsCreateBodyItemsItem{
 				Extension: "mp3",
-				Type:      types.PostV1FilesUploadUrlsBodyItemsItemTypeEnumAudio,
+				Type:      types.V1FilesUploadUrlsCreateBodyItemsItemTypeEnumAudio,
 			},
 		},
 	})

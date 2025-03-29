@@ -1,0 +1,8 @@
+package types
+
+// V1AiImageGeneratorCreateResponse404MessageEnum
+type V1AiImageGeneratorCreateResponse404MessageEnum string
+
+const (
+	V1AiImageGeneratorCreateResponse404MessageEnumNotFound V1AiImageGeneratorCreateResponse404MessageEnum = "Not Found"
+)

@@ -8,7 +8,7 @@ import (
 // CreateRequest
 type CreateRequest struct {
 	// Provide the assets for face swap. For video, The `video_source` field determines whether `video_file_path` or `youtube_url` field is used
-	Assets types.PostV1FaceSwapBodyAssets `json:"assets"`
+	Assets types.V1FaceSwapCreateBodyAssets `json:"assets"`
 	// The end time of the input video in seconds
 	EndSeconds float64 `json:"end_seconds"`
 	// The height of the final output video. The maximum height depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details

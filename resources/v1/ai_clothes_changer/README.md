@@ -24,9 +24,9 @@ func main() {
 		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
 	)
 	res, err := client.V1.AiClothesChanger.Create(ai_clothes_changer.CreateRequest{
-		Assets: types.PostV1AiClothesChangerBodyAssets{
+		Assets: types.V1AiClothesChangerCreateBodyAssets{
 			GarmentFilePath: "api-assets/id/outfit.png",
-			GarmentType:     types.PostV1AiClothesChangerBodyAssetsGarmentTypeEnumDresses,
+			GarmentType:     types.V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumDresses,
 			PersonFilePath:  "api-assets/id/model.png",
 		},
 	})

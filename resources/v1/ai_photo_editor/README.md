@@ -27,11 +27,11 @@ func main() {
 		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
 	)
 	res, err := client.V1.AiPhotoEditor.Create(ai_photo_editor.CreateRequest{
-		Assets: types.PostV1AiPhotoEditorBodyAssets{
+		Assets: types.V1AiPhotoEditorCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
 		Resolution: 768,
-		Style: types.PostV1AiPhotoEditorBodyStyle{
+		Style: types.V1AiPhotoEditorCreateBodyStyle{
 			ImageDescription: "A photo of a person",
 			LikenessStrength: 5.2,
 			NegativePrompt:   nullable.NewValue("painting, cartoon, sketch"),

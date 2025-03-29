@@ -86,21 +86,21 @@ func (c *Client) Delete(request DeleteRequest, reqModifiers ...RequestModifier) 
 // - `canceled` - image render is canceled by the user
 //
 // GET /v1/image-projects/{id}
-func (c *Client) Get(request GetRequest, reqModifiers ...RequestModifier) (types.GetV1ImageProjectsIdResponse, error) {
+func (c *Client) Get(request GetRequest, reqModifiers ...RequestModifier) (types.V1ImageProjectsGetResponse, error) {
 	// URL formatting
 	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"image-projects/"+sdkcore.FmtStringParam(request.Id))
 	if err != nil {
-		return types.GetV1ImageProjectsIdResponse{}, err
+		return types.V1ImageProjectsGetResponse{}, err
 	}
 	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
-		return types.GetV1ImageProjectsIdResponse{}, err
+		return types.V1ImageProjectsGetResponse{}, err
 	}
 
 	// Init request
 	req, err := http.NewRequest("GET", targetUrl.String(), nil)
 	if err != nil {
-		return types.GetV1ImageProjectsIdResponse{}, err
+		return types.V1ImageProjectsGetResponse{}, err
 	}
 
 	// Add headers
@@ -111,30 +111,30 @@ func (c *Client) Get(request GetRequest, reqModifiers ...RequestModifier) (types
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
-		return types.GetV1ImageProjectsIdResponse{}, err
+		return types.V1ImageProjectsGetResponse{}, err
 	}
 
 	// Dispatch request
 	resp, err := c.coreClient.HttpClient.Do(req)
 	if err != nil {
-		return types.GetV1ImageProjectsIdResponse{}, err
+		return types.V1ImageProjectsGetResponse{}, err
 	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return types.GetV1ImageProjectsIdResponse{}, sdkcore.NewApiError(*req, *resp)
+		return types.V1ImageProjectsGetResponse{}, sdkcore.NewApiError(*req, *resp)
 	}
 
 	// Handle response
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return types.GetV1ImageProjectsIdResponse{}, err
+		return types.V1ImageProjectsGetResponse{}, err
 	}
-	var bodyData types.GetV1ImageProjectsIdResponse
+	var bodyData types.V1ImageProjectsGetResponse
 	err = json.Unmarshal(body, &bodyData)
 	if err != nil {
-		return types.GetV1ImageProjectsIdResponse{}, err
+		return types.V1ImageProjectsGetResponse{}, err
 	}
 	return bodyData, nil
 

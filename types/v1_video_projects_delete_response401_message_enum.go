@@ -1,0 +1,8 @@
+package types
+
+// V1VideoProjectsDeleteResponse401MessageEnum
+type V1VideoProjectsDeleteResponse401MessageEnum string
+
+const (
+	V1VideoProjectsDeleteResponse401MessageEnumUnauthorized V1VideoProjectsDeleteResponse401MessageEnum = "Unauthorized"
+)

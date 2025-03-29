@@ -17,19 +17,19 @@ func TestCreate200SuccessDefault(t *testing.T) {
 		sdk.WithEnv(sdk.MockServer),
 	)
 	res, err := client.V1.Animation.Create(animation.CreateRequest{
-		Assets: types.PostV1AnimationBodyAssets{
+		Assets: types.V1AnimationCreateBodyAssets{
 			AudioFilePath: nullable.NewValue("api-assets/id/1234.mp3"),
-			AudioSource:   types.PostV1AnimationBodyAssetsAudioSourceEnumFile,
+			AudioSource:   types.V1AnimationCreateBodyAssetsAudioSourceEnumFile,
 			ImageFilePath: nullable.NewValue("api-assets/id/1234.png"),
 		},
 		EndSeconds: 15.0,
 		Fps:        12.0,
 		Height:     960,
-		Style: types.PostV1AnimationBodyStyle{
-			ArtStyle:        types.PostV1AnimationBodyStyleArtStyleEnumPainterlyIllustration,
-			CameraEffect:    types.PostV1AnimationBodyStyleCameraEffectEnumAccelerate,
+		Style: types.V1AnimationCreateBodyStyle{
+			ArtStyle:        types.V1AnimationCreateBodyStyleArtStyleEnumPainterlyIllustration,
+			CameraEffect:    types.V1AnimationCreateBodyStyleCameraEffectEnumAccelerate,
 			Prompt:          nullable.NewValue("Cyberpunk city"),
-			PromptType:      types.PostV1AnimationBodyStylePromptTypeEnumAiChoose,
+			PromptType:      types.V1AnimationCreateBodyStylePromptTypeEnumAiChoose,
 			TransitionSpeed: 5,
 		},
 		Width: 512,

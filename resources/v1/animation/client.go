@@ -30,19 +30,19 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // Create a Animation video. The estimated frame cost is calculated based on the `fps` and `end_seconds` input.
 //
 // POST /v1/animation
-func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1AnimationResponse, error) {
+func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AnimationCreateResponse, error) {
 	// URL formatting
 	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"animation")
 	if err != nil {
-		return types.PostV1AnimationResponse{}, err
+		return types.V1AnimationCreateResponse{}, err
 	}
 	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
-		return types.PostV1AnimationResponse{}, err
+		return types.V1AnimationCreateResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(types.PostV1AnimationBody{
+	reqBody, err := json.Marshal(types.V1AnimationCreateBody{
 		Name:       request.Name,
 		Assets:     request.Assets,
 		EndSeconds: request.EndSeconds,
@@ -51,14 +51,14 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 		Style:      request.Style,
 		Width:      request.Width})
 	if err != nil {
-		return types.PostV1AnimationResponse{}, err
+		return types.V1AnimationCreateResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
-		return types.PostV1AnimationResponse{}, err
+		return types.V1AnimationCreateResponse{}, err
 	}
 
 	// Add headers
@@ -70,30 +70,30 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
-		return types.PostV1AnimationResponse{}, err
+		return types.V1AnimationCreateResponse{}, err
 	}
 
 	// Dispatch request
 	resp, err := c.coreClient.HttpClient.Do(req)
 	if err != nil {
-		return types.PostV1AnimationResponse{}, err
+		return types.V1AnimationCreateResponse{}, err
 	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return types.PostV1AnimationResponse{}, sdkcore.NewApiError(*req, *resp)
+		return types.V1AnimationCreateResponse{}, sdkcore.NewApiError(*req, *resp)
 	}
 
 	// Handle response
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return types.PostV1AnimationResponse{}, err
+		return types.V1AnimationCreateResponse{}, err
 	}
-	var bodyData types.PostV1AnimationResponse
+	var bodyData types.V1AnimationCreateResponse
 	err = json.Unmarshal(body, &bodyData)
 	if err != nil {
-		return types.PostV1AnimationResponse{}, err
+		return types.V1AnimationCreateResponse{}, err
 	}
 	return bodyData, nil
 

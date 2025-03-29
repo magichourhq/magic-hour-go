@@ -8,7 +8,7 @@ import (
 // CreateRequest
 type CreateRequest struct {
 	// Provide the assets for animation.
-	Assets types.PostV1AnimationBodyAssets `json:"assets"`
+	Assets types.V1AnimationCreateBodyAssets `json:"assets"`
 	// The end time of the input video in seconds
 	EndSeconds float64 `json:"end_seconds"`
 	// The desire output video frame rate
@@ -18,7 +18,7 @@ type CreateRequest struct {
 	// The name of video
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// Defines the style of the output video
-	Style types.PostV1AnimationBodyStyle `json:"style"`
+	Style types.V1AnimationCreateBodyStyle `json:"style"`
 	// The width of the final output video. The maximum width depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
 	Width int `json:"width"`
 }

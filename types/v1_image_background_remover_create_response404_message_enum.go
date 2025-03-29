@@ -1,0 +1,8 @@
+package types
+
+// V1ImageBackgroundRemoverCreateResponse404MessageEnum
+type V1ImageBackgroundRemoverCreateResponse404MessageEnum string
+
+const (
+	V1ImageBackgroundRemoverCreateResponse404MessageEnumNotFound V1ImageBackgroundRemoverCreateResponse404MessageEnum = "Not Found"
+)

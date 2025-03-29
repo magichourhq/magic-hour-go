@@ -24,7 +24,7 @@ func main() {
 		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
 	)
 	res, err := client.V1.AiHeadshotGenerator.Create(ai_headshot_generator.CreateRequest{
-		Assets: types.PostV1AiHeadshotGeneratorBodyAssets{
+		Assets: types.V1AiHeadshotGeneratorCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
 	})

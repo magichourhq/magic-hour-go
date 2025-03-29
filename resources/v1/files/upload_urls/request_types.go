@@ -6,5 +6,5 @@ import (
 
 // CreateRequest
 type CreateRequest struct {
-	Items []types.PostV1FilesUploadUrlsBodyItemsItem `json:"items"`
+	Items []types.V1FilesUploadUrlsCreateBodyItemsItem `json:"items"`
 }

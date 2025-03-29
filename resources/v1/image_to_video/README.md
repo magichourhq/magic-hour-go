@@ -28,12 +28,12 @@ func main() {
 		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
 	)
 	res, err := client.V1.ImageToVideo.Create(image_to_video.CreateRequest{
-		Assets: types.PostV1ImageToVideoBodyAssets{
+		Assets: types.V1ImageToVideoCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
 		EndSeconds: 5.0,
 		Height:     960,
-		Style: types.PostV1ImageToVideoBodyStyle{
+		Style: types.V1ImageToVideoCreateBodyStyle{
 			Prompt: nullable.NewNull[string](),
 		},
 		Width: 512,

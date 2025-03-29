@@ -1,0 +1,8 @@
+package types
+
+// V1AiImageUpscalerCreateResponse401MessageEnum
+type V1AiImageUpscalerCreateResponse401MessageEnum string
+
+const (
+	V1AiImageUpscalerCreateResponse401MessageEnumUnauthorized V1AiImageUpscalerCreateResponse401MessageEnum = "Unauthorized"
+)

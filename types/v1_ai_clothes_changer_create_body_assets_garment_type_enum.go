@@ -1,0 +1,10 @@
+package types
+
+// V1AiClothesChangerCreateBodyAssetsGarmentTypeEnum
+type V1AiClothesChangerCreateBodyAssetsGarmentTypeEnum string
+
+const (
+	V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumDresses   V1AiClothesChangerCreateBodyAssetsGarmentTypeEnum = "dresses"
+	V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumLowerBody V1AiClothesChangerCreateBodyAssetsGarmentTypeEnum = "lower_body"
+	V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumUpperBody V1AiClothesChangerCreateBodyAssetsGarmentTypeEnum = "upper_body"
+)

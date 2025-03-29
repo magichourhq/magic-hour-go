@@ -30,31 +30,31 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // Create an AI QR code. Each QR code costs 20 frames.
 //
 // POST /v1/ai-qr-code-generator
-func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1AiQrCodeGeneratorResponse, error) {
+func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiQrCodeGeneratorCreateResponse, error) {
 	// URL formatting
 	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-qr-code-generator")
 	if err != nil {
-		return types.PostV1AiQrCodeGeneratorResponse{}, err
+		return types.V1AiQrCodeGeneratorCreateResponse{}, err
 	}
 	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
-		return types.PostV1AiQrCodeGeneratorResponse{}, err
+		return types.V1AiQrCodeGeneratorCreateResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(types.PostV1AiQrCodeGeneratorBody{
+	reqBody, err := json.Marshal(types.V1AiQrCodeGeneratorCreateBody{
 		Name:    request.Name,
 		Content: request.Content,
 		Style:   request.Style})
 	if err != nil {
-		return types.PostV1AiQrCodeGeneratorResponse{}, err
+		return types.V1AiQrCodeGeneratorCreateResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
-		return types.PostV1AiQrCodeGeneratorResponse{}, err
+		return types.V1AiQrCodeGeneratorCreateResponse{}, err
 	}
 
 	// Add headers
@@ -66,30 +66,30 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
-		return types.PostV1AiQrCodeGeneratorResponse{}, err
+		return types.V1AiQrCodeGeneratorCreateResponse{}, err
 	}
 
 	// Dispatch request
 	resp, err := c.coreClient.HttpClient.Do(req)
 	if err != nil {
-		return types.PostV1AiQrCodeGeneratorResponse{}, err
+		return types.V1AiQrCodeGeneratorCreateResponse{}, err
 	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return types.PostV1AiQrCodeGeneratorResponse{}, sdkcore.NewApiError(*req, *resp)
+		return types.V1AiQrCodeGeneratorCreateResponse{}, sdkcore.NewApiError(*req, *resp)
 	}
 
 	// Handle response
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return types.PostV1AiQrCodeGeneratorResponse{}, err
+		return types.V1AiQrCodeGeneratorCreateResponse{}, err
 	}
-	var bodyData types.PostV1AiQrCodeGeneratorResponse
+	var bodyData types.V1AiQrCodeGeneratorCreateResponse
 	err = json.Unmarshal(body, &bodyData)
 	if err != nil {
-		return types.PostV1AiQrCodeGeneratorResponse{}, err
+		return types.V1AiQrCodeGeneratorCreateResponse{}, err
 	}
 	return bodyData, nil
 

@@ -17,11 +17,11 @@ func TestCreate200SuccessDefault(t *testing.T) {
 		sdk.WithEnv(sdk.MockServer),
 	)
 	res, err := client.V1.AiPhotoEditor.Create(ai_photo_editor.CreateRequest{
-		Assets: types.PostV1AiPhotoEditorBodyAssets{
+		Assets: types.V1AiPhotoEditorCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
 		Resolution: 768,
-		Style: types.PostV1AiPhotoEditorBodyStyle{
+		Style: types.V1AiPhotoEditorCreateBodyStyle{
 			ImageDescription: "A photo of a person",
 			LikenessStrength: 5.2,
 			NegativePrompt:   nullable.NewValue("painting, cartoon, sketch"),

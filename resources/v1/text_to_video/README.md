@@ -28,8 +28,8 @@ func main() {
 	)
 	res, err := client.V1.TextToVideo.Create(text_to_video.CreateRequest{
 		EndSeconds:  5.0,
-		Orientation: types.PostV1TextToVideoBodyOrientationEnumLandscape,
-		Style: types.PostV1TextToVideoBodyStyle{
+		Orientation: types.V1TextToVideoCreateBodyOrientationEnumLandscape,
+		Style: types.V1TextToVideoCreateBodyStyle{
 			Prompt: "string",
 		},
 	})

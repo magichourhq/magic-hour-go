@@ -28,10 +28,10 @@ func main() {
 		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
 	)
 	res, err := client.V1.FaceSwap.Create(face_swap.CreateRequest{
-		Assets: types.PostV1FaceSwapBodyAssets{
+		Assets: types.V1FaceSwapCreateBodyAssets{
 			ImageFilePath: "image/id/1234.png",
 			VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"),
-			VideoSource:   types.PostV1FaceSwapBodyAssetsVideoSourceEnumFile,
+			VideoSource:   types.V1FaceSwapCreateBodyAssetsVideoSourceEnumFile,
 		},
 		EndSeconds:   15.0,
 		Height:       960,

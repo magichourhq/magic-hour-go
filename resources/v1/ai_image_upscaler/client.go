@@ -30,32 +30,32 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // Upscale your image using AI. Each 2x upscale costs 50 frames, and 4x upscale costs 200 frames.
 //
 // POST /v1/ai-image-upscaler
-func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1AiImageUpscalerResponse, error) {
+func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiImageUpscalerCreateResponse, error) {
 	// URL formatting
 	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-image-upscaler")
 	if err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.V1AiImageUpscalerCreateResponse{}, err
 	}
 	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.V1AiImageUpscalerCreateResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(types.PostV1AiImageUpscalerBody{
+	reqBody, err := json.Marshal(types.V1AiImageUpscalerCreateBody{
 		Name:        request.Name,
 		Assets:      request.Assets,
 		ScaleFactor: request.ScaleFactor,
 		Style:       request.Style})
 	if err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.V1AiImageUpscalerCreateResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.V1AiImageUpscalerCreateResponse{}, err
 	}
 
 	// Add headers
@@ -67,30 +67,30 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.V1AiImageUpscalerCreateResponse{}, err
 	}
 
 	// Dispatch request
 	resp, err := c.coreClient.HttpClient.Do(req)
 	if err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.V1AiImageUpscalerCreateResponse{}, err
 	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return types.PostV1AiImageUpscalerResponse{}, sdkcore.NewApiError(*req, *resp)
+		return types.V1AiImageUpscalerCreateResponse{}, sdkcore.NewApiError(*req, *resp)
 	}
 
 	// Handle response
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.V1AiImageUpscalerCreateResponse{}, err
 	}
-	var bodyData types.PostV1AiImageUpscalerResponse
+	var bodyData types.V1AiImageUpscalerCreateResponse
 	err = json.Unmarshal(body, &bodyData)
 	if err != nil {
-		return types.PostV1AiImageUpscalerResponse{}, err
+		return types.V1AiImageUpscalerCreateResponse{}, err
 	}
 	return bodyData, nil
 
