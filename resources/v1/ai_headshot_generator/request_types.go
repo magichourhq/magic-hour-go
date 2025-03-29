@@ -8,8 +8,8 @@ import (
 // CreateRequest
 type CreateRequest struct {
 	// Provide the assets for headshot photo
-	Assets types.PostV1AiHeadshotGeneratorBodyAssets `json:"assets"`
+	Assets types.V1AiHeadshotGeneratorCreateBodyAssets `json:"assets"`
 	// The name of image
-	Name  nullable.Nullable[string]                                   `json:"name,omitempty"`
-	Style nullable.Nullable[types.PostV1AiHeadshotGeneratorBodyStyle] `json:"style,omitempty"`
+	Name  nullable.Nullable[string]                                     `json:"name,omitempty"`
+	Style nullable.Nullable[types.V1AiHeadshotGeneratorCreateBodyStyle] `json:"style,omitempty"`
 }

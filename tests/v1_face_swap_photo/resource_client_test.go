@@ -16,7 +16,7 @@ func TestCreate200SuccessDefault(t *testing.T) {
 		sdk.WithEnv(sdk.MockServer),
 	)
 	res, err := client.V1.FaceSwapPhoto.Create(face_swap_photo.CreateRequest{
-		Assets: types.PostV1FaceSwapPhotoBodyAssets{
+		Assets: types.V1FaceSwapPhotoCreateBodyAssets{
 			SourceFilePath: "api-assets/id/1234.png",
 			TargetFilePath: "api-assets/id/1234.png",
 		},

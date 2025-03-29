@@ -17,10 +17,10 @@ func TestCreate200SuccessDefault(t *testing.T) {
 		sdk.WithEnv(sdk.MockServer),
 	)
 	res, err := client.V1.LipSync.Create(lip_sync.CreateRequest{
-		Assets: types.PostV1LipSyncBodyAssets{
+		Assets: types.V1LipSyncCreateBodyAssets{
 			AudioFilePath: "api-assets/id/1234.mp3",
 			VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"),
-			VideoSource:   types.PostV1LipSyncBodyAssetsVideoSourceEnumFile,
+			VideoSource:   types.V1LipSyncCreateBodyAssetsVideoSourceEnumFile,
 		},
 		EndSeconds:   15.0,
 		Height:       960,

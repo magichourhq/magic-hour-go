@@ -25,8 +25,8 @@ func main() {
 	)
 	res, err := client.V1.AiImageGenerator.Create(ai_image_generator.CreateRequest{
 		ImageCount:  1,
-		Orientation: types.PostV1AiImageGeneratorBodyOrientationEnumLandscape,
-		Style: types.PostV1AiImageGeneratorBodyStyle{
+		Orientation: types.V1AiImageGeneratorCreateBodyOrientationEnumLandscape,
+		Style: types.V1AiImageGeneratorCreateBodyStyle{
 			Prompt: "Cool image",
 		},
 	})

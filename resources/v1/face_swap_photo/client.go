@@ -30,30 +30,30 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // Create a face swap photo. Each photo costs 5 frames. The height/width of the output image depends on your subscription. Please refer to our [pricing](/pricing) page for more details
 //
 // POST /v1/face-swap-photo
-func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1FaceSwapPhotoResponse, error) {
+func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1FaceSwapPhotoCreateResponse, error) {
 	// URL formatting
 	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"face-swap-photo")
 	if err != nil {
-		return types.PostV1FaceSwapPhotoResponse{}, err
+		return types.V1FaceSwapPhotoCreateResponse{}, err
 	}
 	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
-		return types.PostV1FaceSwapPhotoResponse{}, err
+		return types.V1FaceSwapPhotoCreateResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(types.PostV1FaceSwapPhotoBody{
+	reqBody, err := json.Marshal(types.V1FaceSwapPhotoCreateBody{
 		Name:   request.Name,
 		Assets: request.Assets})
 	if err != nil {
-		return types.PostV1FaceSwapPhotoResponse{}, err
+		return types.V1FaceSwapPhotoCreateResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
-		return types.PostV1FaceSwapPhotoResponse{}, err
+		return types.V1FaceSwapPhotoCreateResponse{}, err
 	}
 
 	// Add headers
@@ -65,30 +65,30 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
-		return types.PostV1FaceSwapPhotoResponse{}, err
+		return types.V1FaceSwapPhotoCreateResponse{}, err
 	}
 
 	// Dispatch request
 	resp, err := c.coreClient.HttpClient.Do(req)
 	if err != nil {
-		return types.PostV1FaceSwapPhotoResponse{}, err
+		return types.V1FaceSwapPhotoCreateResponse{}, err
 	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return types.PostV1FaceSwapPhotoResponse{}, sdkcore.NewApiError(*req, *resp)
+		return types.V1FaceSwapPhotoCreateResponse{}, sdkcore.NewApiError(*req, *resp)
 	}
 
 	// Handle response
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return types.PostV1FaceSwapPhotoResponse{}, err
+		return types.V1FaceSwapPhotoCreateResponse{}, err
 	}
-	var bodyData types.PostV1FaceSwapPhotoResponse
+	var bodyData types.V1FaceSwapPhotoCreateResponse
 	err = json.Unmarshal(body, &bodyData)
 	if err != nil {
-		return types.PostV1FaceSwapPhotoResponse{}, err
+		return types.V1FaceSwapPhotoCreateResponse{}, err
 	}
 	return bodyData, nil
 

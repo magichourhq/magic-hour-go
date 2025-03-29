@@ -12,6 +12,6 @@ type CreateRequest struct {
 	// The name of video
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// Determines the orientation of the output video
-	Orientation types.PostV1TextToVideoBodyOrientationEnum `json:"orientation"`
-	Style       types.PostV1TextToVideoBodyStyle           `json:"style"`
+	Orientation types.V1TextToVideoCreateBodyOrientationEnum `json:"orientation"`
+	Style       types.V1TextToVideoCreateBodyStyle           `json:"style"`
 }

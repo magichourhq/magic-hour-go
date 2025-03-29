@@ -8,7 +8,7 @@ import (
 // CreateRequest
 type CreateRequest struct {
 	// Provide the assets for background removal
-	Assets types.PostV1ImageBackgroundRemoverBodyAssets `json:"assets"`
+	Assets types.V1ImageBackgroundRemoverCreateBodyAssets `json:"assets"`
 	// The name of image
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 }

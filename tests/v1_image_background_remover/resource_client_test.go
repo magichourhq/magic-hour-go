@@ -16,7 +16,7 @@ func TestCreate200SuccessDefault(t *testing.T) {
 		sdk.WithEnv(sdk.MockServer),
 	)
 	res, err := client.V1.ImageBackgroundRemover.Create(image_background_remover.CreateRequest{
-		Assets: types.PostV1ImageBackgroundRemoverBodyAssets{
+		Assets: types.V1ImageBackgroundRemoverCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
 	})

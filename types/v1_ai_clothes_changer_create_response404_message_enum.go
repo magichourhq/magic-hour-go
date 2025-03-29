@@ -1,0 +1,8 @@
+package types
+
+// V1AiClothesChangerCreateResponse404MessageEnum
+type V1AiClothesChangerCreateResponse404MessageEnum string
+
+const (
+	V1AiClothesChangerCreateResponse404MessageEnumNotFound V1AiClothesChangerCreateResponse404MessageEnum = "Not Found"
+)

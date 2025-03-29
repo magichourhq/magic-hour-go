@@ -16,7 +16,7 @@ func TestCreate200SuccessDefault(t *testing.T) {
 		sdk.WithEnv(sdk.MockServer),
 	)
 	res, err := client.V1.AiHeadshotGenerator.Create(ai_headshot_generator.CreateRequest{
-		Assets: types.PostV1AiHeadshotGeneratorBodyAssets{
+		Assets: types.V1AiHeadshotGeneratorCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
 	})

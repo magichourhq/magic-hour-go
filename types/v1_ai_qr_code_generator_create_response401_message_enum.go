@@ -1,0 +1,8 @@
+package types
+
+// V1AiQrCodeGeneratorCreateResponse401MessageEnum
+type V1AiQrCodeGeneratorCreateResponse401MessageEnum string
+
+const (
+	V1AiQrCodeGeneratorCreateResponse401MessageEnumUnauthorized V1AiQrCodeGeneratorCreateResponse401MessageEnum = "Unauthorized"
+)

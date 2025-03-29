@@ -24,7 +24,7 @@ func main() {
 		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
 	)
 	res, err := client.V1.ImageBackgroundRemover.Create(image_background_remover.CreateRequest{
-		Assets: types.PostV1ImageBackgroundRemoverBodyAssets{
+		Assets: types.V1ImageBackgroundRemoverCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
 	})

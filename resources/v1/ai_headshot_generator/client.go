@@ -30,31 +30,31 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // Create an AI headshot. Each headshot costs 50 frames.
 //
 // POST /v1/ai-headshot-generator
-func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1AiHeadshotGeneratorResponse, error) {
+func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiHeadshotGeneratorCreateResponse, error) {
 	// URL formatting
 	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-headshot-generator")
 	if err != nil {
-		return types.PostV1AiHeadshotGeneratorResponse{}, err
+		return types.V1AiHeadshotGeneratorCreateResponse{}, err
 	}
 	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
-		return types.PostV1AiHeadshotGeneratorResponse{}, err
+		return types.V1AiHeadshotGeneratorCreateResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(types.PostV1AiHeadshotGeneratorBody{
+	reqBody, err := json.Marshal(types.V1AiHeadshotGeneratorCreateBody{
 		Name:   request.Name,
 		Style:  request.Style,
 		Assets: request.Assets})
 	if err != nil {
-		return types.PostV1AiHeadshotGeneratorResponse{}, err
+		return types.V1AiHeadshotGeneratorCreateResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
-		return types.PostV1AiHeadshotGeneratorResponse{}, err
+		return types.V1AiHeadshotGeneratorCreateResponse{}, err
 	}
 
 	// Add headers
@@ -66,30 +66,30 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
-		return types.PostV1AiHeadshotGeneratorResponse{}, err
+		return types.V1AiHeadshotGeneratorCreateResponse{}, err
 	}
 
 	// Dispatch request
 	resp, err := c.coreClient.HttpClient.Do(req)
 	if err != nil {
-		return types.PostV1AiHeadshotGeneratorResponse{}, err
+		return types.V1AiHeadshotGeneratorCreateResponse{}, err
 	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return types.PostV1AiHeadshotGeneratorResponse{}, sdkcore.NewApiError(*req, *resp)
+		return types.V1AiHeadshotGeneratorCreateResponse{}, sdkcore.NewApiError(*req, *resp)
 	}
 
 	// Handle response
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return types.PostV1AiHeadshotGeneratorResponse{}, err
+		return types.V1AiHeadshotGeneratorCreateResponse{}, err
 	}
-	var bodyData types.PostV1AiHeadshotGeneratorResponse
+	var bodyData types.V1AiHeadshotGeneratorCreateResponse
 	err = json.Unmarshal(body, &bodyData)
 	if err != nil {
-		return types.PostV1AiHeadshotGeneratorResponse{}, err
+		return types.V1AiHeadshotGeneratorCreateResponse{}, err
 	}
 	return bodyData, nil
 

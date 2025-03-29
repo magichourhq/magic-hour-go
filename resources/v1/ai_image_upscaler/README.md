@@ -24,12 +24,12 @@ func main() {
 		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
 	)
 	res, err := client.V1.AiImageUpscaler.Create(ai_image_upscaler.CreateRequest{
-		Assets: types.PostV1AiImageUpscalerBodyAssets{
+		Assets: types.V1AiImageUpscalerCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
 		ScaleFactor: 2.0,
-		Style: types.PostV1AiImageUpscalerBodyStyle{
-			Enhancement: types.PostV1AiImageUpscalerBodyStyleEnhancementEnumBalanced,
+		Style: types.V1AiImageUpscalerCreateBodyStyle{
+			Enhancement: types.V1AiImageUpscalerCreateBodyStyleEnhancementEnumBalanced,
 		},
 	})
 }

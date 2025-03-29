@@ -28,19 +28,19 @@ func main() {
 		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
 	)
 	res, err := client.V1.VideoToVideo.Create(video_to_video.CreateRequest{
-		Assets: types.PostV1VideoToVideoBodyAssets{
+		Assets: types.V1VideoToVideoCreateBodyAssets{
 			VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"),
-			VideoSource:   types.PostV1VideoToVideoBodyAssetsVideoSourceEnumFile,
+			VideoSource:   types.V1VideoToVideoCreateBodyAssetsVideoSourceEnumFile,
 		},
 		EndSeconds:   15.0,
 		Height:       960,
 		StartSeconds: 0.0,
-		Style: types.PostV1VideoToVideoBodyStyle{
-			ArtStyle:   types.PostV1VideoToVideoBodyStyleArtStyleEnum3dRender,
-			Model:      types.PostV1VideoToVideoBodyStyleModelEnumAbsoluteReality,
+		Style: types.V1VideoToVideoCreateBodyStyle{
+			ArtStyle:   types.V1VideoToVideoCreateBodyStyleArtStyleEnum3dRender,
+			Model:      types.V1VideoToVideoCreateBodyStyleModelEnumAbsoluteReality,
 			Prompt:     nullable.NewNull[string](),
-			PromptType: types.PostV1VideoToVideoBodyStylePromptTypeEnumAppendDefault,
-			Version:    types.PostV1VideoToVideoBodyStyleVersionEnumDefault,
+			PromptType: types.V1VideoToVideoCreateBodyStylePromptTypeEnumAppendDefault,
+			Version:    types.V1VideoToVideoCreateBodyStyleVersionEnumDefault,
 		},
 		Width: 512,
 	})

@@ -1,0 +1,8 @@
+package types
+
+// V1ImageBackgroundRemoverCreateResponse401MessageEnum
+type V1ImageBackgroundRemoverCreateResponse401MessageEnum string
+
+const (
+	V1ImageBackgroundRemoverCreateResponse401MessageEnumUnauthorized V1ImageBackgroundRemoverCreateResponse401MessageEnum = "Unauthorized"
+)

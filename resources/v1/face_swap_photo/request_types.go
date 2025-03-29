@@ -8,7 +8,7 @@ import (
 // CreateRequest
 type CreateRequest struct {
 	// Provide the assets for face swap photo
-	Assets types.PostV1FaceSwapPhotoBodyAssets `json:"assets"`
+	Assets types.V1FaceSwapPhotoCreateBodyAssets `json:"assets"`
 	// The name of image
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 }

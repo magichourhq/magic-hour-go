@@ -32,19 +32,19 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // Get more information about this mode at our [product page](/products/video-to-video).
 //
 // POST /v1/video-to-video
-func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.PostV1VideoToVideoResponse, error) {
+func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1VideoToVideoCreateResponse, error) {
 	// URL formatting
 	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"video-to-video")
 	if err != nil {
-		return types.PostV1VideoToVideoResponse{}, err
+		return types.V1VideoToVideoCreateResponse{}, err
 	}
 	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
-		return types.PostV1VideoToVideoResponse{}, err
+		return types.V1VideoToVideoCreateResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(types.PostV1VideoToVideoBody{
+	reqBody, err := json.Marshal(types.V1VideoToVideoCreateBody{
 		FpsResolution: request.FpsResolution,
 		Name:          request.Name,
 		Assets:        request.Assets,
@@ -54,14 +54,14 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 		Style:         request.Style,
 		Width:         request.Width})
 	if err != nil {
-		return types.PostV1VideoToVideoResponse{}, err
+		return types.V1VideoToVideoCreateResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
-		return types.PostV1VideoToVideoResponse{}, err
+		return types.V1VideoToVideoCreateResponse{}, err
 	}
 
 	// Add headers
@@ -73,30 +73,30 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
-		return types.PostV1VideoToVideoResponse{}, err
+		return types.V1VideoToVideoCreateResponse{}, err
 	}
 
 	// Dispatch request
 	resp, err := c.coreClient.HttpClient.Do(req)
 	if err != nil {
-		return types.PostV1VideoToVideoResponse{}, err
+		return types.V1VideoToVideoCreateResponse{}, err
 	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return types.PostV1VideoToVideoResponse{}, sdkcore.NewApiError(*req, *resp)
+		return types.V1VideoToVideoCreateResponse{}, sdkcore.NewApiError(*req, *resp)
 	}
 
 	// Handle response
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return types.PostV1VideoToVideoResponse{}, err
+		return types.V1VideoToVideoCreateResponse{}, err
 	}
-	var bodyData types.PostV1VideoToVideoResponse
+	var bodyData types.V1VideoToVideoCreateResponse
 	err = json.Unmarshal(body, &bodyData)
 	if err != nil {
-		return types.PostV1VideoToVideoResponse{}, err
+		return types.V1VideoToVideoCreateResponse{}, err
 	}
 	return bodyData, nil
 

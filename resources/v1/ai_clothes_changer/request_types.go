@@ -8,7 +8,7 @@ import (
 // CreateRequest
 type CreateRequest struct {
 	// Provide the assets for clothes changer
-	Assets types.PostV1AiClothesChangerBodyAssets `json:"assets"`
+	Assets types.V1AiClothesChangerCreateBodyAssets `json:"assets"`
 	// The name of image
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 }

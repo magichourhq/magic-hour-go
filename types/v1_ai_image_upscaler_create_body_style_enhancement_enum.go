@@ -1,0 +1,10 @@
+package types
+
+// V1AiImageUpscalerCreateBodyStyleEnhancementEnum
+type V1AiImageUpscalerCreateBodyStyleEnhancementEnum string
+
+const (
+	V1AiImageUpscalerCreateBodyStyleEnhancementEnumBalanced    V1AiImageUpscalerCreateBodyStyleEnhancementEnum = "Balanced"
+	V1AiImageUpscalerCreateBodyStyleEnhancementEnumCreative    V1AiImageUpscalerCreateBodyStyleEnhancementEnum = "Creative"
+	V1AiImageUpscalerCreateBodyStyleEnhancementEnumResemblance V1AiImageUpscalerCreateBodyStyleEnhancementEnum = "Resemblance"
+)

@@ -1,0 +1,8 @@
+package types
+
+// V1AiQrCodeGeneratorCreateResponse404MessageEnum
+type V1AiQrCodeGeneratorCreateResponse404MessageEnum string
+
+const (
+	V1AiQrCodeGeneratorCreateResponse404MessageEnumNotFound V1AiQrCodeGeneratorCreateResponse404MessageEnum = "Not Found"
+)

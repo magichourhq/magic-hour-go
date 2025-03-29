@@ -10,7 +10,7 @@ type CreateRequest struct {
 	// number to images to generate
 	ImageCount int `json:"image_count"`
 	// The name of image
-	Name        nullable.Nullable[string]                       `json:"name,omitempty"`
-	Orientation types.PostV1AiImageGeneratorBodyOrientationEnum `json:"orientation"`
-	Style       types.PostV1AiImageGeneratorBodyStyle           `json:"style"`
+	Name        nullable.Nullable[string]                         `json:"name,omitempty"`
+	Orientation types.V1AiImageGeneratorCreateBodyOrientationEnum `json:"orientation"`
+	Style       types.V1AiImageGeneratorCreateBodyStyle           `json:"style"`
 }
