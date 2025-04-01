@@ -56,6 +56,10 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 * [create](resources/v1/ai_qr_code_generator/README.md#create) - AI QR Code
 
+### [V1.AiTalkingPhoto](resources/v1/ai_talking_photo/README.md)
+
+* [create](resources/v1/ai_talking_photo/README.md#create) - AI Talking Photo
+
 ### [V1.Animation](resources/v1/animation/README.md)
 
 * [create](resources/v1/animation/README.md#create) - Animation
