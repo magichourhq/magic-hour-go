@@ -15,6 +15,7 @@ import (
 	os "os"
 
 	sdk "github.com/magichourhq/magic-hour-go/client"
+	nullable "github.com/magichourhq/magic-hour-go/nullable"
 	ai_image_upscaler "github.com/magichourhq/magic-hour-go/resources/v1/ai_image_upscaler"
 	types "github.com/magichourhq/magic-hour-go/types"
 )
@@ -27,6 +28,7 @@ func main() {
 		Assets: types.V1AiImageUpscalerCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
+		Name:        nullable.NewValue("Image Upscaler image"),
 		ScaleFactor: 2.0,
 		Style: types.V1AiImageUpscalerCreateBodyStyle{
 			Enhancement: types.V1AiImageUpscalerCreateBodyStyleEnhancementEnumBalanced,

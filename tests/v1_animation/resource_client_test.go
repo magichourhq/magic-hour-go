@@ -25,6 +25,7 @@ func TestCreate200SuccessDefault(t *testing.T) {
 		EndSeconds: 15.0,
 		Fps:        12.0,
 		Height:     960,
+		Name:       nullable.NewValue("Animation video"),
 		Style: types.V1AnimationCreateBodyStyle{
 			ArtStyle:        types.V1AnimationCreateBodyStyleArtStyleEnumPainterlyIllustration,
 			CameraEffect:    types.V1AnimationCreateBodyStyleCameraEffectEnumAccelerate,

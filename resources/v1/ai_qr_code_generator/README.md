@@ -15,6 +15,7 @@ import (
 	os "os"
 
 	sdk "github.com/magichourhq/magic-hour-go/client"
+	nullable "github.com/magichourhq/magic-hour-go/nullable"
 	ai_qr_code_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_qr_code_generator"
 	types "github.com/magichourhq/magic-hour-go/types"
 )
@@ -25,6 +26,7 @@ func main() {
 	)
 	res, err := client.V1.AiQrCodeGenerator.Create(ai_qr_code_generator.CreateRequest{
 		Content: "https://magichour.ai",
+		Name:    nullable.NewValue("Qr Code image"),
 		Style: types.V1AiQrCodeGeneratorCreateBodyStyle{
 			ArtStyle: "Watercolor",
 		},

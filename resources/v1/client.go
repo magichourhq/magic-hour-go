@@ -8,6 +8,7 @@ import (
 	ai_headshot_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_headshot_generator"
 	ai_image_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_image_generator"
 	ai_image_upscaler "github.com/magichourhq/magic-hour-go/resources/v1/ai_image_upscaler"
+	ai_meme_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_meme_generator"
 	ai_photo_editor "github.com/magichourhq/magic-hour-go/resources/v1/ai_photo_editor"
 	ai_qr_code_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_qr_code_generator"
 	ai_talking_photo "github.com/magichourhq/magic-hour-go/resources/v1/ai_talking_photo"
@@ -32,6 +33,7 @@ type Client struct {
 	AiHeadshotGenerator    *ai_headshot_generator.Client
 	AiImageGenerator       *ai_image_generator.Client
 	AiImageUpscaler        *ai_image_upscaler.Client
+	AiMemeGenerator        *ai_meme_generator.Client
 	AiPhotoEditor          *ai_photo_editor.Client
 	AiQrCodeGenerator      *ai_qr_code_generator.Client
 	AiTalkingPhoto         *ai_talking_photo.Client
@@ -57,6 +59,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 		AiHeadshotGenerator:    ai_headshot_generator.NewClient(coreClient),
 		AiImageGenerator:       ai_image_generator.NewClient(coreClient),
 		AiImageUpscaler:        ai_image_upscaler.NewClient(coreClient),
+		AiMemeGenerator:        ai_meme_generator.NewClient(coreClient),
 		AiPhotoEditor:          ai_photo_editor.NewClient(coreClient),
 		AiQrCodeGenerator:      ai_qr_code_generator.NewClient(coreClient),
 		AiTalkingPhoto:         ai_talking_photo.NewClient(coreClient),

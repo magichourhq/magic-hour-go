@@ -48,6 +48,10 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 * [create](resources/v1/ai_image_upscaler/README.md#create) - AI Image Upscaler
 
+### [V1.AiMemeGenerator](resources/v1/ai_meme_generator/README.md)
+
+* [create](resources/v1/ai_meme_generator/README.md#create) - AI Meme Generator
+
 ### [V1.AiPhotoEditor](resources/v1/ai_photo_editor/README.md)
 
 * [create](resources/v1/ai_photo_editor/README.md#create) - AI Photo Editor

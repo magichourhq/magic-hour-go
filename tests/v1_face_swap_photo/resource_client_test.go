@@ -5,6 +5,7 @@ import (
 	testing "testing"
 
 	sdk "github.com/magichourhq/magic-hour-go/client"
+	nullable "github.com/magichourhq/magic-hour-go/nullable"
 	face_swap_photo "github.com/magichourhq/magic-hour-go/resources/v1/face_swap_photo"
 	types "github.com/magichourhq/magic-hour-go/types"
 )
@@ -20,6 +21,7 @@ func TestCreate200SuccessDefault(t *testing.T) {
 			SourceFilePath: "api-assets/id/1234.png",
 			TargetFilePath: "api-assets/id/1234.png",
 		},
+		Name: nullable.NewValue("Face Swap image"),
 	})
 
 	if err != nil {

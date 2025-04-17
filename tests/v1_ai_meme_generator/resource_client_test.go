@@ -1,4 +1,4 @@
-package test_face_swap_client
+package test_ai_meme_generator_client
 
 import (
 	fmt "fmt"
@@ -6,7 +6,7 @@ import (
 
 	sdk "github.com/magichourhq/magic-hour-go/client"
 	nullable "github.com/magichourhq/magic-hour-go/nullable"
-	face_swap "github.com/magichourhq/magic-hour-go/resources/v1/face_swap"
+	ai_meme_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_meme_generator"
 	types "github.com/magichourhq/magic-hour-go/types"
 )
 
@@ -16,17 +16,13 @@ func TestCreate200SuccessDefault(t *testing.T) {
 		sdk.WithBearerAuth("API_TOKEN"),
 		sdk.WithEnv(sdk.MockServer),
 	)
-	res, err := client.V1.FaceSwap.Create(face_swap.CreateRequest{
-		Assets: types.V1FaceSwapCreateBodyAssets{
-			ImageFilePath: "image/id/1234.png",
-			VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"),
-			VideoSource:   types.V1FaceSwapCreateBodyAssetsVideoSourceEnumFile,
+	res, err := client.V1.AiMemeGenerator.Create(ai_meme_generator.CreateRequest{
+		Name: nullable.NewValue("My Funny Meme"),
+		Style: types.V1AiMemeGeneratorCreateBodyStyle{
+			SearchWeb: nullable.NewValue(false),
+			Template:  types.V1AiMemeGeneratorCreateBodyStyleTemplateEnumDrakeHotlineBling,
+			Topic:     "When the code finally works",
 		},
-		EndSeconds:   15.0,
-		Height:       960,
-		Name:         nullable.NewValue("Face Swap video"),
-		StartSeconds: 0.0,
-		Width:        512,
 	})
 
 	if err != nil {
