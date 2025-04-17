@@ -35,6 +35,8 @@ func main() {
 		},
 		EndSeconds:   15.0,
 		Height:       960,
+		MaxFpsLimit:  nullable.NewValue(12.0),
+		Name:         nullable.NewValue("Lip Sync video"),
 		StartSeconds: 0.0,
 		Width:        512,
 	})

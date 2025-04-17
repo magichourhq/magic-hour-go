@@ -30,6 +30,7 @@ func main() {
 		Assets: types.V1AiPhotoEditorCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
+		Name:       nullable.NewValue("Photo Editor image"),
 		Resolution: 768,
 		Style: types.V1AiPhotoEditorCreateBodyStyle{
 			ImageDescription: "A photo of a person",

@@ -35,6 +35,7 @@ func main() {
 		},
 		EndSeconds:   15.0,
 		Height:       960,
+		Name:         nullable.NewValue("Face Swap video"),
 		StartSeconds: 0.0,
 		Width:        512,
 	})

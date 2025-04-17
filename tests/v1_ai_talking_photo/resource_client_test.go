@@ -5,6 +5,7 @@ import (
 	testing "testing"
 
 	sdk "github.com/magichourhq/magic-hour-go/client"
+	nullable "github.com/magichourhq/magic-hour-go/nullable"
 	ai_talking_photo "github.com/magichourhq/magic-hour-go/resources/v1/ai_talking_photo"
 	types "github.com/magichourhq/magic-hour-go/types"
 )
@@ -21,6 +22,7 @@ func TestCreate200SuccessDefault(t *testing.T) {
 			ImageFilePath: "api-assets/id/1234.png",
 		},
 		EndSeconds:   15.0,
+		Name:         nullable.NewValue("Talking Photo image"),
 		StartSeconds: 0.0,
 	})
 

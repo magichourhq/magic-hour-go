@@ -15,6 +15,7 @@ import (
 	os "os"
 
 	sdk "github.com/magichourhq/magic-hour-go/client"
+	nullable "github.com/magichourhq/magic-hour-go/nullable"
 	ai_headshot_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_headshot_generator"
 	types "github.com/magichourhq/magic-hour-go/types"
 )
@@ -27,6 +28,7 @@ func main() {
 		Assets: types.V1AiHeadshotGeneratorCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
+		Name: nullable.NewValue("Ai Headshot image"),
 	})
 }
 
