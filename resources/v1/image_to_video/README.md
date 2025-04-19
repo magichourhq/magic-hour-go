@@ -35,7 +35,7 @@ func main() {
 		Height:     960,
 		Name:       nullable.NewValue("Image To Video video"),
 		Style: types.V1ImageToVideoCreateBodyStyle{
-			Prompt: nullable.NewValue("string"),
+			Prompt: nullable.NewValue("a dog running"),
 		},
 		Width: 512,
 	})

@@ -14,7 +14,8 @@ type CreateRequest struct {
 	// The height of the input video. This value will help determine the final orientation of the output video. The output video resolution may not match the input.
 	Height int `json:"height"`
 	// The name of video
-	Name  nullable.Nullable[string]           `json:"name,omitempty"`
+	Name nullable.Nullable[string] `json:"name,omitempty"`
+	// Attributed used to dictate the style of the output
 	Style types.V1ImageToVideoCreateBodyStyle `json:"style"`
 	// The width of the input video. This value will help determine the final orientation of the output video. The output video resolution may not match the input.
 	Width int `json:"width"`

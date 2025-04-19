@@ -21,7 +21,7 @@ func TestCreate200SuccessDefault(t *testing.T) {
 		Name:        nullable.NewValue("Text To Video video"),
 		Orientation: types.V1TextToVideoCreateBodyOrientationEnumLandscape,
 		Style: types.V1TextToVideoCreateBodyStyle{
-			Prompt: "string",
+			Prompt: "a dog running",
 		},
 	})
 

@@ -22,6 +22,6 @@ type V1ImageProjectsGetResponse struct {
 	Status V1ImageProjectsGetResponseStatusEnum `json:"status"`
 	// The amount of frames used to generate the image.
 	TotalFrameCost int `json:"total_frame_cost"`
-	// The type of the image project. Possible values are AI_HEADSHOT, AI_IMAGE, IMAGE_UPSCALER, FACE_SWAP, PHOTO_EDITOR, QR_CODE, BACKGROUND_REMOVER, CLOTHES_CHANGER, AI_MEME, FACE_EDITOR
+	// The type of the image project. Possible values are AI_HEADSHOT, AI_IMAGE, IMAGE_UPSCALER, FACE_SWAP, PHOTO_EDITOR, QR_CODE, BACKGROUND_REMOVER, CLOTHES_CHANGER, AI_MEME, FACE_EDITOR, PHOTO_COLORIZER
 	Type string `json:"type"`
 }
