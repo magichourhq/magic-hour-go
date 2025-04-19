@@ -45,12 +45,12 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 
 	// Prep body
 	reqBody, err := json.Marshal(types.V1FaceSwapCreateBody{
+		Height:       request.Height,
 		Name:         request.Name,
+		Width:        request.Width,
 		Assets:       request.Assets,
 		EndSeconds:   request.EndSeconds,
-		Height:       request.Height,
-		StartSeconds: request.StartSeconds,
-		Width:        request.Width})
+		StartSeconds: request.StartSeconds})
 	if err != nil {
 		return types.V1FaceSwapCreateResponse{}, err
 	}

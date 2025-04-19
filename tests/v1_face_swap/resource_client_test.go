@@ -23,10 +23,10 @@ func TestCreate200SuccessDefault(t *testing.T) {
 			VideoSource:   types.V1FaceSwapCreateBodyAssetsVideoSourceEnumFile,
 		},
 		EndSeconds:   15.0,
-		Height:       960,
+		Height:       nullable.NewValue(960),
 		Name:         nullable.NewValue("Face Swap video"),
 		StartSeconds: 0.0,
-		Width:        512,
+		Width:        nullable.NewValue(512),
 	})
 
 	if err != nil {
