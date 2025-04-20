@@ -1,4 +1,4 @@
-package lip_sync
+package ai_face_editor
 
 import (
 	bytes "bytes"
@@ -25,42 +25,36 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 	return &client
 }
 
-// Lip Sync
+// AI Face Editor
 //
-// Create a Lip Sync video. The estimated frame cost is calculated using 30 FPS. This amount is deducted from your account balance when a video is queued. Once the video is complete, the cost will be updated based on the actual number of frames rendered.
+// Edit facial features of an image using AI. Each edit costs 1 frame. The height/width of the output image depends on your subscription. Please refer to our [pricing](/pricing) page for more details
 //
-// Get more information about this mode at our [product page](/products/lip-sync).
-//
-// POST /v1/lip-sync
-func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1LipSyncCreateResponse, error) {
+// POST /v1/ai-face-editor
+func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiFaceEditorCreateResponse, error) {
 	// URL formatting
-	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"lip-sync")
+	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-face-editor")
 	if err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiFaceEditorCreateResponse{}, err
 	}
 	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiFaceEditorCreateResponse{}, err
 	}
 
 	// Prep body
-	reqBody, err := json.Marshal(types.V1LipSyncCreateBody{
-		Height:       request.Height,
-		MaxFpsLimit:  request.MaxFpsLimit,
-		Name:         request.Name,
-		Width:        request.Width,
-		Assets:       request.Assets,
-		EndSeconds:   request.EndSeconds,
-		StartSeconds: request.StartSeconds})
+	reqBody, err := json.Marshal(types.V1AiFaceEditorCreateBody{
+		Name:   request.Name,
+		Assets: request.Assets,
+		Style:  request.Style})
 	if err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiFaceEditorCreateResponse{}, err
 	}
 	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiFaceEditorCreateResponse{}, err
 	}
 
 	// Add headers
@@ -72,30 +66,30 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiFaceEditorCreateResponse{}, err
 	}
 
 	// Dispatch request
 	resp, err := c.coreClient.HttpClient.Do(req)
 	if err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiFaceEditorCreateResponse{}, err
 	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return types.V1LipSyncCreateResponse{}, sdkcore.NewApiError(*req, *resp)
+		return types.V1AiFaceEditorCreateResponse{}, sdkcore.NewApiError(*req, *resp)
 	}
 
 	// Handle response
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiFaceEditorCreateResponse{}, err
 	}
-	var bodyData types.V1LipSyncCreateResponse
+	var bodyData types.V1AiFaceEditorCreateResponse
 	err = json.Unmarshal(body, &bodyData)
 	if err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiFaceEditorCreateResponse{}, err
 	}
 	return bodyData, nil
 
