@@ -21,6 +21,7 @@ import (
 	image_projects "github.com/magichourhq/magic-hour-go/resources/v1/image_projects"
 	image_to_video "github.com/magichourhq/magic-hour-go/resources/v1/image_to_video"
 	lip_sync "github.com/magichourhq/magic-hour-go/resources/v1/lip_sync"
+	photo_colorizer "github.com/magichourhq/magic-hour-go/resources/v1/photo_colorizer"
 	text_to_video "github.com/magichourhq/magic-hour-go/resources/v1/text_to_video"
 	video_projects "github.com/magichourhq/magic-hour-go/resources/v1/video_projects"
 	video_to_video "github.com/magichourhq/magic-hour-go/resources/v1/video_to_video"
@@ -46,6 +47,7 @@ type Client struct {
 	ImageBackgroundRemover *image_background_remover.Client
 	ImageToVideo           *image_to_video.Client
 	LipSync                *lip_sync.Client
+	PhotoColorizer         *photo_colorizer.Client
 	TextToVideo            *text_to_video.Client
 	VideoToVideo           *video_to_video.Client
 }
@@ -73,6 +75,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 		ImageBackgroundRemover: image_background_remover.NewClient(coreClient),
 		ImageToVideo:           image_to_video.NewClient(coreClient),
 		LipSync:                lip_sync.NewClient(coreClient),
+		PhotoColorizer:         photo_colorizer.NewClient(coreClient),
 		TextToVideo:            text_to_video.NewClient(coreClient),
 		VideoToVideo:           video_to_video.NewClient(coreClient),
 	}

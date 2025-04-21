@@ -101,6 +101,10 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 * [create](resources/v1/lip_sync/README.md#create) - Lip Sync
 
+### [V1.PhotoColorizer](resources/v1/photo_colorizer/README.md)
+
+* [create](resources/v1/photo_colorizer/README.md#create) - Photo Colorizer
+
 ### [V1.TextToVideo](resources/v1/text_to_video/README.md)
 
 * [create](resources/v1/text_to_video/README.md#create) - Text-to-Video
