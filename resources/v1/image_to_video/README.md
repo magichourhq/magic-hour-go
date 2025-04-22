@@ -32,12 +32,12 @@ func main() {
 			ImageFilePath: "api-assets/id/1234.png",
 		},
 		EndSeconds: 5.0,
-		Height:     960,
+		Height:     nullable.NewValue(960),
 		Name:       nullable.NewValue("Image To Video video"),
 		Style: types.V1ImageToVideoCreateBodyStyle{
 			Prompt: nullable.NewValue("a dog running"),
 		},
-		Width: 512,
+		Width: nullable.NewValue(512),
 	})
 }
 

@@ -10,12 +10,16 @@ type V1ImageToVideoCreateBody struct {
 	Assets V1ImageToVideoCreateBodyAssets `json:"assets"`
 	// The total duration of the output video in seconds.
 	EndSeconds float64 `json:"end_seconds"`
-	// The height of the input video. This value will help determine the final orientation of the output video. The output video resolution may not match the input.
-	Height int `json:"height"`
+	// This field does not affect the output video's resolution. The video's orientation will match that of the input image.
+	//
+	// It is retained solely for backward compatibility and will be deprecated in the future.
+	Height nullable.Nullable[int] `json:"height,omitempty"`
 	// The name of video
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// Attributed used to dictate the style of the output
 	Style V1ImageToVideoCreateBodyStyle `json:"style"`
-	// The width of the input video. This value will help determine the final orientation of the output video. The output video resolution may not match the input.
-	Width int `json:"width"`
+	// This field does not affect the output video's resolution. The video's orientation will match that of the input image.
+	//
+	// It is retained solely for backward compatibility and will be deprecated in the future.
+	Width nullable.Nullable[int] `json:"width,omitempty"`
 }
