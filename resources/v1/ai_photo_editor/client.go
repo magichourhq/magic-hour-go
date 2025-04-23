@@ -44,16 +44,18 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	}
 
 	// Prep body
+	reqBodyBuf := &bytes.Buffer{}
 	reqBody, err := json.Marshal(types.V1AiPhotoEditorCreateBody{
 		Name:       request.Name,
 		Steps:      request.Steps,
 		Assets:     request.Assets,
 		Resolution: request.Resolution,
-		Style:      request.Style})
+		Style:      request.Style,
+	})
 	if err != nil {
 		return types.V1AiPhotoEditorCreateResponse{}, err
 	}
-	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
+	reqBodyBuf = bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)

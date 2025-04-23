@@ -1,0 +1,8 @@
+package types
+
+// V1AiGifGeneratorCreateResponse401MessageEnum
+type V1AiGifGeneratorCreateResponse401MessageEnum string
+
+const (
+	V1AiGifGeneratorCreateResponse401MessageEnumUnauthorized V1AiGifGeneratorCreateResponse401MessageEnum = "Unauthorized"
+)

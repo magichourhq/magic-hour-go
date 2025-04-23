@@ -80,10 +80,9 @@ func addFormQueryParam(queryParams url.Values, paramName string, value interface
 			if explode {
 				queryParams.Add(mapKey.String(), mapVal)
 			}
-
 		}
 
-		if !explode && len(queryParams) > 0 {
+		if !explode && len(chunks) > 0 {
 			queryParams.Add(paramName, strings.Join(chunks, ","))
 		}
 
@@ -182,9 +181,10 @@ func addDeepObjQueryParam(queryParams url.Values, paramName string, value interf
 		v = v.Elem()
 	}
 
-	if v.Kind() == reflect.Struct || v.Kind() == reflect.Map {
+	switch v.Kind() {
+	case reflect.Struct, reflect.Map, reflect.Array, reflect.Slice:
 		encodeDeepObjectKey(queryParams, paramName, value)
-	} else {
+	default:
 		// according to the docs, deepObject style only applies to
 		// object encodes, encodings for primitives & arrays are listed as n/a,
 		// fall back on form style as it is the default for query params
@@ -238,23 +238,47 @@ func encodeDeepObjectKey(queryParams url.Values, key string, value interface{}) 
 }
 
 // Encodes any struct that supports json encodeing to url values
-func EncodeUrlParams(val interface{}) (url.Values, error) {
-	// convert to json string then map[string]interface{} to
-	// ensure all name mappings/undefined/null values are handled correctly
-	jsonData, err := json.Marshal(val)
-	if err != nil {
-		return url.Values{}, err
+func FormUrlEncodedBody(value interface{}, styleMap map[string]string, explodeMap map[string]bool) (*strings.Reader, error) {
+	v := reflect.ValueOf(value)
+	// handle pointers
+	if v.Kind() == reflect.Ptr {
+		v = v.Elem()
 	}
+	switch v.Kind() {
+	case reflect.Map:
+		formValues := url.Values{}
+		for _, mapKey := range v.MapKeys() {
+			key := mapKey.String()
+			style, styleOk := styleMap[key]
+			if !styleOk {
+				style = "form"
+			}
+			explode, explodeOk := explodeMap[key]
+			if !explodeOk {
+				explode = style == "form"
+			}
 
-	var data map[string]interface{}
-	if err := json.Unmarshal(jsonData, &data); err != nil {
-		return url.Values{}, err
+			AddQueryParam(formValues, key, v.MapIndex(mapKey).Interface(), style, explode)
+		}
+
+		bodyBuf := strings.NewReader(formValues.Encode())
+		return bodyBuf, nil
+
+	case reflect.Struct:
+		// structs that are part of a form url encoded body must implement json marshaling
+		// marshal then unmarshal back to an interface to process.
+		jsonData, err := json.Marshal(value)
+		if err == nil {
+			var jsonInterface interface{}
+			err = json.Unmarshal(jsonData, &jsonInterface)
+
+			if err == nil {
+				return FormUrlEncodedBody(jsonInterface, styleMap, explodeMap)
+			}
+		}
+		return &strings.Reader{}, err
+
+	default:
+		return &strings.Reader{}, fmt.Errorf("x-www-form-urlencoded data must be a map or a struct at the top level")
 	}
-
-	values := url.Values{}
-	for key, value := range data {
-		values.Set(key, FmtStringParam(value))
-	}
-
-	return values, nil
 }
