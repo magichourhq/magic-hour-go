@@ -42,6 +42,7 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	}
 
 	// Prep body
+	reqBodyBuf := &bytes.Buffer{}
 	reqBody, err := json.Marshal(types.V1AnimationCreateBody{
 		Name:       request.Name,
 		Assets:     request.Assets,
@@ -49,11 +50,12 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 		Fps:        request.Fps,
 		Height:     request.Height,
 		Style:      request.Style,
-		Width:      request.Width})
+		Width:      request.Width,
+	})
 	if err != nil {
 		return types.V1AnimationCreateResponse{}, err
 	}
-	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
+	reqBodyBuf = bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)

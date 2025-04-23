@@ -42,13 +42,15 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	}
 
 	// Prep body
+	reqBodyBuf := &bytes.Buffer{}
 	reqBody, err := json.Marshal(types.V1ImageBackgroundRemoverCreateBody{
 		Name:   request.Name,
-		Assets: request.Assets})
+		Assets: request.Assets,
+	})
 	if err != nil {
 		return types.V1ImageBackgroundRemoverCreateResponse{}, err
 	}
-	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
+	reqBodyBuf = bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)

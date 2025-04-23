@@ -1,4 +1,4 @@
-package lip_sync
+package ai_gif_generator
 
 import (
 	bytes "bytes"
@@ -25,44 +25,37 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 	return &client
 }
 
-// Lip Sync
+// AI GIFs
 //
-// Create a Lip Sync video. The estimated frame cost is calculated using 30 FPS. This amount is deducted from your account balance when a video is queued. Once the video is complete, the cost will be updated based on the actual number of frames rendered.
+// Create an AI GIF. Each GIF costs 5 frames.
 //
-// Get more information about this mode at our [product page](/products/lip-sync).
-//
-// POST /v1/lip-sync
-func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1LipSyncCreateResponse, error) {
+// POST /v1/ai-gif-generator
+func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiGifGeneratorCreateResponse, error) {
 	// URL formatting
-	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"lip-sync")
+	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-gif-generator")
 	if err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiGifGeneratorCreateResponse{}, err
 	}
 	targetUrl, err := url.Parse(joinedUrl)
 	if err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiGifGeneratorCreateResponse{}, err
 	}
 
 	// Prep body
 	reqBodyBuf := &bytes.Buffer{}
-	reqBody, err := json.Marshal(types.V1LipSyncCreateBody{
-		Height:       request.Height,
-		MaxFpsLimit:  request.MaxFpsLimit,
-		Name:         request.Name,
-		Width:        request.Width,
-		Assets:       request.Assets,
-		EndSeconds:   request.EndSeconds,
-		StartSeconds: request.StartSeconds,
+	reqBody, err := json.Marshal(types.V1AiGifGeneratorCreateBody{
+		Name:  request.Name,
+		Style: request.Style,
 	})
 	if err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiGifGeneratorCreateResponse{}, err
 	}
 	reqBodyBuf = bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
 	if err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiGifGeneratorCreateResponse{}, err
 	}
 
 	// Add headers
@@ -74,30 +67,30 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiGifGeneratorCreateResponse{}, err
 	}
 
 	// Dispatch request
 	resp, err := c.coreClient.HttpClient.Do(req)
 	if err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiGifGeneratorCreateResponse{}, err
 	}
 
 	// Check status
 	if resp.StatusCode >= 300 {
-		return types.V1LipSyncCreateResponse{}, sdkcore.NewApiError(*req, *resp)
+		return types.V1AiGifGeneratorCreateResponse{}, sdkcore.NewApiError(*req, *resp)
 	}
 
 	// Handle response
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiGifGeneratorCreateResponse{}, err
 	}
-	var bodyData types.V1LipSyncCreateResponse
+	var bodyData types.V1AiGifGeneratorCreateResponse
 	err = json.Unmarshal(body, &bodyData)
 	if err != nil {
-		return types.V1LipSyncCreateResponse{}, err
+		return types.V1AiGifGeneratorCreateResponse{}, err
 	}
 	return bodyData, nil
 

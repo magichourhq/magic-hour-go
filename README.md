@@ -40,6 +40,10 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 * [create](resources/v1/ai_face_editor/README.md#create) - AI Face Editor
 
+### [V1.AiGifGenerator](resources/v1/ai_gif_generator/README.md)
+
+* [create](resources/v1/ai_gif_generator/README.md#create) - AI GIFs
+
 ### [V1.AiHeadshotGenerator](resources/v1/ai_headshot_generator/README.md)
 
 * [create](resources/v1/ai_headshot_generator/README.md#create) - AI Headshots

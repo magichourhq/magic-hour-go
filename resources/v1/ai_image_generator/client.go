@@ -42,15 +42,17 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	}
 
 	// Prep body
+	reqBodyBuf := &bytes.Buffer{}
 	reqBody, err := json.Marshal(types.V1AiImageGeneratorCreateBody{
 		Name:        request.Name,
 		ImageCount:  request.ImageCount,
 		Orientation: request.Orientation,
-		Style:       request.Style})
+		Style:       request.Style,
+	})
 	if err != nil {
 		return types.V1AiImageGeneratorCreateResponse{}, err
 	}
-	reqBodyBuf := bytes.NewBuffer([]byte(reqBody))
+	reqBodyBuf = bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)

@@ -6,6 +6,7 @@ import (
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
 	ai_clothes_changer "github.com/magichourhq/magic-hour-go/resources/v1/ai_clothes_changer"
 	ai_face_editor "github.com/magichourhq/magic-hour-go/resources/v1/ai_face_editor"
+	ai_gif_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_gif_generator"
 	ai_headshot_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_headshot_generator"
 	ai_image_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_image_generator"
 	ai_image_upscaler "github.com/magichourhq/magic-hour-go/resources/v1/ai_image_upscaler"
@@ -33,6 +34,7 @@ type Client struct {
 	VideoProjects          *video_projects.Client
 	AiClothesChanger       *ai_clothes_changer.Client
 	AiFaceEditor           *ai_face_editor.Client
+	AiGifGenerator         *ai_gif_generator.Client
 	AiHeadshotGenerator    *ai_headshot_generator.Client
 	AiImageGenerator       *ai_image_generator.Client
 	AiImageUpscaler        *ai_image_upscaler.Client
@@ -61,6 +63,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 		VideoProjects:          video_projects.NewClient(coreClient),
 		AiClothesChanger:       ai_clothes_changer.NewClient(coreClient),
 		AiFaceEditor:           ai_face_editor.NewClient(coreClient),
+		AiGifGenerator:         ai_gif_generator.NewClient(coreClient),
 		AiHeadshotGenerator:    ai_headshot_generator.NewClient(coreClient),
 		AiImageGenerator:       ai_image_generator.NewClient(coreClient),
 		AiImageUpscaler:        ai_image_upscaler.NewClient(coreClient),
