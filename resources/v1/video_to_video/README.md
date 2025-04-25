@@ -34,7 +34,7 @@ func main() {
 		},
 		EndSeconds:    15.0,
 		FpsResolution: nullable.NewValue(types.V1VideoToVideoCreateBodyFpsResolutionEnumHalf),
-		Height:        960,
+		Height:        nullable.NewValue(960),
 		Name:          nullable.NewValue("Video To Video video"),
 		StartSeconds:  0.0,
 		Style: types.V1VideoToVideoCreateBodyStyle{
@@ -44,7 +44,7 @@ func main() {
 			PromptType: types.V1VideoToVideoCreateBodyStylePromptTypeEnumAppendDefault,
 			Version:    types.V1VideoToVideoCreateBodyStyleVersionEnumDefault,
 		},
-		Width: 512,
+		Width: nullable.NewValue(512),
 	})
 }
 

@@ -47,13 +47,13 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	reqBodyBuf := &bytes.Buffer{}
 	reqBody, err := json.Marshal(types.V1VideoToVideoCreateBody{
 		FpsResolution: request.FpsResolution,
+		Height:        request.Height,
 		Name:          request.Name,
+		Width:         request.Width,
 		Assets:        request.Assets,
 		EndSeconds:    request.EndSeconds,
-		Height:        request.Height,
 		StartSeconds:  request.StartSeconds,
 		Style:         request.Style,
-		Width:         request.Width,
 	})
 	if err != nil {
 		return types.V1VideoToVideoCreateResponse{}, err

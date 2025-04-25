@@ -27,7 +27,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 
 // AI GIFs
 //
-// Create an AI GIF. Each GIF costs 5 frames.
+// Create an AI GIF. Each GIF costs 25 frames.
 //
 // POST /v1/ai-gif-generator
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiGifGeneratorCreateResponse, error) {
