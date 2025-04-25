@@ -21,6 +21,22 @@ func MustOpenFile(path string) os.File {
 	return *file
 }
 
+// Creates an in-memory file with the given name and content
+func NewInMemoryFile(name string, content string) os.File {
+	tmpFile, err := os.CreateTemp("", "memory-file-*")
+	if err != nil {
+		fmt.Printf("Failed to create temp file: %v\n", err)
+	}
+	if _, err := tmpFile.WriteString(content); err != nil {
+		fmt.Printf("Failed to write to temp file: %v\n", err)
+	}
+	if _, err := tmpFile.Seek(0, 0); err != nil {
+		fmt.Printf("Failed to seek in temp file: %v\n", err)
+	}
+
+	return *tmpFile
+}
+
 // Handles adding files, fields, or arrays of each to a form data writer
 func AddToFormDataWriter(writer *multipart.Writer, field string, value interface{}) error {
 	reflectVal := reflect.ValueOf(value)
