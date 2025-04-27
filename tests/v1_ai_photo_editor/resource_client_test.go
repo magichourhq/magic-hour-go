@@ -29,6 +29,8 @@ func TestCreate200SuccessDefault(t *testing.T) {
 			Prompt:           "A photo portrait of a person wearing a hat",
 			PromptStrength:   3.75,
 			Steps:            nullable.NewValue(4),
+			UpscaleFactor:    nullable.NewValue(2),
+			UpscaleFidelity:  nullable.NewValue(0.5),
 		},
 	})
 
