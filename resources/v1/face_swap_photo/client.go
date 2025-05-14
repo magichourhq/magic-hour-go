@@ -5,7 +5,6 @@ import (
 	json "encoding/json"
 	io "io"
 	http "net/http"
-	url "net/url"
 
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
 	types "github.com/magichourhq/magic-hour-go/types"
@@ -27,16 +26,12 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 
 // Face Swap Photo
 //
-// Create a face swap photo. Each photo costs 5 frames. The height/width of the output image depends on your subscription. Please refer to our [pricing](/pricing) page for more details
+// Create a face swap photo. Each photo costs 5 credits. The height/width of the output image depends on your subscription. Please refer to our [pricing](/pricing) page for more details
 //
 // POST /v1/face-swap-photo
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1FaceSwapPhotoCreateResponse, error) {
 	// URL formatting
-	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"face-swap-photo")
-	if err != nil {
-		return types.V1FaceSwapPhotoCreateResponse{}, err
-	}
-	targetUrl, err := url.Parse(joinedUrl)
+	targetUrl, err := c.coreClient.BuildURL("/v1/" + "face-swap-photo")
 	if err != nil {
 		return types.V1FaceSwapPhotoCreateResponse{}, err
 	}

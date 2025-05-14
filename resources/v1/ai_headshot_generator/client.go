@@ -5,7 +5,6 @@ import (
 	json "encoding/json"
 	io "io"
 	http "net/http"
-	url "net/url"
 
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
 	types "github.com/magichourhq/magic-hour-go/types"
@@ -27,16 +26,12 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 
 // AI Headshots
 //
-// Create an AI headshot. Each headshot costs 50 frames.
+// Create an AI headshot. Each headshot costs 50 credits.
 //
 // POST /v1/ai-headshot-generator
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiHeadshotGeneratorCreateResponse, error) {
 	// URL formatting
-	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-headshot-generator")
-	if err != nil {
-		return types.V1AiHeadshotGeneratorCreateResponse{}, err
-	}
-	targetUrl, err := url.Parse(joinedUrl)
+	targetUrl, err := c.coreClient.BuildURL("/v1/" + "ai-headshot-generator")
 	if err != nil {
 		return types.V1AiHeadshotGeneratorCreateResponse{}, err
 	}

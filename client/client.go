@@ -12,8 +12,8 @@ type Client struct {
 
 // Instantiate a new API client
 func NewClient(builders ...func(*sdkcore.CoreClient)) *Client {
-	defaultEnv := Environment
-	coreClient := sdkcore.NewCoreClient(string(defaultEnv))
+	defaultEnv := sdkcore.DefaultBaseURL(Environment.String())
+	coreClient := sdkcore.NewCoreClient(defaultEnv)
 	for _, b := range builders {
 		b(coreClient)
 	}

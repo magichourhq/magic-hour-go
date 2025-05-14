@@ -5,7 +5,6 @@ import (
 	json "encoding/json"
 	io "io"
 	http "net/http"
-	url "net/url"
 
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
 	types "github.com/magichourhq/magic-hour-go/types"
@@ -27,16 +26,12 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 
 // AI GIFs
 //
-// Create an AI GIF. Each GIF costs 25 frames.
+// Create an AI GIF. Each GIF costs 25 credits.
 //
 // POST /v1/ai-gif-generator
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiGifGeneratorCreateResponse, error) {
 	// URL formatting
-	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-gif-generator")
-	if err != nil {
-		return types.V1AiGifGeneratorCreateResponse{}, err
-	}
-	targetUrl, err := url.Parse(joinedUrl)
+	targetUrl, err := c.coreClient.BuildURL("/v1/" + "ai-gif-generator")
 	if err != nil {
 		return types.V1AiGifGeneratorCreateResponse{}, err
 	}

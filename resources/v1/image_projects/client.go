@@ -4,7 +4,6 @@ import (
 	json "encoding/json"
 	io "io"
 	http "net/http"
-	url "net/url"
 
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
 	types "github.com/magichourhq/magic-hour-go/types"
@@ -31,11 +30,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // DELETE /v1/image-projects/{id}
 func (c *Client) Delete(request DeleteRequest, reqModifiers ...RequestModifier) error {
 	// URL formatting
-	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"image-projects/"+sdkcore.FmtStringParam(request.Id))
-	if err != nil {
-		return err
-	}
-	targetUrl, err := url.Parse(joinedUrl)
+	targetUrl, err := c.coreClient.BuildURL("/v1/" + "image-projects/" + sdkcore.FmtStringParam(request.Id))
 	if err != nil {
 		return err
 	}
@@ -88,11 +83,7 @@ func (c *Client) Delete(request DeleteRequest, reqModifiers ...RequestModifier) 
 // GET /v1/image-projects/{id}
 func (c *Client) Get(request GetRequest, reqModifiers ...RequestModifier) (types.V1ImageProjectsGetResponse, error) {
 	// URL formatting
-	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"image-projects/"+sdkcore.FmtStringParam(request.Id))
-	if err != nil {
-		return types.V1ImageProjectsGetResponse{}, err
-	}
-	targetUrl, err := url.Parse(joinedUrl)
+	targetUrl, err := c.coreClient.BuildURL("/v1/" + "image-projects/" + sdkcore.FmtStringParam(request.Id))
 	if err != nil {
 		return types.V1ImageProjectsGetResponse{}, err
 	}

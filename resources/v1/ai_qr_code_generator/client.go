@@ -5,7 +5,6 @@ import (
 	json "encoding/json"
 	io "io"
 	http "net/http"
-	url "net/url"
 
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
 	types "github.com/magichourhq/magic-hour-go/types"
@@ -27,16 +26,12 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 
 // AI QR Code
 //
-// Create an AI QR code. Each QR code costs 20 frames.
+// Create an AI QR code. Each QR code costs 20 credits.
 //
 // POST /v1/ai-qr-code-generator
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiQrCodeGeneratorCreateResponse, error) {
 	// URL formatting
-	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-qr-code-generator")
-	if err != nil {
-		return types.V1AiQrCodeGeneratorCreateResponse{}, err
-	}
-	targetUrl, err := url.Parse(joinedUrl)
+	targetUrl, err := c.coreClient.BuildURL("/v1/" + "ai-qr-code-generator")
 	if err != nil {
 		return types.V1AiQrCodeGeneratorCreateResponse{}, err
 	}

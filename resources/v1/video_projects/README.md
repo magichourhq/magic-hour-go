@@ -1,6 +1,5 @@
 
-### delete <a name="delete"></a>
-Delete video
+### Delete video <a name="delete"></a>
 
 Permanently delete the rendered video. This action is not reversible, please be sure before deleting.
 
@@ -29,8 +28,7 @@ func main() {
 
 ```
 
-### get <a name="get"></a>
-Get video details
+### Get video details <a name="get"></a>
 
 Get the details of a video project. The `downloads` field will be empty unless the video was successfully rendered.
 

@@ -5,7 +5,6 @@ import (
 	json "encoding/json"
 	io "io"
 	http "net/http"
-	url "net/url"
 
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
 	types "github.com/magichourhq/magic-hour-go/types"
@@ -29,16 +28,12 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 //
 // > **NOTE**: this API is still in early development stages, and should be avoided. Please reach out to us if you're interested in this API.
 //
-// Edit photo using AI. Each photo costs 10 frames.
+// Edit photo using AI. Each photo costs 10 credits.
 //
 // POST /v1/ai-photo-editor
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiPhotoEditorCreateResponse, error) {
 	// URL formatting
-	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-photo-editor")
-	if err != nil {
-		return types.V1AiPhotoEditorCreateResponse{}, err
-	}
-	targetUrl, err := url.Parse(joinedUrl)
+	targetUrl, err := c.coreClient.BuildURL("/v1/" + "ai-photo-editor")
 	if err != nil {
 		return types.V1AiPhotoEditorCreateResponse{}, err
 	}

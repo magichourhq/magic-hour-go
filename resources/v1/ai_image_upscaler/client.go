@@ -5,7 +5,6 @@ import (
 	json "encoding/json"
 	io "io"
 	http "net/http"
-	url "net/url"
 
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
 	types "github.com/magichourhq/magic-hour-go/types"
@@ -27,16 +26,12 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 
 // AI Image Upscaler
 //
-// Upscale your image using AI. Each 2x upscale costs 50 frames, and 4x upscale costs 200 frames.
+// Upscale your image using AI. Each 2x upscale costs 50 credits, and 4x upscale costs 200 credits.
 //
 // POST /v1/ai-image-upscaler
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiImageUpscalerCreateResponse, error) {
 	// URL formatting
-	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"ai-image-upscaler")
-	if err != nil {
-		return types.V1AiImageUpscalerCreateResponse{}, err
-	}
-	targetUrl, err := url.Parse(joinedUrl)
+	targetUrl, err := c.coreClient.BuildURL("/v1/" + "ai-image-upscaler")
 	if err != nil {
 		return types.V1AiImageUpscalerCreateResponse{}, err
 	}
