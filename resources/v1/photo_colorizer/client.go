@@ -5,7 +5,6 @@ import (
 	json "encoding/json"
 	io "io"
 	http "net/http"
-	url "net/url"
 
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
 	types "github.com/magichourhq/magic-hour-go/types"
@@ -27,16 +26,12 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 
 // Photo Colorizer
 //
-// Colorize image. Each image costs 5 frames.
+// Colorize image. Each image costs 5 credits.
 //
 // POST /v1/photo-colorizer
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1PhotoColorizerCreateResponse, error) {
 	// URL formatting
-	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"photo-colorizer")
-	if err != nil {
-		return types.V1PhotoColorizerCreateResponse{}, err
-	}
-	targetUrl, err := url.Parse(joinedUrl)
+	targetUrl, err := c.coreClient.BuildURL("/v1/" + "photo-colorizer")
 	if err != nil {
 		return types.V1PhotoColorizerCreateResponse{}, err
 	}

@@ -1,6 +1,5 @@
 
-### delete <a name="delete"></a>
-Delete image
+### Delete image <a name="delete"></a>
 
 Permanently delete the rendered image. This action is not reversible, please be sure before deleting.
 
@@ -29,8 +28,7 @@ func main() {
 
 ```
 
-### get <a name="get"></a>
-Get image details
+### Get image details <a name="get"></a>
 
 Get the details of a image project. The `downloads` field will be empty unless the image was successfully rendered.
 

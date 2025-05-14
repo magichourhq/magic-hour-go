@@ -7,6 +7,10 @@ import (
 // Success
 type V1VideoProjectsGetResponse struct {
 	CreatedAt string `json:"created_at"`
+	// The amount of credits deducted from your account to generate the video. If the status is not 'complete', this value is an estimate and may be adjusted upon completion based on the actual FPS of the output video.
+	//
+	// If video generation fails, credits will be refunded, and this field will be updated to include the refund.
+	CreditsCharged int `json:"credits_charged"`
 	// Deprecated: Please use `.downloads` instead. The download url and expiration date of the video project
 	Download  nullable.Nullable[V1VideoProjectsGetResponseDownload] `json:"download,omitempty"`
 	Downloads []V1VideoProjectsGetResponseDownloadsItem             `json:"downloads"`
@@ -28,6 +32,8 @@ type V1VideoProjectsGetResponse struct {
 	StartSeconds float64 `json:"start_seconds"`
 	// The status of the video.
 	Status V1VideoProjectsGetResponseStatusEnum `json:"status"`
+	// Deprecated: Previously represented the number of frames (original name of our credit system) used for video generation. Use 'credits_charged' instead.
+	//
 	// The amount of frames used to generate the video. If the status is not 'complete', the cost is an estimate and will be adjusted when the video completes.
 	TotalFrameCost int `json:"total_frame_cost"`
 	// The type of the video project. Possible values are ANIMATION, IMAGE_TO_VIDEO, VIDEO_TO_VIDEO, TEXT_TO_VIDEO, FACE_SWAP, LIP_SYNC, AUTO_SUBTITLE, TALKING_PHOTO

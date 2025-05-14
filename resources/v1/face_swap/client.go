@@ -5,7 +5,6 @@ import (
 	json "encoding/json"
 	io "io"
 	http "net/http"
-	url "net/url"
 
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
 	types "github.com/magichourhq/magic-hour-go/types"
@@ -34,11 +33,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // POST /v1/face-swap
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1FaceSwapCreateResponse, error) {
 	// URL formatting
-	joinedUrl, err := url.JoinPath(c.coreClient.BaseURL, "/v1/"+"face-swap")
-	if err != nil {
-		return types.V1FaceSwapCreateResponse{}, err
-	}
-	targetUrl, err := url.Parse(joinedUrl)
+	targetUrl, err := c.coreClient.BuildURL("/v1/" + "face-swap")
 	if err != nil {
 		return types.V1FaceSwapCreateResponse{}, err
 	}

@@ -2,17 +2,25 @@ package core
 
 import (
 	http "net/http"
+	url "net/url"
+	strings "strings"
 )
 
 type CoreClient struct {
-	BaseURL    string
+	BaseURL    map[string]string
 	HttpClient *http.Client
 	Auth       map[string]func(*http.Request)
 	Modifiers  []RequestModifier
 }
 type RequestModifier = func(req *http.Request) error
 
-func NewCoreClient(baseURL string) *CoreClient {
+const defaultServiceName = "__default_service__"
+
+func DefaultBaseURL(baseURL string) map[string]string {
+	return map[string]string{defaultServiceName: baseURL}
+}
+
+func NewCoreClient(baseURL map[string]string) *CoreClient {
 	client := CoreClient{
 		BaseURL:    baseURL,
 		HttpClient: http.DefaultClient,
@@ -29,6 +37,23 @@ func (c *CoreClient) AddAuth(authNames []string, request *http.Request) {
 		}
 		provider(request)
 	}
+}
+
+func (c *CoreClient) BuildURL(path string, serviceName ...string) (*url.URL, error) {
+	// Use the provided serviceName or the default one
+	name := defaultServiceName
+	if len(serviceName) > 0 && serviceName[0] != "" {
+		name = serviceName[0]
+	}
+
+	base, _ := c.BaseURL[name]
+
+	// Trim trailing slash from base URL
+	base = strings.TrimRight(base, "/")
+	// Trim leading slash from path
+	path = strings.TrimLeft(path, "/")
+
+	return url.Parse(base + "/" + path)
 }
 
 func (c *CoreClient) ApplyModifiers(req *http.Request, modifiers []RequestModifier) error {
