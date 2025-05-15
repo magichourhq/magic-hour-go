@@ -40,6 +40,7 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	reqBodyBuf := &bytes.Buffer{}
 	reqBody, err := json.Marshal(types.V1AiTalkingPhotoCreateBody{
 		Name:         request.Name,
+		Style:        request.Style,
 		Assets:       request.Assets,
 		EndSeconds:   request.EndSeconds,
 		StartSeconds: request.StartSeconds,
