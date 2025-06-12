@@ -32,3 +32,10 @@ func main() {
 }
 
 ```
+
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `assets` | ✓ | Provide the assets for background removal | `V1ImageBackgroundRemoverCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
+| `name` | ✗ | The name of image | `"Background Remover image"` |

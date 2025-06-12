@@ -45,3 +45,13 @@ func main() {
 }
 
 ```
+
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `assets` | ✓ | Provide the assets for photo editor | `V1AiPhotoEditorCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
+| `resolution` | ✓ | The resolution of the final output image. The allowed value is based on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details | `768` |
+| `style` | ✓ |  | `V1AiPhotoEditorCreateBodyStyle {ImageDescription: "A photo of a person",LikenessStrength: 5.2,NegativePrompt: nullable.NewValue("painting, cartoon, sketch"),Prompt: "A photo portrait of a person wearing a hat",PromptStrength: 3.75,Steps: nullable.NewValue(4),UpscaleFactor: nullable.NewValue(2),UpscaleFidelity: nullable.NewValue(0.5),}` |
+| `name` | ✗ | The name of image | `"Photo Editor image"` |
+| `steps` | ✗ | Deprecated: Please use `.style.steps` instead. Number of iterations used to generate the output. Higher values improve quality and increase the strength of the prompt but increase processing time. | `123` |

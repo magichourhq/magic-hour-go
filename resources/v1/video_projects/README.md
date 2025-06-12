@@ -28,6 +28,12 @@ func main() {
 
 ```
 
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `id` | ✓ | The id of the video project | `"cm6pvghix03bvyz0zwash6noj"` |
+
 ### Get video details <a name="get"></a>
 
 Get the details of a video project. The `downloads` field will be empty unless the video was successfully rendered.
@@ -65,3 +71,9 @@ func main() {
 }
 
 ```
+
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `id` | ✓ | The id of the video | `"cm6pvghix03bvyz0zwash6noj"` |

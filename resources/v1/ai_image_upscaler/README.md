@@ -36,3 +36,12 @@ func main() {
 }
 
 ```
+
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `assets` | ✓ | Provide the assets for upscaling | `V1AiImageUpscalerCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
+| `scale_factor` | ✓ | How much to scale the image. Must be either 2 or 4 | `2.0` |
+| `style` | ✓ |  | `V1AiImageUpscalerCreateBodyStyle {Enhancement: V1AiImageUpscalerCreateBodyStyleEnhancementEnumBalanced,}` |
+| `name` | ✗ | The name of image | `"Image Upscaler image"` |

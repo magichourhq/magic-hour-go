@@ -32,3 +32,11 @@ func main() {
 }
 
 ```
+
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `assets` | ✓ | Provide the assets for headshot photo | `V1AiHeadshotGeneratorCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
+| `name` | ✗ | The name of image | `"Ai Headshot image"` |
+| `style` | ✗ |  | `V1AiHeadshotGeneratorCreateBodyStyle {Prompt: nullable.NewValue("professional passport photo, business attire, smiling, good posture, light blue background, centered, plain background"),}` |

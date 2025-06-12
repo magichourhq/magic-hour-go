@@ -33,3 +33,10 @@ func main() {
 }
 
 ```
+
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `assets` | ✓ | Provide the assets for face swap photo | `V1FaceSwapPhotoCreateBodyAssets {SourceFilePath: "api-assets/id/1234.png",TargetFilePath: "api-assets/id/1234.png",}` |
+| `name` | ✗ | The name of image | `"Face Swap image"` |
