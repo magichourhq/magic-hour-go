@@ -22,6 +22,7 @@ func TestCreate200SuccessDefault(t *testing.T) {
 		Orientation: types.V1AiImageGeneratorCreateBodyOrientationEnumLandscape,
 		Style: types.V1AiImageGeneratorCreateBodyStyle{
 			Prompt: "Cool image",
+			Tool:   nullable.NewValue(types.V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator),
 		},
 	})
 

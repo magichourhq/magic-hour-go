@@ -29,8 +29,18 @@ func main() {
 		Orientation: types.V1AiImageGeneratorCreateBodyOrientationEnumLandscape,
 		Style: types.V1AiImageGeneratorCreateBodyStyle{
 			Prompt: "Cool image",
+			Tool:   nullable.NewValue(types.V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator),
 		},
 	})
 }
 
 ```
+
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `image_count` | ✓ | number to images to generate | `1` |
+| `orientation` | ✓ |  | `V1AiImageGeneratorCreateBodyOrientationEnumLandscape` |
+| `style` | ✓ |  | `V1AiImageGeneratorCreateBodyStyle {Prompt: "Cool image",Tool: nullable.NewValue(V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator),}` |
+| `name` | ✗ | The name of image | `"Ai Image image"` |

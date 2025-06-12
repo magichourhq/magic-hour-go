@@ -34,3 +34,10 @@ func main() {
 }
 
 ```
+
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `assets` | ✓ | Provide the assets for clothes changer | `V1AiClothesChangerCreateBodyAssets {GarmentFilePath: "api-assets/id/outfit.png",GarmentType: V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumDresses,PersonFilePath: "api-assets/id/model.png",}` |
+| `name` | ✗ | The name of image | `"Clothes Changer image"` |

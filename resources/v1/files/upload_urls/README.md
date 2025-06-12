@@ -56,3 +56,9 @@ func main() {
 }
 
 ```
+
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `items` | ✓ |  | `[]V1FilesUploadUrlsCreateBodyItemsItem{V1FilesUploadUrlsCreateBodyItemsItem {Extension: "mp4",Type: V1FilesUploadUrlsCreateBodyItemsItemTypeEnumVideo,},V1FilesUploadUrlsCreateBodyItemsItem {Extension: "mp3",Type: V1FilesUploadUrlsCreateBodyItemsItemTypeEnumAudio,},}` |

@@ -33,3 +33,11 @@ func main() {
 }
 
 ```
+
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `content` | ✓ | The content of the QR code. | `"https://magichour.ai"` |
+| `style` | ✓ |  | `V1AiQrCodeGeneratorCreateBodyStyle {ArtStyle: "Watercolor",}` |
+| `name` | ✗ | The name of image | `"Qr Code image"` |

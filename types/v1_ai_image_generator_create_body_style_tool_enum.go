@@ -1,0 +1,42 @@
+package types
+
+// The art style to use for image generation. Defaults to 'general' if not provided.
+type V1AiImageGeneratorCreateBodyStyleToolEnum string
+
+const (
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator            V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-anime-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiArtGenerator              V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-art-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiBackgroundGenerator       V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-background-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiCharacterGenerator        V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-character-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiFaceGenerator             V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-face-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiFashionGenerator          V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-fashion-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiIconGenerator             V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-icon-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiIllustrationGenerator     V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-illustration-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiInteriorDesignGenerator   V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-interior-design-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiLandscapeGenerator        V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-landscape-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiLogoGenerator             V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-logo-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiMangaGenerator            V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-manga-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiOutfitGenerator           V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-outfit-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiPatternGenerator          V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-pattern-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiPhotoGenerator            V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-photo-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiSketchGenerator           V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-sketch-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAiTattooGenerator           V1AiImageGeneratorCreateBodyStyleToolEnum = "ai-tattoo-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAlbumCoverGenerator         V1AiImageGeneratorCreateBodyStyleToolEnum = "album-cover-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumAnimatedCharactersGenerator V1AiImageGeneratorCreateBodyStyleToolEnum = "animated-characters-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumArchitectureGenerator       V1AiImageGeneratorCreateBodyStyleToolEnum = "architecture-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumBookCoverGenerator          V1AiImageGeneratorCreateBodyStyleToolEnum = "book-cover-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumComicBookGenerator          V1AiImageGeneratorCreateBodyStyleToolEnum = "comic-book-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumDarkFantasyAi               V1AiImageGeneratorCreateBodyStyleToolEnum = "dark-fantasy-ai"
+	V1AiImageGeneratorCreateBodyStyleToolEnumDisneyAiGenerator           V1AiImageGeneratorCreateBodyStyleToolEnum = "disney-ai-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumDndAiArtGenerator           V1AiImageGeneratorCreateBodyStyleToolEnum = "dnd-ai-art-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumEmojiGenerator              V1AiImageGeneratorCreateBodyStyleToolEnum = "emoji-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumFantasyMapGenerator         V1AiImageGeneratorCreateBodyStyleToolEnum = "fantasy-map-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumGeneral                     V1AiImageGeneratorCreateBodyStyleToolEnum = "general"
+	V1AiImageGeneratorCreateBodyStyleToolEnumGraffitiGenerator           V1AiImageGeneratorCreateBodyStyleToolEnum = "graffiti-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumMoviePosterGenerator        V1AiImageGeneratorCreateBodyStyleToolEnum = "movie-poster-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumOpticalIllusionGenerator    V1AiImageGeneratorCreateBodyStyleToolEnum = "optical-illusion-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumPokemonGenerator            V1AiImageGeneratorCreateBodyStyleToolEnum = "pokemon-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumSouthParkCharacterGenerator V1AiImageGeneratorCreateBodyStyleToolEnum = "south-park-character-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumSuperheroGenerator          V1AiImageGeneratorCreateBodyStyleToolEnum = "superhero-generator"
+	V1AiImageGeneratorCreateBodyStyleToolEnumThumbnailMaker              V1AiImageGeneratorCreateBodyStyleToolEnum = "thumbnail-maker"
+)

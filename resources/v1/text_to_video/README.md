@@ -37,3 +37,12 @@ func main() {
 }
 
 ```
+
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `end_seconds` | ✓ | The total duration of the output video in seconds. | `5.0` |
+| `orientation` | ✓ | Determines the orientation of the output video | `V1TextToVideoCreateBodyOrientationEnumLandscape` |
+| `style` | ✓ |  | `V1TextToVideoCreateBodyStyle {Prompt: "a dog running",}` |
+| `name` | ✗ | The name of video | `"Text To Video video"` |

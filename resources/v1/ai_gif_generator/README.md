@@ -32,3 +32,10 @@ func main() {
 }
 
 ```
+
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `style` | ✓ |  | `V1AiGifGeneratorCreateBodyStyle {Prompt: "Cute dancing cat, pixel art",}` |
+| `name` | ✗ | The name of gif | `"Ai Gif gif"` |

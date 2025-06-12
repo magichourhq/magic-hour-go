@@ -45,3 +45,15 @@ func main() {
 }
 
 ```
+
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `assets` | ✓ | Provide the assets for animation. | `V1AnimationCreateBodyAssets {AudioFilePath: nullable.NewValue("api-assets/id/1234.mp3"),AudioSource: V1AnimationCreateBodyAssetsAudioSourceEnumFile,ImageFilePath: nullable.NewValue("api-assets/id/1234.png"),}` |
+| `end_seconds` | ✓ | The end time of the input video in seconds | `15.0` |
+| `fps` | ✓ | The desire output video frame rate | `12.0` |
+| `height` | ✓ | The height of the final output video. The maximum height depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details | `960` |
+| `style` | ✓ | Defines the style of the output video | `V1AnimationCreateBodyStyle {ArtStyle: V1AnimationCreateBodyStyleArtStyleEnumPainterlyIllustration,CameraEffect: V1AnimationCreateBodyStyleCameraEffectEnumAccelerate,Prompt: nullable.NewValue("Cyberpunk city"),PromptType: V1AnimationCreateBodyStylePromptTypeEnumAiChoose,TransitionSpeed: 5,}` |
+| `width` | ✓ | The width of the final output video. The maximum width depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details | `512` |
+| `name` | ✗ | The name of video | `"Animation video"` |

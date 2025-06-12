@@ -41,3 +41,14 @@ func main() {
 }
 
 ```
+
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `assets` | ✓ | Provide the assets for image-to-video. | `V1ImageToVideoCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
+| `end_seconds` | ✓ | The total duration of the output video in seconds. | `5.0` |
+| `style` | ✓ | Attributed used to dictate the style of the output | `V1ImageToVideoCreateBodyStyle {Prompt: nullable.NewValue("a dog running"),}` |
+| `height` | ✗ | This field does not affect the output video's resolution. The video's orientation will match that of the input image.  It is retained solely for backward compatibility and will be deprecated in the future. | `960` |
+| `name` | ✗ | The name of video | `"Image To Video video"` |
+| `width` | ✗ | This field does not affect the output video's resolution. The video's orientation will match that of the input image.  It is retained solely for backward compatibility and will be deprecated in the future. | `512` |
