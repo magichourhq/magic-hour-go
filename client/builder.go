@@ -38,8 +38,6 @@ func WithHTTPClient(httpClient *http.Client) func(*sdkcore.CoreClient) {
 
 func WithBearerAuth(token string) func(*sdkcore.CoreClient) {
 	return func(c *sdkcore.CoreClient) {
-		c.Auth["bearerAuth"] = func(request *http.Request) {
-			request.Header.Add("Authorization", "Bearer "+token)
-		}
+		c.Auth["bearerAuth"] = sdkcore.NewAuthBearer(token)
 	}
 }

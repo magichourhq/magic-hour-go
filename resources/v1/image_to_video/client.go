@@ -64,7 +64,10 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	req.Header.Add("Content-Type", "application/json")
 
 	// Add auth
-	c.coreClient.AddAuth([]string{"bearerAuth"}, req)
+	err = c.coreClient.AddAuth(req, "bearerAuth")
+	if err != nil {
+		return types.V1ImageToVideoCreateResponse{}, err
+	}
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {

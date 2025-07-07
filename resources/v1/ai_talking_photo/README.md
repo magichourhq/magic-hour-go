@@ -5,6 +5,16 @@ Create a talking photo from an image and audio or text input.
 
 **API Endpoint**: `POST /v1/ai-talking-photo`
 
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `assets` | ✓ | Provide the assets for creating a talking photo | `V1AiTalkingPhotoCreateBodyAssets {AudioFilePath: "api-assets/id/1234.mp3",ImageFilePath: "api-assets/id/1234.png",}` |
+| `end_seconds` | ✓ | The end time of the input audio in seconds. The maximum duration allowed is 30 seconds. | `15.0` |
+| `start_seconds` | ✓ | The start time of the input audio in seconds. The maximum duration allowed is 30 seconds. | `0.0` |
+| `name` | ✗ | The name of image | `"Talking Photo image"` |
+| `style` | ✗ | Attributes used to dictate the style of the output | `V1AiTalkingPhotoCreateBodyStyle {GenerationMode: nullable.NewValue(V1AiTalkingPhotoCreateBodyStyleGenerationModeEnumExpressive),Intensity: nullable.NewValue(1.5),}` |
+
 #### Example Snippet
 
 ```go
@@ -36,12 +46,14 @@ func main() {
 
 ```
 
-#### Parameters
+#### Response
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `assets` | ✓ | Provide the assets for creating a talking photo | `V1AiTalkingPhotoCreateBodyAssets {AudioFilePath: "api-assets/id/1234.mp3",ImageFilePath: "api-assets/id/1234.png",}` |
-| `end_seconds` | ✓ | The end time of the input audio in seconds. The maximum duration allowed is 30 seconds. | `15.0` |
-| `start_seconds` | ✓ | The start time of the input audio in seconds. The maximum duration allowed is 30 seconds. | `0.0` |
-| `name` | ✗ | The name of image | `"Talking Photo image"` |
-| `style` | ✗ | Attributes used to dictate the style of the output | `V1AiTalkingPhotoCreateBodyStyle {GenerationMode: nullable.NewValue(V1AiTalkingPhotoCreateBodyStyleGenerationModeEnumExpressive),Intensity: nullable.NewValue(1.5),}` |
+##### Type
+[V1AiTalkingPhotoCreateResponse](/types/v1_ai_talking_photo_create_response.go)
+
+##### Example
+`V1AiTalkingPhotoCreateResponse {
+CreditsCharged: 450,
+EstimatedFrameCost: 450,
+Id: "clx7uu86w0a5qp55yxz315r6r",
+}`

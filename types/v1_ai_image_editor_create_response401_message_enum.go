@@ -1,0 +1,8 @@
+package types
+
+// V1AiImageEditorCreateResponse401MessageEnum
+type V1AiImageEditorCreateResponse401MessageEnum string
+
+const (
+	V1AiImageEditorCreateResponse401MessageEnumUnauthorized V1AiImageEditorCreateResponse401MessageEnum = "Unauthorized"
+)

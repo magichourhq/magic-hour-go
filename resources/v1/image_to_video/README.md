@@ -8,6 +8,17 @@ Get more information about this mode at our [product page](/products/image-to-vi
 
 **API Endpoint**: `POST /v1/image-to-video`
 
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `assets` | ✓ | Provide the assets for image-to-video. | `V1ImageToVideoCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
+| `end_seconds` | ✓ | The total duration of the output video in seconds. | `5.0` |
+| `style` | ✓ | Attributed used to dictate the style of the output | `V1ImageToVideoCreateBodyStyle {Prompt: nullable.NewValue("a dog running"),}` |
+| `height` | ✗ | This field does not affect the output video's resolution. The video's orientation will match that of the input image.  It is retained solely for backward compatibility and will be deprecated in the future. | `960` |
+| `name` | ✗ | The name of video | `"Image To Video video"` |
+| `width` | ✗ | This field does not affect the output video's resolution. The video's orientation will match that of the input image.  It is retained solely for backward compatibility and will be deprecated in the future. | `512` |
+
 #### Example Snippet
 
 ```go
@@ -42,13 +53,14 @@ func main() {
 
 ```
 
-#### Parameters
+#### Response
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `assets` | ✓ | Provide the assets for image-to-video. | `V1ImageToVideoCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
-| `end_seconds` | ✓ | The total duration of the output video in seconds. | `5.0` |
-| `style` | ✓ | Attributed used to dictate the style of the output | `V1ImageToVideoCreateBodyStyle {Prompt: nullable.NewValue("a dog running"),}` |
-| `height` | ✗ | This field does not affect the output video's resolution. The video's orientation will match that of the input image.  It is retained solely for backward compatibility and will be deprecated in the future. | `960` |
-| `name` | ✗ | The name of video | `"Image To Video video"` |
-| `width` | ✗ | This field does not affect the output video's resolution. The video's orientation will match that of the input image.  It is retained solely for backward compatibility and will be deprecated in the future. | `512` |
+##### Type
+[V1ImageToVideoCreateResponse](/types/v1_image_to_video_create_response.go)
+
+##### Example
+`V1ImageToVideoCreateResponse {
+CreditsCharged: 450,
+EstimatedFrameCost: 450,
+Id: "clx7uu86w0a5qp55yxz315r6r",
+}`

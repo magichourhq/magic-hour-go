@@ -5,6 +5,13 @@ Create an AI generated meme. Each meme costs 10 credits.
 
 **API Endpoint**: `POST /v1/ai-meme-generator`
 
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `style` | ✓ |  | `V1AiMemeGeneratorCreateBodyStyle {SearchWeb: nullable.NewValue(false),Template: V1AiMemeGeneratorCreateBodyStyleTemplateEnumDrakeHotlineBling,Topic: "When the code finally works",}` |
+| `name` | ✗ | The name of the meme. | `"My Funny Meme"` |
+
 #### Example Snippet
 
 ```go
@@ -35,9 +42,14 @@ func main() {
 
 ```
 
-#### Parameters
+#### Response
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `style` | ✓ |  | `V1AiMemeGeneratorCreateBodyStyle {SearchWeb: nullable.NewValue(false),Template: V1AiMemeGeneratorCreateBodyStyleTemplateEnumDrakeHotlineBling,Topic: "When the code finally works",}` |
-| `name` | ✗ | The name of the meme. | `"My Funny Meme"` |
+##### Type
+[V1AiMemeGeneratorCreateResponse](/types/v1_ai_meme_generator_create_response.go)
+
+##### Example
+`V1AiMemeGeneratorCreateResponse {
+CreditsCharged: 10,
+FrameCost: 10,
+Id: "clx7uu86w0a5qp55yxz315r6r",
+}`

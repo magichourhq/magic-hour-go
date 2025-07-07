@@ -5,6 +5,15 @@ Create an AI image. Each image costs 5 credits.
 
 **API Endpoint**: `POST /v1/ai-image-generator`
 
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `image_count` | ✓ | number to images to generate | `1` |
+| `orientation` | ✓ |  | `V1AiImageGeneratorCreateBodyOrientationEnumLandscape` |
+| `style` | ✓ |  | `V1AiImageGeneratorCreateBodyStyle {Prompt: "Cool image",Tool: nullable.NewValue(V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator),}` |
+| `name` | ✗ | The name of image | `"Ai Image image"` |
+
 #### Example Snippet
 
 ```go
@@ -36,11 +45,14 @@ func main() {
 
 ```
 
-#### Parameters
+#### Response
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `image_count` | ✓ | number to images to generate | `1` |
-| `orientation` | ✓ |  | `V1AiImageGeneratorCreateBodyOrientationEnumLandscape` |
-| `style` | ✓ |  | `V1AiImageGeneratorCreateBodyStyle {Prompt: "Cool image",Tool: nullable.NewValue(V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator),}` |
-| `name` | ✗ | The name of image | `"Ai Image image"` |
+##### Type
+[V1AiImageGeneratorCreateResponse](/types/v1_ai_image_generator_create_response.go)
+
+##### Example
+`V1AiImageGeneratorCreateResponse {
+CreditsCharged: 5,
+FrameCost: 5,
+Id: "clx7uu86w0a5qp55yxz315r6r",
+}`

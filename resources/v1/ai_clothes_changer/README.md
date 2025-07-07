@@ -5,6 +5,13 @@ Change outfits in photos in seconds with just a photo reference. Each photo cost
 
 **API Endpoint**: `POST /v1/ai-clothes-changer`
 
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `assets` | ✓ | Provide the assets for clothes changer | `V1AiClothesChangerCreateBodyAssets {GarmentFilePath: "api-assets/id/outfit.png",GarmentType: V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumDresses,PersonFilePath: "api-assets/id/model.png",}` |
+| `name` | ✗ | The name of image | `"Clothes Changer image"` |
+
 #### Example Snippet
 
 ```go
@@ -35,9 +42,14 @@ func main() {
 
 ```
 
-#### Parameters
+#### Response
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `assets` | ✓ | Provide the assets for clothes changer | `V1AiClothesChangerCreateBodyAssets {GarmentFilePath: "api-assets/id/outfit.png",GarmentType: V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumDresses,PersonFilePath: "api-assets/id/model.png",}` |
-| `name` | ✗ | The name of image | `"Clothes Changer image"` |
+##### Type
+[V1AiClothesChangerCreateResponse](/types/v1_ai_clothes_changer_create_response.go)
+
+##### Example
+`V1AiClothesChangerCreateResponse {
+CreditsCharged: 25,
+FrameCost: 25,
+Id: "clx7uu86w0a5qp55yxz315r6r",
+}`
