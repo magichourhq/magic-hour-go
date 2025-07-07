@@ -9,8 +9,8 @@ import (
 	types "github.com/magichourhq/magic-hour-go/types"
 )
 
-func TestCreate200SuccessDefault(t *testing.T) {
-	// Success test for Default body
+func TestCreate200SuccessAllParams(t *testing.T) {
+	// Success test using all required and optional
 	client := sdk.NewClient(
 		sdk.WithBearerAuth("API_TOKEN"),
 		sdk.WithEnv(sdk.MockServer),
@@ -29,7 +29,7 @@ func TestCreate200SuccessDefault(t *testing.T) {
 	})
 
 	if err != nil {
-		t.Fatalf("TestCreate200SuccessDefault - failed making request with error: %#v", err)
+		t.Fatalf("TestCreate200SuccessAllParams - failed making request with error: %#v", err)
 	}
 
 	fmt.Printf("response - %#v\n", res)

@@ -36,15 +36,14 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 //
 // Note: `.gif` is supported for face swap API `video_file_path` field.
 //
-// After receiving the upload url, you can upload the file by sending a PUT request with the header `'Content-Type: application/octet-stream'`.
+// After receiving the upload url, you can upload the file by sending a PUT request.
 //
 // # For example using curl
 //
 // ```
 //
-//	curl -X PUT -H 'Content-Type: application/octet-stream' \
-//	  --data '@/path/to/file/video.mp4' \
-//	  https://videos.magichour.ai/api-assets/id/video.mp4?auth-value=1234567890
+//	curl -X PUT --data '@/path/to/file/video.mp4' \
+//	  https://videos.magichour.ai/api-assets/id/video.mp4?<auth params from the API response>
 //
 // ```
 //
@@ -77,7 +76,10 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	req.Header.Add("Content-Type", "application/json")
 
 	// Add auth
-	c.coreClient.AddAuth([]string{"bearerAuth"}, req)
+	err = c.coreClient.AddAuth(req, "bearerAuth")
+	if err != nil {
+		return types.V1FilesUploadUrlsCreateResponse{}, err
+	}
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {

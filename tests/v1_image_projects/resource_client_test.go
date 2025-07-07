@@ -8,8 +8,8 @@ import (
 	image_projects "github.com/magichourhq/magic-hour-go/resources/v1/image_projects"
 )
 
-func TestDelete204GeneratedSuccess(t *testing.T) {
-	// Success case test
+func TestDelete204SuccessAllParams(t *testing.T) {
+	// Success test using all required and optional
 	client := sdk.NewClient(
 		sdk.WithBearerAuth("API_TOKEN"),
 		sdk.WithEnv(sdk.MockServer),
@@ -19,13 +19,13 @@ func TestDelete204GeneratedSuccess(t *testing.T) {
 	})
 
 	if err != nil {
-		t.Fatalf("TestDelete204GeneratedSuccess - failed making request with error: %#v", err)
+		t.Fatalf("TestDelete204SuccessAllParams - failed making request with error: %#v", err)
 	}
 
 }
 
-func TestGet200GeneratedSuccess(t *testing.T) {
-	// Success case test
+func TestGet200SuccessAllParams(t *testing.T) {
+	// Success test using all required and optional
 	client := sdk.NewClient(
 		sdk.WithBearerAuth("API_TOKEN"),
 		sdk.WithEnv(sdk.MockServer),
@@ -35,7 +35,7 @@ func TestGet200GeneratedSuccess(t *testing.T) {
 	})
 
 	if err != nil {
-		t.Fatalf("TestGet200GeneratedSuccess - failed making request with error: %#v", err)
+		t.Fatalf("TestGet200SuccessAllParams - failed making request with error: %#v", err)
 	}
 
 	fmt.Printf("response - %#v\n", res)

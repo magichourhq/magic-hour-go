@@ -5,6 +5,13 @@ Create an AI GIF. Each GIF costs 25 credits.
 
 **API Endpoint**: `POST /v1/ai-gif-generator`
 
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `style` | ✓ |  | `V1AiGifGeneratorCreateBodyStyle {Prompt: "Cute dancing cat, pixel art",}` |
+| `name` | ✗ | The name of gif | `"Ai Gif gif"` |
+
 #### Example Snippet
 
 ```go
@@ -33,9 +40,14 @@ func main() {
 
 ```
 
-#### Parameters
+#### Response
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `style` | ✓ |  | `V1AiGifGeneratorCreateBodyStyle {Prompt: "Cute dancing cat, pixel art",}` |
-| `name` | ✗ | The name of gif | `"Ai Gif gif"` |
+##### Type
+[V1AiGifGeneratorCreateResponse](/types/v1_ai_gif_generator_create_response.go)
+
+##### Example
+`V1AiGifGeneratorCreateResponse {
+CreditsCharged: 25,
+FrameCost: 25,
+Id: "clx7uu86w0a5qp55yxz315r6r",
+}`

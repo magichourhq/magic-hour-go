@@ -45,7 +45,10 @@ func (c *Client) Delete(request DeleteRequest, reqModifiers ...RequestModifier) 
 	req.Header.Add("x-sideko-sdk-language", "Go")
 
 	// Add auth
-	c.coreClient.AddAuth([]string{"bearerAuth"}, req)
+	err = c.coreClient.AddAuth(req, "bearerAuth")
+	if err != nil {
+		return err
+	}
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
@@ -98,7 +101,10 @@ func (c *Client) Get(request GetRequest, reqModifiers ...RequestModifier) (types
 	req.Header.Add("x-sideko-sdk-language", "Go")
 
 	// Add auth
-	c.coreClient.AddAuth([]string{"bearerAuth"}, req)
+	err = c.coreClient.AddAuth(req, "bearerAuth")
+	if err != nil {
+		return types.V1VideoProjectsGetResponse{}, err
+	}
 
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {

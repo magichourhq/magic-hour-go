@@ -5,6 +5,13 @@ Colorize image. Each image costs 5 credits.
 
 **API Endpoint**: `POST /v1/photo-colorizer`
 
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `assets` | ✓ | Provide the assets for photo colorization | `V1PhotoColorizerCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
+| `name` | ✗ | The name of image | `"Photo Colorizer image"` |
+
 #### Example Snippet
 
 ```go
@@ -33,9 +40,14 @@ func main() {
 
 ```
 
-#### Parameters
+#### Response
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `assets` | ✓ | Provide the assets for photo colorization | `V1PhotoColorizerCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
-| `name` | ✗ | The name of image | `"Photo Colorizer image"` |
+##### Type
+[V1PhotoColorizerCreateResponse](/types/v1_photo_colorizer_create_response.go)
+
+##### Example
+`V1PhotoColorizerCreateResponse {
+CreditsCharged: 5,
+FrameCost: 5,
+Id: "clx7uu86w0a5qp55yxz315r6r",
+}`

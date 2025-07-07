@@ -5,6 +5,15 @@ Upscale your image using AI. Each 2x upscale costs 50 credits, and 4x upscale co
 
 **API Endpoint**: `POST /v1/ai-image-upscaler`
 
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `assets` | ✓ | Provide the assets for upscaling | `V1AiImageUpscalerCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
+| `scale_factor` | ✓ | How much to scale the image. Must be either 2 or 4 | `2.0` |
+| `style` | ✓ |  | `V1AiImageUpscalerCreateBodyStyle {Enhancement: V1AiImageUpscalerCreateBodyStyleEnhancementEnumBalanced,}` |
+| `name` | ✗ | The name of image | `"Image Upscaler image"` |
+
 #### Example Snippet
 
 ```go
@@ -37,11 +46,14 @@ func main() {
 
 ```
 
-#### Parameters
+#### Response
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `assets` | ✓ | Provide the assets for upscaling | `V1AiImageUpscalerCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
-| `scale_factor` | ✓ | How much to scale the image. Must be either 2 or 4 | `2.0` |
-| `style` | ✓ |  | `V1AiImageUpscalerCreateBodyStyle {Enhancement: V1AiImageUpscalerCreateBodyStyleEnhancementEnumBalanced,}` |
-| `name` | ✗ | The name of image | `"Image Upscaler image"` |
+##### Type
+[V1AiImageUpscalerCreateResponse](/types/v1_ai_image_upscaler_create_response.go)
+
+##### Example
+`V1AiImageUpscalerCreateResponse {
+CreditsCharged: 50,
+FrameCost: 50,
+Id: "clx7uu86w0a5qp55yxz315r6r",
+}`

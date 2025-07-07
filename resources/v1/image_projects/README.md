@@ -5,6 +5,12 @@ Permanently delete the rendered image. This action is not reversible, please be 
 
 **API Endpoint**: `DELETE /v1/image-projects/{id}`
 
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `id` | ✓ | The id of the image project | `"cm6pvghix03bvyz0zwash6noj"` |
+
 #### Example Snippet
 
 ```go
@@ -28,12 +34,6 @@ func main() {
 
 ```
 
-#### Parameters
-
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `id` | ✓ | The id of the image project | `"cm6pvghix03bvyz0zwash6noj"` |
-
 ### Get image details <a name="get"></a>
 
 Get the details of a image project. The `downloads` field will be empty unless the image was successfully rendered.
@@ -48,6 +48,12 @@ The image can be one of the following status
 
 
 **API Endpoint**: `GET /v1/image-projects/{id}`
+
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `id` | ✓ | The id of the image project | `"cm6pvghix03bvyz0zwash6noj"` |
 
 #### Example Snippet
 
@@ -72,8 +78,30 @@ func main() {
 
 ```
 
-#### Parameters
+#### Response
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `id` | ✓ | The id of the image project | `"cm6pvghix03bvyz0zwash6noj"` |
+##### Type
+[V1ImageProjectsGetResponse](/types/v1_image_projects_get_response.go)
+
+##### Example
+`V1ImageProjectsGetResponse {
+CreatedAt: "1970-01-01T00:00:00",
+CreditsCharged: 5,
+Downloads: []V1ImageProjectsGetResponseDownloadsItem{
+V1ImageProjectsGetResponseDownloadsItem {
+ExpiresAt: "2024-10-19T05:16:19.027Z",
+Url: "https://videos.magichour.ai/id/output.png",
+},
+},
+Enabled: true,
+Error: nullable.NewValue(V1ImageProjectsGetResponseError {
+Code: "no_source_face",
+Message: "Please use an image with a detectable face",
+}),
+Id: "clx7uu86w0a5qp55yxz315r6r",
+ImageCount: 1,
+Name: nullable.NewValue("Example Name"),
+Status: V1ImageProjectsGetResponseStatusEnumComplete,
+TotalFrameCost: 5,
+Type: "AI_IMAGE",
+}`

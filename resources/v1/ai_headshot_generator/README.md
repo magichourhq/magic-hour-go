@@ -5,6 +5,14 @@ Create an AI headshot. Each headshot costs 50 credits.
 
 **API Endpoint**: `POST /v1/ai-headshot-generator`
 
+#### Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|:--------:|-------------|--------|
+| `assets` | ✓ | Provide the assets for headshot photo | `V1AiHeadshotGeneratorCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
+| `name` | ✗ | The name of image | `"Ai Headshot image"` |
+| `style` | ✗ |  | `V1AiHeadshotGeneratorCreateBodyStyle {Prompt: nullable.NewValue("professional passport photo, business attire, smiling, good posture, light blue background, centered, plain background"),}` |
+
 #### Example Snippet
 
 ```go
@@ -33,10 +41,14 @@ func main() {
 
 ```
 
-#### Parameters
+#### Response
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `assets` | ✓ | Provide the assets for headshot photo | `V1AiHeadshotGeneratorCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
-| `name` | ✗ | The name of image | `"Ai Headshot image"` |
-| `style` | ✗ |  | `V1AiHeadshotGeneratorCreateBodyStyle {Prompt: nullable.NewValue("professional passport photo, business attire, smiling, good posture, light blue background, centered, plain background"),}` |
+##### Type
+[V1AiHeadshotGeneratorCreateResponse](/types/v1_ai_headshot_generator_create_response.go)
+
+##### Example
+`V1AiHeadshotGeneratorCreateResponse {
+CreditsCharged: 50,
+FrameCost: 50,
+Id: "clx7uu86w0a5qp55yxz315r6r",
+}`
