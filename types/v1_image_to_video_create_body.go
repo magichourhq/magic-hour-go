@@ -24,7 +24,7 @@ type V1ImageToVideoCreateBody struct {
 	// - `1080p` - Supports videos between 5-60 seconds. Output: 30fps. Cost: 600 credits per 5 seconds. **Requires** `pro` or `business` tier.
 	Resolution nullable.Nullable[V1ImageToVideoCreateBodyResolutionEnum] `json:"resolution,omitempty"`
 	// Attributed used to dictate the style of the output
-	Style V1ImageToVideoCreateBodyStyle `json:"style"`
+	Style nullable.Nullable[V1ImageToVideoCreateBodyStyle] `json:"style,omitempty"`
 	// This field does not affect the output video's resolution. The video's orientation will match that of the input image.
 	//
 	// It is retained solely for backward compatibility and will be deprecated in the future.
