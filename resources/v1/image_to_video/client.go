@@ -44,10 +44,10 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 		Height:     request.Height,
 		Name:       request.Name,
 		Resolution: request.Resolution,
+		Style:      request.Style,
 		Width:      request.Width,
 		Assets:     request.Assets,
 		EndSeconds: request.EndSeconds,
-		Style:      request.Style,
 	})
 	if err != nil {
 		return types.V1ImageToVideoCreateResponse{}, err
