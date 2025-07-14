@@ -23,6 +23,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		EndSeconds: 5.0,
 		Height:     nullable.NewValue(960),
 		Name:       nullable.NewValue("Image To Video video"),
+		Resolution: nullable.NewValue(types.V1ImageToVideoCreateBodyResolutionEnum1080p),
 		Style: types.V1ImageToVideoCreateBodyStyle{
 			HighQuality: nullable.NewValue(true),
 			Prompt:      nullable.NewValue("a dog running"),
