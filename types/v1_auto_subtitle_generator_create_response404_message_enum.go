@@ -1,0 +1,8 @@
+package types
+
+// V1AutoSubtitleGeneratorCreateResponse404MessageEnum
+type V1AutoSubtitleGeneratorCreateResponse404MessageEnum string
+
+const (
+	V1AutoSubtitleGeneratorCreateResponse404MessageEnumNotFound V1AutoSubtitleGeneratorCreateResponse404MessageEnum = "Not Found"
+)

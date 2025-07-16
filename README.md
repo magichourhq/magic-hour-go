@@ -80,6 +80,10 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 * [create](resources/v1/animation/README.md#create) - Animation
 
+### [V1.AutoSubtitleGenerator](resources/v1/auto_subtitle_generator/README.md)
+
+* [create](resources/v1/auto_subtitle_generator/README.md#create) - Auto Subtitle Generator
+
 ### [V1.FaceSwap](resources/v1/face_swap/README.md)
 
 * [create](resources/v1/face_swap/README.md#create) - Face Swap video

@@ -1,0 +1,8 @@
+package types
+
+// V1AutoSubtitleGeneratorCreateResponse401MessageEnum
+type V1AutoSubtitleGeneratorCreateResponse401MessageEnum string
+
+const (
+	V1AutoSubtitleGeneratorCreateResponse401MessageEnumUnauthorized V1AutoSubtitleGeneratorCreateResponse401MessageEnum = "Unauthorized"
+)
