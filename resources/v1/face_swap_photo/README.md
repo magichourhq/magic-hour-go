@@ -9,7 +9,7 @@ Create a face swap photo. Each photo costs 5 credits. The height/width of the ou
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `assets` | ✓ | Provide the assets for face swap photo | `V1FaceSwapPhotoCreateBodyAssets {SourceFilePath: "api-assets/id/1234.png",TargetFilePath: "api-assets/id/1234.png",}` |
+| `assets` | ✓ | Provide the assets for face swap photo | `V1FaceSwapPhotoCreateBodyAssets {FaceMappings: nullable.NewValue([]V1FaceSwapPhotoCreateBodyAssetsFaceMappingsItem{V1FaceSwapPhotoCreateBodyAssetsFaceMappingsItem {NewFace: "api-assets/id/1234.png",OriginalFace: "api-assets/id/0-0.png",},}),FaceSwapMode: nullable.NewValue(V1FaceSwapPhotoCreateBodyAssetsFaceSwapModeEnumAllFaces),SourceFilePath: nullable.NewValue("api-assets/id/1234.png"),TargetFilePath: "api-assets/id/1234.png",}` |
 | `name` | ✗ | The name of image | `"Face Swap image"` |
 
 #### Example Snippet
@@ -32,7 +32,14 @@ func main() {
 	)
 	res, err := client.V1.FaceSwapPhoto.Create(face_swap_photo.CreateRequest{
 		Assets: types.V1FaceSwapPhotoCreateBodyAssets{
-			SourceFilePath: "api-assets/id/1234.png",
+			FaceMappings: nullable.NewValue([]types.V1FaceSwapPhotoCreateBodyAssetsFaceMappingsItem{
+				types.V1FaceSwapPhotoCreateBodyAssetsFaceMappingsItem{
+					NewFace:      "api-assets/id/1234.png",
+					OriginalFace: "api-assets/id/0-0.png",
+				},
+			}),
+			FaceSwapMode:   nullable.NewValue(types.V1FaceSwapPhotoCreateBodyAssetsFaceSwapModeEnumAllFaces),
+			SourceFilePath: nullable.NewValue("api-assets/id/1234.png"),
 			TargetFilePath: "api-assets/id/1234.png",
 		},
 		Name: nullable.NewValue("Face Swap image"),
