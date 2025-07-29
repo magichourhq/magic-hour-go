@@ -25,7 +25,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 				},
 			}),
 			FaceSwapMode:  nullable.NewValue(types.V1FaceSwapCreateBodyAssetsFaceSwapModeEnumAllFaces),
-			ImageFilePath: "image/id/1234.png",
+			ImageFilePath: nullable.NewValue("image/id/1234.png"),
 			VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"),
 			VideoSource:   types.V1FaceSwapCreateBodyAssetsVideoSourceEnumFile,
 			YoutubeUrl:    nullable.NewValue("http://www.example.com"),
