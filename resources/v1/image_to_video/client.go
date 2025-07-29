@@ -28,7 +28,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 //
 // Create a Image To Video video. The estimated frame cost is calculated using 30 FPS. This amount is deducted from your account balance when a video is queued. Once the video is complete, the cost will be updated based on the actual number of frames rendered.
 //
-// Get more information about this mode at our [product page](/products/image-to-video).
+// Get more information about this mode at our [product page](https://magichour.ai/products/image-to-video).
 //
 // POST /v1/image-to-video
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1ImageToVideoCreateResponse, error) {

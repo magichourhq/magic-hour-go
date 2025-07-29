@@ -18,6 +18,13 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 	)
 	res, err := client.V1.FaceSwap.Create(face_swap.CreateRequest{
 		Assets: types.V1FaceSwapCreateBodyAssets{
+			FaceMappings: nullable.NewValue([]types.V1FaceSwapCreateBodyAssetsFaceMappingsItem{
+				types.V1FaceSwapCreateBodyAssetsFaceMappingsItem{
+					NewFace:      "api-assets/id/1234.png",
+					OriginalFace: "api-assets/id/0-0.png",
+				},
+			}),
+			FaceSwapMode:  nullable.NewValue(types.V1FaceSwapCreateBodyAssetsFaceSwapModeEnumAllFaces),
 			ImageFilePath: "image/id/1234.png",
 			VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"),
 			VideoSource:   types.V1FaceSwapCreateBodyAssetsVideoSourceEnumFile,
