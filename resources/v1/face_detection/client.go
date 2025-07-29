@@ -45,6 +45,12 @@ func (c *Client) Get(request GetRequest, reqModifiers ...RequestModifier) (types
 	// Add headers
 	req.Header.Add("x-sideko-sdk-language", "Go")
 
+	// Add auth
+	err = c.coreClient.AddAuth(req, "bearerAuth")
+	if err != nil {
+		return types.V1FaceDetectionGetResponse{}, err
+	}
+
 	// Add base client & request level modifiers
 	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
 		return types.V1FaceDetectionGetResponse{}, err
