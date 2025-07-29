@@ -3,7 +3,7 @@
 
 Create a Face Swap video. The estimated frame cost is calculated using 30 FPS. This amount is deducted from your account balance when a video is queued. Once the video is complete, the cost will be updated based on the actual number of frames rendered.
   
-Get more information about this mode at our [product page](/products/face-swap).
+Get more information about this mode at our [product page](https://magichour.ai/products/face-swap).
   
 
 **API Endpoint**: `POST /v1/face-swap`
@@ -12,7 +12,7 @@ Get more information about this mode at our [product page](/products/face-swap).
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `assets` | ✓ | Provide the assets for face swap. For video, The `video_source` field determines whether `video_file_path` or `youtube_url` field is used | `V1FaceSwapCreateBodyAssets {ImageFilePath: "image/id/1234.png",VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"),VideoSource: V1FaceSwapCreateBodyAssetsVideoSourceEnumFile,}` |
+| `assets` | ✓ | Provide the assets for face swap. For video, The `video_source` field determines whether `video_file_path` or `youtube_url` field is used | `V1FaceSwapCreateBodyAssets {FaceMappings: nullable.NewValue([]V1FaceSwapCreateBodyAssetsFaceMappingsItem{V1FaceSwapCreateBodyAssetsFaceMappingsItem {NewFace: "api-assets/id/1234.png",OriginalFace: "api-assets/id/0-0.png",},}),FaceSwapMode: nullable.NewValue(V1FaceSwapCreateBodyAssetsFaceSwapModeEnumAllFaces),ImageFilePath: "image/id/1234.png",VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"),VideoSource: V1FaceSwapCreateBodyAssetsVideoSourceEnumFile,}` |
 | `end_seconds` | ✓ | The end time of the input video in seconds | `15.0` |
 | `start_seconds` | ✓ | The start time of the input video in seconds | `0.0` |
 | `height` | ✗ | Used to determine the dimensions of the output video.     * If height is provided, width will also be required. The larger value between width and height will be used to determine the maximum output resolution while maintaining the original aspect ratio. * If both height and width are omitted, the video will be resized according to your subscription's maximum resolution, while preserving aspect ratio.  Note: if the video's original resolution is less than the maximum, the video will not be resized.  See our [pricing page](https://magichour.ai/pricing) for more details. | `960` |
@@ -39,6 +39,13 @@ func main() {
 	)
 	res, err := client.V1.FaceSwap.Create(face_swap.CreateRequest{
 		Assets: types.V1FaceSwapCreateBodyAssets{
+			FaceMappings: nullable.NewValue([]types.V1FaceSwapCreateBodyAssetsFaceMappingsItem{
+				types.V1FaceSwapCreateBodyAssetsFaceMappingsItem{
+					NewFace:      "api-assets/id/1234.png",
+					OriginalFace: "api-assets/id/0-0.png",
+				},
+			}),
+			FaceSwapMode:  nullable.NewValue(types.V1FaceSwapCreateBodyAssetsFaceSwapModeEnumAllFaces),
 			ImageFilePath: "image/id/1234.png",
 			VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"),
 			VideoSource:   types.V1FaceSwapCreateBodyAssetsVideoSourceEnumFile,
