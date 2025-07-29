@@ -1,0 +1,8 @@
+package types
+
+// V1FaceDetectionCreateResponse401MessageEnum
+type V1FaceDetectionCreateResponse401MessageEnum string
+
+const (
+	V1FaceDetectionCreateResponse401MessageEnumUnauthorized V1FaceDetectionCreateResponse401MessageEnum = "Unauthorized"
+)
