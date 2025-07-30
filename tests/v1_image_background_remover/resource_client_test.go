@@ -18,7 +18,8 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 	)
 	res, err := client.V1.ImageBackgroundRemover.Create(image_background_remover.CreateRequest{
 		Assets: types.V1ImageBackgroundRemoverCreateBodyAssets{
-			ImageFilePath: "api-assets/id/1234.png",
+			BackgroundImageFilePath: nullable.NewValue("api-assets/id/1234.png"),
+			ImageFilePath:           "api-assets/id/1234.png",
 		},
 		Name: nullable.NewValue("Background Remover image"),
 	})
