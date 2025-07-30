@@ -9,7 +9,7 @@ Remove background from image. Each image costs 5 credits.
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `assets` | ✓ | Provide the assets for background removal | `V1ImageBackgroundRemoverCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
+| `assets` | ✓ | Provide the assets for background removal | `V1ImageBackgroundRemoverCreateBodyAssets {BackgroundImageFilePath: nullable.NewValue("api-assets/id/1234.png"),ImageFilePath: "api-assets/id/1234.png",}` |
 | `name` | ✗ | The name of image | `"Background Remover image"` |
 
 #### Example Snippet
@@ -32,7 +32,8 @@ func main() {
 	)
 	res, err := client.V1.ImageBackgroundRemover.Create(image_background_remover.CreateRequest{
 		Assets: types.V1ImageBackgroundRemoverCreateBodyAssets{
-			ImageFilePath: "api-assets/id/1234.png",
+			BackgroundImageFilePath: nullable.NewValue("api-assets/id/1234.png"),
+			ImageFilePath:           "api-assets/id/1234.png",
 		},
 		Name: nullable.NewValue("Background Remover image"),
 	})
