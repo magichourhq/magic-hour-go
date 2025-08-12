@@ -21,7 +21,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			ImageFilePath: "api-assets/id/1234.png",
 		},
 		EndSeconds: 5.0,
-		Height:     nullable.NewValue(960),
+		Height:     nullable.NewValue(123),
 		Name:       nullable.NewValue("Image To Video video"),
 		Resolution: nullable.NewValue(types.V1ImageToVideoCreateBodyResolutionEnum1080p),
 		Style: nullable.NewValue(types.V1ImageToVideoCreateBodyStyle{
@@ -29,7 +29,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			Prompt:      nullable.NewValue("a dog running"),
 			QualityMode: nullable.NewValue(types.V1ImageToVideoCreateBodyStyleQualityModeEnumQuick),
 		}),
-		Width: nullable.NewValue(512),
+		Width: nullable.NewValue(123),
 	})
 
 	if err != nil {
