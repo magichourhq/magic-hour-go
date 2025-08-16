@@ -29,9 +29,9 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		StartSeconds:  0.0,
 		Style: types.V1VideoToVideoCreateBodyStyle{
 			ArtStyle:   types.V1VideoToVideoCreateBodyStyleArtStyleEnum3dRender,
-			Model:      types.V1VideoToVideoCreateBodyStyleModelEnumAbsoluteReality,
+			Model:      types.V1VideoToVideoCreateBodyStyleModelEnumDefault,
 			Prompt:     nullable.NewValue("string"),
-			PromptType: types.V1VideoToVideoCreateBodyStylePromptTypeEnumAppendDefault,
+			PromptType: types.V1VideoToVideoCreateBodyStylePromptTypeEnumDefault,
 			Version:    types.V1VideoToVideoCreateBodyStyleVersionEnumDefault,
 		},
 		Width: nullable.NewValue(512),

@@ -14,8 +14,18 @@ type V1FaceSwapPhotoCreateBodyAssets struct {
 	FaceSwapMode nullable.Nullable[V1FaceSwapPhotoCreateBodyAssetsFaceSwapModeEnum] `json:"face_swap_mode,omitempty"`
 	// This is the image from which the face is extracted. The value is required if `face_swap_mode` is `all-faces`.
 	//
-	// This value can be either the `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls), or the url of the file.
+	// This value is either
+	// - a direct URL to the video file
+	// - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).
+	//
+	// Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.
+	//
 	SourceFilePath nullable.Nullable[string] `json:"source_file_path,omitempty"`
-	// This is the image where the face from the source image will be placed. This value can be either the `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls), or the url of the file.
+	// This is the image where the face from the source image will be placed. This value is either
+	// - a direct URL to the video file
+	// - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).
+	//
+	// Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.
+	//
 	TargetFilePath string `json:"target_file_path"`
 }

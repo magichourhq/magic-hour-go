@@ -1,6 +1,6 @@
 package types
 
-// V1AnimationCreateBodyStyleCameraEffectEnum
+// The camera effect used to create the output video
 type V1AnimationCreateBodyStyleCameraEffectEnum string
 
 const (

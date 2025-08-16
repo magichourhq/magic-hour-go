@@ -1,6 +1,6 @@
 package types
 
-// The type of asset to upload
+// The type of asset to upload. Possible types are video, audio, image
 type V1FilesUploadUrlsCreateBodyItemsItemTypeEnum string
 
 const (

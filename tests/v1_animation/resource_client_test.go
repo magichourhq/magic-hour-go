@@ -30,9 +30,9 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Style: types.V1AnimationCreateBodyStyle{
 			ArtStyle:        types.V1AnimationCreateBodyStyleArtStyleEnumPainterlyIllustration,
 			ArtStyleCustom:  nullable.NewValue("string"),
-			CameraEffect:    types.V1AnimationCreateBodyStyleCameraEffectEnumAccelerate,
+			CameraEffect:    types.V1AnimationCreateBodyStyleCameraEffectEnumSimpleZoomIn,
 			Prompt:          nullable.NewValue("Cyberpunk city"),
-			PromptType:      types.V1AnimationCreateBodyStylePromptTypeEnumAiChoose,
+			PromptType:      types.V1AnimationCreateBodyStylePromptTypeEnumCustom,
 			TransitionSpeed: 5,
 		},
 		Width: 512,

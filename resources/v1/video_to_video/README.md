@@ -13,12 +13,12 @@ Get more information about this mode at our [product page](https://magichour.ai/
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
 | `assets` | ✓ | Provide the assets for video-to-video. For video, The `video_source` field determines whether `video_file_path` or `youtube_url` field is used | `V1VideoToVideoCreateBodyAssets {VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"),VideoSource: V1VideoToVideoCreateBodyAssetsVideoSourceEnumFile,}` |
-| `end_seconds` | ✓ | The end time of the input video in seconds | `15.0` |
-| `start_seconds` | ✓ | The start time of the input video in seconds | `0.0` |
-| `style` | ✓ |  | `V1VideoToVideoCreateBodyStyle {ArtStyle: V1VideoToVideoCreateBodyStyleArtStyleEnum3dRender,Model: V1VideoToVideoCreateBodyStyleModelEnumAbsoluteReality,Prompt: nullable.NewValue("string"),PromptType: V1VideoToVideoCreateBodyStylePromptTypeEnumAppendDefault,Version: V1VideoToVideoCreateBodyStyleVersionEnumDefault,}` |
+| `end_seconds` | ✓ | The end time of the input video in seconds. This value is used to trim the input video. The value must be greater than 0.1, and more than the start_seconds. | `15.0` |
+| `start_seconds` | ✓ | The start time of the input video in seconds. This value is used to trim the input video. The value must be greater than 0. | `0.0` |
+| `style` | ✓ |  | `V1VideoToVideoCreateBodyStyle {ArtStyle: V1VideoToVideoCreateBodyStyleArtStyleEnum3dRender,Model: V1VideoToVideoCreateBodyStyleModelEnumDefault,Prompt: nullable.NewValue("string"),PromptType: V1VideoToVideoCreateBodyStylePromptTypeEnumDefault,Version: V1VideoToVideoCreateBodyStyleVersionEnumDefault,}` |
 | `fps_resolution` | ✗ | Determines whether the resulting video will have the same frame per second as the original video, or half.  * `FULL` - the result video will have the same FPS as the input video * `HALF` - the result video will have half the FPS as the input video | `V1VideoToVideoCreateBodyFpsResolutionEnumHalf` |
 | `height` | ✗ | Used to determine the dimensions of the output video.     * If height is provided, width will also be required. The larger value between width and height will be used to determine the maximum output resolution while maintaining the original aspect ratio. * If both height and width are omitted, the video will be resized according to your subscription's maximum resolution, while preserving aspect ratio.  Note: if the video's original resolution is less than the maximum, the video will not be resized.  See our [pricing page](https://magichour.ai/pricing) for more details. | `960` |
-| `name` | ✗ | The name of video | `"Video To Video video"` |
+| `name` | ✗ | The name of video. This value is mainly used for your own identification of the video. | `"Video To Video video"` |
 | `width` | ✗ | Used to determine the dimensions of the output video.     * If width is provided, height will also be required. The larger value between width and height will be used to determine the maximum output resolution while maintaining the original aspect ratio. * If both height and width are omitted, the video will be resized according to your subscription's maximum resolution, while preserving aspect ratio.  Note: if the video's original resolution is less than the maximum, the video will not be resized.  See our [pricing page](https://magichour.ai/pricing) for more details. | `512` |
 
 #### Example Snippet
@@ -51,9 +51,9 @@ func main() {
 		StartSeconds:  0.0,
 		Style: types.V1VideoToVideoCreateBodyStyle{
 			ArtStyle:   types.V1VideoToVideoCreateBodyStyleArtStyleEnum3dRender,
-			Model:      types.V1VideoToVideoCreateBodyStyleModelEnumAbsoluteReality,
+			Model:      types.V1VideoToVideoCreateBodyStyleModelEnumDefault,
 			Prompt:     nullable.NewValue("string"),
-			PromptType: types.V1VideoToVideoCreateBodyStylePromptTypeEnumAppendDefault,
+			PromptType: types.V1VideoToVideoCreateBodyStylePromptTypeEnumDefault,
 			Version:    types.V1VideoToVideoCreateBodyStyleVersionEnumDefault,
 		},
 		Width: nullable.NewValue(512),
@@ -71,5 +71,5 @@ func main() {
 `V1VideoToVideoCreateResponse {
 CreditsCharged: 450,
 EstimatedFrameCost: 450,
-Id: "clx7uu86w0a5qp55yxz315r6r",
+Id: "cuid-example",
 }`

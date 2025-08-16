@@ -11,7 +11,7 @@ Edit images with AI. Each edit costs 50 credits.
 |-----------|:--------:|-------------|--------|
 | `assets` | ✓ | Provide the assets for image edit | `V1AiImageEditorCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
 | `style` | ✓ |  | `V1AiImageEditorCreateBodyStyle {Prompt: "Give me sunglasses",}` |
-| `name` | ✗ | The name of image | `"Ai Image Editor image"` |
+| `name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Ai Image Editor image"` |
 
 #### Example Snippet
 
@@ -53,5 +53,5 @@ func main() {
 `V1AiImageEditorCreateResponse {
 CreditsCharged: 50,
 FrameCost: 50,
-Id: "clx7uu86w0a5qp55yxz315r6r",
+Id: "cuid-example",
 }`

@@ -10,8 +10,8 @@ Edit facial features of an image using AI. Each edit costs 1 frame. The height/w
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
 | `assets` | ✓ | Provide the assets for face editor | `V1AiFaceEditorCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
-| `style` | ✓ | Face editing parameters | `V1AiFaceEditorCreateBodyStyle {EnhanceFace: false,EyeGazeHorizontal: 0.0,EyeGazeVertical: 0.0,EyeOpenRatio: 0.0,EyebrowDirection: 0.0,HeadPitch: 0.0,HeadRoll: 0.0,HeadYaw: 0.0,LipOpenRatio: 0.0,MouthGrim: 0.0,MouthPositionHorizontal: 0.0,MouthPositionVertical: 0.0,MouthPout: 0.0,MouthPurse: 0.0,MouthSmile: 0.0,}` |
-| `name` | ✗ | The name of image | `"Face Editor image"` |
+| `style` | ✓ | Face editing parameters | `V1AiFaceEditorCreateBodyStyle {EnhanceFace: nullable.NewValue(false),EyeGazeHorizontal: nullable.NewValue(0.0),EyeGazeVertical: nullable.NewValue(0.0),EyeOpenRatio: nullable.NewValue(0.0),EyebrowDirection: nullable.NewValue(0.0),HeadPitch: nullable.NewValue(0.0),HeadRoll: nullable.NewValue(0.0),HeadYaw: nullable.NewValue(0.0),LipOpenRatio: nullable.NewValue(0.0),MouthGrim: nullable.NewValue(0.0),MouthPositionHorizontal: nullable.NewValue(0.0),MouthPositionVertical: nullable.NewValue(0.0),MouthPout: nullable.NewValue(0.0),MouthPurse: nullable.NewValue(0.0),MouthSmile: nullable.NewValue(0.0),}` |
+| `name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Face Editor image"` |
 
 #### Example Snippet
 
@@ -37,21 +37,21 @@ func main() {
 		},
 		Name: nullable.NewValue("Face Editor image"),
 		Style: types.V1AiFaceEditorCreateBodyStyle{
-			EnhanceFace:             false,
-			EyeGazeHorizontal:       0.0,
-			EyeGazeVertical:         0.0,
-			EyeOpenRatio:            0.0,
-			EyebrowDirection:        0.0,
-			HeadPitch:               0.0,
-			HeadRoll:                0.0,
-			HeadYaw:                 0.0,
-			LipOpenRatio:            0.0,
-			MouthGrim:               0.0,
-			MouthPositionHorizontal: 0.0,
-			MouthPositionVertical:   0.0,
-			MouthPout:               0.0,
-			MouthPurse:              0.0,
-			MouthSmile:              0.0,
+			EnhanceFace:             nullable.NewValue(false),
+			EyeGazeHorizontal:       nullable.NewValue(0.0),
+			EyeGazeVertical:         nullable.NewValue(0.0),
+			EyeOpenRatio:            nullable.NewValue(0.0),
+			EyebrowDirection:        nullable.NewValue(0.0),
+			HeadPitch:               nullable.NewValue(0.0),
+			HeadRoll:                nullable.NewValue(0.0),
+			HeadYaw:                 nullable.NewValue(0.0),
+			LipOpenRatio:            nullable.NewValue(0.0),
+			MouthGrim:               nullable.NewValue(0.0),
+			MouthPositionHorizontal: nullable.NewValue(0.0),
+			MouthPositionVertical:   nullable.NewValue(0.0),
+			MouthPout:               nullable.NewValue(0.0),
+			MouthPurse:              nullable.NewValue(0.0),
+			MouthSmile:              nullable.NewValue(0.0),
 		},
 	})
 }
@@ -67,5 +67,5 @@ func main() {
 `V1AiFaceEditorCreateResponse {
 CreditsCharged: 1,
 FrameCost: 1,
-Id: "clx7uu86w0a5qp55yxz315r6r",
+Id: "cuid-example",
 }`

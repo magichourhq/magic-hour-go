@@ -1,6 +1,6 @@
 package types
 
-// The art style of the final output video
+// The art style used to create the output video
 type V1AnimationCreateBodyStyleArtStyleEnum string
 
 const (

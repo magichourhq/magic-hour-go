@@ -9,10 +9,10 @@ Create an AI image. Each image costs 5 credits.
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `image_count` | ✓ | number to images to generate | `1` |
-| `orientation` | ✓ |  | `V1AiImageGeneratorCreateBodyOrientationEnumLandscape` |
-| `style` | ✓ |  | `V1AiImageGeneratorCreateBodyStyle {Prompt: "Cool image",Tool: nullable.NewValue(V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator),}` |
-| `name` | ✗ | The name of image | `"Ai Image image"` |
+| `image_count` | ✓ | Number of images to generate. | `1` |
+| `orientation` | ✓ | The orientation of the output image(s). | `V1AiImageGeneratorCreateBodyOrientationEnumLandscape` |
+| `style` | ✓ | The art style to use for image generation. | `V1AiImageGeneratorCreateBodyStyle {Prompt: "Cool image",Tool: nullable.NewValue(V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator),}` |
+| `name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Ai Image image"` |
 
 #### Example Snippet
 
@@ -54,5 +54,5 @@ func main() {
 `V1AiImageGeneratorCreateResponse {
 CreditsCharged: 5,
 FrameCost: 5,
-Id: "clx7uu86w0a5qp55yxz315r6r",
+Id: "cuid-example",
 }`

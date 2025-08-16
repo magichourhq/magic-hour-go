@@ -10,7 +10,7 @@ Create a face swap photo. Each photo costs 5 credits. The height/width of the ou
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
 | `assets` | ✓ | Provide the assets for face swap photo | `V1FaceSwapPhotoCreateBodyAssets {FaceMappings: nullable.NewValue([]V1FaceSwapPhotoCreateBodyAssetsFaceMappingsItem{V1FaceSwapPhotoCreateBodyAssetsFaceMappingsItem {NewFace: "api-assets/id/1234.png",OriginalFace: "api-assets/id/0-0.png",},}),FaceSwapMode: nullable.NewValue(V1FaceSwapPhotoCreateBodyAssetsFaceSwapModeEnumAllFaces),SourceFilePath: nullable.NewValue("api-assets/id/1234.png"),TargetFilePath: "api-assets/id/1234.png",}` |
-| `name` | ✗ | The name of image | `"Face Swap image"` |
+| `name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Face Swap image"` |
 
 #### Example Snippet
 
@@ -57,5 +57,5 @@ func main() {
 `V1FaceSwapPhotoCreateResponse {
 CreditsCharged: 5,
 FrameCost: 5,
-Id: "clx7uu86w0a5qp55yxz315r6r",
+Id: "cuid-example",
 }`

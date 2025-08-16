@@ -9,13 +9,13 @@ import (
 type CreateRequest struct {
 	// Provide the assets for animation.
 	Assets types.V1AnimationCreateBodyAssets `json:"assets"`
-	// The end time of the input video in seconds
+	// This value determines the duration of the output video.
 	EndSeconds float64 `json:"end_seconds"`
 	// The desire output video frame rate
 	Fps float64 `json:"fps"`
 	// The height of the final output video. The maximum height depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
 	Height int `json:"height"`
-	// The name of video
+	// The name of video. This value is mainly used for your own identification of the video.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// Defines the style of the output video
 	Style types.V1AnimationCreateBodyStyle `json:"style"`

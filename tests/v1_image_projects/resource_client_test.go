@@ -15,7 +15,7 @@ func TestDelete204SuccessAllParams(t *testing.T) {
 		sdk.WithEnv(sdk.MockServer),
 	)
 	err := client.V1.ImageProjects.Delete(image_projects.DeleteRequest{
-		Id: "cm6pvghix03bvyz0zwash6noj",
+		Id: "cuid-example",
 	})
 
 	if err != nil {
@@ -31,7 +31,7 @@ func TestGet200SuccessAllParams(t *testing.T) {
 		sdk.WithEnv(sdk.MockServer),
 	)
 	res, err := client.V1.ImageProjects.Get(image_projects.GetRequest{
-		Id: "cm6pvghix03bvyz0zwash6noj",
+		Id: "cuid-example",
 	})
 
 	if err != nil {

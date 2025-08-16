@@ -10,8 +10,8 @@ Create an AI headshot. Each headshot costs 50 credits.
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
 | `assets` | ✓ | Provide the assets for headshot photo | `V1AiHeadshotGeneratorCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
-| `name` | ✗ | The name of image | `"Ai Headshot image"` |
-| `style` | ✗ |  | `V1AiHeadshotGeneratorCreateBodyStyle {Prompt: nullable.NewValue("professional passport photo, business attire, smiling, good posture, light blue background, centered, plain background"),}` |
+| `name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Ai Headshot image"` |
+| `style` | ✗ |  | `V1AiHeadshotGeneratorCreateBodyStyle {}` |
 
 #### Example Snippet
 
@@ -50,5 +50,5 @@ func main() {
 `V1AiHeadshotGeneratorCreateResponse {
 CreditsCharged: 50,
 FrameCost: 50,
-Id: "clx7uu86w0a5qp55yxz315r6r",
+Id: "cuid-example",
 }`

@@ -10,7 +10,7 @@ Colorize image. Each image costs 5 credits.
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
 | `assets` | ✓ | Provide the assets for photo colorization | `V1PhotoColorizerCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
-| `name` | ✗ | The name of image | `"Photo Colorizer image"` |
+| `name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Photo Colorizer image"` |
 
 #### Example Snippet
 
@@ -49,5 +49,5 @@ func main() {
 `V1PhotoColorizerCreateResponse {
 CreditsCharged: 5,
 FrameCost: 5,
-Id: "clx7uu86w0a5qp55yxz315r6r",
+Id: "cuid-example",
 }`

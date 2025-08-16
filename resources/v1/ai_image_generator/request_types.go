@@ -7,10 +7,12 @@ import (
 
 // CreateRequest
 type CreateRequest struct {
-	// number to images to generate
+	// Number of images to generate.
 	ImageCount int `json:"image_count"`
-	// The name of image
-	Name        nullable.Nullable[string]                         `json:"name,omitempty"`
+	// The name of image. This value is mainly used for your own identification of the image.
+	Name nullable.Nullable[string] `json:"name,omitempty"`
+	// The orientation of the output image(s).
 	Orientation types.V1AiImageGeneratorCreateBodyOrientationEnum `json:"orientation"`
-	Style       types.V1AiImageGeneratorCreateBodyStyle           `json:"style"`
+	// The art style to use for image generation.
+	Style types.V1AiImageGeneratorCreateBodyStyle `json:"style"`
 }
