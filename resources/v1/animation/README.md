@@ -10,12 +10,12 @@ Create a Animation video. The estimated frame cost is calculated based on the `f
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
 | `assets` | ✓ | Provide the assets for animation. | `V1AnimationCreateBodyAssets {AudioFilePath: nullable.NewValue("api-assets/id/1234.mp3"),AudioSource: V1AnimationCreateBodyAssetsAudioSourceEnumFile,ImageFilePath: nullable.NewValue("api-assets/id/1234.png"),}` |
-| `end_seconds` | ✓ | The end time of the input video in seconds | `15.0` |
+| `end_seconds` | ✓ | This value determines the duration of the output video. | `15.0` |
 | `fps` | ✓ | The desire output video frame rate | `12.0` |
 | `height` | ✓ | The height of the final output video. The maximum height depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details | `960` |
-| `style` | ✓ | Defines the style of the output video | `V1AnimationCreateBodyStyle {ArtStyle: V1AnimationCreateBodyStyleArtStyleEnumPainterlyIllustration,CameraEffect: V1AnimationCreateBodyStyleCameraEffectEnumAccelerate,Prompt: nullable.NewValue("Cyberpunk city"),PromptType: V1AnimationCreateBodyStylePromptTypeEnumAiChoose,TransitionSpeed: 5,}` |
+| `style` | ✓ | Defines the style of the output video | `V1AnimationCreateBodyStyle {ArtStyle: V1AnimationCreateBodyStyleArtStyleEnumPainterlyIllustration,CameraEffect: V1AnimationCreateBodyStyleCameraEffectEnumSimpleZoomIn,Prompt: nullable.NewValue("Cyberpunk city"),PromptType: V1AnimationCreateBodyStylePromptTypeEnumCustom,TransitionSpeed: 5,}` |
 | `width` | ✓ | The width of the final output video. The maximum width depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details | `512` |
-| `name` | ✗ | The name of video | `"Animation video"` |
+| `name` | ✗ | The name of video. This value is mainly used for your own identification of the video. | `"Animation video"` |
 
 #### Example Snippet
 
@@ -47,9 +47,9 @@ func main() {
 		Name:       nullable.NewValue("Animation video"),
 		Style: types.V1AnimationCreateBodyStyle{
 			ArtStyle:        types.V1AnimationCreateBodyStyleArtStyleEnumPainterlyIllustration,
-			CameraEffect:    types.V1AnimationCreateBodyStyleCameraEffectEnumAccelerate,
+			CameraEffect:    types.V1AnimationCreateBodyStyleCameraEffectEnumSimpleZoomIn,
 			Prompt:          nullable.NewValue("Cyberpunk city"),
-			PromptType:      types.V1AnimationCreateBodyStylePromptTypeEnumAiChoose,
+			PromptType:      types.V1AnimationCreateBodyStylePromptTypeEnumCustom,
 			TransitionSpeed: 5,
 		},
 		Width: 512,
@@ -67,5 +67,5 @@ func main() {
 `V1AnimationCreateResponse {
 CreditsCharged: 450,
 EstimatedFrameCost: 450,
-Id: "clx7uu86w0a5qp55yxz315r6r",
+Id: "cuid-example",
 }`

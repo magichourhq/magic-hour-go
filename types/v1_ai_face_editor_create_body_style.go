@@ -1,35 +1,39 @@
 package types
 
+import (
+	nullable "github.com/magichourhq/magic-hour-go/nullable"
+)
+
 // Face editing parameters
 type V1AiFaceEditorCreateBodyStyle struct {
 	// Enhance face features
-	EnhanceFace bool `json:"enhance_face"`
+	EnhanceFace nullable.Nullable[bool] `json:"enhance_face,omitempty"`
 	// Horizontal eye gaze (-100 to 100), in increments of 5
-	EyeGazeHorizontal float64 `json:"eye_gaze_horizontal"`
+	EyeGazeHorizontal nullable.Nullable[float64] `json:"eye_gaze_horizontal,omitempty"`
 	// Vertical eye gaze (-100 to 100), in increments of 5
-	EyeGazeVertical float64 `json:"eye_gaze_vertical"`
+	EyeGazeVertical nullable.Nullable[float64] `json:"eye_gaze_vertical,omitempty"`
 	// Eye open ratio (-100 to 100), in increments of 5
-	EyeOpenRatio float64 `json:"eye_open_ratio"`
+	EyeOpenRatio nullable.Nullable[float64] `json:"eye_open_ratio,omitempty"`
 	// Eyebrow direction (-100 to 100), in increments of 5
-	EyebrowDirection float64 `json:"eyebrow_direction"`
+	EyebrowDirection nullable.Nullable[float64] `json:"eyebrow_direction,omitempty"`
 	// Head pitch (-100 to 100), in increments of 5
-	HeadPitch float64 `json:"head_pitch"`
+	HeadPitch nullable.Nullable[float64] `json:"head_pitch,omitempty"`
 	// Head roll (-100 to 100), in increments of 5
-	HeadRoll float64 `json:"head_roll"`
+	HeadRoll nullable.Nullable[float64] `json:"head_roll,omitempty"`
 	// Head yaw (-100 to 100), in increments of 5
-	HeadYaw float64 `json:"head_yaw"`
+	HeadYaw nullable.Nullable[float64] `json:"head_yaw,omitempty"`
 	// Lip open ratio (-100 to 100), in increments of 5
-	LipOpenRatio float64 `json:"lip_open_ratio"`
+	LipOpenRatio nullable.Nullable[float64] `json:"lip_open_ratio,omitempty"`
 	// Mouth grim (-100 to 100), in increments of 5
-	MouthGrim float64 `json:"mouth_grim"`
+	MouthGrim nullable.Nullable[float64] `json:"mouth_grim,omitempty"`
 	// Horizontal mouth position (-100 to 100), in increments of 5
-	MouthPositionHorizontal float64 `json:"mouth_position_horizontal"`
+	MouthPositionHorizontal nullable.Nullable[float64] `json:"mouth_position_horizontal,omitempty"`
 	// Vertical mouth position (-100 to 100), in increments of 5
-	MouthPositionVertical float64 `json:"mouth_position_vertical"`
+	MouthPositionVertical nullable.Nullable[float64] `json:"mouth_position_vertical,omitempty"`
 	// Mouth pout (-100 to 100), in increments of 5
-	MouthPout float64 `json:"mouth_pout"`
+	MouthPout nullable.Nullable[float64] `json:"mouth_pout,omitempty"`
 	// Mouth purse (-100 to 100), in increments of 5
-	MouthPurse float64 `json:"mouth_purse"`
+	MouthPurse nullable.Nullable[float64] `json:"mouth_purse,omitempty"`
 	// Mouth smile (-100 to 100), in increments of 5
-	MouthSmile float64 `json:"mouth_smile"`
+	MouthSmile nullable.Nullable[float64] `json:"mouth_smile,omitempty"`
 }

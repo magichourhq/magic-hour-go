@@ -20,7 +20,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		EndSeconds:  5.0,
 		Name:        nullable.NewValue("Text To Video video"),
 		Orientation: types.V1TextToVideoCreateBodyOrientationEnumLandscape,
-		Resolution:  nullable.NewValue(types.V1TextToVideoCreateBodyResolutionEnum1080p),
+		Resolution:  nullable.NewValue(types.V1TextToVideoCreateBodyResolutionEnum720p),
 		Style: types.V1TextToVideoCreateBodyStyle{
 			Prompt:      "a dog running",
 			QualityMode: nullable.NewValue(types.V1TextToVideoCreateBodyStyleQualityModeEnumQuick),

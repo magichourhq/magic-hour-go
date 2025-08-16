@@ -7,7 +7,7 @@ import (
 
 // CreateRequest
 type CreateRequest struct {
-	// The name of gif
+	// The name of gif. This value is mainly used for your own identification of the gif.
 	Name  nullable.Nullable[string]             `json:"name,omitempty"`
 	Style types.V1AiGifGeneratorCreateBodyStyle `json:"style"`
 }

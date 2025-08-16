@@ -1,7 +1,7 @@
 
 ### Delete image <a name="delete"></a>
 
-Permanently delete the rendered image. This action is not reversible, please be sure before deleting.
+Permanently delete the rendered image(s). This action is not reversible, please be sure before deleting.
 
 **API Endpoint**: `DELETE /v1/image-projects/{id}`
 
@@ -9,7 +9,7 @@ Permanently delete the rendered image. This action is not reversible, please be 
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `id` | ✓ | The id of the image project | `"cm6pvghix03bvyz0zwash6noj"` |
+| `id` | ✓ | Unique ID of the image project. This value is returned by all of the POST APIs that create an image. | `"cuid-example"` |
 
 #### Example Snippet
 
@@ -28,7 +28,7 @@ func main() {
 		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
 	)
 	err := client.V1.ImageProjects.Delete(image_projects.DeleteRequest{
-		Id: "cm6pvghix03bvyz0zwash6noj",
+		Id: "cuid-example",
 	})
 }
 
@@ -53,7 +53,7 @@ The image can be one of the following status
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `id` | ✓ | The id of the image project | `"cm6pvghix03bvyz0zwash6noj"` |
+| `id` | ✓ | Unique ID of the image project. This value is returned by all of the POST APIs that create an image. | `"cuid-example"` |
 
 #### Example Snippet
 
@@ -72,7 +72,7 @@ func main() {
 		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
 	)
 	res, err := client.V1.ImageProjects.Get(image_projects.GetRequest{
-		Id: "cm6pvghix03bvyz0zwash6noj",
+		Id: "cuid-example",
 	})
 }
 
@@ -98,7 +98,7 @@ Error: nullable.NewValue(V1ImageProjectsGetResponseError {
 Code: "no_source_face",
 Message: "Please use an image with a detectable face",
 }),
-Id: "clx7uu86w0a5qp55yxz315r6r",
+Id: "cuid-example",
 ImageCount: 1,
 Name: nullable.NewValue("Example Name"),
 Status: V1ImageProjectsGetResponseStatusEnumComplete,

@@ -8,7 +8,7 @@ import (
 type V1AiQrCodeGeneratorCreateBody struct {
 	// The content of the QR code.
 	Content string `json:"content"`
-	// The name of image
+	// The name of image. This value is mainly used for your own identification of the image.
 	Name  nullable.Nullable[string]          `json:"name,omitempty"`
 	Style V1AiQrCodeGeneratorCreateBodyStyle `json:"style"`
 }

@@ -16,7 +16,7 @@ type V1VideoProjectsGetResponse struct {
 	Downloads []V1VideoProjectsGetResponseDownloadsItem             `json:"downloads"`
 	// Indicates whether the resource is deleted
 	Enabled bool `json:"enabled"`
-	// The end time of the input video in seconds
+	// The end time of the input video in seconds. This value is used to trim the input video. The value must be greater than 0.1, and more than the start_seconds.
 	EndSeconds float64 `json:"end_seconds"`
 	// In the case of an error, this object will contain the error encountered during video render
 	Error nullable.Nullable[V1VideoProjectsGetResponseError] `json:"error,omitempty"`
@@ -28,7 +28,7 @@ type V1VideoProjectsGetResponse struct {
 	Id string `json:"id"`
 	// The name of the video.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
-	// The start time of the input video in seconds
+	// The start time of the input video in seconds. This value is used to trim the input video. The value must be greater than 0.
 	StartSeconds float64 `json:"start_seconds"`
 	// The status of the video.
 	Status V1VideoProjectsGetResponseStatusEnum `json:"status"`

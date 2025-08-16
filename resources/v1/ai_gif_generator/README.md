@@ -10,7 +10,7 @@ Create an AI GIF. Each GIF costs 50 credits.
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
 | `style` | ✓ |  | `V1AiGifGeneratorCreateBodyStyle {Prompt: "Cute dancing cat, pixel art",}` |
-| `name` | ✗ | The name of gif | `"Ai Gif gif"` |
+| `name` | ✗ | The name of gif. This value is mainly used for your own identification of the gif. | `"Ai Gif gif"` |
 
 #### Example Snippet
 
@@ -49,5 +49,5 @@ func main() {
 `V1AiGifGeneratorCreateResponse {
 CreditsCharged: 50,
 FrameCost: 50,
-Id: "clx7uu86w0a5qp55yxz315r6r",
+Id: "cuid-example",
 }`

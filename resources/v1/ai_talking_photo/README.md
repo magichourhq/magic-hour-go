@@ -12,7 +12,7 @@ Create a talking photo from an image and audio or text input.
 | `assets` | ✓ | Provide the assets for creating a talking photo | `V1AiTalkingPhotoCreateBodyAssets {AudioFilePath: "api-assets/id/1234.mp3",ImageFilePath: "api-assets/id/1234.png",}` |
 | `end_seconds` | ✓ | The end time of the input audio in seconds. The maximum duration allowed is 60 seconds. | `15.0` |
 | `start_seconds` | ✓ | The start time of the input audio in seconds. The maximum duration allowed is 60 seconds. | `0.0` |
-| `name` | ✗ | The name of image | `"Talking Photo image"` |
+| `name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Talking Photo image"` |
 | `style` | ✗ | Attributes used to dictate the style of the output | `V1AiTalkingPhotoCreateBodyStyle {GenerationMode: nullable.NewValue(V1AiTalkingPhotoCreateBodyStyleGenerationModeEnumExpressive),Intensity: nullable.NewValue(1.5),}` |
 
 #### Example Snippet
@@ -55,5 +55,5 @@ func main() {
 `V1AiTalkingPhotoCreateResponse {
 CreditsCharged: 450,
 EstimatedFrameCost: 450,
-Id: "clx7uu86w0a5qp55yxz315r6r",
+Id: "cuid-example",
 }`

@@ -9,8 +9,8 @@ Change outfits in photos in seconds with just a photo reference. Each photo cost
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `assets` | ✓ | Provide the assets for clothes changer | `V1AiClothesChangerCreateBodyAssets {GarmentFilePath: "api-assets/id/outfit.png",GarmentType: V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumDresses,PersonFilePath: "api-assets/id/model.png",}` |
-| `name` | ✗ | The name of image | `"Clothes Changer image"` |
+| `assets` | ✓ | Provide the assets for clothes changer | `V1AiClothesChangerCreateBodyAssets {GarmentFilePath: "api-assets/id/outfit.png",GarmentType: V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumUpperBody,PersonFilePath: "api-assets/id/model.png",}` |
+| `name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Clothes Changer image"` |
 
 #### Example Snippet
 
@@ -33,7 +33,7 @@ func main() {
 	res, err := client.V1.AiClothesChanger.Create(ai_clothes_changer.CreateRequest{
 		Assets: types.V1AiClothesChangerCreateBodyAssets{
 			GarmentFilePath: "api-assets/id/outfit.png",
-			GarmentType:     types.V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumDresses,
+			GarmentType:     types.V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumUpperBody,
 			PersonFilePath:  "api-assets/id/model.png",
 		},
 		Name: nullable.NewValue("Clothes Changer image"),
@@ -51,5 +51,5 @@ func main() {
 `V1AiClothesChangerCreateResponse {
 CreditsCharged: 25,
 FrameCost: 25,
-Id: "clx7uu86w0a5qp55yxz315r6r",
+Id: "cuid-example",
 }`

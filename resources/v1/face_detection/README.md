@@ -1,7 +1,9 @@
 
 ### Get face detection details <a name="get"></a>
 
-Get the details of a face detection task.
+Get the details of a face detection task. 
+
+Use this API to get the list of faces detected in the image or video to use in the [face swap photo](/api-reference/face-swap-photo/face-swap-photo) or [face swap video](/api-reference/face-swap/face-swap-video) API calls for multi-face swaps.
 
 **API Endpoint**: `GET /v1/face-detection/{id}`
 
@@ -9,7 +11,7 @@ Get the details of a face detection task.
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `id` | ✓ | The id of the task | `"string"` |
+| `id` | ✓ | The id of the task. This value is returned by the [face detection API](/api-reference/files/face-detection#response-id). | `"uuid-example"` |
 
 #### Example Snippet
 
@@ -28,7 +30,7 @@ func main() {
 		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
 	)
 	res, err := client.V1.FaceDetection.Get(face_detection.GetRequest{
-		Id: "string",
+		Id: "uuid-example",
 	})
 }
 
@@ -41,20 +43,22 @@ func main() {
 
 ##### Example
 `V1FaceDetectionGetResponse {
-CreditsCharged: 123,
+CreditsCharged: 0,
 Faces: []V1FaceDetectionGetResponseFacesItem{
 V1FaceDetectionGetResponseFacesItem {
 Path: "api-assets/id/0-0.png",
 Url: "https://videos.magichour.ai/api-assets/id/0-0.png",
 },
 },
-Id: "string",
+Id: "uuid-example",
 Status: V1FaceDetectionGetResponseStatusEnumComplete,
 }`
 
 ### Face Detection <a name="create"></a>
 
 Detect faces in an image or video. 
+      
+Use this API to get the list of faces detected in the image or video to use in the [face swap photo](/api-reference/face-swap-photo/face-swap-photo) or [face swap video](/api-reference/face-swap/face-swap-video) API calls for multi-face swaps.
 
 Note: Face detection is free to use for the near future. Pricing may change in the future.
 
@@ -103,5 +107,5 @@ func main() {
 ##### Example
 `V1FaceDetectionCreateResponse {
 CreditsCharged: 123,
-Id: "string",
+Id: "uuid-example",
 }`

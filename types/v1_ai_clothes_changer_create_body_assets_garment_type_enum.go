@@ -1,6 +1,6 @@
 package types
 
-// V1AiClothesChangerCreateBodyAssetsGarmentTypeEnum
+// The type of the outfit.
 type V1AiClothesChangerCreateBodyAssetsGarmentTypeEnum string
 
 const (

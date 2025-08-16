@@ -51,5 +51,5 @@ func main() {
 `V1AiMemeGeneratorCreateResponse {
 CreditsCharged: 10,
 FrameCost: 10,
-Id: "clx7uu86w0a5qp55yxz315r6r",
+Id: "cuid-example",
 }`

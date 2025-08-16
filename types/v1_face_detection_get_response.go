@@ -6,7 +6,7 @@ type V1FaceDetectionGetResponse struct {
 	CreditsCharged int `json:"credits_charged"`
 	// The faces detected in the image or video. The list is populated as faces are detected.
 	Faces []V1FaceDetectionGetResponseFacesItem `json:"faces"`
-	// The id of the task
+	// The id of the task. This value is returned by the [face detection API](/api-reference/files/face-detection#response-id).
 	Id string `json:"id"`
 	// The status of the detection.
 	Status V1FaceDetectionGetResponseStatusEnum `json:"status"`

@@ -9,7 +9,7 @@ Permanently delete the rendered video. This action is not reversible, please be 
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `id` | ✓ | The id of the video project | `"cm6pvghix03bvyz0zwash6noj"` |
+| `id` | ✓ | Unique ID of the video project. This value is returned by all of the POST APIs that create a video. | `"cuid-example"` |
 
 #### Example Snippet
 
@@ -28,7 +28,7 @@ func main() {
 		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
 	)
 	err := client.V1.VideoProjects.Delete(video_projects.DeleteRequest{
-		Id: "cm6pvghix03bvyz0zwash6noj",
+		Id: "cuid-example",
 	})
 }
 
@@ -53,7 +53,7 @@ The video can be one of the following status
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `id` | ✓ | The id of the video | `"cm6pvghix03bvyz0zwash6noj"` |
+| `id` | ✓ | Unique ID of the video project. This value is returned by all of the POST APIs that create a video. | `"cuid-example"` |
 
 #### Example Snippet
 
@@ -72,7 +72,7 @@ func main() {
 		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
 	)
 	res, err := client.V1.VideoProjects.Get(video_projects.GetRequest{
-		Id: "cm6pvghix03bvyz0zwash6noj",
+		Id: "cuid-example",
 	})
 }
 
@@ -105,7 +105,7 @@ Message: "Please use an image with a detectable face",
 }),
 Fps: 30.0,
 Height: 960,
-Id: "clx7uu86w0a5qp55yxz315r6r",
+Id: "cuid-example",
 Name: nullable.NewValue("Example Name"),
 StartSeconds: 0.0,
 Status: V1VideoProjectsGetResponseStatusEnumComplete,

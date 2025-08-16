@@ -13,10 +13,10 @@ Get more information about this mode at our [product page](https://magichour.ai/
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
 | `assets` | ✓ | Provide the assets for face swap. For video, The `video_source` field determines whether `video_file_path` or `youtube_url` field is used | `V1FaceSwapCreateBodyAssets {FaceMappings: nullable.NewValue([]V1FaceSwapCreateBodyAssetsFaceMappingsItem{V1FaceSwapCreateBodyAssetsFaceMappingsItem {NewFace: "api-assets/id/1234.png",OriginalFace: "api-assets/id/0-0.png",},}),FaceSwapMode: nullable.NewValue(V1FaceSwapCreateBodyAssetsFaceSwapModeEnumAllFaces),ImageFilePath: nullable.NewValue("image/id/1234.png"),VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"),VideoSource: V1FaceSwapCreateBodyAssetsVideoSourceEnumFile,}` |
-| `end_seconds` | ✓ | The end time of the input video in seconds | `15.0` |
-| `start_seconds` | ✓ | The start time of the input video in seconds | `0.0` |
+| `end_seconds` | ✓ | The end time of the input video in seconds. This value is used to trim the input video. The value must be greater than 0.1, and more than the start_seconds. | `15.0` |
+| `start_seconds` | ✓ | The start time of the input video in seconds. This value is used to trim the input video. The value must be greater than 0. | `0.0` |
 | `height` | ✗ | Used to determine the dimensions of the output video.     * If height is provided, width will also be required. The larger value between width and height will be used to determine the maximum output resolution while maintaining the original aspect ratio. * If both height and width are omitted, the video will be resized according to your subscription's maximum resolution, while preserving aspect ratio.  Note: if the video's original resolution is less than the maximum, the video will not be resized.  See our [pricing page](https://magichour.ai/pricing) for more details. | `960` |
-| `name` | ✗ | The name of video | `"Face Swap video"` |
+| `name` | ✗ | The name of video. This value is mainly used for your own identification of the video. | `"Face Swap video"` |
 | `width` | ✗ | Used to determine the dimensions of the output video.     * If width is provided, height will also be required. The larger value between width and height will be used to determine the maximum output resolution while maintaining the original aspect ratio. * If both height and width are omitted, the video will be resized according to your subscription's maximum resolution, while preserving aspect ratio.  Note: if the video's original resolution is less than the maximum, the video will not be resized.  See our [pricing page](https://magichour.ai/pricing) for more details. | `512` |
 
 #### Example Snippet
@@ -69,5 +69,5 @@ func main() {
 `V1FaceSwapCreateResponse {
 CreditsCharged: 450,
 EstimatedFrameCost: 450,
-Id: "clx7uu86w0a5qp55yxz315r6r",
+Id: "cuid-example",
 }`

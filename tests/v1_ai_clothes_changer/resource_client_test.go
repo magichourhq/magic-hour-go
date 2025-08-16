@@ -19,7 +19,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 	res, err := client.V1.AiClothesChanger.Create(ai_clothes_changer.CreateRequest{
 		Assets: types.V1AiClothesChangerCreateBodyAssets{
 			GarmentFilePath: "api-assets/id/outfit.png",
-			GarmentType:     types.V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumDresses,
+			GarmentType:     types.V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumUpperBody,
 			PersonFilePath:  "api-assets/id/model.png",
 		},
 		Name: nullable.NewValue("Clothes Changer image"),

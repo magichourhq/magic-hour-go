@@ -1,6 +1,6 @@
 package types
 
-// V1AiImageGeneratorCreateBodyOrientationEnum
+// The orientation of the output image(s).
 type V1AiImageGeneratorCreateBodyOrientationEnum string
 
 const (

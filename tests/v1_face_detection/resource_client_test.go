@@ -17,7 +17,7 @@ func TestGet200SuccessAllParams(t *testing.T) {
 		sdk.WithEnv(sdk.MockServer),
 	)
 	res, err := client.V1.FaceDetection.Get(face_detection.GetRequest{
-		Id: "string",
+		Id: "uuid-example",
 	})
 
 	if err != nil {
