@@ -24,7 +24,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		},
 		EndSeconds:    15.0,
 		FpsResolution: nullable.NewValue(types.V1VideoToVideoCreateBodyFpsResolutionEnumHalf),
-		Height:        nullable.NewValue(960),
+		Height:        nullable.NewValue(123),
 		Name:          nullable.NewValue("Video To Video video"),
 		StartSeconds:  0.0,
 		Style: types.V1VideoToVideoCreateBodyStyle{
@@ -34,7 +34,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			PromptType: types.V1VideoToVideoCreateBodyStylePromptTypeEnumDefault,
 			Version:    types.V1VideoToVideoCreateBodyStyleVersionEnumDefault,
 		},
-		Width: nullable.NewValue(512),
+		Width: nullable.NewValue(123),
 	})
 
 	if err != nil {

@@ -11,9 +11,13 @@ type CreateRequest struct {
 	Assets types.V1ImageToVideoCreateBodyAssets `json:"assets"`
 	// The total duration of the output video in seconds.
 	EndSeconds float64 `json:"end_seconds"`
-	// This field does not affect the output video's resolution. The video's orientation will match that of the input image.
+	// `height` is deprecated and no longer influences the output video's resolution.
 	//
-	// It is retained solely for backward compatibility and will be deprecated in the future.
+	// Output resolution is determined by the **minimum** of:
+	// - The resolution of the input video
+	// - The maximum resolution allowed by your subscription tier. See our [pricing page](https://magichour.ai/pricing) for more details.
+	//
+	// This field is retained only for backward compatibility and will be removed in a future release.
 	Height nullable.Nullable[int] `json:"height,omitempty"`
 	// The name of video. This value is mainly used for your own identification of the video.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
@@ -28,8 +32,12 @@ type CreateRequest struct {
 	Resolution nullable.Nullable[types.V1ImageToVideoCreateBodyResolutionEnum] `json:"resolution,omitempty"`
 	// Attributed used to dictate the style of the output
 	Style nullable.Nullable[types.V1ImageToVideoCreateBodyStyle] `json:"style,omitempty"`
-	// This field does not affect the output video's resolution. The video's orientation will match that of the input image.
+	// `width` is deprecated and no longer influences the output video's resolution.
 	//
-	// It is retained solely for backward compatibility and will be deprecated in the future.
+	// Output resolution is determined by the **minimum** of:
+	// - The resolution of the input video
+	// - The maximum resolution allowed by your subscription tier. See our [pricing page](https://magichour.ai/pricing) for more details.
+	//
+	// This field is retained only for backward compatibility and will be removed in a future release.
 	Width nullable.Nullable[int] `json:"width,omitempty"`
 }
