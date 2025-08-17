@@ -31,10 +31,10 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			YoutubeUrl:    nullable.NewValue("http://www.example.com"),
 		},
 		EndSeconds:   15.0,
-		Height:       nullable.NewValue(960),
+		Height:       nullable.NewValue(123),
 		Name:         nullable.NewValue("Face Swap video"),
 		StartSeconds: 0.0,
-		Width:        nullable.NewValue(512),
+		Width:        nullable.NewValue(123),
 	})
 
 	if err != nil {

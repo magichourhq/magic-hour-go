@@ -24,11 +24,11 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			YoutubeUrl:    nullable.NewValue("http://www.example.com"),
 		},
 		EndSeconds:   15.0,
-		Height:       nullable.NewValue(960),
+		Height:       nullable.NewValue(123),
 		MaxFpsLimit:  nullable.NewValue(12.0),
 		Name:         nullable.NewValue("Lip Sync video"),
 		StartSeconds: 0.0,
-		Width:        nullable.NewValue(512),
+		Width:        nullable.NewValue(123),
 	})
 
 	if err != nil {
