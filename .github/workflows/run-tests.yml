@@ -12,16 +12,24 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go-version:
+          - "1.21"
+          - "1.22"
+          - "1.23"
+          - "1.24"
+          - "1.25"
     steps:
       #----------------------------------------------
       #  -----  checkout & setup go  -----
       #----------------------------------------------
       - name: checkout repository
         uses: actions/checkout@v4
-      - name: setup python
+      - name: setup go
         uses: actions/setup-go@v5
         with:
-          go-version: ">=1.19.0"
+          go-version: ${{ matrix.go-version }}
       #---------------------------------------------------
       #  -----  load cached go deps if cache exists -----
       #---------------------------------------------------
@@ -42,3 +50,5 @@ jobs:
       #------------------------------
       - name: run tests
         run: go test ./... -v
+      - name: run tests with race detection
+        run: go test ./... -v -race
