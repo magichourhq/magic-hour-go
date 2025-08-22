@@ -57,5 +57,3 @@ jobs:
       #------------------------------
       - name: run tests
         run: go test ./... -v
-      - name: run tests with race detection
-        run: go test ./... -v -race

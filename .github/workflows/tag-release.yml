@@ -1,0 +1,55 @@
+# This workflow will tag the go package on release or on manual trigger
+#
+# REQUIREMENTS:
+#   - Define a secret `SIDEKO_API_KEY` in your github environment
+#
+# MAINTENANCE:
+#   - Workflow triggers `on: ...` can be edited and Sideko will maintain the `jobs: ...`
+#   - Alternatively, if you wish to fully customize the workflow, you can clone this
+#     file (save under a different filepath to avoid clashing) and either disable this workflow
+#     via the triggers or remove `github` from the `ci_cd` options in the SDK config.
+#
+name: Tag Release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch: {}
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      #---------------------------
+      #  -----  checkout -----
+      #---------------------------
+      - name: checkout repository
+        uses: actions/checkout@v4
+      #--------------------------------------------------
+      #  -----  read version from VERSION file  -----
+      #--------------------------------------------------
+      - name: extract version
+        run: |
+          echo "SDK_TAG=v$(cat VERSION)" >> $GITHUB_ENV
+          echo "tagging version v$(cat VERSION)..."
+      #---------------------------------------
+      #  -----  create and push tag  -----
+      #---------------------------------------
+      - name: create tag
+        uses: actions/github-script@v7.0.1
+        with:
+          script: |
+            github.rest.git.createRef({owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `refs/tags/${process.env.SDK_TAG}`,
+              sha: context.sha
+            })
+      #----------------------------------------------
+      #  -----  mark SDK as released in Sideko  -----
+      #----------------------------------------------
+      - name: install sideko cli
+        run: npm install -g @sideko/cli
+      - name: mark sdk as released
+        env:
+          SIDEKO_API_KEY: ${{ secrets.SIDEKO_API_KEY }}
+        run: sideko sdk released

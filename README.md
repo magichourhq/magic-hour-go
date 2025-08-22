@@ -32,6 +32,9 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 ## Module Documentation and Snippets
 
+### [V1](resources/v1/README.md)
+
+
 ### [V1.AiClothesChanger](resources/v1/ai_clothes_changer/README.md)
 
 * [create](resources/v1/ai_clothes_changer/README.md#create) - AI Clothes Changer
@@ -96,6 +99,9 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 ### [V1.FaceSwapPhoto](resources/v1/face_swap_photo/README.md)
 
 * [create](resources/v1/face_swap_photo/README.md#create) - Face Swap Photo
+
+### [V1.Files](resources/v1/files/README.md)
+
 
 ### [V1.Files.UploadUrls](resources/v1/files/upload_urls/README.md)
 
