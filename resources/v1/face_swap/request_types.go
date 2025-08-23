@@ -23,6 +23,8 @@ type CreateRequest struct {
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// The start time of the input video in seconds. This value is used to trim the input video. The value must be greater than 0.
 	StartSeconds float64 `json:"start_seconds"`
+	// Style of the face swap video.
+	Style nullable.Nullable[types.V1FaceSwapCreateBodyStyle] `json:"style,omitempty"`
 	// `width` is deprecated and no longer influences the output video's resolution.
 	//
 	// Output resolution is determined by the **minimum** of:

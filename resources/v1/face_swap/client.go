@@ -43,6 +43,7 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	reqBody, err := json.Marshal(types.V1FaceSwapCreateBody{
 		Height:       request.Height,
 		Name:         request.Name,
+		Style:        request.Style,
 		Width:        request.Width,
 		Assets:       request.Assets,
 		EndSeconds:   request.EndSeconds,
