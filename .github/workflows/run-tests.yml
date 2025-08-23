@@ -16,17 +16,6 @@ concurrency:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        go-version:
-          - "1.19"
-          - "1.20"
-          - "1.21"
-          - "1.22"
-          - "1.23"
-          - "1.24"
-          - "1.25"
     steps:
       #----------------------------------------------
       #  -----  checkout & setup go  -----
@@ -36,7 +25,7 @@ jobs:
       - name: setup go
         uses: actions/setup-go@v5
         with:
-          go-version: ${{ matrix.go-version }}
+          go-version: ">=1.19.0"
       #---------------------------------------------------
       #  -----  load cached go deps if cache exists -----
       #---------------------------------------------------
