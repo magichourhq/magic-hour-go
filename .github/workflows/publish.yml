@@ -13,3 +13,17 @@ jobs:
         run: |
           VERSION=${{ github.event.release.tag_name }}
           GOPROXY=proxy.golang.org go list -m github.com/magichourhq/magic-hour-go@$VERSION
+      #---------------------------
+      #  -----  checkout -----
+      #---------------------------
+      - name: checkout repository
+        uses: actions/checkout@v4
+      #----------------------------------------------
+      #  -----  mark SDK as released in Sideko  -----
+      #----------------------------------------------
+      - name: install sideko cli
+        run: npm install -g @sideko/cli
+      - name: mark sdk as released
+        env:
+          SIDEKO_API_KEY: ${{ secrets.SIDEKO_API_KEY }}
+        run: sideko sdk released
