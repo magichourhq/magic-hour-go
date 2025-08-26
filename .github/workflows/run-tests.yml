@@ -1,0 +1,48 @@
+# This workflow will test the go package against Sideko's Mock Servers
+# Tests will run automatically on a push to `main` or a pull request event
+
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      #----------------------------------------------
+      #  -----  checkout & setup go  -----
+      #----------------------------------------------
+      - name: checkout repository
+        uses: actions/checkout@v4
+      - name: setup go
+        uses: actions/setup-go@v5
+        with:
+          go-version: ">=1.19.0"
+      #---------------------------------------------------
+      #  -----  load cached go deps if cache exists -----
+      #---------------------------------------------------
+      - name: load cached go dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-mod-${{ hashFiles('**/go.sum') }}
+      #---------------------------------------------------
+      #  -----  install dependencies -----
+      #---------------------------------------------------
+      - name: install dependencies
+        run: |
+          go mod tidy
+          go mod download
+      #------------------------------
+      #  -----  run tests -----
+      #------------------------------
+      - name: run tests
+        run: go test ./... -v
