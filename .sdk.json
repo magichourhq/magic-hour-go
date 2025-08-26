@@ -1,3 +1,985 @@
 {
-  "id": "6c9313b2-e1b9-42d3-89fc-24e3ce1eb9d1"
+  "id": "b3473029-2c72-435e-bbd1-d8c0a5bb6878",
+  "tracked_paths": [
+    {
+      "editable": true,
+      "path": ".gitignore"
+    },
+    {
+      "editable": true,
+      "path": "VERSION"
+    },
+    {
+      "editable": true,
+      "path": "client/README.md"
+    },
+    {
+      "editable": false,
+      "path": "client/builder.go"
+    },
+    {
+      "editable": false,
+      "path": "client/client.go"
+    },
+    {
+      "editable": false,
+      "path": "client/environment.go"
+    },
+    {
+      "editable": false,
+      "path": "client/request_types.go"
+    },
+    {
+      "editable": false,
+      "path": "core/api_error.go"
+    },
+    {
+      "editable": false,
+      "path": "core/auth.go"
+    },
+    {
+      "editable": false,
+      "path": "core/binary_response.go"
+    },
+    {
+      "editable": false,
+      "path": "core/client.go"
+    },
+    {
+      "editable": false,
+      "path": "core/form_data.go"
+    },
+    {
+      "editable": false,
+      "path": "core/params.go"
+    },
+    {
+      "editable": true,
+      "path": "go.mod"
+    },
+    {
+      "editable": false,
+      "path": "nullable/nullable.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/README.md"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/ai_clothes_changer/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_clothes_changer/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_clothes_changer/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/ai_face_editor/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_face_editor/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_face_editor/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/ai_gif_generator/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_gif_generator/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_gif_generator/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/ai_headshot_generator/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_headshot_generator/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_headshot_generator/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/ai_image_editor/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_image_editor/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_image_editor/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/ai_image_generator/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_image_generator/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_image_generator/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/ai_image_upscaler/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_image_upscaler/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_image_upscaler/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/ai_meme_generator/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_meme_generator/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_meme_generator/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/ai_photo_editor/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_photo_editor/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_photo_editor/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/ai_qr_code_generator/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_qr_code_generator/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_qr_code_generator/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/ai_talking_photo/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_talking_photo/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_talking_photo/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/animation/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/animation/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/animation/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/auto_subtitle_generator/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/auto_subtitle_generator/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/auto_subtitle_generator/request_types.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/client.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/face_detection/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/face_detection/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/face_detection/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/face_swap/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/face_swap/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/face_swap/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/face_swap_photo/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/face_swap_photo/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/face_swap_photo/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/files/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/files/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/files/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/files/upload_urls/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/files/upload_urls/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/files/upload_urls/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/image_background_remover/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/image_background_remover/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/image_background_remover/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/image_projects/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/image_projects/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/image_projects/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/image_to_video/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/image_to_video/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/image_to_video/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/lip_sync/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/lip_sync/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/lip_sync/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/photo_colorizer/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/photo_colorizer/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/photo_colorizer/request_types.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/text_to_video/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/text_to_video/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/text_to_video/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/video_projects/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/video_projects/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/video_projects/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/video_to_video/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/video_to_video/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/video_to_video/request_types.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_ai_clothes_changer/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_ai_face_editor/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_ai_gif_generator/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_ai_headshot_generator/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_ai_image_editor/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_ai_image_generator/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_ai_image_upscaler/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_ai_meme_generator/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_ai_photo_editor/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_ai_qr_code_generator/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_ai_talking_photo/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_animation/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_auto_subtitle_generator/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_face_detection/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_face_swap/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_face_swap_photo/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_files_upload_urls/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_image_background_remover/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_image_projects/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_image_to_video/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_lip_sync/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_photo_colorizer/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_text_to_video/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_video_projects/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_video_to_video/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_clothes_changer_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_clothes_changer_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_clothes_changer_create_body_assets_garment_type_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_clothes_changer_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_face_editor_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_face_editor_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_face_editor_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_face_editor_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_gif_generator_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_gif_generator_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_gif_generator_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_headshot_generator_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_headshot_generator_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_headshot_generator_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_headshot_generator_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_image_editor_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_image_editor_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_image_editor_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_image_editor_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_image_generator_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_image_generator_create_body_orientation_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_image_generator_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_image_generator_create_body_style_tool_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_image_generator_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_image_upscaler_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_image_upscaler_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_image_upscaler_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_image_upscaler_create_body_style_enhancement_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_image_upscaler_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_meme_generator_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_meme_generator_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_meme_generator_create_body_style_template_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_meme_generator_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_photo_editor_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_photo_editor_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_photo_editor_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_photo_editor_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_qr_code_generator_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_qr_code_generator_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_qr_code_generator_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_talking_photo_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_talking_photo_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_talking_photo_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_talking_photo_create_body_style_generation_mode_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_talking_photo_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_animation_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_animation_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_animation_create_body_assets_audio_source_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_animation_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_animation_create_body_style_art_style_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_animation_create_body_style_camera_effect_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_animation_create_body_style_prompt_type_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_animation_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_auto_subtitle_generator_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_auto_subtitle_generator_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_auto_subtitle_generator_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_auto_subtitle_generator_create_body_style_custom_config.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_auto_subtitle_generator_create_body_style_template_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_auto_subtitle_generator_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_detection_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_detection_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_detection_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_detection_get_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_detection_get_response_faces_item.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_detection_get_response_status_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_swap_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_swap_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_swap_create_body_assets_face_mappings_item.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_swap_create_body_assets_face_swap_mode_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_swap_create_body_assets_video_source_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_swap_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_swap_create_body_style_version_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_swap_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_swap_photo_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_swap_photo_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_swap_photo_create_body_assets_face_mappings_item.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_swap_photo_create_body_assets_face_swap_mode_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_swap_photo_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_files_upload_urls_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_files_upload_urls_create_body_items_item.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_files_upload_urls_create_body_items_item_type_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_files_upload_urls_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_files_upload_urls_create_response_items_item.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_image_background_remover_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_image_background_remover_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_image_background_remover_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_image_projects_get_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_image_projects_get_response_downloads_item.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_image_projects_get_response_error.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_image_projects_get_response_status_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_image_to_video_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_image_to_video_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_image_to_video_create_body_resolution_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_image_to_video_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_image_to_video_create_body_style_quality_mode_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_image_to_video_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_lip_sync_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_lip_sync_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_lip_sync_create_body_assets_video_source_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_lip_sync_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_photo_colorizer_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_photo_colorizer_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_photo_colorizer_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_text_to_video_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_text_to_video_create_body_orientation_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_text_to_video_create_body_resolution_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_text_to_video_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_text_to_video_create_body_style_quality_mode_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_text_to_video_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_video_projects_get_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_video_projects_get_response_download.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_video_projects_get_response_downloads_item.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_video_projects_get_response_error.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_video_projects_get_response_status_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_video_to_video_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_video_to_video_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_video_to_video_create_body_assets_video_source_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_video_to_video_create_body_fps_resolution_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_video_to_video_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_video_to_video_create_body_style_art_style_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_video_to_video_create_body_style_model_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_video_to_video_create_body_style_prompt_type_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_video_to_video_create_body_style_version_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_video_to_video_create_response.go"
+    }
+  ]
 }
