@@ -1,4 +1,6 @@
+# v1_aigifgenerator
 
+## Module Functions
 ### AI GIFs <a name="create"></a>
 
 Create an AI GIF. Each GIF costs 50 credits.
@@ -9,8 +11,9 @@ Create an AI GIF. Each GIF costs 50 credits.
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `style` | ✓ |  | `V1AiGifGeneratorCreateBodyStyle {Prompt: "Cute dancing cat, pixel art",}` |
-| `name` | ✗ | The name of gif. This value is mainly used for your own identification of the gif. | `"Ai Gif gif"` |
+| `Style` | ✓ |  | `V1AiGifGeneratorCreateBodyStyle {Prompt: "Cute dancing cat, pixel art",}` |
+| `└─ Prompt` | ✓ | The prompt used for the GIF. | `"Cute dancing cat, pixel art"` |
+| `Name` | ✗ | The name of gif. This value is mainly used for your own identification of the gif. | `"Ai Gif gif"` |
 
 #### Example Snippet
 
@@ -51,3 +54,7 @@ CreditsCharged: 50,
 FrameCost: 50,
 Id: "cuid-example",
 }`
+<!-- CUSTOM DOCS START -->
+
+<!-- CUSTOM DOCS END -->
+

@@ -1,4 +1,6 @@
+# v1_imageprojects
 
+## Module Functions
 ### Delete image <a name="delete"></a>
 
 Permanently delete the rendered image(s). This action is not reversible, please be sure before deleting.
@@ -9,7 +11,7 @@ Permanently delete the rendered image(s). This action is not reversible, please 
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `id` | ✓ | Unique ID of the image project. This value is returned by all of the POST APIs that create an image. | `"cuid-example"` |
+| `Id` | ✓ | Unique ID of the image project. This value is returned by all of the POST APIs that create an image. | `"cuid-example"` |
 
 #### Example Snippet
 
@@ -53,7 +55,7 @@ The image can be one of the following status
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `id` | ✓ | Unique ID of the image project. This value is returned by all of the POST APIs that create an image. | `"cuid-example"` |
+| `Id` | ✓ | Unique ID of the image project. This value is returned by all of the POST APIs that create an image. | `"cuid-example"` |
 
 #### Example Snippet
 
@@ -105,3 +107,7 @@ Status: V1ImageProjectsGetResponseStatusEnumComplete,
 TotalFrameCost: 5,
 Type: "AI_IMAGE",
 }`
+<!-- CUSTOM DOCS START -->
+
+<!-- CUSTOM DOCS END -->
+

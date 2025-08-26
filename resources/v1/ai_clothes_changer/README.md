@@ -1,4 +1,6 @@
+# v1_aiclotheschanger
 
+## Module Functions
 ### AI Clothes Changer <a name="create"></a>
 
 Change outfits in photos in seconds with just a photo reference. Each photo costs 25 credits.
@@ -9,8 +11,11 @@ Change outfits in photos in seconds with just a photo reference. Each photo cost
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `assets` | ✓ | Provide the assets for clothes changer | `V1AiClothesChangerCreateBodyAssets {GarmentFilePath: "api-assets/id/outfit.png",GarmentType: V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumUpperBody,PersonFilePath: "api-assets/id/model.png",}` |
-| `name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Clothes Changer image"` |
+| `Assets` | ✓ | Provide the assets for clothes changer | `V1AiClothesChangerCreateBodyAssets {GarmentFilePath: "api-assets/id/outfit.png",GarmentType: V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumUpperBody,PersonFilePath: "api-assets/id/model.png",}` |
+| `└─ GarmentFilePath` | ✓ | The image of the outfit. This value is either - a direct URL to the video file - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).  Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.  | `"api-assets/id/outfit.png"` |
+| `└─ GarmentType` | ✓ | The type of the outfit. | `V1AiClothesChangerCreateBodyAssetsGarmentTypeEnumUpperBody` |
+| `└─ PersonFilePath` | ✓ | The image with the person. This value is either - a direct URL to the video file - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).  Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.  | `"api-assets/id/model.png"` |
+| `Name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Clothes Changer image"` |
 
 #### Example Snippet
 
@@ -53,3 +58,7 @@ CreditsCharged: 25,
 FrameCost: 25,
 Id: "cuid-example",
 }`
+<!-- CUSTOM DOCS START -->
+
+<!-- CUSTOM DOCS END -->
+

@@ -1,4 +1,6 @@
+# v1_files_uploadurls
 
+## Module Functions
 ### Generate asset upload urls <a name="create"></a>
 
 Generates a list of pre-signed upload URLs for the assets required. This API is only necessary if you want to upload to Magic Hour's storage. Refer to the [Input Files Guide](/integration/input-files) for more details.
@@ -28,7 +30,7 @@ curl -X PUT --data '@/path/to/file/video.mp4' \
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `items` | ✓ | The list of assets to upload. The response array will match the order of items in the request body. | `[]V1FilesUploadUrlsCreateBodyItemsItem{V1FilesUploadUrlsCreateBodyItemsItem {Extension: "mp4",Type: V1FilesUploadUrlsCreateBodyItemsItemTypeEnumVideo,},V1FilesUploadUrlsCreateBodyItemsItem {Extension: "mp3",Type: V1FilesUploadUrlsCreateBodyItemsItemTypeEnumAudio,},}` |
+| `Items` | ✓ | The list of assets to upload. The response array will match the order of items in the request body. | `[]V1FilesUploadUrlsCreateBodyItemsItem{V1FilesUploadUrlsCreateBodyItemsItem {Extension: "mp4",Type: V1FilesUploadUrlsCreateBodyItemsItemTypeEnumVideo,},V1FilesUploadUrlsCreateBodyItemsItem {Extension: "mp3",Type: V1FilesUploadUrlsCreateBodyItemsItemTypeEnumAudio,},}` |
 
 #### Example Snippet
 
@@ -83,3 +85,7 @@ UploadUrl: "https://videos.magichour.ai/api-assets/id/audio.mp3?auth-value=12345
 },
 },
 }`
+<!-- CUSTOM DOCS START -->
+
+<!-- CUSTOM DOCS END -->
+

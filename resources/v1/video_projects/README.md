@@ -1,4 +1,6 @@
+# v1_videoprojects
 
+## Module Functions
 ### Delete video <a name="delete"></a>
 
 Permanently delete the rendered video. This action is not reversible, please be sure before deleting.
@@ -9,7 +11,7 @@ Permanently delete the rendered video. This action is not reversible, please be 
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `id` | ✓ | Unique ID of the video project. This value is returned by all of the POST APIs that create a video. | `"cuid-example"` |
+| `Id` | ✓ | Unique ID of the video project. This value is returned by all of the POST APIs that create a video. | `"cuid-example"` |
 
 #### Example Snippet
 
@@ -53,7 +55,7 @@ The video can be one of the following status
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `id` | ✓ | Unique ID of the video project. This value is returned by all of the POST APIs that create a video. | `"cuid-example"` |
+| `Id` | ✓ | Unique ID of the video project. This value is returned by all of the POST APIs that create a video. | `"cuid-example"` |
 
 #### Example Snippet
 
@@ -113,3 +115,7 @@ TotalFrameCost: 450,
 Type: "FACE_SWAP",
 Width: 512,
 }`
+<!-- CUSTOM DOCS START -->
+
+<!-- CUSTOM DOCS END -->
+

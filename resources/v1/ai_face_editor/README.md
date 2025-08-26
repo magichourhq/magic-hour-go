@@ -1,4 +1,6 @@
+# v1_aifaceeditor
 
+## Module Functions
 ### AI Face Editor <a name="create"></a>
 
 Edit facial features of an image using AI. Each edit costs 1 frame. The height/width of the output image depends on your subscription. Please refer to our [pricing](/pricing) page for more details
@@ -9,9 +11,25 @@ Edit facial features of an image using AI. Each edit costs 1 frame. The height/w
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `assets` | ✓ | Provide the assets for face editor | `V1AiFaceEditorCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
-| `style` | ✓ | Face editing parameters | `V1AiFaceEditorCreateBodyStyle {EnhanceFace: nullable.NewValue(false),EyeGazeHorizontal: nullable.NewValue(0.0),EyeGazeVertical: nullable.NewValue(0.0),EyeOpenRatio: nullable.NewValue(0.0),EyebrowDirection: nullable.NewValue(0.0),HeadPitch: nullable.NewValue(0.0),HeadRoll: nullable.NewValue(0.0),HeadYaw: nullable.NewValue(0.0),LipOpenRatio: nullable.NewValue(0.0),MouthGrim: nullable.NewValue(0.0),MouthPositionHorizontal: nullable.NewValue(0.0),MouthPositionVertical: nullable.NewValue(0.0),MouthPout: nullable.NewValue(0.0),MouthPurse: nullable.NewValue(0.0),MouthSmile: nullable.NewValue(0.0),}` |
-| `name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Face Editor image"` |
+| `Assets` | ✓ | Provide the assets for face editor | `V1AiFaceEditorCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
+| `└─ ImageFilePath` | ✓ | This is the image whose face will be edited. This value is either - a direct URL to the video file - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).  Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.  | `"api-assets/id/1234.png"` |
+| `Style` | ✓ | Face editing parameters | `V1AiFaceEditorCreateBodyStyle {EnhanceFace: nullable.NewValue(false),EyeGazeHorizontal: nullable.NewValue(0.0),EyeGazeVertical: nullable.NewValue(0.0),EyeOpenRatio: nullable.NewValue(0.0),EyebrowDirection: nullable.NewValue(0.0),HeadPitch: nullable.NewValue(0.0),HeadRoll: nullable.NewValue(0.0),HeadYaw: nullable.NewValue(0.0),LipOpenRatio: nullable.NewValue(0.0),MouthGrim: nullable.NewValue(0.0),MouthPositionHorizontal: nullable.NewValue(0.0),MouthPositionVertical: nullable.NewValue(0.0),MouthPout: nullable.NewValue(0.0),MouthPurse: nullable.NewValue(0.0),MouthSmile: nullable.NewValue(0.0),}` |
+| `└─ EnhanceFace` | ✗ | Enhance face features | `false` |
+| `└─ EyeGazeHorizontal` | ✗ | Horizontal eye gaze (-100 to 100), in increments of 5 | `0.0` |
+| `└─ EyeGazeVertical` | ✗ | Vertical eye gaze (-100 to 100), in increments of 5 | `0.0` |
+| `└─ EyeOpenRatio` | ✗ | Eye open ratio (-100 to 100), in increments of 5 | `0.0` |
+| `└─ EyebrowDirection` | ✗ | Eyebrow direction (-100 to 100), in increments of 5 | `0.0` |
+| `└─ HeadPitch` | ✗ | Head pitch (-100 to 100), in increments of 5 | `0.0` |
+| `└─ HeadRoll` | ✗ | Head roll (-100 to 100), in increments of 5 | `0.0` |
+| `└─ HeadYaw` | ✗ | Head yaw (-100 to 100), in increments of 5 | `0.0` |
+| `└─ LipOpenRatio` | ✗ | Lip open ratio (-100 to 100), in increments of 5 | `0.0` |
+| `└─ MouthGrim` | ✗ | Mouth grim (-100 to 100), in increments of 5 | `0.0` |
+| `└─ MouthPositionHorizontal` | ✗ | Horizontal mouth position (-100 to 100), in increments of 5 | `0.0` |
+| `└─ MouthPositionVertical` | ✗ | Vertical mouth position (-100 to 100), in increments of 5 | `0.0` |
+| `└─ MouthPout` | ✗ | Mouth pout (-100 to 100), in increments of 5 | `0.0` |
+| `└─ MouthPurse` | ✗ | Mouth purse (-100 to 100), in increments of 5 | `0.0` |
+| `└─ MouthSmile` | ✗ | Mouth smile (-100 to 100), in increments of 5 | `0.0` |
+| `Name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Face Editor image"` |
 
 #### Example Snippet
 
@@ -69,3 +87,7 @@ CreditsCharged: 1,
 FrameCost: 1,
 Id: "cuid-example",
 }`
+<!-- CUSTOM DOCS START -->
+
+<!-- CUSTOM DOCS END -->
+

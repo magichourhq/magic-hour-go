@@ -1,4 +1,6 @@
+# v1_aimemegenerator
 
+## Module Functions
 ### AI Meme Generator <a name="create"></a>
 
 Create an AI generated meme. Each meme costs 10 credits.
@@ -9,8 +11,11 @@ Create an AI generated meme. Each meme costs 10 credits.
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `style` | ✓ |  | `V1AiMemeGeneratorCreateBodyStyle {SearchWeb: nullable.NewValue(false),Template: V1AiMemeGeneratorCreateBodyStyleTemplateEnumDrakeHotlineBling,Topic: "When the code finally works",}` |
-| `name` | ✗ | The name of the meme. | `"My Funny Meme"` |
+| `Style` | ✓ |  | `V1AiMemeGeneratorCreateBodyStyle {SearchWeb: nullable.NewValue(false),Template: V1AiMemeGeneratorCreateBodyStyleTemplateEnumDrakeHotlineBling,Topic: "When the code finally works",}` |
+| `└─ SearchWeb` | ✗ | Whether to search the web for meme content. | `false` |
+| `└─ Template` | ✓ | To use our templates, pass in one of the enum values. | `V1AiMemeGeneratorCreateBodyStyleTemplateEnumDrakeHotlineBling` |
+| `└─ Topic` | ✓ | The topic of the meme. | `"When the code finally works"` |
+| `Name` | ✗ | The name of the meme. | `"My Funny Meme"` |
 
 #### Example Snippet
 
@@ -53,3 +58,7 @@ CreditsCharged: 10,
 FrameCost: 10,
 Id: "cuid-example",
 }`
+<!-- CUSTOM DOCS START -->
+
+<!-- CUSTOM DOCS END -->
+

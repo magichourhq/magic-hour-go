@@ -1,4 +1,6 @@
+# v1_aiimageupscaler
 
+## Module Functions
 ### AI Image Upscaler <a name="create"></a>
 
 Upscale your image using AI. Each 2x upscale costs 50 credits, and 4x upscale costs 200 credits.
@@ -9,10 +11,13 @@ Upscale your image using AI. Each 2x upscale costs 50 credits, and 4x upscale co
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `assets` | ✓ | Provide the assets for upscaling | `V1AiImageUpscalerCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
-| `scale_factor` | ✓ | How much to scale the image. Must be either 2 or 4.              Note: 4x upscale is only available on Creator, Pro, or Business tier. | `2.0` |
-| `style` | ✓ |  | `V1AiImageUpscalerCreateBodyStyle {Enhancement: V1AiImageUpscalerCreateBodyStyleEnhancementEnumBalanced,}` |
-| `name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Image Upscaler image"` |
+| `Assets` | ✓ | Provide the assets for upscaling | `V1AiImageUpscalerCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
+| `└─ ImageFilePath` | ✓ | The image to upscale. This value is either - a direct URL to the video file - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).  Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.  | `"api-assets/id/1234.png"` |
+| `ScaleFactor` | ✓ | How much to scale the image. Must be either 2 or 4.              Note: 4x upscale is only available on Creator, Pro, or Business tier. | `2.0` |
+| `Style` | ✓ |  | `V1AiImageUpscalerCreateBodyStyle {Enhancement: V1AiImageUpscalerCreateBodyStyleEnhancementEnumBalanced,}` |
+| `└─ Enhancement` | ✓ |  | `V1AiImageUpscalerCreateBodyStyleEnhancementEnumBalanced` |
+| `└─ Prompt` | ✗ | A prompt to guide the final image. This value is ignored if `enhancement` is not Creative | `"string"` |
+| `Name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Image Upscaler image"` |
 
 #### Example Snippet
 
@@ -57,3 +62,7 @@ CreditsCharged: 50,
 FrameCost: 50,
 Id: "cuid-example",
 }`
+<!-- CUSTOM DOCS START -->
+
+<!-- CUSTOM DOCS END -->
+

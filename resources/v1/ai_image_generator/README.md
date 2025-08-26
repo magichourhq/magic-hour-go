@@ -1,4 +1,6 @@
+# v1_aiimagegenerator
 
+## Module Functions
 ### AI Images <a name="create"></a>
 
 Create an AI image. Each image costs 5 credits.
@@ -9,10 +11,12 @@ Create an AI image. Each image costs 5 credits.
 
 | Parameter | Required | Description | Example |
 |-----------|:--------:|-------------|--------|
-| `image_count` | ✓ | Number of images to generate. | `1` |
-| `orientation` | ✓ | The orientation of the output image(s). | `V1AiImageGeneratorCreateBodyOrientationEnumLandscape` |
-| `style` | ✓ | The art style to use for image generation. | `V1AiImageGeneratorCreateBodyStyle {Prompt: "Cool image",Tool: nullable.NewValue(V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator),}` |
-| `name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Ai Image image"` |
+| `ImageCount` | ✓ | Number of images to generate. | `1` |
+| `Orientation` | ✓ | The orientation of the output image(s). | `V1AiImageGeneratorCreateBodyOrientationEnumLandscape` |
+| `Style` | ✓ | The art style to use for image generation. | `V1AiImageGeneratorCreateBodyStyle {Prompt: "Cool image",Tool: nullable.NewValue(V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator),}` |
+| `└─ Prompt` | ✓ | The prompt used for the image(s). | `"Cool image"` |
+| `└─ Tool` | ✗ | The art style to use for image generation. Defaults to 'general' if not provided. | `V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator` |
+| `Name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Ai Image image"` |
 
 #### Example Snippet
 
@@ -56,3 +60,7 @@ CreditsCharged: 5,
 FrameCost: 5,
 Id: "cuid-example",
 }`
+<!-- CUSTOM DOCS START -->
+
+<!-- CUSTOM DOCS END -->
+
