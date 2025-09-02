@@ -1,5 +1,5 @@
 {
-  "id": "2f482aa8-c84c-46e2-97cb-cd4946459565",
+  "id": "3e23d785-71f4-4eb3-9ff3-a3e7db6bbe24",
   "tracked_paths": [
     {
       "editable": true,
@@ -520,6 +520,10 @@
     {
       "editable": false,
       "path": "types/v1_ai_gif_generator_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_gif_generator_create_body_output_format_enum.go"
     },
     {
       "editable": false,
