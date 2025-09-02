@@ -39,8 +39,9 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	// Prep body
 	reqBodyBuf := &bytes.Buffer{}
 	reqBody, err := json.Marshal(types.V1AiGifGeneratorCreateBody{
-		Name:  request.Name,
-		Style: request.Style,
+		Name:         request.Name,
+		OutputFormat: request.OutputFormat,
+		Style:        request.Style,
 	})
 	if err != nil {
 		return types.V1AiGifGeneratorCreateResponse{}, err
