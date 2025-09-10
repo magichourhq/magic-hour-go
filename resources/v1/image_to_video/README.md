@@ -1,4 +1,4 @@
-# v1_imagetovideo
+# v1.image_to_video
 
 ## Module Functions
 ### Image-to-Video <a name="create"></a>

@@ -1,4 +1,4 @@
-# v1_facedetection
+# v1.face_detection
 
 ## Module Functions
 ### Get face detection details <a name="get"></a>

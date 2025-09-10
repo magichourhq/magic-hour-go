@@ -1,4 +1,4 @@
-# v1_animation
+# v1.animation
 
 ## Module Functions
 ### Animation <a name="create"></a>

@@ -1,4 +1,4 @@
-# v1_faceswapphoto
+# v1.face_swap_photo
 
 ## Module Functions
 ### Face Swap Photo <a name="create"></a>

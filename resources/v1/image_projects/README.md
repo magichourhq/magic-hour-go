@@ -1,4 +1,4 @@
-# v1_imageprojects
+# v1.image_projects
 
 ## Module Functions
 ### Delete image <a name="delete"></a>
