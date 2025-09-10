@@ -1,4 +1,4 @@
-# v1_aiqrcodegenerator
+# v1.ai_qr_code_generator
 
 ## Module Functions
 ### AI QR Code <a name="create"></a>

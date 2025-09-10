@@ -1,4 +1,4 @@
-# v1_aiimageeditor
+# v1.ai_image_editor
 
 ## Module Functions
 ### AI Image Editor <a name="create"></a>

@@ -1,4 +1,4 @@
-# v1_aiclotheschanger
+# v1.ai_clothes_changer
 
 ## Module Functions
 ### AI Clothes Changer <a name="create"></a>

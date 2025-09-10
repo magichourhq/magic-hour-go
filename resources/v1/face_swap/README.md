@@ -1,4 +1,4 @@
-# v1_faceswap
+# v1.face_swap
 
 ## Module Functions
 ### Face Swap video <a name="create"></a>

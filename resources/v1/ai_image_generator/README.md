@@ -1,4 +1,4 @@
-# v1_aiimagegenerator
+# v1.ai_image_generator
 
 ## Module Functions
 ### AI Images <a name="create"></a>

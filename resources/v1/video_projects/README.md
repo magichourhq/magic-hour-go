@@ -1,4 +1,4 @@
-# v1_videoprojects
+# v1.video_projects
 
 ## Module Functions
 ### Delete video <a name="delete"></a>

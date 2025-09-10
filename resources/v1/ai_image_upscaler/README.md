@@ -1,4 +1,4 @@
-# v1_aiimageupscaler
+# v1.ai_image_upscaler
 
 ## Module Functions
 ### AI Image Upscaler <a name="create"></a>

@@ -47,6 +47,7 @@ const (
 	V1VideoToVideoCreateBodyStyleArtStyleEnumOilPainting       V1VideoToVideoCreateBodyStyleArtStyleEnum = "Oil Painting"
 	V1VideoToVideoCreateBodyStyleArtStyleEnumOnFire            V1VideoToVideoCreateBodyStyleArtStyleEnum = "On Fire"
 	V1VideoToVideoCreateBodyStyleArtStyleEnumOrigami           V1VideoToVideoCreateBodyStyleArtStyleEnum = "Origami"
+	V1VideoToVideoCreateBodyStyleArtStyleEnumPainterlyAnime    V1VideoToVideoCreateBodyStyleArtStyleEnum = "Painterly Anime"
 	V1VideoToVideoCreateBodyStyleArtStyleEnumPixar             V1VideoToVideoCreateBodyStyleArtStyleEnum = "Pixar"
 	V1VideoToVideoCreateBodyStyleArtStyleEnumPixel             V1VideoToVideoCreateBodyStyleArtStyleEnum = "Pixel"
 	V1VideoToVideoCreateBodyStyleArtStyleEnumPowerArmor        V1VideoToVideoCreateBodyStyleArtStyleEnum = "Power Armor"

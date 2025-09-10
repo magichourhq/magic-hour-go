@@ -1,4 +1,4 @@
-# v1_imagebackgroundremover
+# v1.image_background_remover
 
 ## Module Functions
 ### Image Background Remover <a name="create"></a>

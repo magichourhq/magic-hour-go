@@ -1,4 +1,4 @@
-# v1_aimemegenerator
+# v1.ai_meme_generator
 
 ## Module Functions
 ### AI Meme Generator <a name="create"></a>

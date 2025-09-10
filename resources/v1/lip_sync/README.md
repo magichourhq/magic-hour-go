@@ -1,4 +1,4 @@
-# v1_lipsync
+# v1.lip_sync
 
 ## Module Functions
 ### Lip Sync <a name="create"></a>
