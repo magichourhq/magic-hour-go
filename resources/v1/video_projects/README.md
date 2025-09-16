@@ -1,6 +1,7 @@
 # v1.video_projects
 
 ## Module Functions
+
 ### Delete video <a name="delete"></a>
 
 Permanently delete the rendered video. This action is not reversible, please be sure before deleting.
@@ -115,7 +116,5 @@ TotalFrameCost: 450,
 Type: "FACE_SWAP",
 Width: 512,
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 

@@ -1,6 +1,7 @@
 # v1.ai_headshot_generator
 
 ## Module Functions
+
 ### AI Headshots <a name="create"></a>
 
 Create an AI headshot. Each headshot costs 50 credits.
@@ -56,7 +57,5 @@ CreditsCharged: 50,
 FrameCost: 50,
 Id: "cuid-example",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 

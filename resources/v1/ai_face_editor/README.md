@@ -1,6 +1,7 @@
 # v1.ai_face_editor
 
 ## Module Functions
+
 ### AI Face Editor <a name="create"></a>
 
 Edit facial features of an image using AI. Each edit costs 1 frame. The height/width of the output image depends on your subscription. Please refer to our [pricing](/pricing) page for more details
@@ -87,7 +88,5 @@ CreditsCharged: 1,
 FrameCost: 1,
 Id: "cuid-example",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 

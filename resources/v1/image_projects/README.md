@@ -1,6 +1,7 @@
 # v1.image_projects
 
 ## Module Functions
+
 ### Delete image <a name="delete"></a>
 
 Permanently delete the rendered image(s). This action is not reversible, please be sure before deleting.
@@ -107,7 +108,5 @@ Status: V1ImageProjectsGetResponseStatusEnumComplete,
 TotalFrameCost: 5,
 Type: "AI_IMAGE",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 

@@ -1,6 +1,7 @@
 # v1.ai_photo_editor
 
 ## Module Functions
+
 ### AI Photo Editor <a name="create"></a>
 
 > **NOTE**: this API is still in early development stages, and should be avoided. Please reach out to us if you're interested in this API. 
@@ -78,7 +79,5 @@ CreditsCharged: 10,
 FrameCost: 10,
 Id: "cuid-example",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 

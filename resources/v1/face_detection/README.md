@@ -1,6 +1,7 @@
 # v1.face_detection
 
 ## Module Functions
+
 ### Get face detection details <a name="get"></a>
 
 Get the details of a face detection task. 
@@ -112,7 +113,5 @@ func main() {
 CreditsCharged: 123,
 Id: "uuid-example",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 

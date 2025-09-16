@@ -1,6 +1,7 @@
 # v1.ai_meme_generator
 
 ## Module Functions
+
 ### AI Meme Generator <a name="create"></a>
 
 Create an AI generated meme. Each meme costs 10 credits.
@@ -58,7 +59,5 @@ CreditsCharged: 10,
 FrameCost: 10,
 Id: "cuid-example",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 

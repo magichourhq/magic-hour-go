@@ -1,6 +1,7 @@
 # v1.auto_subtitle_generator
 
 ## Module Functions
+
 ### Auto Subtitle Generator <a name="create"></a>
 
 Automatically generate subtitles for your video in multiple languages.
@@ -62,7 +63,5 @@ CreditsCharged: 450,
 EstimatedFrameCost: 450,
 Id: "cuid-example",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 
