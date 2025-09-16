@@ -1,4 +1,4 @@
-# v1_autosubtitlegenerator
+# v1.auto_subtitle_generator
 
 ## Module Functions
 ### Auto Subtitle Generator <a name="create"></a>

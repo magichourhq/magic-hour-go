@@ -1,4 +1,4 @@
-# v1_aitalkingphoto
+# v1.ai_talking_photo
 
 ## Module Functions
 ### AI Talking Photo <a name="create"></a>
@@ -18,7 +18,7 @@ Create a talking photo from an image and audio or text input.
 | `StartSeconds` | ✓ | The start time of the input audio in seconds. The maximum duration allowed is 60 seconds. | `0.0` |
 | `Name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Talking Photo image"` |
 | `Style` | ✗ | Attributes used to dictate the style of the output | `V1AiTalkingPhotoCreateBodyStyle {GenerationMode: nullable.NewValue(V1AiTalkingPhotoCreateBodyStyleGenerationModeEnumExpressive),Intensity: nullable.NewValue(1.5),}` |
-| `└─ GenerationMode` | ✗ | Controls overall motion style. * `expressive` - More motion and facial expressiveness; may introduce visual artifacts. * `stable` -  Reduced motion for cleaner output; may result in minimal animation. | `V1AiTalkingPhotoCreateBodyStyleGenerationModeEnumExpressive` |
+| `└─ GenerationMode` | ✗ | Controls overall motion style. * `pro` -  Realistic, high fidelity, accurate lip sync, slower. * `expressive` - More motion and facial expressiveness; may introduce visual artifacts. * `stable` -  Reduced motion for cleaner output; may result in minimal animation. (Deprecated: passing this value will be treated as `pro`) | `V1AiTalkingPhotoCreateBodyStyleGenerationModeEnumExpressive` |
 | `└─ Intensity` | ✗ | Note: this value is only applicable when generation_mode is `expressive`. The value can include up to 2 decimal places. * Lower values yield more stability but can suppress mouth movement. * Higher values increase motion and expressiveness, with a higher risk of distortion. | `1.5` |
 
 #### Example Snippet

@@ -1,4 +1,4 @@
-# v1_photocolorizer
+# v1.photo_colorizer
 
 ## Module Functions
 ### Photo Colorizer <a name="create"></a>

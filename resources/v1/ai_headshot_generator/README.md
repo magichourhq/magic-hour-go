@@ -1,4 +1,4 @@
-# v1_aiheadshotgenerator
+# v1.ai_headshot_generator
 
 ## Module Functions
 ### AI Headshots <a name="create"></a>

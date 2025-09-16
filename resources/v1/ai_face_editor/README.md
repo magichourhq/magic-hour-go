@@ -1,4 +1,4 @@
-# v1_aifaceeditor
+# v1.ai_face_editor
 
 ## Module Functions
 ### AI Face Editor <a name="create"></a>

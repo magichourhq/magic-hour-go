@@ -1,4 +1,4 @@
-# v1_texttovideo
+# v1.text_to_video
 
 ## Module Functions
 ### Text-to-Video <a name="create"></a>
