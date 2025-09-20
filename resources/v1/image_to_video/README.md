@@ -1,6 +1,7 @@
 # v1.image_to_video
 
 ## Module Functions
+
 ### Image-to-Video <a name="create"></a>
 
 Create a Image To Video video. The estimated frame cost is calculated using 30 FPS. This amount is deducted from your account balance when a video is queued. Once the video is complete, the cost will be updated based on the actual number of frames rendered.
@@ -67,7 +68,5 @@ CreditsCharged: 450,
 EstimatedFrameCost: 450,
 Id: "cuid-example",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 

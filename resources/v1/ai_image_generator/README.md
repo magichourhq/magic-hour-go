@@ -1,6 +1,7 @@
 # v1.ai_image_generator
 
 ## Module Functions
+
 ### AI Images <a name="create"></a>
 
 Create an AI image. Each image costs 5 credits.
@@ -60,7 +61,5 @@ CreditsCharged: 5,
 FrameCost: 5,
 Id: "cuid-example",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 

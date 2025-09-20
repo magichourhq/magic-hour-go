@@ -77,9 +77,18 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 * [create](resources/v1/ai_talking_photo/README.md#create) - AI Talking Photo
 
+### [V1.AiVoiceGenerator](resources/v1/ai_voice_generator/README.md)
+
+* [create](resources/v1/ai_voice_generator/README.md#create) - AI Voice Generator
+
 ### [V1.Animation](resources/v1/animation/README.md)
 
 * [create](resources/v1/animation/README.md#create) - Animation
+
+### [V1.AudioProjects](resources/v1/audio_projects/README.md)
+
+* [delete](resources/v1/audio_projects/README.md#delete) - Delete audio
+* [get](resources/v1/audio_projects/README.md#get) - Get audio details
 
 ### [V1.AutoSubtitleGenerator](resources/v1/auto_subtitle_generator/README.md)
 

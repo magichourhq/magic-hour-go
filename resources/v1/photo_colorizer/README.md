@@ -1,6 +1,7 @@
 # v1.photo_colorizer
 
 ## Module Functions
+
 ### Photo Colorizer <a name="create"></a>
 
 Colorize image. Each image costs 5 credits.
@@ -54,7 +55,5 @@ CreditsCharged: 5,
 FrameCost: 5,
 Id: "cuid-example",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 

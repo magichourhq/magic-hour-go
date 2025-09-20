@@ -1,6 +1,7 @@
 # v1.ai_talking_photo
 
 ## Module Functions
+
 ### AI Talking Photo <a name="create"></a>
 
 Create a talking photo from an image and audio or text input.
@@ -63,7 +64,5 @@ CreditsCharged: 450,
 EstimatedFrameCost: 450,
 Id: "cuid-example",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 

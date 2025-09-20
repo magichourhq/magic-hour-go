@@ -1,5 +1,5 @@
 {
-  "id": "41889f47-f01d-44fd-8608-8197fcb05db6",
+  "id": "855e62c2-e51d-484a-9e52-7fa641940ec6",
   "tracked_paths": [
     {
       "editable": true,
@@ -199,6 +199,18 @@
     },
     {
       "editable": true,
+      "path": "resources/v1/ai_voice_generator/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_voice_generator/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_voice_generator/request_types.go"
+    },
+    {
+      "editable": true,
       "path": "resources/v1/animation/README.md"
     },
     {
@@ -208,6 +220,18 @@
     {
       "editable": false,
       "path": "resources/v1/animation/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/audio_projects/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/audio_projects/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/audio_projects/request_types.go"
     },
     {
       "editable": true,
@@ -431,7 +455,15 @@
     },
     {
       "editable": false,
+      "path": "tests/v1_ai_voice_generator/resource_client_test.go"
+    },
+    {
+      "editable": false,
       "path": "tests/v1_animation/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_audio_projects/resource_client_test.go"
     },
     {
       "editable": false,
@@ -671,6 +703,22 @@
     },
     {
       "editable": false,
+      "path": "types/v1_ai_voice_generator_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_voice_generator_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_voice_generator_create_body_style_voice_name_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_voice_generator_create_response.go"
+    },
+    {
+      "editable": false,
       "path": "types/v1_animation_create_body.go"
     },
     {
@@ -700,6 +748,22 @@
     {
       "editable": false,
       "path": "types/v1_animation_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_audio_projects_get_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_audio_projects_get_response_downloads_item.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_audio_projects_get_response_error.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_audio_projects_get_response_status_enum.go"
     },
     {
       "editable": false,

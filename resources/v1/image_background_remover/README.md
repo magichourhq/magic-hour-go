@@ -1,6 +1,7 @@
 # v1.image_background_remover
 
 ## Module Functions
+
 ### Image Background Remover <a name="create"></a>
 
 Remove background from image. Each image costs 5 credits.
@@ -56,7 +57,5 @@ CreditsCharged: 5,
 FrameCost: 5,
 Id: "cuid-example",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 

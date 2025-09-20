@@ -1,6 +1,7 @@
 # v1.ai_gif_generator
 
 ## Module Functions
+
 ### AI GIFs <a name="create"></a>
 
 Create an AI GIF. Each GIF costs 50 credits.
@@ -56,7 +57,5 @@ CreditsCharged: 50,
 FrameCost: 50,
 Id: "cuid-example",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 

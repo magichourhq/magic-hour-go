@@ -15,7 +15,9 @@ import (
 	ai_photo_editor "github.com/magichourhq/magic-hour-go/resources/v1/ai_photo_editor"
 	ai_qr_code_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_qr_code_generator"
 	ai_talking_photo "github.com/magichourhq/magic-hour-go/resources/v1/ai_talking_photo"
+	ai_voice_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_voice_generator"
 	animation "github.com/magichourhq/magic-hour-go/resources/v1/animation"
+	audio_projects "github.com/magichourhq/magic-hour-go/resources/v1/audio_projects"
 	auto_subtitle_generator "github.com/magichourhq/magic-hour-go/resources/v1/auto_subtitle_generator"
 	face_detection "github.com/magichourhq/magic-hour-go/resources/v1/face_detection"
 	face_swap "github.com/magichourhq/magic-hour-go/resources/v1/face_swap"
@@ -33,6 +35,7 @@ import (
 
 type Client struct {
 	coreClient             *sdkcore.CoreClient
+	AudioProjects          *audio_projects.Client
 	ImageProjects          *image_projects.Client
 	VideoProjects          *video_projects.Client
 	FaceDetection          *face_detection.Client
@@ -47,6 +50,7 @@ type Client struct {
 	AiPhotoEditor          *ai_photo_editor.Client
 	AiQrCodeGenerator      *ai_qr_code_generator.Client
 	AiTalkingPhoto         *ai_talking_photo.Client
+	AiVoiceGenerator       *ai_voice_generator.Client
 	Animation              *animation.Client
 	AutoSubtitleGenerator  *auto_subtitle_generator.Client
 	FaceSwap               *face_swap.Client
@@ -65,6 +69,7 @@ type RequestModifier = func(req *http.Request) error
 func NewClient(coreClient *sdkcore.CoreClient) *Client {
 	client := Client{
 		coreClient:             coreClient,
+		AudioProjects:          audio_projects.NewClient(coreClient),
 		ImageProjects:          image_projects.NewClient(coreClient),
 		VideoProjects:          video_projects.NewClient(coreClient),
 		FaceDetection:          face_detection.NewClient(coreClient),
@@ -79,6 +84,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 		AiPhotoEditor:          ai_photo_editor.NewClient(coreClient),
 		AiQrCodeGenerator:      ai_qr_code_generator.NewClient(coreClient),
 		AiTalkingPhoto:         ai_talking_photo.NewClient(coreClient),
+		AiVoiceGenerator:       ai_voice_generator.NewClient(coreClient),
 		Animation:              animation.NewClient(coreClient),
 		AutoSubtitleGenerator:  auto_subtitle_generator.NewClient(coreClient),
 		FaceSwap:               face_swap.NewClient(coreClient),

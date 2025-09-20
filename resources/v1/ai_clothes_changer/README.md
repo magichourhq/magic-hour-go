@@ -1,6 +1,7 @@
 # v1.ai_clothes_changer
 
 ## Module Functions
+
 ### AI Clothes Changer <a name="create"></a>
 
 Change outfits in photos in seconds with just a photo reference. Each photo costs 25 credits.
@@ -58,7 +59,5 @@ CreditsCharged: 25,
 FrameCost: 25,
 Id: "cuid-example",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 

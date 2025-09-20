@@ -1,6 +1,7 @@
 # v1.ai_qr_code_generator
 
 ## Module Functions
+
 ### AI QR Code <a name="create"></a>
 
 Create an AI QR code. Each QR code costs 20 credits.
@@ -56,7 +57,5 @@ CreditsCharged: 20,
 FrameCost: 20,
 Id: "cuid-example",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 

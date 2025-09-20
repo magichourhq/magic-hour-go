@@ -1,6 +1,7 @@
 # v1.face_swap_photo
 
 ## Module Functions
+
 ### Face Swap Photo <a name="create"></a>
 
 Create a face swap photo. Each photo costs 5 credits. The height/width of the output image depends on your subscription. Please refer to our [pricing](https://magichour.ai/pricing) page for more details
@@ -65,7 +66,5 @@ CreditsCharged: 5,
 FrameCost: 5,
 Id: "cuid-example",
 }`
-<!-- CUSTOM DOCS START -->
 
-<!-- CUSTOM DOCS END -->
 
