@@ -22,6 +22,6 @@ type V1AudioProjectsGetResponse struct {
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// The status of the audio.
 	Status V1AudioProjectsGetResponseStatusEnum `json:"status"`
-	// The type of the audio project. Possible values are VOICE_GENERATOR
+	// The type of the audio project. Possible values are VOICE_GENERATOR, VOICE_CHANGER
 	Type string `json:"type"`
 }

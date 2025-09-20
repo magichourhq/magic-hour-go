@@ -1,5 +1,5 @@
 {
-  "id": "855e62c2-e51d-484a-9e52-7fa641940ec6",
+  "id": "4eef9017-b4a1-40cb-a212-1a194632d163",
   "tracked_paths": [
     {
       "editable": true,
@@ -948,6 +948,14 @@
     {
       "editable": false,
       "path": "types/v1_lip_sync_create_body_assets_video_source_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_lip_sync_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_lip_sync_create_body_style_generation_mode_enum.go"
     },
     {
       "editable": false,
