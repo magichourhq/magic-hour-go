@@ -44,6 +44,7 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 		Height:       request.Height,
 		MaxFpsLimit:  request.MaxFpsLimit,
 		Name:         request.Name,
+		Style:        request.Style,
 		Width:        request.Width,
 		Assets:       request.Assets,
 		EndSeconds:   request.EndSeconds,

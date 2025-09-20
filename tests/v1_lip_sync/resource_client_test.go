@@ -28,7 +28,10 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		MaxFpsLimit:  nullable.NewValue(12.0),
 		Name:         nullable.NewValue("Lip Sync video"),
 		StartSeconds: 0.0,
-		Width:        nullable.NewValue(123),
+		Style: nullable.NewValue(types.V1LipSyncCreateBodyStyle{
+			GenerationMode: nullable.NewValue(types.V1LipSyncCreateBodyStyleGenerationModeEnumLite),
+		}),
+		Width: nullable.NewValue(123),
 	})
 
 	if err != nil {
