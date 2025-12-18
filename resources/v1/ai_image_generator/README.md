@@ -2,9 +2,9 @@
 
 ## Module Functions
 
-### AI Images <a name="create"></a>
+### AI Image Generator <a name="create"></a>
 
-Create an AI image. Each image costs 5 credits.
+Create an AI image. Each standard image costs 5 credits. Pro quality images cost 30 credits.
 
 **API Endpoint**: `POST /v1/ai-image-generator`
 
@@ -14,8 +14,9 @@ Create an AI image. Each image costs 5 credits.
 |-----------|:--------:|-------------|--------|
 | `ImageCount` | ✓ | Number of images to generate. | `1` |
 | `Orientation` | ✓ | The orientation of the output image(s). | `V1AiImageGeneratorCreateBodyOrientationEnumLandscape` |
-| `Style` | ✓ | The art style to use for image generation. | `V1AiImageGeneratorCreateBodyStyle {Prompt: "Cool image",Tool: nullable.NewValue(V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator),}` |
+| `Style` | ✓ | The art style to use for image generation. | `V1AiImageGeneratorCreateBodyStyle {Prompt: "Cool image",QualityMode: nullable.NewValue(V1AiImageGeneratorCreateBodyStyleQualityModeEnumStandard),Tool: nullable.NewValue(V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator),}` |
 | `└─ Prompt` | ✓ | The prompt used for the image(s). | `"Cool image"` |
+| `└─ QualityMode` | ✗ | Controls the quality of the generated image. Defaults to 'standard' if not specified.  **Options:** - `standard` - Standard quality generation. Cost: 5 credits per image. - `pro` - Pro quality generation with enhanced details and quality. Cost: 30 credits per image.  Note: Pro mode is available for users on Creator, Pro, or Business tier. | `V1AiImageGeneratorCreateBodyStyleQualityModeEnumStandard` |
 | `└─ Tool` | ✗ | The art style to use for image generation. Defaults to 'general' if not provided. | `V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator` |
 | `Name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Ai Image image"` |
 
@@ -42,8 +43,9 @@ func main() {
 		Name:        nullable.NewValue("Ai Image image"),
 		Orientation: types.V1AiImageGeneratorCreateBodyOrientationEnumLandscape,
 		Style: types.V1AiImageGeneratorCreateBodyStyle{
-			Prompt: "Cool image",
-			Tool:   nullable.NewValue(types.V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator),
+			Prompt:      "Cool image",
+			QualityMode: nullable.NewValue(types.V1AiImageGeneratorCreateBodyStyleQualityModeEnumStandard),
+			Tool:        nullable.NewValue(types.V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator),
 		},
 	})
 }
@@ -61,5 +63,4 @@ CreditsCharged: 5,
 FrameCost: 5,
 Id: "cuid-example",
 }`
-
 

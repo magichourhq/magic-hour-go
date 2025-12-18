@@ -49,7 +49,6 @@ The video can be one of the following status
 - `error` - an error occurred during rendering
 - `canceled` - video render is canceled by the user
 
-
 **API Endpoint**: `GET /v1/video-projects/{id}`
 
 #### Parameters
@@ -116,5 +115,4 @@ TotalFrameCost: 450,
 Type: "FACE_SWAP",
 Width: 512,
 }`
-
 

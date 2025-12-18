@@ -49,7 +49,6 @@ The audio can be one of the following status
 - `error` - an error occurred during rendering
 - `canceled` - audio render is canceled by the user
 
-
 **API Endpoint**: `GET /v1/audio-projects/{id}`
 
 #### Parameters
@@ -106,5 +105,4 @@ Name: nullable.NewValue("Example Name"),
 Status: V1AudioProjectsGetResponseStatusEnumComplete,
 Type: "VOICE_GENERATOR",
 }`
-
 
