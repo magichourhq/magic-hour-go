@@ -18,10 +18,15 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 	)
 	res, err := client.V1.AiImageEditor.Create(ai_image_editor.CreateRequest{
 		Assets: types.V1AiImageEditorCreateBodyAssets{
-			ImageFilePath: "api-assets/id/1234.png",
+			ImageFilePath: nullable.NewValue("api-assets/id/1234.png"),
+			ImageFilePaths: nullable.NewValue([]string{
+				"api-assets/id/1234.png",
+				"api-assets/id/1235.png",
+			}),
 		},
 		Name: nullable.NewValue("Ai Image Editor image"),
 		Style: types.V1AiImageEditorCreateBodyStyle{
+			Model:  nullable.NewValue(types.V1AiImageEditorCreateBodyStyleModelEnumNanoBanana),
 			Prompt: "Give me sunglasses",
 		},
 	})

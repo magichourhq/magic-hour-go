@@ -24,9 +24,9 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 	return &client
 }
 
-// AI QR Code
+// AI QR Code Generator
 //
-// Create an AI QR code. Each QR code costs 20 credits.
+// Create an AI QR code. Each QR code costs 0 credits.
 //
 // POST /v1/ai-qr-code-generator
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiQrCodeGeneratorCreateResponse, error) {

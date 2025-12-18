@@ -24,7 +24,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 	return &client
 }
 
-// AI GIFs
+// AI GIF Generator
 //
 // Create an AI GIF. Each GIF costs 50 credits.
 //

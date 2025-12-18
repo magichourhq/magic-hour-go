@@ -24,9 +24,9 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 	return &client
 }
 
-// AI Images
+// AI Image Generator
 //
-// Create an AI image. Each image costs 5 credits.
+// Create an AI image. Each standard image costs 5 credits. Pro quality images cost 30 credits.
 //
 // POST /v1/ai-image-generator
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiImageGeneratorCreateResponse, error) {
