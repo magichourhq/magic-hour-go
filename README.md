@@ -32,7 +32,6 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 ## Module Documentation and Snippets
 
-
 ### [V1.AiClothesChanger](resources/v1/ai_clothes_changer/README.md)
 
 * [create](resources/v1/ai_clothes_changer/README.md#create) - AI Clothes Changer
@@ -43,11 +42,11 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 ### [V1.AiGifGenerator](resources/v1/ai_gif_generator/README.md)
 
-* [create](resources/v1/ai_gif_generator/README.md#create) - AI GIFs
+* [create](resources/v1/ai_gif_generator/README.md#create) - AI GIF Generator
 
 ### [V1.AiHeadshotGenerator](resources/v1/ai_headshot_generator/README.md)
 
-* [create](resources/v1/ai_headshot_generator/README.md#create) - AI Headshots
+* [create](resources/v1/ai_headshot_generator/README.md#create) - AI Headshot Generator
 
 ### [V1.AiImageEditor](resources/v1/ai_image_editor/README.md)
 
@@ -55,7 +54,7 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 ### [V1.AiImageGenerator](resources/v1/ai_image_generator/README.md)
 
-* [create](resources/v1/ai_image_generator/README.md#create) - AI Images
+* [create](resources/v1/ai_image_generator/README.md#create) - AI Image Generator
 
 ### [V1.AiImageUpscaler](resources/v1/ai_image_upscaler/README.md)
 
@@ -71,7 +70,7 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 ### [V1.AiQrCodeGenerator](resources/v1/ai_qr_code_generator/README.md)
 
-* [create](resources/v1/ai_qr_code_generator/README.md#create) - AI QR Code
+* [create](resources/v1/ai_qr_code_generator/README.md#create) - AI QR Code Generator
 
 ### [V1.AiTalkingPhoto](resources/v1/ai_talking_photo/README.md)
 
@@ -101,7 +100,7 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 ### [V1.FaceSwap](resources/v1/face_swap/README.md)
 
-* [create](resources/v1/face_swap/README.md#create) - Face Swap video
+* [create](resources/v1/face_swap/README.md#create) - Face Swap Video
 
 ### [V1.FaceSwapPhoto](resources/v1/face_swap_photo/README.md)
 

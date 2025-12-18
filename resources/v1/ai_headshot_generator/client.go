@@ -24,7 +24,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 	return &client
 }
 
-// AI Headshots
+// AI Headshot Generator
 //
 // Create an AI headshot. Each headshot costs 50 credits.
 //
