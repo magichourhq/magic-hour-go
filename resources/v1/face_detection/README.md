@@ -4,7 +4,7 @@
 
 ### Get face detection details <a name="get"></a>
 
-Get the details of a face detection task. 
+Get the details of a face detection task.
 
 Use this API to get the list of faces detected in the image or video to use in the [face swap photo](/api-reference/face-swap-photo/face-swap-photo) or [face swap video](/api-reference/face-swap/face-swap-video) API calls for multi-face swaps.
 
@@ -12,9 +12,9 @@ Use this API to get the list of faces detected in the image or video to use in t
 
 #### Parameters
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `Id` | ✓ | The id of the task. This value is returned by the [face detection API](/api-reference/files/face-detection#response-id). | `"uuid-example"` |
+| Parameter | Required | Description                                                                                                              | Example          |
+| --------- | :------: | ------------------------------------------------------------------------------------------------------------------------ | ---------------- |
+| `Id`      |    ✓     | The id of the task. This value is returned by the [face detection API](/api-reference/files/face-detection#response-id). | `"uuid-example"` |
 
 #### Example Snippet
 
@@ -36,16 +36,18 @@ func main() {
 		Id: "uuid-example",
 	})
 }
-
 ```
 
 #### Response
 
 ##### Type
+
 [V1FaceDetectionGetResponse](/types/v1_face_detection_get_response.go)
 
 ##### Example
-`V1FaceDetectionGetResponse {
+
+```go
+V1FaceDetectionGetResponse {
 CreditsCharged: 0,
 Faces: []V1FaceDetectionGetResponseFacesItem{
 V1FaceDetectionGetResponseFacesItem {
@@ -55,12 +57,13 @@ Url: "https://videos.magichour.ai/api-assets/id/0-0.png",
 },
 Id: "uuid-example",
 Status: V1FaceDetectionGetResponseStatusEnumComplete,
-}`
+}
+```
 
 ### Face Detection <a name="create"></a>
 
-Detect faces in an image or video. 
-      
+Detect faces in an image or video.
+
 Use this API to get the list of faces detected in the image or video to use in the [face swap photo](/api-reference/face-swap-photo/face-swap-photo) or [face swap video](/api-reference/face-swap/face-swap-video) API calls for multi-face swaps.
 
 Note: Face detection is free to use for the near future. Pricing may change in the future.
@@ -69,11 +72,11 @@ Note: Face detection is free to use for the near future. Pricing may change in t
 
 #### Parameters
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `Assets` | ✓ | Provide the assets for face detection | `V1FaceDetectionCreateBodyAssets {TargetFilePath: "api-assets/id/1234.png",}` |
-| `└─ TargetFilePath` | ✓ | This is the image or video where the face will be detected. This value is either - a direct URL to the video file - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).  Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.  | `"api-assets/id/1234.png"` |
-| `ConfidenceScore` | ✗ | Confidence threshold for filtering detected faces.  * Higher values (e.g., 0.9) include only faces detected with high certainty, reducing false positives.  * Lower values (e.g., 0.3) include more faces, but may increase the chance of incorrect detections. | `0.5` |
+| Parameter           | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                    | Example                                                                       |
+| ------------------- | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `Assets`            |    ✓     | Provide the assets for face detection                                                                                                                                                                                                                                                                                                                                                                          | `V1FaceDetectionCreateBodyAssets {TargetFilePath: "api-assets/id/1234.png",}` |
+| `└─ TargetFilePath` |    ✓     | This is the image or video where the face will be detected. This value is either - a direct URL to the video file - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls). Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more. | `"api-assets/id/1234.png"`                                                    |
+| `ConfidenceScore`   |    ✗     | Confidence threshold for filtering detected faces. * Higher values (e.g., 0.9) include only faces detected with high certainty, reducing false positives. * Lower values (e.g., 0.3) include more faces, but may increase the chance of incorrect detections.                                                                                                                                                  | `0.5`                                                                         |
 
 #### Example Snippet
 
@@ -100,17 +103,19 @@ func main() {
 		ConfidenceScore: nullable.NewValue(0.5),
 	})
 }
-
 ```
 
 #### Response
 
 ##### Type
+
 [V1FaceDetectionCreateResponse](/types/v1_face_detection_create_response.go)
 
 ##### Example
-`V1FaceDetectionCreateResponse {
+
+```go
+V1FaceDetectionCreateResponse {
 CreditsCharged: 123,
 Id: "uuid-example",
-}`
-
+}
+```

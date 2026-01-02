@@ -10,13 +10,13 @@ Create an AI generated meme. Each meme costs 10 credits.
 
 #### Parameters
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `Style` | ✓ |  | `V1AiMemeGeneratorCreateBodyStyle {SearchWeb: nullable.NewValue(false),Template: V1AiMemeGeneratorCreateBodyStyleTemplateEnumDrakeHotlineBling,Topic: "When the code finally works",}` |
-| `└─ SearchWeb` | ✗ | Whether to search the web for meme content. | `false` |
-| `└─ Template` | ✓ | To use our templates, pass in one of the enum values. | `V1AiMemeGeneratorCreateBodyStyleTemplateEnumDrakeHotlineBling` |
-| `└─ Topic` | ✓ | The topic of the meme. | `"When the code finally works"` |
-| `Name` | ✗ | The name of the meme. | `"My Funny Meme"` |
+| Parameter      | Required | Description                                           | Example                                                                                                                                                                                |
+| -------------- | :------: | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Style`        |    ✓     |                                                       | `V1AiMemeGeneratorCreateBodyStyle {SearchWeb: nullable.NewValue(false),Template: V1AiMemeGeneratorCreateBodyStyleTemplateEnumDrakeHotlineBling,Topic: "When the code finally works",}` |
+| `└─ SearchWeb` |    ✗     | Whether to search the web for meme content.           | `false`                                                                                                                                                                                |
+| `└─ Template`  |    ✓     | To use our templates, pass in one of the enum values. | `V1AiMemeGeneratorCreateBodyStyleTemplateEnumDrakeHotlineBling`                                                                                                                        |
+| `└─ Topic`     |    ✓     | The topic of the meme.                                | `"When the code finally works"`                                                                                                                                                        |
+| `Name`         |    ✗     | The name of the meme.                                 | `"My Funny Meme"`                                                                                                                                                                      |
 
 #### Example Snippet
 
@@ -45,18 +45,20 @@ func main() {
 		},
 	})
 }
-
 ```
 
 #### Response
 
 ##### Type
+
 [V1AiMemeGeneratorCreateResponse](/types/v1_ai_meme_generator_create_response.go)
 
 ##### Example
-`V1AiMemeGeneratorCreateResponse {
+
+```go
+V1AiMemeGeneratorCreateResponse {
 CreditsCharged: 10,
 FrameCost: 10,
 Id: "cuid-example",
-}`
-
+}
+```

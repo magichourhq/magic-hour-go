@@ -15,6 +15,7 @@ import (
 	ai_photo_editor "github.com/magichourhq/magic-hour-go/resources/v1/ai_photo_editor"
 	ai_qr_code_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_qr_code_generator"
 	ai_talking_photo "github.com/magichourhq/magic-hour-go/resources/v1/ai_talking_photo"
+	ai_voice_cloner "github.com/magichourhq/magic-hour-go/resources/v1/ai_voice_cloner"
 	ai_voice_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_voice_generator"
 	animation "github.com/magichourhq/magic-hour-go/resources/v1/animation"
 	audio_projects "github.com/magichourhq/magic-hour-go/resources/v1/audio_projects"
@@ -50,6 +51,7 @@ type Client struct {
 	AiPhotoEditor          *ai_photo_editor.Client
 	AiQrCodeGenerator      *ai_qr_code_generator.Client
 	AiTalkingPhoto         *ai_talking_photo.Client
+	AiVoiceCloner          *ai_voice_cloner.Client
 	AiVoiceGenerator       *ai_voice_generator.Client
 	Animation              *animation.Client
 	AutoSubtitleGenerator  *auto_subtitle_generator.Client
@@ -84,6 +86,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 		AiPhotoEditor:          ai_photo_editor.NewClient(coreClient),
 		AiQrCodeGenerator:      ai_qr_code_generator.NewClient(coreClient),
 		AiTalkingPhoto:         ai_talking_photo.NewClient(coreClient),
+		AiVoiceCloner:          ai_voice_cloner.NewClient(coreClient),
 		AiVoiceGenerator:       ai_voice_generator.NewClient(coreClient),
 		Animation:              animation.NewClient(coreClient),
 		AutoSubtitleGenerator:  auto_subtitle_generator.NewClient(coreClient),

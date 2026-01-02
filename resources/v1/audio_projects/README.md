@@ -10,9 +10,9 @@ Permanently delete the rendered audio file(s). This action is not reversible, pl
 
 #### Parameters
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `Id` | ✓ | Unique ID of the audio project. This value is returned by all of the POST APIs that create an audio. | `"cuid-example"` |
+| Parameter | Required | Description                                                                                          | Example          |
+| --------- | :------: | ---------------------------------------------------------------------------------------------------- | ---------------- |
+| `Id`      |    ✓     | Unique ID of the audio project. This value is returned by all of the POST APIs that create an audio. | `"cuid-example"` |
 
 #### Example Snippet
 
@@ -34,7 +34,6 @@ func main() {
 		Id: "cuid-example",
 	})
 }
-
 ```
 
 ### Get audio details <a name="get"></a>
@@ -42,6 +41,7 @@ func main() {
 Get the details of a audio project. The `downloads` field will be empty unless the audio was successfully rendered.
 
 The audio can be one of the following status
+
 - `draft` - not currently used
 - `queued` - the job is queued and waiting for a GPU
 - `rendering` - the generation is in progress
@@ -53,9 +53,9 @@ The audio can be one of the following status
 
 #### Parameters
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `Id` | ✓ | Unique ID of the audio project. This value is returned by all of the POST APIs that create an audio. | `"cuid-example"` |
+| Parameter | Required | Description                                                                                          | Example          |
+| --------- | :------: | ---------------------------------------------------------------------------------------------------- | ---------------- |
+| `Id`      |    ✓     | Unique ID of the audio project. This value is returned by all of the POST APIs that create an audio. | `"cuid-example"` |
 
 #### Example Snippet
 
@@ -77,16 +77,18 @@ func main() {
 		Id: "cuid-example",
 	})
 }
-
 ```
 
 #### Response
 
 ##### Type
+
 [V1AudioProjectsGetResponse](/types/v1_audio_projects_get_response.go)
 
 ##### Example
-`V1AudioProjectsGetResponse {
+
+```go
+V1AudioProjectsGetResponse {
 CreatedAt: "1970-01-01T00:00:00",
 CreditsCharged: 2,
 Downloads: []V1AudioProjectsGetResponseDownloadsItem{
@@ -104,5 +106,5 @@ Id: "cuid-example",
 Name: nullable.NewValue("Example Name"),
 Status: V1AudioProjectsGetResponseStatusEnumComplete,
 Type: "VOICE_GENERATOR",
-}`
-
+}
+```
