@@ -10,9 +10,9 @@ Permanently delete the rendered image(s). This action is not reversible, please 
 
 #### Parameters
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `Id` | ✓ | Unique ID of the image project. This value is returned by all of the POST APIs that create an image. | `"cuid-example"` |
+| Parameter | Required | Description                                                                                          | Example          |
+| --------- | :------: | ---------------------------------------------------------------------------------------------------- | ---------------- |
+| `Id`      |    ✓     | Unique ID of the image project. This value is returned by all of the POST APIs that create an image. | `"cuid-example"` |
 
 #### Example Snippet
 
@@ -34,7 +34,6 @@ func main() {
 		Id: "cuid-example",
 	})
 }
-
 ```
 
 ### Get image details <a name="get"></a>
@@ -42,6 +41,7 @@ func main() {
 Get the details of a image project. The `downloads` field will be empty unless the image was successfully rendered.
 
 The image can be one of the following status
+
 - `draft` - not currently used
 - `queued` - the job is queued and waiting for a GPU
 - `rendering` - the generation is in progress
@@ -53,9 +53,9 @@ The image can be one of the following status
 
 #### Parameters
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `Id` | ✓ | Unique ID of the image project. This value is returned by all of the POST APIs that create an image. | `"cuid-example"` |
+| Parameter | Required | Description                                                                                          | Example          |
+| --------- | :------: | ---------------------------------------------------------------------------------------------------- | ---------------- |
+| `Id`      |    ✓     | Unique ID of the image project. This value is returned by all of the POST APIs that create an image. | `"cuid-example"` |
 
 #### Example Snippet
 
@@ -77,16 +77,18 @@ func main() {
 		Id: "cuid-example",
 	})
 }
-
 ```
 
 #### Response
 
 ##### Type
+
 [V1ImageProjectsGetResponse](/types/v1_image_projects_get_response.go)
 
 ##### Example
-`V1ImageProjectsGetResponse {
+
+```go
+V1ImageProjectsGetResponse {
 CreatedAt: "1970-01-01T00:00:00",
 CreditsCharged: 5,
 Downloads: []V1ImageProjectsGetResponseDownloadsItem{
@@ -106,5 +108,5 @@ Name: nullable.NewValue("Example Name"),
 Status: V1ImageProjectsGetResponseStatusEnumComplete,
 TotalFrameCost: 5,
 Type: "AI_IMAGE",
-}`
-
+}
+```

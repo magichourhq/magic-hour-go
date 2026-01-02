@@ -10,9 +10,9 @@ Permanently delete the rendered video. This action is not reversible, please be 
 
 #### Parameters
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `Id` | ✓ | Unique ID of the video project. This value is returned by all of the POST APIs that create a video. | `"cuid-example"` |
+| Parameter | Required | Description                                                                                         | Example          |
+| --------- | :------: | --------------------------------------------------------------------------------------------------- | ---------------- |
+| `Id`      |    ✓     | Unique ID of the video project. This value is returned by all of the POST APIs that create a video. | `"cuid-example"` |
 
 #### Example Snippet
 
@@ -34,7 +34,6 @@ func main() {
 		Id: "cuid-example",
 	})
 }
-
 ```
 
 ### Get video details <a name="get"></a>
@@ -42,6 +41,7 @@ func main() {
 Get the details of a video project. The `downloads` field will be empty unless the video was successfully rendered.
 
 The video can be one of the following status
+
 - `draft` - not currently used
 - `queued` - the job is queued and waiting for a GPU
 - `rendering` - the generation is in progress
@@ -53,9 +53,9 @@ The video can be one of the following status
 
 #### Parameters
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `Id` | ✓ | Unique ID of the video project. This value is returned by all of the POST APIs that create a video. | `"cuid-example"` |
+| Parameter | Required | Description                                                                                         | Example          |
+| --------- | :------: | --------------------------------------------------------------------------------------------------- | ---------------- |
+| `Id`      |    ✓     | Unique ID of the video project. This value is returned by all of the POST APIs that create a video. | `"cuid-example"` |
 
 #### Example Snippet
 
@@ -77,16 +77,18 @@ func main() {
 		Id: "cuid-example",
 	})
 }
-
 ```
 
 #### Response
 
 ##### Type
+
 [V1VideoProjectsGetResponse](/types/v1_video_projects_get_response.go)
 
 ##### Example
-`V1VideoProjectsGetResponse {
+
+```go
+V1VideoProjectsGetResponse {
 CreatedAt: "1970-01-01T00:00:00",
 CreditsCharged: 450,
 Download: nullable.NewValue(V1VideoProjectsGetResponseDownload {
@@ -114,5 +116,5 @@ Status: V1VideoProjectsGetResponseStatusEnumComplete,
 TotalFrameCost: 450,
 Type: "FACE_SWAP",
 Width: 512,
-}`
-
+}
+```

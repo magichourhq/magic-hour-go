@@ -10,15 +10,15 @@ Edit images with AI. Each edit costs 50 credits.
 
 #### Parameters
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `Assets` | ✓ | Provide the assets for image edit | `V1AiImageEditorCreateBodyAssets {ImageFilePath: nullable.NewValue("api-assets/id/1234.png"),ImageFilePaths: nullable.NewValue([]string{"api-assets/id/1234.png","api-assets/id/1235.png",}),}` |
-| `└─ ImageFilePath` | ✗ | Deprecated: Please use `image_file_paths` instead as edits with multiple images are now supported. The image used in the edit. This value is either - a direct URL to the video file - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).  Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.  | `"api-assets/id/1234.png"` |
-| `└─ ImageFilePaths` | ✗ | The image(s) used in the edit, maximum of 10 images. This value is either - a direct URL to the video file - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).  Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.  | `[]string{"api-assets/id/1234.png","api-assets/id/1235.png",}` |
-| `Style` | ✓ |  | `V1AiImageEditorCreateBodyStyle {Model: nullable.NewValue(V1AiImageEditorCreateBodyStyleModelEnumNanoBanana),Prompt: "Give me sunglasses",}` |
-| `└─ Model` | ✗ | The AI model to use for image editing. * `Nano Banana` - Precise, realistic edits with consistent results * `Seedream` - Creative, imaginative images with artistic freedom * `default` - Use the model we recommend, which will change over time. This is recommended unless you need a specific model. This is the default behavior. | `V1AiImageEditorCreateBodyStyleModelEnumNanoBanana` |
-| `└─ Prompt` | ✓ | The prompt used to edit the image. | `"Give me sunglasses"` |
-| `Name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Ai Image Editor image"` |
+| Parameter           | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Example                                                                                                                                                                                         |
+| ------------------- | :------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Assets`            |    ✓     | Provide the assets for image edit                                                                                                                                                                                                                                                                                                                                                                                                                                                 | `V1AiImageEditorCreateBodyAssets {ImageFilePath: nullable.NewValue("api-assets/id/1234.png"),ImageFilePaths: nullable.NewValue([]string{"api-assets/id/1234.png","api-assets/id/1235.png",}),}` |
+| `└─ ImageFilePath`  |    ✗     | Deprecated: Please use `image_file_paths` instead as edits with multiple images are now supported. The image used in the edit. This value is either - a direct URL to the video file - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls). Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more. | `"api-assets/id/1234.png"`                                                                                                                                                                      |
+| `└─ ImageFilePaths` |    ✗     | The image(s) used in the edit, maximum of 10 images. This value is either - a direct URL to the video file - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls). Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.                                                                           | `[]string{"api-assets/id/1234.png","api-assets/id/1235.png",}`                                                                                                                                  |
+| `Style`             |    ✓     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `V1AiImageEditorCreateBodyStyle {Model: nullable.NewValue(V1AiImageEditorCreateBodyStyleModelEnumNanoBanana),Prompt: "Give me sunglasses",}`                                                    |
+| `└─ Model`          |    ✗     | The AI model to use for image editing. * `Nano Banana` - Precise, realistic edits with consistent results * `Seedream` - Creative, imaginative images with artistic freedom * `default` - Use the model we recommend, which will change over time. This is recommended unless you need a specific model. This is the default behavior.                                                                                                                                            | `V1AiImageEditorCreateBodyStyleModelEnumNanoBanana`                                                                                                                                             |
+| `└─ Prompt`         |    ✓     | The prompt used to edit the image.                                                                                                                                                                                                                                                                                                                                                                                                                                                | `"Give me sunglasses"`                                                                                                                                                                          |
+| `Name`              |    ✗     | The name of image. This value is mainly used for your own identification of the image.                                                                                                                                                                                                                                                                                                                                                                                            | `"Ai Image Editor image"`                                                                                                                                                                       |
 
 #### Example Snippet
 
@@ -53,18 +53,20 @@ func main() {
 		},
 	})
 }
-
 ```
 
 #### Response
 
 ##### Type
+
 [V1AiImageEditorCreateResponse](/types/v1_ai_image_editor_create_response.go)
 
 ##### Example
-`V1AiImageEditorCreateResponse {
+
+```go
+V1AiImageEditorCreateResponse {
 CreditsCharged: 50,
 FrameCost: 50,
 Id: "cuid-example",
-}`
-
+}
+```

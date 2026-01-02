@@ -10,13 +10,13 @@ Create an AI headshot. Each headshot costs 50 credits.
 
 #### Parameters
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `Assets` | ✓ | Provide the assets for headshot photo | `V1AiHeadshotGeneratorCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
-| `└─ ImageFilePath` | ✓ | The image used to generate the headshot. This image must contain one detectable face. This value is either - a direct URL to the video file - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).  Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.  | `"api-assets/id/1234.png"` |
-| `Name` | ✗ | The name of image. This value is mainly used for your own identification of the image. | `"Ai Headshot image"` |
-| `Style` | ✗ |  | `V1AiHeadshotGeneratorCreateBodyStyle {}` |
-| `└─ Prompt` | ✗ | Prompt used to guide the style of your headshot. We recommend omitting the prompt unless you want to customize your headshot. You can visit [AI headshot generator](https://magichour.ai/create/ai-headshot-generator) to view an example of a good prompt used for our 'Professional' style. | `"string"` |
+| Parameter          | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                              | Example                                                                            |
+| ------------------ | :------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `Assets`           |    ✓     | Provide the assets for headshot photo                                                                                                                                                                                                                                                                                                                                                                                                    | `V1AiHeadshotGeneratorCreateBodyAssets {ImageFilePath: "api-assets/id/1234.png",}` |
+| `└─ ImageFilePath` |    ✓     | The image used to generate the headshot. This image must contain one detectable face. This value is either - a direct URL to the video file - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls). Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more. | `"api-assets/id/1234.png"`                                                         |
+| `Name`             |    ✗     | The name of image. This value is mainly used for your own identification of the image.                                                                                                                                                                                                                                                                                                                                                   | `"Ai Headshot image"`                                                              |
+| `Style`            |    ✗     |                                                                                                                                                                                                                                                                                                                                                                                                                                          | `V1AiHeadshotGeneratorCreateBodyStyle {}`                                          |
+| `└─ Prompt`        |    ✗     | Prompt used to guide the style of your headshot. We recommend omitting the prompt unless you want to customize your headshot. You can visit [AI headshot generator](https://magichour.ai/create/ai-headshot-generator) to view an example of a good prompt used for our 'Professional' style.                                                                                                                                            | `"string"`                                                                         |
 
 #### Example Snippet
 
@@ -43,18 +43,20 @@ func main() {
 		Name: nullable.NewValue("Ai Headshot image"),
 	})
 }
-
 ```
 
 #### Response
 
 ##### Type
+
 [V1AiHeadshotGeneratorCreateResponse](/types/v1_ai_headshot_generator_create_response.go)
 
 ##### Example
-`V1AiHeadshotGeneratorCreateResponse {
+
+```go
+V1AiHeadshotGeneratorCreateResponse {
 CreditsCharged: 50,
 FrameCost: 50,
 Id: "cuid-example",
-}`
-
+}
+```

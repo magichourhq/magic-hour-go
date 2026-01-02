@@ -10,12 +10,12 @@ Create an AI GIF. Each GIF costs 50 credits.
 
 #### Parameters
 
-| Parameter | Required | Description | Example |
-|-----------|:--------:|-------------|--------|
-| `Style` | ✓ |  | `V1AiGifGeneratorCreateBodyStyle {Prompt: "Cute dancing cat, pixel art",}` |
-| `└─ Prompt` | ✓ | The prompt used for the GIF. | `"Cute dancing cat, pixel art"` |
-| `Name` | ✗ | The name of gif. This value is mainly used for your own identification of the gif. | `"Ai Gif gif"` |
-| `OutputFormat` | ✗ | The output file format for the generated animation. | `V1AiGifGeneratorCreateBodyOutputFormatEnumGif` |
+| Parameter      | Required | Description                                                                        | Example                                                                    |
+| -------------- | :------: | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `Style`        |    ✓     |                                                                                    | `V1AiGifGeneratorCreateBodyStyle {Prompt: "Cute dancing cat, pixel art",}` |
+| `└─ Prompt`    |    ✓     | The prompt used for the GIF.                                                       | `"Cute dancing cat, pixel art"`                                            |
+| `Name`         |    ✗     | The name of gif. This value is mainly used for your own identification of the gif. | `"Ai Gif gif"`                                                             |
+| `OutputFormat` |    ✗     | The output file format for the generated animation.                                | `V1AiGifGeneratorCreateBodyOutputFormatEnumGif`                            |
 
 #### Example Snippet
 
@@ -43,18 +43,20 @@ func main() {
 		},
 	})
 }
-
 ```
 
 #### Response
 
 ##### Type
+
 [V1AiGifGeneratorCreateResponse](/types/v1_ai_gif_generator_create_response.go)
 
 ##### Example
-`V1AiGifGeneratorCreateResponse {
+
+```go
+V1AiGifGeneratorCreateResponse {
 CreditsCharged: 50,
 FrameCost: 50,
 Id: "cuid-example",
-}`
-
+}
+```
