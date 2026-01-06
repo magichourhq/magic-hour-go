@@ -18,7 +18,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 	)
 	res, err := client.V1.TextToVideo.Create(text_to_video.CreateRequest{
 		EndSeconds:  5.0,
-		Name:        nullable.NewValue("Text To Video video"),
+		Name:        nullable.NewValue("My Text To Video video"),
 		Orientation: types.V1TextToVideoCreateBodyOrientationEnumLandscape,
 		Resolution:  nullable.NewValue(types.V1TextToVideoCreateBodyResolutionEnum720p),
 		Style: types.V1TextToVideoCreateBodyStyle{

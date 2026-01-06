@@ -20,7 +20,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Assets: types.V1PhotoColorizerCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
-		Name: nullable.NewValue("Photo Colorizer image"),
+		Name: nullable.NewValue("My Photo Colorizer image"),
 	})
 
 	if err != nil {

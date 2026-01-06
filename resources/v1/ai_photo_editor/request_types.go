@@ -9,7 +9,7 @@ import (
 type CreateRequest struct {
 	// Provide the assets for photo editor
 	Assets types.V1AiPhotoEditorCreateBodyAssets `json:"assets"`
-	// The name of image. This value is mainly used for your own identification of the image.
+	// Give your image a custom name for easy identification.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// The resolution of the final output image. The allowed value is based on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
 	Resolution int `json:"resolution"`

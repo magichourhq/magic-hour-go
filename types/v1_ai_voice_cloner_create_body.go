@@ -8,7 +8,7 @@ import (
 type V1AiVoiceClonerCreateBody struct {
 	// Provide the assets for voice cloning.
 	Assets V1AiVoiceClonerCreateBodyAssets `json:"assets"`
-	// The name of audio. This value is mainly used for your own identification of the audio.
+	// Give your audio a custom name for easy identification.
 	Name  nullable.Nullable[string]      `json:"name,omitempty"`
 	Style V1AiVoiceClonerCreateBodyStyle `json:"style"`
 }

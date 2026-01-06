@@ -1,8 +1,8 @@
 package types
 
-// The mode of face swap.
-// * `all-faces` - Swap all faces in the target image or video. `source_file_path` is required.
-// * `individual-faces` - Swap individual faces in the target image or video. `source_faces` is required.
+// Choose how to swap faces:
+// **all-faces** (recommended) — swap all detected faces using one source image (`source_file_path` required)
+// +- **individual-faces** — specify exact mappings using `face_mappings`
 type V1FaceSwapCreateBodyAssetsFaceSwapModeEnum string
 
 const (

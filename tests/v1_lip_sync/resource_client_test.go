@@ -26,7 +26,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		EndSeconds:   15.0,
 		Height:       nullable.NewValue(123),
 		MaxFpsLimit:  nullable.NewValue(12.0),
-		Name:         nullable.NewValue("Lip Sync video"),
+		Name:         nullable.NewValue("My Lip Sync video"),
 		StartSeconds: 0.0,
 		Style: nullable.NewValue(types.V1LipSyncCreateBodyStyle{
 			GenerationMode: nullable.NewValue(types.V1LipSyncCreateBodyStyleGenerationModeEnumLite),

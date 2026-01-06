@@ -32,7 +32,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		},
 		EndSeconds:   15.0,
 		Height:       nullable.NewValue(123),
-		Name:         nullable.NewValue("Face Swap video"),
+		Name:         nullable.NewValue("My Face Swap video"),
 		StartSeconds: 0.0,
 		Style: nullable.NewValue(types.V1FaceSwapCreateBodyStyle{
 			Version: nullable.NewValue(types.V1FaceSwapCreateBodyStyleVersionEnumDefault),

@@ -18,7 +18,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 	)
 	res, err := client.V1.AiQrCodeGenerator.Create(ai_qr_code_generator.CreateRequest{
 		Content: "https://magichour.ai",
-		Name:    nullable.NewValue("Qr Code image"),
+		Name:    nullable.NewValue("My Qr Code image"),
 		Style: types.V1AiQrCodeGeneratorCreateBodyStyle{
 			ArtStyle: "Watercolor",
 		},

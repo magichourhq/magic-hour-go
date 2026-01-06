@@ -20,7 +20,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Assets: types.V1AiImageUpscalerCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
-		Name:        nullable.NewValue("Image Upscaler image"),
+		Name:        nullable.NewValue("My Image Upscaler image"),
 		ScaleFactor: 2.0,
 		Style: types.V1AiImageUpscalerCreateBodyStyle{
 			Enhancement: types.V1AiImageUpscalerCreateBodyStyleEnhancementEnumBalanced,

@@ -1,6 +1,6 @@
 package types
 
-// V1LipSyncCreateBodyAssetsVideoSourceEnum
+// Choose your video source.
 type V1LipSyncCreateBodyAssetsVideoSourceEnum string
 
 const (

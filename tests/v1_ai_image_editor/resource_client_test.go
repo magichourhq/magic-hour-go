@@ -24,7 +24,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 				"api-assets/id/1235.png",
 			}),
 		},
-		Name: nullable.NewValue("Ai Image Editor image"),
+		Name: nullable.NewValue("My Ai Image Editor image"),
 		Style: types.V1AiImageEditorCreateBodyStyle{
 			Model:  nullable.NewValue(types.V1AiImageEditorCreateBodyStyleModelEnumNanoBanana),
 			Prompt: "Give me sunglasses",

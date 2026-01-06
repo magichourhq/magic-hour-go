@@ -10,6 +10,6 @@ type V1AutoSubtitleGeneratorCreateResponse struct {
 	//
 	// The amount of frames used to generate the video. If the status is not 'complete', the cost is an estimate and will be adjusted when the video completes.
 	EstimatedFrameCost int `json:"estimated_frame_cost"`
-	// Unique ID of the video. This value can be used in the [get video project API](https://docs.magichour.ai/api-reference/video-projects/get-video-details) to fetch additional details such as status
+	// Unique ID of the video. Use it with the [Get video Project API](https://docs.magichour.ai/api-reference/video-projects/get-video-details) to fetch status and downloads.
 	Id string `json:"id"`
 }

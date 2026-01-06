@@ -19,7 +19,7 @@ type CreateRequest struct {
 	//
 	// This field is retained only for backward compatibility and will be removed in a future release.
 	Height nullable.Nullable[int] `json:"height,omitempty"`
-	// The name of video. This value is mainly used for your own identification of the video.
+	// Give your video a custom name for easy identification.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// Controls the output video resolution. Defaults to `720p` if not specified.
 	//

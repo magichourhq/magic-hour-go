@@ -8,9 +8,9 @@ import (
 type V1FaceSwapCreateBodyAssets struct {
 	// This is the array of face mappings used for multiple face swap. The value is required if `face_swap_mode` is `individual-faces`.
 	FaceMappings nullable.Nullable[[]V1FaceSwapCreateBodyAssetsFaceMappingsItem] `json:"face_mappings,omitempty"`
-	// The mode of face swap.
-	// * `all-faces` - Swap all faces in the target image or video. `source_file_path` is required.
-	// * `individual-faces` - Swap individual faces in the target image or video. `source_faces` is required.
+	// Choose how to swap faces:
+	// **all-faces** (recommended) — swap all detected faces using one source image (`source_file_path` required)
+	// +- **individual-faces** — specify exact mappings using `face_mappings`
 	FaceSwapMode nullable.Nullable[V1FaceSwapCreateBodyAssetsFaceSwapModeEnum] `json:"face_swap_mode,omitempty"`
 	// The path of the input image with the face to be swapped.  The value is required if `face_swap_mode` is `all-faces`.
 	//
@@ -18,17 +18,18 @@ type V1FaceSwapCreateBodyAssets struct {
 	// - a direct URL to the video file
 	// - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).
 	//
-	// Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.
+	// See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details.
 	//
 	ImageFilePath nullable.Nullable[string] `json:"image_file_path,omitempty"`
-	// Required if `video_source` is `file`. This value is either
+	// Your video file. Required if `video_source` is `file`. This value is either
 	// - a direct URL to the video file
 	// - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).
 	//
-	// Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.
+	// See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details.
 	//
-	VideoFilePath nullable.Nullable[string]                 `json:"video_file_path,omitempty"`
-	VideoSource   V1FaceSwapCreateBodyAssetsVideoSourceEnum `json:"video_source"`
-	// Using a youtube video as the input source. This field is required if `video_source` is `youtube`
+	VideoFilePath nullable.Nullable[string] `json:"video_file_path,omitempty"`
+	// Choose your video source.
+	VideoSource V1FaceSwapCreateBodyAssetsVideoSourceEnum `json:"video_source"`
+	// YouTube URL (required if `video_source` is `youtube`).
 	YoutubeUrl nullable.Nullable[string] `json:"youtube_url,omitempty"`
 }

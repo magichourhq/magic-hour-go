@@ -11,7 +11,7 @@ type CreateRequest struct {
 	Assets types.V1AiTalkingPhotoCreateBodyAssets `json:"assets"`
 	// The end time of the input audio in seconds. The maximum duration allowed is 60 seconds.
 	EndSeconds float64 `json:"end_seconds"`
-	// The name of image. This value is mainly used for your own identification of the image.
+	// Give your image a custom name for easy identification.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// The start time of the input audio in seconds. The maximum duration allowed is 60 seconds.
 	StartSeconds float64 `json:"start_seconds"`

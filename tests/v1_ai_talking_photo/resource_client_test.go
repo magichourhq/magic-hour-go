@@ -22,7 +22,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			ImageFilePath: "api-assets/id/1234.png",
 		},
 		EndSeconds:   15.0,
-		Name:         nullable.NewValue("Talking Photo image"),
+		Name:         nullable.NewValue("My Talking Photo image"),
 		StartSeconds: 0.0,
 		Style: nullable.NewValue(types.V1AiTalkingPhotoCreateBodyStyle{
 			GenerationMode: nullable.NewValue(types.V1AiTalkingPhotoCreateBodyStyleGenerationModeEnumPro),

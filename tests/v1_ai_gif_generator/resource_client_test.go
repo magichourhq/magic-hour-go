@@ -17,7 +17,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		sdk.WithEnv(sdk.MockServer),
 	)
 	res, err := client.V1.AiGifGenerator.Create(ai_gif_generator.CreateRequest{
-		Name:         nullable.NewValue("Ai Gif gif"),
+		Name:         nullable.NewValue("My Ai Gif gif"),
 		OutputFormat: nullable.NewValue(types.V1AiGifGeneratorCreateBodyOutputFormatEnumGif),
 		Style: types.V1AiGifGeneratorCreateBodyStyle{
 			Prompt: "Cute dancing cat, pixel art",

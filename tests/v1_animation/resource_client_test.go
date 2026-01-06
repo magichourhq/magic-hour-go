@@ -26,7 +26,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		EndSeconds: 15.0,
 		Fps:        12.0,
 		Height:     960,
-		Name:       nullable.NewValue("Animation video"),
+		Name:       nullable.NewValue("My Animation video"),
 		Style: types.V1AnimationCreateBodyStyle{
 			ArtStyle:        types.V1AnimationCreateBodyStyleArtStyleEnumPainterlyIllustration,
 			ArtStyleCustom:  nullable.NewValue("string"),

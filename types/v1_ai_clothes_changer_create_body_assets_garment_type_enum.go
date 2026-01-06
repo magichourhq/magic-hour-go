@@ -1,6 +1,6 @@
 package types
 
-// The type of the outfit.
+// Deprecated: garment_type is no longer needed.
 type V1AiClothesChangerCreateBodyAssetsGarmentTypeEnum string
 
 const (

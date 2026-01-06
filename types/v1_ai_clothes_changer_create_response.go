@@ -8,6 +8,6 @@ type V1AiClothesChangerCreateResponse struct {
 	CreditsCharged int `json:"credits_charged"`
 	// Deprecated: Previously represented the number of frames (original name of our credit system) used for image generation. Use 'credits_charged' instead.
 	FrameCost int `json:"frame_cost"`
-	// Unique ID of the image. This value can be used in the [get image project API](https://docs.magichour.ai/api-reference/image-projects/get-image-details) to fetch additional details such as status
+	// Unique ID of the image. Use it with the [Get image Project API](https://docs.magichour.ai/api-reference/image-projects/get-image-details) to fetch status and downloads.
 	Id string `json:"id"`
 }

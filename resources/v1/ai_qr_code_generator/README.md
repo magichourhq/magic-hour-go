@@ -15,7 +15,7 @@ Create an AI QR code. Each QR code costs 0 credits.
 | `Content`     |    ✓     | The content of the QR code.                                                                                                                                                                                                                 | `"https://magichour.ai"`                                       |
 | `Style`       |    ✓     |                                                                                                                                                                                                                                             | `V1AiQrCodeGeneratorCreateBodyStyle {ArtStyle: "Watercolor",}` |
 | `└─ ArtStyle` |    ✓     | To use our templates, pass in one of Watercolor, Cyberpunk City, Ink Landscape, Interior Painting, Japanese Street, Mech, Minecraft, Picasso Painting, Game Map, Spaceship, Chinese Painting, Winter Village, or pass any custom art style. | `"Watercolor"`                                                 |
-| `Name`        |    ✗     | The name of image. This value is mainly used for your own identification of the image.                                                                                                                                                      | `"Qr Code image"`                                              |
+| `Name`        |    ✗     | Give your image a custom name for easy identification.                                                                                                                                                                                      | `"My Qr Code image"`                                           |
 
 #### Example Snippet
 
@@ -37,7 +37,7 @@ func main() {
 	)
 	res, err := client.V1.AiQrCodeGenerator.Create(ai_qr_code_generator.CreateRequest{
 		Content: "https://magichour.ai",
-		Name:    nullable.NewValue("Qr Code image"),
+		Name:    nullable.NewValue("My Qr Code image"),
 		Style: types.V1AiQrCodeGeneratorCreateBodyStyle{
 			ArtStyle: "Watercolor",
 		},

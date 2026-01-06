@@ -28,7 +28,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			SourceFilePath: nullable.NewValue("api-assets/id/1234.png"),
 			TargetFilePath: "api-assets/id/1234.png",
 		},
-		Name: nullable.NewValue("Face Swap image"),
+		Name: nullable.NewValue("My Face Swap image"),
 	})
 
 	if err != nil {

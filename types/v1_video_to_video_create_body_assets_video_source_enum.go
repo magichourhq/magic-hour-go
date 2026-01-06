@@ -1,6 +1,6 @@
 package types
 
-// V1VideoToVideoCreateBodyAssetsVideoSourceEnum
+// Choose your video source.
 type V1VideoToVideoCreateBodyAssetsVideoSourceEnum string
 
 const (

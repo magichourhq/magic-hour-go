@@ -1,6 +1,6 @@
 package types
 
-// V1FaceSwapCreateBodyAssetsVideoSourceEnum
+// Choose your video source.
 type V1FaceSwapCreateBodyAssetsVideoSourceEnum string
 
 const (
