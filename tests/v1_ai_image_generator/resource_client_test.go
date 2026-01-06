@@ -18,7 +18,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 	)
 	res, err := client.V1.AiImageGenerator.Create(ai_image_generator.CreateRequest{
 		ImageCount:  1,
-		Name:        nullable.NewValue("Ai Image image"),
+		Name:        nullable.NewValue("My Ai Image image"),
 		Orientation: types.V1AiImageGeneratorCreateBodyOrientationEnumLandscape,
 		Style: types.V1AiImageGeneratorCreateBodyStyle{
 			Prompt:      "Cool image",

@@ -14,7 +14,7 @@ type V1AnimationCreateBody struct {
 	Fps float64 `json:"fps"`
 	// The height of the final output video. The maximum height depends on your subscription. Please refer to our [pricing page](https://magichour.ai/pricing) for more details
 	Height int `json:"height"`
-	// The name of video. This value is mainly used for your own identification of the video.
+	// Give your video a custom name for easy identification.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// Defines the style of the output video
 	Style V1AnimationCreateBodyStyle `json:"style"`

@@ -10,12 +10,12 @@ Create an AI GIF. Each GIF costs 50 credits.
 
 #### Parameters
 
-| Parameter      | Required | Description                                                                        | Example                                                                    |
-| -------------- | :------: | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `Style`        |    ✓     |                                                                                    | `V1AiGifGeneratorCreateBodyStyle {Prompt: "Cute dancing cat, pixel art",}` |
-| `└─ Prompt`    |    ✓     | The prompt used for the GIF.                                                       | `"Cute dancing cat, pixel art"`                                            |
-| `Name`         |    ✗     | The name of gif. This value is mainly used for your own identification of the gif. | `"Ai Gif gif"`                                                             |
-| `OutputFormat` |    ✗     | The output file format for the generated animation.                                | `V1AiGifGeneratorCreateBodyOutputFormatEnumGif`                            |
+| Parameter      | Required | Description                                          | Example                                                                    |
+| -------------- | :------: | ---------------------------------------------------- | -------------------------------------------------------------------------- |
+| `Style`        |    ✓     |                                                      | `V1AiGifGeneratorCreateBodyStyle {Prompt: "Cute dancing cat, pixel art",}` |
+| `└─ Prompt`    |    ✓     | The prompt used for the GIF.                         | `"Cute dancing cat, pixel art"`                                            |
+| `Name`         |    ✗     | Give your gif a custom name for easy identification. | `"My Ai Gif gif"`                                                          |
+| `OutputFormat` |    ✗     | The output file format for the generated animation.  | `V1AiGifGeneratorCreateBodyOutputFormatEnumGif`                            |
 
 #### Example Snippet
 
@@ -36,7 +36,7 @@ func main() {
 		sdk.WithBearerAuth(os.Getenv("API_TOKEN")),
 	)
 	res, err := client.V1.AiGifGenerator.Create(ai_gif_generator.CreateRequest{
-		Name:         nullable.NewValue("Ai Gif gif"),
+		Name:         nullable.NewValue("My Ai Gif gif"),
 		OutputFormat: nullable.NewValue(types.V1AiGifGeneratorCreateBodyOutputFormatEnumGif),
 		Style: types.V1AiGifGeneratorCreateBodyStyle{
 			Prompt: "Cute dancing cat, pixel art",

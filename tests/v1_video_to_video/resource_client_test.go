@@ -25,7 +25,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		EndSeconds:    15.0,
 		FpsResolution: nullable.NewValue(types.V1VideoToVideoCreateBodyFpsResolutionEnumHalf),
 		Height:        nullable.NewValue(123),
-		Name:          nullable.NewValue("Video To Video video"),
+		Name:          nullable.NewValue("My Video To Video video"),
 		StartSeconds:  0.0,
 		Style: types.V1VideoToVideoCreateBodyStyle{
 			ArtStyle:   types.V1VideoToVideoCreateBodyStyleArtStyleEnum3dRender,

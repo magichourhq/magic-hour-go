@@ -20,7 +20,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Assets: types.V1AiPhotoEditorCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
-		Name:       nullable.NewValue("Photo Editor image"),
+		Name:       nullable.NewValue("My Photo Editor image"),
 		Resolution: 768,
 		Steps:      nullable.NewValue(123),
 		Style: types.V1AiPhotoEditorCreateBodyStyle{

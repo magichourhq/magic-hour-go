@@ -10,7 +10,7 @@ type V1AnimationCreateBodyAssets struct {
 	// - a direct URL to the video file
 	// - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).
 	//
-	// Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.
+	// See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details.
 	//
 	AudioFilePath nullable.Nullable[string] `json:"audio_file_path,omitempty"`
 	// Optionally add an audio source if you'd like to incorporate audio into your video
@@ -19,7 +19,7 @@ type V1AnimationCreateBodyAssets struct {
 	// - a direct URL to the video file
 	// - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).
 	//
-	// Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.
+	// See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details.
 	//
 	ImageFilePath nullable.Nullable[string] `json:"image_file_path,omitempty"`
 	// Using a youtube video as the input source. This field is required if `audio_source` is `youtube`

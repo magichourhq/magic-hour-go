@@ -17,7 +17,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		sdk.WithEnv(sdk.MockServer),
 	)
 	res, err := client.V1.AiVoiceGenerator.Create(ai_voice_generator.CreateRequest{
-		Name: nullable.NewValue("Voice Generator audio"),
+		Name: nullable.NewValue("My Voice Generator audio"),
 		Style: types.V1AiVoiceGeneratorCreateBodyStyle{
 			Prompt:    "Hello, how are you?",
 			VoiceName: types.V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumElonMusk,

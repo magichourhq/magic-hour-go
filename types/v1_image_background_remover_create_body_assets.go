@@ -12,14 +12,14 @@ type V1ImageBackgroundRemoverCreateBodyAssets struct {
 	// - a direct URL to the video file
 	// - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).
 	//
-	// Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.
+	// See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details.
 	//
 	BackgroundImageFilePath nullable.Nullable[string] `json:"background_image_file_path,omitempty"`
 	// The image to remove the background. This value is either
 	// - a direct URL to the video file
 	// - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).
 	//
-	// Please refer to the [Input File documentation](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) to learn more.
+	// See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details.
 	//
 	ImageFilePath string `json:"image_file_path"`
 }

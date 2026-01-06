@@ -8,7 +8,7 @@ import (
 type V1FaceSwapCreateBody struct {
 	// Provide the assets for face swap. For video, The `video_source` field determines whether `video_file_path` or `youtube_url` field is used
 	Assets V1FaceSwapCreateBodyAssets `json:"assets"`
-	// The end time of the input video in seconds. This value is used to trim the input video. The value must be greater than 0.1, and more than the start_seconds.
+	// End time of your clip (seconds). Must be greater than start_seconds.
 	EndSeconds float64 `json:"end_seconds"`
 	// `height` is deprecated and no longer influences the output video's resolution.
 	//
@@ -18,9 +18,9 @@ type V1FaceSwapCreateBody struct {
 	//
 	// This field is retained only for backward compatibility and will be removed in a future release.
 	Height nullable.Nullable[int] `json:"height,omitempty"`
-	// The name of video. This value is mainly used for your own identification of the video.
+	// Give your video a custom name for easy identification.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
-	// The start time of the input video in seconds. This value is used to trim the input video. The value must be greater than 0.
+	// Start time of your clip (seconds). Must be ≥ 0.
 	StartSeconds float64 `json:"start_seconds"`
 	// Style of the face swap video.
 	Style nullable.Nullable[V1FaceSwapCreateBodyStyle] `json:"style,omitempty"`

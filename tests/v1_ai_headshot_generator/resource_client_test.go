@@ -20,7 +20,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Assets: types.V1AiHeadshotGeneratorCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
-		Name: nullable.NewValue("Ai Headshot image"),
+		Name: nullable.NewValue("My Ai Headshot image"),
 		Style: nullable.NewValue(types.V1AiHeadshotGeneratorCreateBodyStyle{
 			Prompt: nullable.NewValue("string"),
 		}),

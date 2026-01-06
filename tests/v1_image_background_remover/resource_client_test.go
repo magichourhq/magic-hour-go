@@ -21,7 +21,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			BackgroundImageFilePath: nullable.NewValue("api-assets/id/1234.png"),
 			ImageFilePath:           "api-assets/id/1234.png",
 		},
-		Name: nullable.NewValue("Background Remover image"),
+		Name: nullable.NewValue("My Background Remover image"),
 	})
 
 	if err != nil {

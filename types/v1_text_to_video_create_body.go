@@ -12,7 +12,7 @@ type V1TextToVideoCreateBody struct {
 	//
 	// Note: For 480p resolution, the value must be either 5 or 10.
 	EndSeconds float64 `json:"end_seconds"`
-	// The name of video. This value is mainly used for your own identification of the video.
+	// Give your video a custom name for easy identification.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// Determines the orientation of the output video
 	Orientation V1TextToVideoCreateBodyOrientationEnum `json:"orientation"`

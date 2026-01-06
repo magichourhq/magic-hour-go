@@ -8,6 +8,6 @@ import (
 type V1PhotoColorizerCreateBody struct {
 	// Provide the assets for photo colorization
 	Assets V1PhotoColorizerCreateBodyAssets `json:"assets"`
-	// The name of image. This value is mainly used for your own identification of the image.
+	// Give your image a custom name for easy identification.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 }

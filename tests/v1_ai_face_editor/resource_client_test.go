@@ -20,7 +20,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Assets: types.V1AiFaceEditorCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
-		Name: nullable.NewValue("Face Editor image"),
+		Name: nullable.NewValue("My Face Editor image"),
 		Style: types.V1AiFaceEditorCreateBodyStyle{
 			EnhanceFace:             nullable.NewValue(false),
 			EyeGazeHorizontal:       nullable.NewValue(0.0),

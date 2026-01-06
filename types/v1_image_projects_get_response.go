@@ -12,11 +12,11 @@ type V1ImageProjectsGetResponse struct {
 	// If an error occurred while generating the image(s), credits will be refunded and this field will be updated to include the refund.
 	CreditsCharged int                                       `json:"credits_charged"`
 	Downloads      []V1ImageProjectsGetResponseDownloadsItem `json:"downloads"`
-	// Indicates whether the resource is deleted
+	// Whether this resource is active. If false, it is deleted.
 	Enabled bool `json:"enabled"`
 	// In the case of an error, this object will contain the error encountered during video render
 	Error nullable.Nullable[V1ImageProjectsGetResponseError] `json:"error,omitempty"`
-	// Unique ID of the image. This value can be used in the [get image project API](https://docs.magichour.ai/api-reference/image-projects/get-image-details) to fetch additional details such as status
+	// Unique ID of the image. Use it with the [Get image Project API](https://docs.magichour.ai/api-reference/image-projects/get-image-details) to fetch status and downloads.
 	Id string `json:"id"`
 	// Number of images generated
 	ImageCount int `json:"image_count"`

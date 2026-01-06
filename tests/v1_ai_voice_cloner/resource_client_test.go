@@ -20,7 +20,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Assets: types.V1AiVoiceClonerCreateBodyAssets{
 			AudioFilePath: "api-assets/id/1234.mp3",
 		},
-		Name: nullable.NewValue("Voice Cloner audio"),
+		Name: nullable.NewValue("My Voice Cloner audio"),
 		Style: types.V1AiVoiceClonerCreateBodyStyle{
 			Prompt: "Hello, this is my cloned voice.",
 		},

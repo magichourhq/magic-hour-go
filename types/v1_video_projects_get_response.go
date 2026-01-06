@@ -14,9 +14,9 @@ type V1VideoProjectsGetResponse struct {
 	// Deprecated: Please use `.downloads` instead. The download url and expiration date of the video project
 	Download  nullable.Nullable[V1VideoProjectsGetResponseDownload] `json:"download,omitempty"`
 	Downloads []V1VideoProjectsGetResponseDownloadsItem             `json:"downloads"`
-	// Indicates whether the resource is deleted
+	// Whether this resource is active. If false, it is deleted.
 	Enabled bool `json:"enabled"`
-	// The end time of the input video in seconds. This value is used to trim the input video. The value must be greater than 0.1, and more than the start_seconds.
+	// End time of your clip (seconds). Must be greater than start_seconds.
 	EndSeconds float64 `json:"end_seconds"`
 	// In the case of an error, this object will contain the error encountered during video render
 	Error nullable.Nullable[V1VideoProjectsGetResponseError] `json:"error,omitempty"`
@@ -24,11 +24,11 @@ type V1VideoProjectsGetResponse struct {
 	Fps float64 `json:"fps"`
 	// The height of the final output video. A value of -1 indicates the height can be ignored.
 	Height int `json:"height"`
-	// Unique ID of the video. This value can be used in the [get video project API](https://docs.magichour.ai/api-reference/video-projects/get-video-details) to fetch additional details such as status
+	// Unique ID of the video. Use it with the [Get video Project API](https://docs.magichour.ai/api-reference/video-projects/get-video-details) to fetch status and downloads.
 	Id string `json:"id"`
 	// The name of the video.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
-	// The start time of the input video in seconds. This value is used to trim the input video. The value must be greater than 0.
+	// Start time of your clip (seconds). Must be ≥ 0.
 	StartSeconds float64 `json:"start_seconds"`
 	// The status of the video.
 	Status V1VideoProjectsGetResponseStatusEnum `json:"status"`

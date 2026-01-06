@@ -9,6 +9,6 @@ import (
 type CreateRequest struct {
 	// Provide the assets for clothes changer
 	Assets types.V1AiClothesChangerCreateBodyAssets `json:"assets"`
-	// The name of image. This value is mainly used for your own identification of the image.
+	// Give your image a custom name for easy identification.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 }
