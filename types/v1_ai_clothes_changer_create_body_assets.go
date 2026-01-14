@@ -13,7 +13,11 @@ type V1AiClothesChangerCreateBodyAssets struct {
 	// See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details.
 	//
 	GarmentFilePath string `json:"garment_file_path"`
-	// Deprecated: garment_type is no longer needed.
+	// Type of garment to swap. If not provided, swaps the entire outfit.
+	// * `upper_body` - for shirts/jackets
+	// * `lower_body` - for pants/skirts
+	// * `dresses` - for entire outfit (deprecated, use `entire_outfit` instead)
+	// * `entire_outfit` - for entire outfit
 	GarmentType nullable.Nullable[V1AiClothesChangerCreateBodyAssetsGarmentTypeEnum] `json:"garment_type,omitempty"`
 	// The image with the person. This value is either
 	// - a direct URL to the video file
