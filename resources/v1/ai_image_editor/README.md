@@ -4,7 +4,7 @@
 
 ### AI Image Editor <a name="create"></a>
 
-Edit images with AI. Each edit costs 10 credits.
+Edit images with AI. Each edit costs 50 credits.
 
 **API Endpoint**: `POST /v1/ai-image-editor`
 
@@ -65,8 +65,8 @@ func main() {
 
 ```go
 V1AiImageEditorCreateResponse {
-CreditsCharged: 10,
-FrameCost: 10,
+CreditsCharged: 50,
+FrameCost: 50,
 Id: "cuid-example",
 }
 ```

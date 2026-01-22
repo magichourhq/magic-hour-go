@@ -1,6 +1,6 @@
 package types
 
-// Determines the orientation of the output video
+// Deprecated. Use `aspect_ratio` instead.
 type V1TextToVideoCreateBodyOrientationEnum string
 
 const (

@@ -61,6 +61,7 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	reqBodyBuf := &bytes.Buffer{}
 	reqBody, err := json.Marshal(types.V1ImageToVideoCreateBody{
 		Height:     request.Height,
+		Model:      request.Model,
 		Name:       request.Name,
 		Resolution: request.Resolution,
 		Style:      request.Style,

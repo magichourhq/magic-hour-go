@@ -17,9 +17,11 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		sdk.WithEnv(sdk.MockServer),
 	)
 	res, err := client.V1.TextToVideo.Create(text_to_video.CreateRequest{
+		AspectRatio: nullable.NewValue(types.V1TextToVideoCreateBodyAspectRatioEnum169),
 		EndSeconds:  5.0,
+		Model:       nullable.NewValue(types.V1TextToVideoCreateBodyModelEnumSora2),
 		Name:        nullable.NewValue("My Text To Video video"),
-		Orientation: types.V1TextToVideoCreateBodyOrientationEnumLandscape,
+		Orientation: nullable.NewValue(types.V1TextToVideoCreateBodyOrientationEnumLandscape),
 		Resolution:  nullable.NewValue(types.V1TextToVideoCreateBodyResolutionEnum720p),
 		Style: types.V1TextToVideoCreateBodyStyle{
 			Prompt:      "a dog running",
