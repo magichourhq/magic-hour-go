@@ -25,7 +25,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Resolution:  nullable.NewValue(types.V1AiImageGeneratorCreateBodyResolutionEnumAuto),
 		Style: types.V1AiImageGeneratorCreateBodyStyle{
 			Prompt:      "Cool image",
-			QualityMode: nullable.NewValue(types.V1AiImageGeneratorCreateBodyStyleQualityModeEnumStandard),
+			QualityMode: nullable.NewValue(types.V1AiImageGeneratorCreateBodyStyleQualityModeEnumPro),
 			Tool:        nullable.NewValue(types.V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator),
 		},
 	})
