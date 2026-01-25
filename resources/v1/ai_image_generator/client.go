@@ -26,7 +26,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 
 // AI Image Generator
 //
-// Create an AI image. Each standard image costs 5 credits. Pro quality images cost 30 credits.
+// Create an AI image with advanced model selection and quality controls.
 //
 // POST /v1/ai-image-generator
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiImageGeneratorCreateResponse, error) {
@@ -39,9 +39,12 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	// Prep body
 	reqBodyBuf := &bytes.Buffer{}
 	reqBody, err := json.Marshal(types.V1AiImageGeneratorCreateBody{
+		AspectRatio: request.AspectRatio,
+		Model:       request.Model,
 		Name:        request.Name,
-		ImageCount:  request.ImageCount,
 		Orientation: request.Orientation,
+		Resolution:  request.Resolution,
+		ImageCount:  request.ImageCount,
 		Style:       request.Style,
 	})
 	if err != nil {

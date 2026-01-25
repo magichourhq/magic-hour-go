@@ -1,6 +1,8 @@
 package types
 
-// The orientation of the output image(s).
+// DEPRECATED: Use `aspect_ratio` instead.
+//
+// The orientation of the output image(s). `aspect_ratio` takes precedence when `orientation` if both are provided.
 type V1AiImageGeneratorCreateBodyOrientationEnum string
 
 const (

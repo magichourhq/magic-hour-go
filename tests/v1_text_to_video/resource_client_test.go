@@ -19,7 +19,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 	res, err := client.V1.TextToVideo.Create(text_to_video.CreateRequest{
 		AspectRatio: nullable.NewValue(types.V1TextToVideoCreateBodyAspectRatioEnum169),
 		EndSeconds:  5.0,
-		Model:       nullable.NewValue(types.V1TextToVideoCreateBodyModelEnumSora2),
+		Model:       nullable.NewValue(types.V1TextToVideoCreateBodyModelEnumKling25Audio),
 		Name:        nullable.NewValue("My Text To Video video"),
 		Orientation: nullable.NewValue(types.V1TextToVideoCreateBodyOrientationEnumLandscape),
 		Resolution:  nullable.NewValue(types.V1TextToVideoCreateBodyResolutionEnum720p),

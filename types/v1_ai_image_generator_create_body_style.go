@@ -8,13 +8,13 @@ import (
 type V1AiImageGeneratorCreateBodyStyle struct {
 	// The prompt used for the image(s).
 	Prompt string `json:"prompt"`
-	// Controls the quality of the generated image. Defaults to 'standard' if not specified.
+	// DEPRECATED: Use `model` field instead for explicit model selection.
 	//
-	// **Options:**
-	// - `standard` - Standard quality generation. Cost: 5 credits per image.
-	// - `pro` - Pro quality generation with enhanced details and quality. Cost: 30 credits per image.
+	// Legacy quality mode mapping:
+	// - `standard` → `z-image-turbo` model
+	// - `pro` → `seedream` model
 	//
-	// Note: Pro mode is available for users on Creator, Pro, or Business tier.
+	// If model is specified, it will take precedence over the legacy quality_mode field.
 	QualityMode nullable.Nullable[V1AiImageGeneratorCreateBodyStyleQualityModeEnum] `json:"quality_mode,omitempty"`
 	// The art style to use for image generation. Defaults to 'general' if not provided.
 	Tool nullable.Nullable[V1AiImageGeneratorCreateBodyStyleToolEnum] `json:"tool,omitempty"`

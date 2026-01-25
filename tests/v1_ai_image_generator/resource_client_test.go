@@ -17,9 +17,12 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		sdk.WithEnv(sdk.MockServer),
 	)
 	res, err := client.V1.AiImageGenerator.Create(ai_image_generator.CreateRequest{
+		AspectRatio: nullable.NewValue(types.V1AiImageGeneratorCreateBodyAspectRatioEnum11),
 		ImageCount:  1,
+		Model:       nullable.NewValue(types.V1AiImageGeneratorCreateBodyModelEnumDefault),
 		Name:        nullable.NewValue("My Ai Image image"),
-		Orientation: types.V1AiImageGeneratorCreateBodyOrientationEnumLandscape,
+		Orientation: nullable.NewValue(types.V1AiImageGeneratorCreateBodyOrientationEnumLandscape),
+		Resolution:  nullable.NewValue(types.V1AiImageGeneratorCreateBodyResolutionEnumAuto),
 		Style: types.V1AiImageGeneratorCreateBodyStyle{
 			Prompt:      "Cool image",
 			QualityMode: nullable.NewValue(types.V1AiImageGeneratorCreateBodyStyleQualityModeEnumStandard),
