@@ -26,8 +26,9 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Name:          nullable.NewValue("My Talking Photo image"),
 		StartSeconds:  0.0,
 		Style: nullable.NewValue(types.V1AiTalkingPhotoCreateBodyStyle{
-			GenerationMode: nullable.NewValue(types.V1AiTalkingPhotoCreateBodyStyleGenerationModeEnumPro),
-			Intensity:      nullable.NewValue(1.5),
+			GenerationMode: nullable.NewValue(types.V1AiTalkingPhotoCreateBodyStyleGenerationModeEnumRealistic),
+			Intensity:      nullable.NewValue(123.45),
+			Prompt:         nullable.NewValue("string"),
 		}),
 	})
 
