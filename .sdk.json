@@ -1,5 +1,5 @@
 {
-  "id": "c32ca59c-6573-4d0a-9fde-ae2cb14431ed",
+  "id": "b8baf6d1-2dd5-4695-b6a3-89dc8d42e775",
   "tracked_paths": [
     {
       "editable": true,
@@ -160,18 +160,6 @@
     {
       "editable": false,
       "path": "resources/v1/ai_meme_generator/request_types.go"
-    },
-    {
-      "editable": true,
-      "path": "resources/v1/ai_photo_editor/README.md"
-    },
-    {
-      "editable": false,
-      "path": "resources/v1/ai_photo_editor/client.go"
-    },
-    {
-      "editable": false,
-      "path": "resources/v1/ai_photo_editor/request_types.go"
     },
     {
       "editable": true,
@@ -455,10 +443,6 @@
     },
     {
       "editable": false,
-      "path": "tests/v1_ai_photo_editor/resource_client_test.go"
-    },
-    {
-      "editable": false,
       "path": "tests/v1_ai_qr_code_generator/resource_client_test.go"
     },
     {
@@ -688,22 +672,6 @@
     {
       "editable": false,
       "path": "types/v1_ai_meme_generator_create_response.go"
-    },
-    {
-      "editable": false,
-      "path": "types/v1_ai_photo_editor_create_body.go"
-    },
-    {
-      "editable": false,
-      "path": "types/v1_ai_photo_editor_create_body_assets.go"
-    },
-    {
-      "editable": false,
-      "path": "types/v1_ai_photo_editor_create_body_style.go"
-    },
-    {
-      "editable": false,
-      "path": "types/v1_ai_photo_editor_create_response.go"
     },
     {
       "editable": false,

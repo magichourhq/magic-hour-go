@@ -64,10 +64,6 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 - [create](resources/v1/ai_meme_generator/README.md#create) - AI Meme Generator
 
-### [V1.AiPhotoEditor](resources/v1/ai_photo_editor/README.md)
-
-- [create](resources/v1/ai_photo_editor/README.md#create) - AI Photo Editor
-
 ### [V1.AiQrCodeGenerator](resources/v1/ai_qr_code_generator/README.md)
 
 - [create](resources/v1/ai_qr_code_generator/README.md#create) - AI QR Code Generator
