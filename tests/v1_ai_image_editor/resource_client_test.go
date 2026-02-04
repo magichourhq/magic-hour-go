@@ -17,14 +17,17 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		sdk.WithEnv(sdk.MockServer),
 	)
 	res, err := client.V1.AiImageEditor.Create(ai_image_editor.CreateRequest{
+		AspectRatio: nullable.NewValue(types.V1AiImageEditorCreateBodyAspectRatioEnum11),
 		Assets: types.V1AiImageEditorCreateBodyAssets{
-			ImageFilePath: nullable.NewValue("api-assets/id/1234.png"),
+			ImageFilePath: nullable.NewValue("string"),
 			ImageFilePaths: nullable.NewValue([]string{
 				"api-assets/id/1234.png",
 				"api-assets/id/1235.png",
 			}),
 		},
-		Name: nullable.NewValue("My Ai Image Editor image"),
+		ImageCount: nullable.NewValue(1.0),
+		Model:      nullable.NewValue(types.V1AiImageEditorCreateBodyModelEnumDefault),
+		Name:       nullable.NewValue("My Ai Image Editor image"),
 		Style: types.V1AiImageEditorCreateBodyStyle{
 			Model:  nullable.NewValue(types.V1AiImageEditorCreateBodyStyleModelEnumNanoBanana),
 			Prompt: "Give me sunglasses",
