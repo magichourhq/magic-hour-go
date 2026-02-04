@@ -26,7 +26,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 
 // AI Image Editor
 //
-// Edit images with AI. Each edit costs 50 credits.
+// Edit images with AI.
 //
 // POST /v1/ai-image-editor
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiImageEditorCreateResponse, error) {
@@ -39,9 +39,12 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	// Prep body
 	reqBodyBuf := &bytes.Buffer{}
 	reqBody, err := json.Marshal(types.V1AiImageEditorCreateBody{
-		Name:   request.Name,
-		Assets: request.Assets,
-		Style:  request.Style,
+		AspectRatio: request.AspectRatio,
+		ImageCount:  request.ImageCount,
+		Model:       request.Model,
+		Name:        request.Name,
+		Assets:      request.Assets,
+		Style:       request.Style,
 	})
 	if err != nil {
 		return types.V1AiImageEditorCreateResponse{}, err
