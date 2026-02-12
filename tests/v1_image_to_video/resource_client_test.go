@@ -20,6 +20,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Assets: types.V1ImageToVideoCreateBodyAssets{
 			ImageFilePath: "api-assets/id/1234.png",
 		},
+		Audio:      nullable.NewValue(true),
 		EndSeconds: 5.0,
 		Height:     nullable.NewValue(123),
 		Model:      nullable.NewValue(types.V1ImageToVideoCreateBodyModelEnumKling25Audio),
