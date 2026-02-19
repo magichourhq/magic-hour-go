@@ -1,7 +1,8 @@
 package types
 
 // The AI model to use for video generation.
-// * `default`: Our recommended model for general use (Kling 2.5 Audio). Note: For backward compatibility, if you use default and end_seconds > 10, we'll fall back to Kling 1.6.
+// * `default`: Our recommended model for general use (Kling 2.5 Audio). Note: For backward compatibility, if you use `default` and `end_seconds` > 10, we'll fall back to kling-1.6.
+// * `ltx-2`: Great for fast iteration with audio, lip-sync, and expressive faces
 // * `seedance`: Great for fast iteration and start/end frame
 // * `kling-2.5`: Great for motion, action, and camera control
 // * `kling-3.0`: Great for cinematic, multi-scene storytelling with control
@@ -16,6 +17,7 @@ const (
 	V1TextToVideoCreateBodyModelEnumKling25      V1TextToVideoCreateBodyModelEnum = "kling-2.5"
 	V1TextToVideoCreateBodyModelEnumKling25Audio V1TextToVideoCreateBodyModelEnum = "kling-2.5-audio"
 	V1TextToVideoCreateBodyModelEnumKling30      V1TextToVideoCreateBodyModelEnum = "kling-3.0"
+	V1TextToVideoCreateBodyModelEnumLtx2         V1TextToVideoCreateBodyModelEnum = "ltx-2"
 	V1TextToVideoCreateBodyModelEnumSeedance     V1TextToVideoCreateBodyModelEnum = "seedance"
 	V1TextToVideoCreateBodyModelEnumSora2        V1TextToVideoCreateBodyModelEnum = "sora-2"
 	V1TextToVideoCreateBodyModelEnumVeo31        V1TextToVideoCreateBodyModelEnum = "veo3.1"
