@@ -27,6 +27,14 @@ type CreateRequest struct {
 	//   - Supported resolutions: auto, 2k, 4k
 	//   - Available for tiers: free, creator, pro, business
 	//   - Image count allowed: 1, 2, 3, 4
+	// - `nano-banana` - 50 credits/image
+	//   - Supported resolutions: auto
+	//   - Available for tiers: free, creator, pro, business
+	//   - Image count allowed: 1, 2, 3, 4
+	// - `nano-banana-2` - 100 credits/image
+	//   - Supported resolutions: auto
+	//   - Available for tiers: free, creator, pro, business
+	//   - Image count allowed: 1, 2, 3, 4
 	// - `nano-banana-pro` - 150 credits/image
 	//   - Supported resolutions: auto
 	//   - Available for tiers: creator, pro, business
