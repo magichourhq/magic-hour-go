@@ -19,6 +19,16 @@ package types
 //   - Available for tiers: free, creator, pro, business
 //   - Image count allowed: 1, 2, 3, 4
 //
+// - `nano-banana` - 50 credits/image
+//   - Supported resolutions: auto
+//   - Available for tiers: free, creator, pro, business
+//   - Image count allowed: 1, 2, 3, 4
+//
+// - `nano-banana-2` - 100 credits/image
+//   - Supported resolutions: auto
+//   - Available for tiers: free, creator, pro, business
+//   - Image count allowed: 1, 2, 3, 4
+//
 // - `nano-banana-pro` - 150 credits/image
 //   - Supported resolutions: auto
 //   - Available for tiers: creator, pro, business
@@ -28,6 +38,8 @@ type V1AiImageGeneratorCreateBodyModelEnum string
 const (
 	V1AiImageGeneratorCreateBodyModelEnumDefault       V1AiImageGeneratorCreateBodyModelEnum = "default"
 	V1AiImageGeneratorCreateBodyModelEnumFluxSchnell   V1AiImageGeneratorCreateBodyModelEnum = "flux-schnell"
+	V1AiImageGeneratorCreateBodyModelEnumNanoBanana    V1AiImageGeneratorCreateBodyModelEnum = "nano-banana"
+	V1AiImageGeneratorCreateBodyModelEnumNanoBanana2   V1AiImageGeneratorCreateBodyModelEnum = "nano-banana-2"
 	V1AiImageGeneratorCreateBodyModelEnumNanoBananaPro V1AiImageGeneratorCreateBodyModelEnum = "nano-banana-pro"
 	V1AiImageGeneratorCreateBodyModelEnumSeedream      V1AiImageGeneratorCreateBodyModelEnum = "seedream"
 	V1AiImageGeneratorCreateBodyModelEnumZImageTurbo   V1AiImageGeneratorCreateBodyModelEnum = "z-image-turbo"

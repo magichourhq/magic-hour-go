@@ -14,6 +14,11 @@ package types
 //   - Image count allowed: 1
 //   - Max additional input images: 9
 //
+// - `nano-banana-2` - 100 credits/image
+//   - Available for tiers: free, creator, pro, business
+//   - Image count allowed: 1
+//   - Max additional input images: 9
+//
 // - `seedream-v4` - 50 credits/image
 //   - Available for tiers: free, creator, pro, business
 //   - Image count allowed: 1
@@ -33,6 +38,7 @@ type V1AiImageEditorCreateBodyModelEnum string
 const (
 	V1AiImageEditorCreateBodyModelEnumDefault       V1AiImageEditorCreateBodyModelEnum = "default"
 	V1AiImageEditorCreateBodyModelEnumNanoBanana    V1AiImageEditorCreateBodyModelEnum = "nano-banana"
+	V1AiImageEditorCreateBodyModelEnumNanoBanana2   V1AiImageEditorCreateBodyModelEnum = "nano-banana-2"
 	V1AiImageEditorCreateBodyModelEnumNanoBananaPro V1AiImageEditorCreateBodyModelEnum = "nano-banana-pro"
 	V1AiImageEditorCreateBodyModelEnumQwenEdit      V1AiImageEditorCreateBodyModelEnum = "qwen-edit"
 	V1AiImageEditorCreateBodyModelEnumSeedreamV4    V1AiImageEditorCreateBodyModelEnum = "seedream-v4"

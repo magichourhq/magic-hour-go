@@ -18,6 +18,7 @@ type V1ImageToVideoCreateBody struct {
 	// * **`sora-2`**: Automatically included with no extra credits
 	// * **`veo3.1`**: Toggle-able (can enable/disable)
 	//
+	// Legacy models:
 	// * **`kling-1.6`**: Not supported
 	Audio nullable.Nullable[bool] `json:"audio,omitempty"`
 	// The total duration of the output video in seconds. Supported durations depend on the chosen model:
@@ -62,6 +63,7 @@ type V1ImageToVideoCreateBody struct {
 	// * **`sora-2`**: Supports 720p.
 	// * **`veo3.1`**: Supports 720p, 1080p.
 	//
+	// Legacy models:
 	// * **`kling-1.6`**: Supports 720p, 1080p.
 	Resolution nullable.Nullable[V1ImageToVideoCreateBodyResolutionEnum] `json:"resolution,omitempty"`
 	// Attributed used to dictate the style of the output
