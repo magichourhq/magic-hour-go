@@ -18,7 +18,8 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 	)
 	res, err := client.V1.ImageToVideo.Create(image_to_video.CreateRequest{
 		Assets: types.V1ImageToVideoCreateBodyAssets{
-			ImageFilePath: "api-assets/id/1234.png",
+			EndImageFilePath: nullable.NewValue("api-assets/id/1234.png"),
+			ImageFilePath:    "api-assets/id/1234.png",
 		},
 		Audio:      nullable.NewValue(true),
 		EndSeconds: 5.0,
