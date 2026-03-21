@@ -43,6 +43,15 @@ type V1AiImageEditorCreateBody struct {
 	//
 	Model nullable.Nullable[V1AiImageEditorCreateBodyModelEnum] `json:"model,omitempty"`
 	// Give your image a custom name for easy identification.
-	Name  nullable.Nullable[string]      `json:"name,omitempty"`
-	Style V1AiImageEditorCreateBodyStyle `json:"style"`
+	Name nullable.Nullable[string] `json:"name,omitempty"`
+	// Maximum resolution for the generated image.
+	//
+	// **Options:**
+	// - `auto` - Automatic resolution (all tiers, default)
+	// - `2k` - Up to 2048px (requires Pro or Business tier)
+	// - `4k` - Up to 4096px (requires Business tier)
+	//
+	// Note: Resolution availability depends on your subscription tier. Defaults to `auto` if not specified.
+	Resolution nullable.Nullable[V1AiImageEditorCreateBodyResolutionEnum] `json:"resolution,omitempty"`
+	Style      V1AiImageEditorCreateBodyStyle                             `json:"style"`
 }
