@@ -43,6 +43,7 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 		ImageCount:  request.ImageCount,
 		Model:       request.Model,
 		Name:        request.Name,
+		Resolution:  request.Resolution,
 		Assets:      request.Assets,
 		Style:       request.Style,
 	})
