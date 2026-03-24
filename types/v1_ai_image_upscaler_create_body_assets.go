@@ -7,6 +7,6 @@ type V1AiImageUpscalerCreateBodyAssets struct {
 	// - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).
 	//
 	// See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details.
-	//
+	// . The maximum input image size is 4096x4096px.
 	ImageFilePath string `json:"image_file_path"`
 }
