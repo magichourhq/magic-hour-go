@@ -1,5 +1,5 @@
 {
-  "id": "eb5b63a7-1309-4843-8432-e63c40228a50",
+  "id": "095b0f64-4d89-47ad-9d55-0b9aea9da6de",
   "tracked_paths": [
     {
       "editable": true,
@@ -311,6 +311,18 @@
     },
     {
       "editable": true,
+      "path": "resources/v1/head_swap/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/head_swap/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/head_swap/request_types.go"
+    },
+    {
+      "editable": true,
       "path": "resources/v1/image_background_remover/README.md"
     },
     {
@@ -484,6 +496,10 @@
     {
       "editable": false,
       "path": "tests/v1_files_upload_urls/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_head_swap/resource_client_test.go"
     },
     {
       "editable": false,
@@ -916,6 +932,18 @@
     {
       "editable": false,
       "path": "types/v1_files_upload_urls_create_response_items_item.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_head_swap_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_head_swap_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_head_swap_create_response.go"
     },
     {
       "editable": false,
