@@ -23,6 +23,7 @@ import (
 	face_swap "github.com/magichourhq/magic-hour-go/resources/v1/face_swap"
 	face_swap_photo "github.com/magichourhq/magic-hour-go/resources/v1/face_swap_photo"
 	files "github.com/magichourhq/magic-hour-go/resources/v1/files"
+	head_swap "github.com/magichourhq/magic-hour-go/resources/v1/head_swap"
 	image_background_remover "github.com/magichourhq/magic-hour-go/resources/v1/image_background_remover"
 	image_projects "github.com/magichourhq/magic-hour-go/resources/v1/image_projects"
 	image_to_video "github.com/magichourhq/magic-hour-go/resources/v1/image_to_video"
@@ -56,6 +57,7 @@ type Client struct {
 	FaceSwap               *face_swap.Client
 	FaceSwapPhoto          *face_swap_photo.Client
 	Files                  *files.Client
+	HeadSwap               *head_swap.Client
 	ImageBackgroundRemover *image_background_remover.Client
 	ImageToVideo           *image_to_video.Client
 	LipSync                *lip_sync.Client
@@ -90,6 +92,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 		FaceSwap:               face_swap.NewClient(coreClient),
 		FaceSwapPhoto:          face_swap_photo.NewClient(coreClient),
 		Files:                  files.NewClient(coreClient),
+		HeadSwap:               head_swap.NewClient(coreClient),
 		ImageBackgroundRemover: image_background_remover.NewClient(coreClient),
 		ImageToVideo:           image_to_video.NewClient(coreClient),
 		LipSync:                lip_sync.NewClient(coreClient),

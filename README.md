@@ -110,6 +110,10 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 - [create](resources/v1/files/upload_urls/README.md#create) - Generate asset upload urls
 
+### [V1.HeadSwap](resources/v1/head_swap/README.md)
+
+- [create](resources/v1/head_swap/README.md#create) - Head Swap
+
 ### [V1.ImageBackgroundRemover](resources/v1/image_background_remover/README.md)
 
 - [create](resources/v1/image_background_remover/README.md#create) - Image Background Remover
