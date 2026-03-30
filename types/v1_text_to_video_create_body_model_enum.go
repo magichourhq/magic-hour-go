@@ -2,8 +2,9 @@ package types
 
 // The AI model to use for video generation.
 //
-// * `default`: uses our currently recommended model for general use. For paid tiers, defaults to `kling-2.5`. For free tiers, it defaults to `ltx-2`.
+// * `default`: uses our currently recommended model for general use. For paid tiers, defaults to `kling-3.0`. For free tiers, it defaults to `ltx-2`.
 // * `ltx-2`: Great for fast iteration with audio, lip-sync, and expressive faces
+// * `wan-2.2`: Fast, medium-quality model with strong visuals and effect support.
 // * `seedance`: Great for fast iteration and start/end frame
 // * `kling-2.5`: Great for motion, action, and camera control
 // * `kling-3.0`: Great for cinematic, multi-scene storytelling with control
@@ -27,4 +28,5 @@ const (
 	V1TextToVideoCreateBodyModelEnumSora2        V1TextToVideoCreateBodyModelEnum = "sora-2"
 	V1TextToVideoCreateBodyModelEnumVeo31        V1TextToVideoCreateBodyModelEnum = "veo3.1"
 	V1TextToVideoCreateBodyModelEnumVeo31Audio   V1TextToVideoCreateBodyModelEnum = "veo3.1-audio"
+	V1TextToVideoCreateBodyModelEnumWan22        V1TextToVideoCreateBodyModelEnum = "wan-2.2"
 )
