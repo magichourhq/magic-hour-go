@@ -24,7 +24,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Audio:      nullable.NewValue(true),
 		EndSeconds: 5.0,
 		Height:     nullable.NewValue(123),
-		Model:      nullable.NewValue(types.V1ImageToVideoCreateBodyModelEnumKling25Audio),
+		Model:      nullable.NewValue(types.V1ImageToVideoCreateBodyModelEnumKling30),
 		Name:       nullable.NewValue("My Image To Video video"),
 		Resolution: nullable.NewValue(types.V1ImageToVideoCreateBodyResolutionEnum720p),
 		Style: nullable.NewValue(types.V1ImageToVideoCreateBodyStyle{
