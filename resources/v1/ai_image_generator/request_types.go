@@ -15,30 +15,33 @@ type CreateRequest struct {
 	//
 	// **Models:**
 	// - `default` - Use the model we recommend, which will change over time. This is recommended unless you need a specific model. This is the default behavior.
-	// - `flux-schnell` - 5 credits/image
-	//   - Supported resolutions: auto
+	// - `flux-schnell` - from 5 credits/image
+	//   - Supported resolutions: 640px, 1k, 2k
 	//   - Available for tiers: free, creator, pro, business
 	//   - Image count allowed: 1, 2, 3, 4
-	// - `z-image-turbo` - 5 credits/image
-	//   - Supported resolutions: auto, 2k
+	// - `z-image-turbo` - from 5 credits/image
+	//   - Supported resolutions: 640px, 1k, 2k
 	//   - Available for tiers: free, creator, pro, business
 	//   - Image count allowed: 1, 2, 3, 4
-	// - `seedream` - 30 credits/image
-	//   - Supported resolutions: auto, 2k, 4k
+	// - `seedream-v4` - from 40 credits/image
+	//   - Supported resolutions: 640px, 1k, 2k, 4k
 	//   - Available for tiers: free, creator, pro, business
 	//   - Image count allowed: 1, 2, 3, 4
-	// - `nano-banana` - 50 credits/image
-	//   - Supported resolutions: auto
+	// - `nano-banana` - from 50 credits/image
+	//   - Supported resolutions: 640px, 1k
 	//   - Available for tiers: free, creator, pro, business
 	//   - Image count allowed: 1, 2, 3, 4
-	// - `nano-banana-2` - 100 credits/image
-	//   - Supported resolutions: auto, 2k, 4k
+	// - `nano-banana-2` - from 100 credits/image
+	//   - Supported resolutions: 640px, 1k, 2k, 4k
 	//   - Available for tiers: free, creator, pro, business
 	//   - Image count allowed: 1, 2, 3, 4
-	// - `nano-banana-pro` - 150 credits/image
-	//   - Supported resolutions: auto, 2k, 4k
+	// - `nano-banana-pro` - from 150 credits/image
+	//   - Supported resolutions: 1k, 2k, 4k
 	//   - Available for tiers: creator, pro, business
 	//   - Image count allowed: 1, 4, 9, 16
+	//
+	// **Deprecated Enum Values:**
+	// - `seedream` - Use `seedream-v4` instead.
 	//
 	Model nullable.Nullable[types.V1AiImageGeneratorCreateBodyModelEnum] `json:"model,omitempty"`
 	// Give your image a custom name for easy identification.
@@ -47,14 +50,24 @@ type CreateRequest struct {
 	//
 	// The orientation of the output image(s). `aspect_ratio` takes precedence when `orientation` if both are provided.
 	Orientation nullable.Nullable[types.V1AiImageGeneratorCreateBodyOrientationEnum] `json:"orientation,omitempty"`
-	// Maximum resolution for the generated image.
+	// Maximum resolution (longest edge) for the output image.
 	//
 	// **Options:**
-	// - `auto` - Automatic resolution (all tiers, default)
-	// - `2k` - Up to 2048px (requires Pro or Business tier)
-	// - `4k` - Up to 4096px (requires Business tier)
+	// - `640px` — up to 640px
+	// - `1k` — up to 1024px
+	// - `2k` — up to 2048px
+	// - `4k` — up to 4096px
+	// - `auto` — **Deprecated.** Mapped server-side from your subscription tier to the best matching resolution the model supports
 	//
-	// Note: Resolution availability depends on the model and your subscription tier. See `model` field for which resolutions each model supports. Defaults to `auto` if not specified.
+	// **Per-model support:**
+	// - `flux-schnell` - 640px, 1k, 2k
+	// - `z-image-turbo` - 640px, 1k, 2k
+	// - `seedream-v4` - 640px, 1k, 2k, 4k
+	// - `nano-banana` - 640px, 1k
+	// - `nano-banana-2` - 640px, 1k, 2k, 4k
+	// - `nano-banana-pro` - 1k, 2k, 4k
+	//
+	// Note: Resolution availability depends on the model and your subscription tier.
 	Resolution nullable.Nullable[types.V1AiImageGeneratorCreateBodyResolutionEnum] `json:"resolution,omitempty"`
 	// The art style to use for image generation.
 	Style types.V1AiImageGeneratorCreateBodyStyle `json:"style"`
