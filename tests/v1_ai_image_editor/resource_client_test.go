@@ -28,7 +28,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		ImageCount: nullable.NewValue(1.0),
 		Model:      nullable.NewValue(types.V1AiImageEditorCreateBodyModelEnumDefault),
 		Name:       nullable.NewValue("My Ai Image Editor image"),
-		Resolution: nullable.NewValue(types.V1AiImageEditorCreateBodyResolutionEnumAuto),
+		Resolution: nullable.NewValue(types.V1AiImageEditorCreateBodyResolutionEnum1k),
 		Style: types.V1AiImageEditorCreateBodyStyle{
 			Model:  nullable.NewValue(types.V1AiImageEditorCreateBodyStyleModelEnumNanoBanana),
 			Prompt: "Give me sunglasses",

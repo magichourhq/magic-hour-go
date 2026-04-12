@@ -12,7 +12,7 @@ type V1AiImageGeneratorCreateBodyStyle struct {
 	//
 	// Legacy quality mode mapping:
 	// - `standard` → `z-image-turbo` model
-	// - `pro` → `seedream` model
+	// - `pro` → `seedream-v4` model
 	//
 	// If model is specified, it will take precedence over the legacy quality_mode field.
 	QualityMode nullable.Nullable[V1AiImageGeneratorCreateBodyStyleQualityModeEnum] `json:"quality_mode,omitempty"`
