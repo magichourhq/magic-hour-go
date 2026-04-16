@@ -1,5 +1,5 @@
 {
-  "id": "2b2873db-2b08-4902-95f1-a085f9111930",
+  "id": "9df5ce0c-0872-499d-951c-cf05ecb62b32",
   "tracked_paths": [
     {
       "editable": true,
@@ -246,6 +246,18 @@
       "path": "resources/v1/auto_subtitle_generator/request_types.go"
     },
     {
+      "editable": true,
+      "path": "resources/v1/body_swap/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/body_swap/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/body_swap/request_types.go"
+    },
+    {
       "editable": false,
       "path": "resources/v1/client.go"
     },
@@ -480,6 +492,10 @@
     {
       "editable": false,
       "path": "tests/v1_auto_subtitle_generator/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_body_swap/resource_client_test.go"
     },
     {
       "editable": false,
@@ -836,6 +852,22 @@
     {
       "editable": false,
       "path": "types/v1_auto_subtitle_generator_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_body_swap_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_body_swap_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_body_swap_create_body_resolution_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_body_swap_create_response.go"
     },
     {
       "editable": false,

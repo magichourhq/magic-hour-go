@@ -19,6 +19,7 @@ import (
 	animation "github.com/magichourhq/magic-hour-go/resources/v1/animation"
 	audio_projects "github.com/magichourhq/magic-hour-go/resources/v1/audio_projects"
 	auto_subtitle_generator "github.com/magichourhq/magic-hour-go/resources/v1/auto_subtitle_generator"
+	body_swap "github.com/magichourhq/magic-hour-go/resources/v1/body_swap"
 	face_detection "github.com/magichourhq/magic-hour-go/resources/v1/face_detection"
 	face_swap "github.com/magichourhq/magic-hour-go/resources/v1/face_swap"
 	face_swap_photo "github.com/magichourhq/magic-hour-go/resources/v1/face_swap_photo"
@@ -54,6 +55,7 @@ type Client struct {
 	AiVoiceGenerator       *ai_voice_generator.Client
 	Animation              *animation.Client
 	AutoSubtitleGenerator  *auto_subtitle_generator.Client
+	BodySwap               *body_swap.Client
 	FaceSwap               *face_swap.Client
 	FaceSwapPhoto          *face_swap_photo.Client
 	Files                  *files.Client
@@ -89,6 +91,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 		AiVoiceGenerator:       ai_voice_generator.NewClient(coreClient),
 		Animation:              animation.NewClient(coreClient),
 		AutoSubtitleGenerator:  auto_subtitle_generator.NewClient(coreClient),
+		BodySwap:               body_swap.NewClient(coreClient),
 		FaceSwap:               face_swap.NewClient(coreClient),
 		FaceSwapPhoto:          face_swap_photo.NewClient(coreClient),
 		Files:                  files.NewClient(coreClient),
