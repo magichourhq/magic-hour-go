@@ -33,10 +33,16 @@ package types
 //   - Supported resolutions: 640px, 1k, 2k, 4k
 //   - Available for tiers: creator, pro, business
 //   - Max additional input images: 9
+//
+// - `gpt-image-2` - from 50 credits/image
+//   - Supported resolutions: 640px, 1k, 2k, 4k
+//   - Available for tiers: creator, pro, business
+//   - Max additional input images: 9
 type V1AiImageEditorCreateBodyModelEnum string
 
 const (
 	V1AiImageEditorCreateBodyModelEnumDefault       V1AiImageEditorCreateBodyModelEnum = "default"
+	V1AiImageEditorCreateBodyModelEnumGptImage2     V1AiImageEditorCreateBodyModelEnum = "gpt-image-2"
 	V1AiImageEditorCreateBodyModelEnumNanoBanana    V1AiImageEditorCreateBodyModelEnum = "nano-banana"
 	V1AiImageEditorCreateBodyModelEnumNanoBanana2   V1AiImageEditorCreateBodyModelEnum = "nano-banana-2"
 	V1AiImageEditorCreateBodyModelEnumNanoBananaPro V1AiImageEditorCreateBodyModelEnum = "nano-banana-pro"
