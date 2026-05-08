@@ -34,6 +34,11 @@ package types
 //   - Available for tiers: creator, pro, business
 //   - Image count allowed: 1, 4, 9, 16
 //
+// - `gpt-image-2` - from 50 credits/image
+//   - Supported resolutions: 640px, 1k, 2k, 4k
+//   - Available for tiers: creator, pro, business
+//   - Image count allowed: 1, 2, 3, 4
+//
 // **Deprecated Enum Values:**
 // - `seedream` - Use `seedream-v4` instead.
 type V1AiImageGeneratorCreateBodyModelEnum string
@@ -41,6 +46,7 @@ type V1AiImageGeneratorCreateBodyModelEnum string
 const (
 	V1AiImageGeneratorCreateBodyModelEnumDefault       V1AiImageGeneratorCreateBodyModelEnum = "default"
 	V1AiImageGeneratorCreateBodyModelEnumFluxSchnell   V1AiImageGeneratorCreateBodyModelEnum = "flux-schnell"
+	V1AiImageGeneratorCreateBodyModelEnumGptImage2     V1AiImageGeneratorCreateBodyModelEnum = "gpt-image-2"
 	V1AiImageGeneratorCreateBodyModelEnumNanoBanana    V1AiImageGeneratorCreateBodyModelEnum = "nano-banana"
 	V1AiImageGeneratorCreateBodyModelEnumNanoBanana2   V1AiImageGeneratorCreateBodyModelEnum = "nano-banana-2"
 	V1AiImageGeneratorCreateBodyModelEnumNanoBananaPro V1AiImageGeneratorCreateBodyModelEnum = "nano-banana-pro"

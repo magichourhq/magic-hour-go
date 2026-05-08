@@ -39,6 +39,10 @@ type CreateRequest struct {
 	//   - Supported resolutions: 1k, 2k, 4k
 	//   - Available for tiers: creator, pro, business
 	//   - Image count allowed: 1, 4, 9, 16
+	// - `gpt-image-2` - from 50 credits/image
+	//   - Supported resolutions: 640px, 1k, 2k, 4k
+	//   - Available for tiers: creator, pro, business
+	//   - Image count allowed: 1, 2, 3, 4
 	//
 	// **Deprecated Enum Values:**
 	// - `seedream` - Use `seedream-v4` instead.
@@ -66,6 +70,7 @@ type CreateRequest struct {
 	// - `nano-banana` - 640px, 1k
 	// - `nano-banana-2` - 640px, 1k, 2k, 4k
 	// - `nano-banana-pro` - 1k, 2k, 4k
+	// - `gpt-image-2` - 640px, 1k, 2k, 4k
 	//
 	// Note: Resolution availability depends on the model and your subscription tier.
 	Resolution nullable.Nullable[types.V1AiImageGeneratorCreateBodyResolutionEnum] `json:"resolution,omitempty"`
