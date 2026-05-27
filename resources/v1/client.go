@@ -18,6 +18,7 @@ import (
 	ai_voice_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_voice_generator"
 	animation "github.com/magichourhq/magic-hour-go/resources/v1/animation"
 	audio_projects "github.com/magichourhq/magic-hour-go/resources/v1/audio_projects"
+	audio_to_video "github.com/magichourhq/magic-hour-go/resources/v1/audio_to_video"
 	auto_subtitle_generator "github.com/magichourhq/magic-hour-go/resources/v1/auto_subtitle_generator"
 	body_swap "github.com/magichourhq/magic-hour-go/resources/v1/body_swap"
 	face_detection "github.com/magichourhq/magic-hour-go/resources/v1/face_detection"
@@ -54,6 +55,7 @@ type Client struct {
 	AiVoiceCloner          *ai_voice_cloner.Client
 	AiVoiceGenerator       *ai_voice_generator.Client
 	Animation              *animation.Client
+	AudioToVideo           *audio_to_video.Client
 	AutoSubtitleGenerator  *auto_subtitle_generator.Client
 	BodySwap               *body_swap.Client
 	FaceSwap               *face_swap.Client
@@ -90,6 +92,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 		AiVoiceCloner:          ai_voice_cloner.NewClient(coreClient),
 		AiVoiceGenerator:       ai_voice_generator.NewClient(coreClient),
 		Animation:              animation.NewClient(coreClient),
+		AudioToVideo:           audio_to_video.NewClient(coreClient),
 		AutoSubtitleGenerator:  auto_subtitle_generator.NewClient(coreClient),
 		BodySwap:               body_swap.NewClient(coreClient),
 		FaceSwap:               face_swap.NewClient(coreClient),
