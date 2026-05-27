@@ -89,6 +89,10 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 - [delete](resources/v1/audio_projects/README.md#delete) - Delete audio
 - [get](resources/v1/audio_projects/README.md#get) - Get audio details
 
+### [V1.AudioToVideo](resources/v1/audio_to_video/README.md)
+
+- [create](resources/v1/audio_to_video/README.md#create) - Audio-to-Video
+
 ### [V1.AutoSubtitleGenerator](resources/v1/auto_subtitle_generator/README.md)
 
 - [create](resources/v1/auto_subtitle_generator/README.md#create) - Auto Subtitle Generator
