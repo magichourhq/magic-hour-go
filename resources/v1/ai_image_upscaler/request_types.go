@@ -14,6 +14,7 @@ type CreateRequest struct {
 	// How much to scale the image. Must be either 2 or 4.
 	//
 	// Note: 4x upscale is only available on Creator, Pro, or Business tier.
-	ScaleFactor float64                                `json:"scale_factor"`
-	Style       types.V1AiImageUpscalerCreateBodyStyle `json:"style"`
+	ScaleFactor float64 `json:"scale_factor"`
+	// Style settings for the upscale. Use `mode` to select between `"pro"` (faster, no enhancement required) and `"creative"` (defaults to `"Balanced"` enhancement). Defaults to `"creative"`.
+	Style types.V1AiImageUpscalerCreateBodyStyle `json:"style"`
 }
