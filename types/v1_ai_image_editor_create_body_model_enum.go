@@ -9,6 +9,11 @@ package types
 //   - Available for tiers: free, creator, pro, business
 //   - Max additional input images: 2
 //
+// - `flux-2-klein` - from 5 credits/image
+//   - Supported resolutions: 640px, 1k, 2k
+//   - Available for tiers: free, creator, pro, business
+//   - Max additional input images: 5
+//
 // - `nano-banana` - from 50 credits/image
 //   - Supported resolutions: 640px, 1k
 //   - Available for tiers: creator, pro, business
@@ -42,6 +47,7 @@ type V1AiImageEditorCreateBodyModelEnum string
 
 const (
 	V1AiImageEditorCreateBodyModelEnumDefault       V1AiImageEditorCreateBodyModelEnum = "default"
+	V1AiImageEditorCreateBodyModelEnumFlux2Klein    V1AiImageEditorCreateBodyModelEnum = "flux-2-klein"
 	V1AiImageEditorCreateBodyModelEnumGptImage2     V1AiImageEditorCreateBodyModelEnum = "gpt-image-2"
 	V1AiImageEditorCreateBodyModelEnumNanoBanana    V1AiImageEditorCreateBodyModelEnum = "nano-banana"
 	V1AiImageEditorCreateBodyModelEnumNanoBanana2   V1AiImageEditorCreateBodyModelEnum = "nano-banana-2"

@@ -9,6 +9,11 @@ package types
 //   - Available for tiers: free, creator, pro, business
 //   - Image count allowed: 1, 2, 3, 4
 //
+// - `flux-2-klein` - from 5 credits/image
+//   - Supported resolutions: 640px, 1k, 2k
+//   - Available for tiers: free, creator, pro, business
+//   - Image count allowed: 1
+//
 // - `z-image-turbo` - from 5 credits/image
 //   - Supported resolutions: 640px, 1k, 2k
 //   - Available for tiers: free, creator, pro, business
@@ -45,6 +50,7 @@ type V1AiImageGeneratorCreateBodyModelEnum string
 
 const (
 	V1AiImageGeneratorCreateBodyModelEnumDefault       V1AiImageGeneratorCreateBodyModelEnum = "default"
+	V1AiImageGeneratorCreateBodyModelEnumFlux2Klein    V1AiImageGeneratorCreateBodyModelEnum = "flux-2-klein"
 	V1AiImageGeneratorCreateBodyModelEnumFluxSchnell   V1AiImageGeneratorCreateBodyModelEnum = "flux-schnell"
 	V1AiImageGeneratorCreateBodyModelEnumGptImage2     V1AiImageGeneratorCreateBodyModelEnum = "gpt-image-2"
 	V1AiImageGeneratorCreateBodyModelEnumNanoBanana    V1AiImageGeneratorCreateBodyModelEnum = "nano-banana"
