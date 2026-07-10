@@ -34,6 +34,10 @@ type V1AiImageGeneratorCreateBody struct {
 	//   - Supported resolutions: 640px, 1k
 	//   - Available for tiers: creator, pro, business
 	//   - Image count allowed: 1, 2, 3, 4
+	// - `nano-banana-2-lite` - from 50 credits/image
+	//   - Supported resolutions: 640px, 1k
+	//   - Available for tiers: creator, pro, business
+	//   - Image count allowed: 1, 2, 3, 4
 	// - `nano-banana-2` - from 100 credits/image
 	//   - Supported resolutions: 640px, 1k, 2k, 4k
 	//   - Available for tiers: creator, pro, business
@@ -72,6 +76,7 @@ type V1AiImageGeneratorCreateBody struct {
 	// - `z-image-turbo` - 640px, 1k, 2k
 	// - `seedream-v4` - 640px, 1k, 2k, 4k
 	// - `nano-banana` - 640px, 1k
+	// - `nano-banana-2-lite` - 640px, 1k
 	// - `nano-banana-2` - 640px, 1k, 2k, 4k
 	// - `nano-banana-pro` - 1k, 2k, 4k
 	// - `gpt-image-2` - 640px, 1k, 2k, 4k

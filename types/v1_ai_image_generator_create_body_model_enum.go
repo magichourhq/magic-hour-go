@@ -29,6 +29,11 @@ package types
 //   - Available for tiers: creator, pro, business
 //   - Image count allowed: 1, 2, 3, 4
 //
+// - `nano-banana-2-lite` - from 50 credits/image
+//   - Supported resolutions: 640px, 1k
+//   - Available for tiers: creator, pro, business
+//   - Image count allowed: 1, 2, 3, 4
+//
 // - `nano-banana-2` - from 100 credits/image
 //   - Supported resolutions: 640px, 1k, 2k, 4k
 //   - Available for tiers: creator, pro, business
@@ -49,14 +54,15 @@ package types
 type V1AiImageGeneratorCreateBodyModelEnum string
 
 const (
-	V1AiImageGeneratorCreateBodyModelEnumDefault       V1AiImageGeneratorCreateBodyModelEnum = "default"
-	V1AiImageGeneratorCreateBodyModelEnumFlux2Klein    V1AiImageGeneratorCreateBodyModelEnum = "flux-2-klein"
-	V1AiImageGeneratorCreateBodyModelEnumFluxSchnell   V1AiImageGeneratorCreateBodyModelEnum = "flux-schnell"
-	V1AiImageGeneratorCreateBodyModelEnumGptImage2     V1AiImageGeneratorCreateBodyModelEnum = "gpt-image-2"
-	V1AiImageGeneratorCreateBodyModelEnumNanoBanana    V1AiImageGeneratorCreateBodyModelEnum = "nano-banana"
-	V1AiImageGeneratorCreateBodyModelEnumNanoBanana2   V1AiImageGeneratorCreateBodyModelEnum = "nano-banana-2"
-	V1AiImageGeneratorCreateBodyModelEnumNanoBananaPro V1AiImageGeneratorCreateBodyModelEnum = "nano-banana-pro"
-	V1AiImageGeneratorCreateBodyModelEnumSeedream      V1AiImageGeneratorCreateBodyModelEnum = "seedream"
-	V1AiImageGeneratorCreateBodyModelEnumSeedreamV4    V1AiImageGeneratorCreateBodyModelEnum = "seedream-v4"
-	V1AiImageGeneratorCreateBodyModelEnumZImageTurbo   V1AiImageGeneratorCreateBodyModelEnum = "z-image-turbo"
+	V1AiImageGeneratorCreateBodyModelEnumDefault         V1AiImageGeneratorCreateBodyModelEnum = "default"
+	V1AiImageGeneratorCreateBodyModelEnumFlux2Klein      V1AiImageGeneratorCreateBodyModelEnum = "flux-2-klein"
+	V1AiImageGeneratorCreateBodyModelEnumFluxSchnell     V1AiImageGeneratorCreateBodyModelEnum = "flux-schnell"
+	V1AiImageGeneratorCreateBodyModelEnumGptImage2       V1AiImageGeneratorCreateBodyModelEnum = "gpt-image-2"
+	V1AiImageGeneratorCreateBodyModelEnumNanoBanana      V1AiImageGeneratorCreateBodyModelEnum = "nano-banana"
+	V1AiImageGeneratorCreateBodyModelEnumNanoBanana2     V1AiImageGeneratorCreateBodyModelEnum = "nano-banana-2"
+	V1AiImageGeneratorCreateBodyModelEnumNanoBanana2Lite V1AiImageGeneratorCreateBodyModelEnum = "nano-banana-2-lite"
+	V1AiImageGeneratorCreateBodyModelEnumNanoBananaPro   V1AiImageGeneratorCreateBodyModelEnum = "nano-banana-pro"
+	V1AiImageGeneratorCreateBodyModelEnumSeedream        V1AiImageGeneratorCreateBodyModelEnum = "seedream"
+	V1AiImageGeneratorCreateBodyModelEnumSeedreamV4      V1AiImageGeneratorCreateBodyModelEnum = "seedream-v4"
+	V1AiImageGeneratorCreateBodyModelEnumZImageTurbo     V1AiImageGeneratorCreateBodyModelEnum = "z-image-turbo"
 )

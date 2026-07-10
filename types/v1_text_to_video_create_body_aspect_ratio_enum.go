@@ -8,7 +8,8 @@ package types
 // * **`kling-3.0`**: Supports 9:16, 16:9, 1:1.
 // * **`veo3.1-lite`**: Supports 9:16, 16:9.
 // * **`veo3.1`**: Supports 9:16, 16:9.
-// * **`seedance`**: Supports 9:16, 16:9, 1:1.
+// * **`seedance-1.5`**: Supports 9:16, 16:9, 1:1.
+// * **`seedance-2.0-mini`**: Supports 9:16, 16:9, 1:1.
 // * **`seedance-2.0`**: Supports 9:16, 16:9, 1:1.
 // * **`sora-2`**: Supports 9:16, 16:9.
 type V1TextToVideoCreateBodyAspectRatioEnum string
