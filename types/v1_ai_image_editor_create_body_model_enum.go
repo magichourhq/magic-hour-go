@@ -24,6 +24,11 @@ package types
 //   - Available for tiers: creator, pro, business
 //   - Max additional input images: 9
 //
+// - `nano-banana-2-lite` - from 50 credits/image
+//   - Supported resolutions: 640px, 1k
+//   - Available for tiers: creator, pro, business
+//   - Max additional input images: 9
+//
 // - `seedream-v4` - from 40 credits/image
 //   - Supported resolutions: 640px, 1k, 2k, 4k
 //   - Available for tiers: creator, pro, business
@@ -46,13 +51,14 @@ package types
 type V1AiImageEditorCreateBodyModelEnum string
 
 const (
-	V1AiImageEditorCreateBodyModelEnumDefault       V1AiImageEditorCreateBodyModelEnum = "default"
-	V1AiImageEditorCreateBodyModelEnumFlux2Klein    V1AiImageEditorCreateBodyModelEnum = "flux-2-klein"
-	V1AiImageEditorCreateBodyModelEnumGptImage2     V1AiImageEditorCreateBodyModelEnum = "gpt-image-2"
-	V1AiImageEditorCreateBodyModelEnumNanoBanana    V1AiImageEditorCreateBodyModelEnum = "nano-banana"
-	V1AiImageEditorCreateBodyModelEnumNanoBanana2   V1AiImageEditorCreateBodyModelEnum = "nano-banana-2"
-	V1AiImageEditorCreateBodyModelEnumNanoBananaPro V1AiImageEditorCreateBodyModelEnum = "nano-banana-pro"
-	V1AiImageEditorCreateBodyModelEnumQwenEdit      V1AiImageEditorCreateBodyModelEnum = "qwen-edit"
-	V1AiImageEditorCreateBodyModelEnumSeedreamV4    V1AiImageEditorCreateBodyModelEnum = "seedream-v4"
-	V1AiImageEditorCreateBodyModelEnumSeedreamV45   V1AiImageEditorCreateBodyModelEnum = "seedream-v4.5"
+	V1AiImageEditorCreateBodyModelEnumDefault         V1AiImageEditorCreateBodyModelEnum = "default"
+	V1AiImageEditorCreateBodyModelEnumFlux2Klein      V1AiImageEditorCreateBodyModelEnum = "flux-2-klein"
+	V1AiImageEditorCreateBodyModelEnumGptImage2       V1AiImageEditorCreateBodyModelEnum = "gpt-image-2"
+	V1AiImageEditorCreateBodyModelEnumNanoBanana      V1AiImageEditorCreateBodyModelEnum = "nano-banana"
+	V1AiImageEditorCreateBodyModelEnumNanoBanana2     V1AiImageEditorCreateBodyModelEnum = "nano-banana-2"
+	V1AiImageEditorCreateBodyModelEnumNanoBanana2Lite V1AiImageEditorCreateBodyModelEnum = "nano-banana-2-lite"
+	V1AiImageEditorCreateBodyModelEnumNanoBananaPro   V1AiImageEditorCreateBodyModelEnum = "nano-banana-pro"
+	V1AiImageEditorCreateBodyModelEnumQwenEdit        V1AiImageEditorCreateBodyModelEnum = "qwen-edit"
+	V1AiImageEditorCreateBodyModelEnumSeedreamV4      V1AiImageEditorCreateBodyModelEnum = "seedream-v4"
+	V1AiImageEditorCreateBodyModelEnumSeedreamV45     V1AiImageEditorCreateBodyModelEnum = "seedream-v4.5"
 )
