@@ -1,6 +1,6 @@
 package types
 
-// V1AiImageUpscalerCreateBodyStyleEnhancementEnum
+// Deprecated: use `mode` instead. `"Resemblance"` maps to `"preserve"`. `"Balanced"` and `"Creative"` map to the same-named modes.
 type V1AiImageUpscalerCreateBodyStyleEnhancementEnum string
 
 const (

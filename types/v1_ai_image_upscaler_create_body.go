@@ -14,6 +14,6 @@ type V1AiImageUpscalerCreateBody struct {
 	//
 	// Note: 4x upscale is only available on Creator, Pro, or Business tier.
 	ScaleFactor float64 `json:"scale_factor"`
-	// Style settings for the upscale. Use `mode` to select between `"pro"` (faster, no enhancement required) and `"creative"` (defaults to `"Balanced"` enhancement). Defaults to `"creative"`.
-	Style V1AiImageUpscalerCreateBodyStyle `json:"style"`
+	// Style settings for the upscale. Use `mode` (`"preserve"`, `"balanced"`, or `"creative"`). Defaults to `"balanced"`.
+	Style nullable.Nullable[V1AiImageUpscalerCreateBodyStyle] `json:"style,omitempty"`
 }
