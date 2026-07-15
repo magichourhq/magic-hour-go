@@ -26,7 +26,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 
 // Body Swap
 //
-// Swap a person into a scene image using Nano Banana 2. Credits depend on `resolution` (from 100 credits at 640px upward).
+// Swap a person into a scene image using Nano Banana 2. Credits depend on `resolution` (from 50 credits at 640px upward).
 //
 // POST /v1/body-swap
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1BodySwapCreateResponse, error) {

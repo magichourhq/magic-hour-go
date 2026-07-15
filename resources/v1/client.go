@@ -14,6 +14,7 @@ import (
 	ai_meme_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_meme_generator"
 	ai_qr_code_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_qr_code_generator"
 	ai_talking_photo "github.com/magichourhq/magic-hour-go/resources/v1/ai_talking_photo"
+	ai_video_editor "github.com/magichourhq/magic-hour-go/resources/v1/ai_video_editor"
 	ai_voice_cloner "github.com/magichourhq/magic-hour-go/resources/v1/ai_voice_cloner"
 	ai_voice_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_voice_generator"
 	animation "github.com/magichourhq/magic-hour-go/resources/v1/animation"
@@ -21,6 +22,7 @@ import (
 	audio_to_video "github.com/magichourhq/magic-hour-go/resources/v1/audio_to_video"
 	auto_subtitle_generator "github.com/magichourhq/magic-hour-go/resources/v1/auto_subtitle_generator"
 	body_swap "github.com/magichourhq/magic-hour-go/resources/v1/body_swap"
+	character_replace "github.com/magichourhq/magic-hour-go/resources/v1/character_replace"
 	face_detection "github.com/magichourhq/magic-hour-go/resources/v1/face_detection"
 	face_swap "github.com/magichourhq/magic-hour-go/resources/v1/face_swap"
 	face_swap_photo "github.com/magichourhq/magic-hour-go/resources/v1/face_swap_photo"
@@ -52,12 +54,14 @@ type Client struct {
 	AiMemeGenerator        *ai_meme_generator.Client
 	AiQrCodeGenerator      *ai_qr_code_generator.Client
 	AiTalkingPhoto         *ai_talking_photo.Client
+	AiVideoEditor          *ai_video_editor.Client
 	AiVoiceCloner          *ai_voice_cloner.Client
 	AiVoiceGenerator       *ai_voice_generator.Client
 	Animation              *animation.Client
 	AudioToVideo           *audio_to_video.Client
 	AutoSubtitleGenerator  *auto_subtitle_generator.Client
 	BodySwap               *body_swap.Client
+	CharacterReplace       *character_replace.Client
 	FaceSwap               *face_swap.Client
 	FaceSwapPhoto          *face_swap_photo.Client
 	Files                  *files.Client
@@ -89,12 +93,14 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 		AiMemeGenerator:        ai_meme_generator.NewClient(coreClient),
 		AiQrCodeGenerator:      ai_qr_code_generator.NewClient(coreClient),
 		AiTalkingPhoto:         ai_talking_photo.NewClient(coreClient),
+		AiVideoEditor:          ai_video_editor.NewClient(coreClient),
 		AiVoiceCloner:          ai_voice_cloner.NewClient(coreClient),
 		AiVoiceGenerator:       ai_voice_generator.NewClient(coreClient),
 		Animation:              animation.NewClient(coreClient),
 		AudioToVideo:           audio_to_video.NewClient(coreClient),
 		AutoSubtitleGenerator:  auto_subtitle_generator.NewClient(coreClient),
 		BodySwap:               body_swap.NewClient(coreClient),
+		CharacterReplace:       character_replace.NewClient(coreClient),
 		FaceSwap:               face_swap.NewClient(coreClient),
 		FaceSwapPhoto:          face_swap_photo.NewClient(coreClient),
 		Files:                  files.NewClient(coreClient),
