@@ -22,11 +22,11 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		},
 		Name:        nullable.NewValue("My Image Upscaler image"),
 		ScaleFactor: 2.0,
-		Style: types.V1AiImageUpscalerCreateBodyStyle{
+		Style: nullable.NewValue(types.V1AiImageUpscalerCreateBodyStyle{
 			Enhancement: nullable.NewValue(types.V1AiImageUpscalerCreateBodyStyleEnhancementEnumBalanced),
-			Mode:        nullable.NewValue(types.V1AiImageUpscalerCreateBodyStyleModeEnumCreative),
+			Mode:        nullable.NewValue(types.V1AiImageUpscalerCreateBodyStyleModeEnumBalanced),
 			Prompt:      nullable.NewValue("string"),
-		},
+		}),
 	})
 
 	if err != nil {

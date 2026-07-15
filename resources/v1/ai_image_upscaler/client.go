@@ -26,7 +26,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 
 // AI Image Upscaler
 //
-// Upscale your image using AI. Each 2x upscale costs 50 credits, and 4x upscale costs 200 credits.
+// Upscale your image using AI. Each 2x upscale costs 50 credits for balanced/creative modes, and 25 credits for preserve. 4x upscale costs 200 and 100 credits respectively.
 //
 // POST /v1/ai-image-upscaler
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiImageUpscalerCreateResponse, error) {
@@ -40,9 +40,9 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	reqBodyBuf := &bytes.Buffer{}
 	reqBody, err := json.Marshal(types.V1AiImageUpscalerCreateBody{
 		Name:        request.Name,
+		Style:       request.Style,
 		Assets:      request.Assets,
 		ScaleFactor: request.ScaleFactor,
-		Style:       request.Style,
 	})
 	if err != nil {
 		return types.V1AiImageUpscalerCreateResponse{}, err

@@ -9,7 +9,7 @@ type V1BodySwapCreateBodyAssets struct {
 	// See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details.
 	//
 	PersonFilePath string `json:"person_file_path"`
-	// Target scene image (background). This value is either
+	// Original scene image (background). This value is either
 	// - a direct URL to the video file
 	// - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).
 	//
