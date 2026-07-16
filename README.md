@@ -72,6 +72,10 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 - [create](resources/v1/ai_talking_photo/README.md#create) - AI Talking Photo
 
+### [V1.AiVideoEditor](resources/v1/ai_video_editor/README.md)
+
+- [create](resources/v1/ai_video_editor/README.md#create) - AI Video Editor
+
 ### [V1.AiVoiceCloner](resources/v1/ai_voice_cloner/README.md)
 
 - [create](resources/v1/ai_voice_cloner/README.md#create) - AI Voice Cloner
@@ -100,6 +104,10 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 ### [V1.BodySwap](resources/v1/body_swap/README.md)
 
 - [create](resources/v1/body_swap/README.md#create) - Body Swap
+
+### [V1.CharacterReplace](resources/v1/character_replace/README.md)
+
+- [create](resources/v1/character_replace/README.md#create) - Character Replace
 
 ### [V1.FaceDetection](resources/v1/face_detection/README.md)
 
