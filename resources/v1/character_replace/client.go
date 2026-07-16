@@ -59,13 +59,18 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 
 	// Prep body
 	reqBodyBuf := &bytes.Buffer{}
-	if _, err := request.Data.Value(); err == nil {
-		reqBody, err := json.Marshal(request.Data)
-		if err != nil {
-			return types.V1CharacterReplaceCreateResponse{}, err
-		}
-		reqBodyBuf = bytes.NewBuffer([]byte(reqBody))
+	reqBody, err := json.Marshal(types.V1CharacterReplaceCreateBody{
+		Name:         request.Name,
+		Resolution:   request.Resolution,
+		StartSeconds: request.StartSeconds,
+		Style:        request.Style,
+		Assets:       request.Assets,
+		EndSeconds:   request.EndSeconds,
+	})
+	if err != nil {
+		return types.V1CharacterReplaceCreateResponse{}, err
 	}
+	reqBodyBuf = bytes.NewBuffer([]byte(reqBody))
 
 	// Init request
 	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
