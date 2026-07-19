@@ -24,6 +24,11 @@ package types
 //   - Available for tiers: creator, pro, business
 //   - Image count allowed: 1, 2, 3, 4
 //
+// - `seedream-v5-pro` - from 75 credits/image
+//   - Supported resolutions: 640px, 1k, 2k
+//   - Available for tiers: creator, pro, business
+//   - Image count allowed: 1, 2, 3, 4
+//
 // - `nano-banana` - from 50 credits/image
 //   - Supported resolutions: 640px, 1k
 //   - Available for tiers: creator, pro, business
@@ -64,5 +69,6 @@ const (
 	V1AiImageGeneratorCreateBodyModelEnumNanoBananaPro   V1AiImageGeneratorCreateBodyModelEnum = "nano-banana-pro"
 	V1AiImageGeneratorCreateBodyModelEnumSeedream        V1AiImageGeneratorCreateBodyModelEnum = "seedream"
 	V1AiImageGeneratorCreateBodyModelEnumSeedreamV4      V1AiImageGeneratorCreateBodyModelEnum = "seedream-v4"
+	V1AiImageGeneratorCreateBodyModelEnumSeedreamV5Pro   V1AiImageGeneratorCreateBodyModelEnum = "seedream-v5-pro"
 	V1AiImageGeneratorCreateBodyModelEnumZImageTurbo     V1AiImageGeneratorCreateBodyModelEnum = "z-image-turbo"
 )

@@ -44,6 +44,11 @@ package types
 //   - Available for tiers: creator, pro, business
 //   - Max additional input images: 9
 //
+// - `seedream-v5-pro` - from 75 credits/image
+//   - Supported resolutions: 640px, 1k, 2k
+//   - Available for tiers: creator, pro, business
+//   - Max additional input images: 9
+//
 // - `gpt-image-2` - from 50 credits/image
 //   - Supported resolutions: 640px, 1k, 2k, 4k
 //   - Available for tiers: creator, pro, business
@@ -61,4 +66,5 @@ const (
 	V1AiImageEditorCreateBodyModelEnumQwenEdit        V1AiImageEditorCreateBodyModelEnum = "qwen-edit"
 	V1AiImageEditorCreateBodyModelEnumSeedreamV4      V1AiImageEditorCreateBodyModelEnum = "seedream-v4"
 	V1AiImageEditorCreateBodyModelEnumSeedreamV45     V1AiImageEditorCreateBodyModelEnum = "seedream-v4.5"
+	V1AiImageEditorCreateBodyModelEnumSeedreamV5Pro   V1AiImageEditorCreateBodyModelEnum = "seedream-v5-pro"
 )
