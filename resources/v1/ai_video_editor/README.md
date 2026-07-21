@@ -41,7 +41,9 @@ For detailed examples, see the [product page](https://magichour.ai/products/vide
 | `EndSeconds`       |    ✓     | End time of your clip in seconds. Must be greater than `start_seconds`. Duration must be between 3 and 10 seconds.                                                                                                                                                                                                                               | `5.0`                                                                        |
 | `Style`            |    ✓     |                                                                                                                                                                                                                                                                                                                                                  | `V1AiVideoEditorCreateBodyStyle {Prompt: "Change the car color to blue",}`   |
 | `└─ Prompt`        |    ✓     | The prompt used to edit the video.                                                                                                                                                                                                                                                                                                               | `"Change the car color to blue"`                                             |
+| `Model`            |    ✗     | Editing model. Defaults to `ltx-2.3` for free tier and `gemini-omni` for paid. Use `ltx-2.3` for LTX video edit.                                                                                                                                                                                                                                 | `V1AiVideoEditorCreateBodyModelEnumGeminiOmni`                               |
 | `Name`             |    ✗     | Give your video a custom name for easy identification.                                                                                                                                                                                                                                                                                           | `"My Video Editor video"`                                                    |
+| `Resolution`       |    ✗     | Output resolution. Defaults to `480p` for free tier and `720p` for paid. Google Omni supports 720p only; LTX-2.3 supports 480p, 720p, and 1080p.                                                                                                                                                                                                 | `V1AiVideoEditorCreateBodyResolutionEnum720p`                                |
 | `StartSeconds`     |    ✗     | Start time of your clip (seconds). Must be ≥ 0.                                                                                                                                                                                                                                                                                                  | `0.0`                                                                        |
 
 #### Example Snippet
@@ -67,7 +69,9 @@ func main() {
 			VideoFilePath: "api-assets/id/1234.mp4",
 		},
 		EndSeconds:   5.0,
+		Model:        nullable.NewValue(types.V1AiVideoEditorCreateBodyModelEnumGeminiOmni),
 		Name:         nullable.NewValue("My Video Editor video"),
+		Resolution:   nullable.NewValue(types.V1AiVideoEditorCreateBodyResolutionEnum720p),
 		StartSeconds: nullable.NewValue(0.0),
 		Style: types.V1AiVideoEditorCreateBodyStyle{
 			Prompt: "Change the car color to blue",
