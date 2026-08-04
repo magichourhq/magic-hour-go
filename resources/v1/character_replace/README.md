@@ -75,6 +75,10 @@ func main() {
 		Name:         nullable.NewValue("My Character Replace video"),
 		Resolution:   nullable.NewValue(types.V1CharacterReplaceCreateBodyResolutionEnum720p),
 		StartSeconds: nullable.NewValue(0.0),
+		Style: nullable.NewValue(types.V1CharacterReplaceCreateBodyStyle{
+			Mode:          nullable.NewValue(types.V1CharacterReplaceCreateBodyStyleModeEnumReplace),
+			SelectionMode: nullable.NewValue(types.V1CharacterReplaceCreateBodyStyleSelectionModeEnumAuto),
+		}),
 	})
 }
 ```
