@@ -11,6 +11,7 @@ package types
 // * `seedance-1.5`: Smooth, consistent motion with precision.
 // * `seedance-2.0-mini`: Fast, consistent video with strong motion quality
 // * `seedance-2.0`: Top quality with reference-to-video control.
+// * `seedance-2.5`: Highest quality with superior realism, detail, and motion
 // * `sora-2`: Open AI's model. Great for creativity and viral clips.
 //
 // If you specify the deprecated model value that includes the `-audio` suffix, this will be the same as included `audio` as `true`.
@@ -28,6 +29,7 @@ const (
 	V1TextToVideoCreateBodyModelEnumSeedance15     V1TextToVideoCreateBodyModelEnum = "seedance-1.5"
 	V1TextToVideoCreateBodyModelEnumSeedance20     V1TextToVideoCreateBodyModelEnum = "seedance-2.0"
 	V1TextToVideoCreateBodyModelEnumSeedance20Mini V1TextToVideoCreateBodyModelEnum = "seedance-2.0-mini"
+	V1TextToVideoCreateBodyModelEnumSeedance25     V1TextToVideoCreateBodyModelEnum = "seedance-2.5"
 	V1TextToVideoCreateBodyModelEnumSora2          V1TextToVideoCreateBodyModelEnum = "sora-2"
 	V1TextToVideoCreateBodyModelEnumVeo31          V1TextToVideoCreateBodyModelEnum = "veo3.1"
 	V1TextToVideoCreateBodyModelEnumVeo31Audio     V1TextToVideoCreateBodyModelEnum = "veo3.1-audio"
