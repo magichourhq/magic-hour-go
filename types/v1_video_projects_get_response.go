@@ -31,12 +31,21 @@ type V1VideoProjectsGetResponse struct {
 	// Start time of your clip (seconds). Must be ≥ 0.
 	StartSeconds float64 `json:"start_seconds"`
 	// The status of the video.
+	//
+	// - `draft` - the project was created but has not been submitted for rendering
+	// - `queued` - the job is waiting for an available server
+	// - `rendering` - the job is being processed; the `video.started` webhook event fires when rendering begins
+	// - `complete` - the job finished successfully; fires `video.completed`
+	// - `error` - the job failed during processing; fires `video.errored`
+	// - `canceled` - the job was manually canceled (for example from the Magic Hour web app)
+	//
+	// **Note:** `rendering`, `complete`, and `error` have matching webhook events; `canceled` does not - a canceled job emits no webhook event, so poll this endpoint to detect cancellation.
 	Status V1VideoProjectsGetResponseStatusEnum `json:"status"`
 	// Deprecated: Previously represented the number of frames (original name of our credit system) used for video generation. Use 'credits_charged' instead.
 	//
 	// The amount of frames used to generate the video. If the status is not 'complete', the cost is an estimate and will be adjusted when the video completes.
 	TotalFrameCost int `json:"total_frame_cost"`
-	// The type of the video project. Possible values are ANIMATION, AUTO_SUBTITLE, VIDEO_TO_VIDEO, FACE_SWAP, TEXT_TO_VIDEO, IMAGE_TO_VIDEO, LIP_SYNC, TALKING_PHOTO, AVATAR, VIDEO_UPSCALER, VIDEO_EDITOR, CHARACTER_REPLACE, VIDEO_COLORIZER, MUSIC_VIDEO, EXTEND, AUDIO_TO_VIDEO, VIDEO_EXPANDER, UGC_AD
+	// The type of the video project. Possible values are ANIMATION, AUTO_SUBTITLE, VIDEO_TO_VIDEO, FACE_SWAP, TEXT_TO_VIDEO, IMAGE_TO_VIDEO, LIP_SYNC, TALKING_PHOTO, AVATAR, VIDEO_UPSCALER, VIDEO_EDITOR, CHARACTER_REPLACE, VIDEO_COLORIZER, VIDEO_TRANSLATOR, MUSIC_VIDEO, EXTEND, AUDIO_TO_VIDEO, VIDEO_EXPANDER, UGC_AD
 	Type string `json:"type"`
 	// The width of the final output video. A value of -1 indicates the width can be ignored.
 	Width int `json:"width"`
