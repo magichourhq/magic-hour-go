@@ -9,7 +9,7 @@ import (
 type CreateRequest struct {
 	// Provide the assets for video editing.
 	Assets types.V1AiVideoEditorCreateBodyAssets `json:"assets"`
-	// End time of your clip in seconds. Must be greater than `start_seconds`. Duration must be between 3 and 10 seconds.
+	// End time of your clip in seconds. Must be greater than `start_seconds`. Minimum duration is 3 seconds. Maximum duration depends on model: `gemini-omni`: 10s, `ltx-2.3`: 45s.
 	EndSeconds float64 `json:"end_seconds"`
 	// Editing model. Defaults to `ltx-2.3` for free tier and `gemini-omni` for paid. Use `ltx-2.3` for LTX video edit.
 	Model nullable.Nullable[types.V1AiVideoEditorCreateBodyModelEnum] `json:"model,omitempty"`
