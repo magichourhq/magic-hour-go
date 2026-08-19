@@ -2,7 +2,9 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/magichourhq/magic-hour-go.svg)](https://pkg.go.dev/github.com/magichourhq/magic-hour-go)
 
-Magic Hour provides an API (beta) that can be integrated into your own application to generate videos and images using AI.
+The Magic Hour Go SDK provides convenient access to the [Magic Hour API](https://magichour.ai) for generating AI videos, images, and audio.
+
+For full API documentation, visit [docs.magichour.ai](https://docs.magichour.ai).
 
 Webhook documentation can be found [here](https://magichour.ai/docs/webhook).
 
