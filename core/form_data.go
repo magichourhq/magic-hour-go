@@ -13,6 +13,7 @@ import (
 
 // Utility to open file that you are certain exists
 func MustOpenFile(path string) os.File {
+	// #nosec G304 -- opening the caller-selected upload path is this helper's purpose.
 	file, err := os.Open(path)
 	if err != nil {
 		fmt.Printf("Failed to open file: %v\n", err)
@@ -49,13 +50,15 @@ func AddToFormDataWriter(writer *multipart.Writer, field string, value interface
 			}
 		}
 	} else if file, ok := value.(os.File); ok {
-		addFileToFormDataWriter(writer, field, file)
+		return addFileToFormDataWriter(writer, field, file)
 	} else if nullableLike, ok := nullable.IsNullableInterface(value); ok {
-		if nullableVal, err := nullableLike.InterfaceValue(); err == nil {
-			AddToFormDataWriter(writer, field, nullableVal)
+		nullableVal, err := nullableLike.InterfaceValue()
+		if err != nil {
+			return err
 		}
+		return AddToFormDataWriter(writer, field, nullableVal)
 	} else {
-		addFieldToFormDataWriter(writer, field, value)
+		return addFieldToFormDataWriter(writer, field, value)
 	}
 
 	return nil
@@ -67,8 +70,8 @@ func addFieldToFormDataWriter(writer *multipart.Writer, field string, value inte
 	if err != nil {
 		return err
 	}
-	label.Write([]byte(FmtStringParam(value)))
-	return nil
+	_, err = label.Write([]byte(FmtStringParam(value)))
+	return err
 }
 
 // Adds file to form data writer

@@ -82,6 +82,7 @@ func (a *AuthKey) Apply(req *http.Request) error {
 		queryParams.Add(a.name, a.value)
 		req.URL.RawQuery = queryParams.Encode()
 	case "cookie":
+		// #nosec G124 -- cookie attributes apply to Set-Cookie responses, not outbound Cookie headers.
 		authCookie := http.Cookie{Name: a.name, Value: a.value}
 		req.AddCookie(&authCookie)
 	default:
@@ -265,6 +266,7 @@ func (a *OAuth2) Refresh() error {
 	}
 
 	// init request
+	// #nosec G704 -- token URL comes from explicit SDK configuration, not request data.
 	req, err := http.NewRequest("POST", url, reqBody)
 	if err != nil {
 		return err
@@ -286,19 +288,26 @@ func (a *OAuth2) Refresh() error {
 
 	// send req
 	client := &http.Client{}
+	// #nosec G704 -- request targets the explicitly configured OAuth token URL.
 	res, err := client.Do(req)
 	if err != nil {
 		return err
 	}
+	defer res.Body.Close()
 	if res.StatusCode >= 300 {
 		return NewApiError(*req, *res)
 	}
 
 	// extract expiry and access token
-	defer res.Body.Close()
 	body, err := io.ReadAll(res.Body)
+	if err != nil {
+		return err
+	}
 	var resBody map[string]interface{}
 	err = json.Unmarshal(body, &resBody)
+	if err != nil {
+		return err
+	}
 
 	tokenPtr, err := jsonpointer.Parse(a.accessTokenPointer)
 	if err != nil {
@@ -343,9 +352,7 @@ func (a *OAuth2) Apply(req *http.Request) error {
 	}
 
 	a.requestMutator.SetValue(a.accessToken)
-	a.requestMutator.Apply(req)
-
-	return nil
+	return a.requestMutator.Apply(req)
 }
 func (a *OAuth2) SetValue(val *string) {
 	panic("an OAuth2 auth provider cannot be a requestMutator")
