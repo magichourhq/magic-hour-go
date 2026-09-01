@@ -13,7 +13,7 @@ type V1AiClothesChangerCreateBodyAssets struct {
 	// See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details.
 	//
 	GarmentFilePath string `json:"garment_file_path"`
-	// Type of garment to swap. If not provided, swaps the entire outfit.
+	// Type of clothing item to swap. If not provided, swaps the entire outfit.
 	// * `upper_body` - for shirts/jackets
 	// * `lower_body` - for pants/skirts
 	// * `dresses` - for entire outfit (deprecated, use `entire_outfit` instead)
