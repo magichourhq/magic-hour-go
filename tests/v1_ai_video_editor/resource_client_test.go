@@ -21,7 +21,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			VideoFilePath: "api-assets/id/1234.mp4",
 		},
 		EndSeconds:   5.0,
-		Model:        nullable.NewValue(types.V1AiVideoEditorCreateBodyModelEnumGeminiOmni),
+		Model:        nullable.NewValue(types.V1AiVideoEditorCreateBodyModelEnumGeminiOmni11),
 		Name:         nullable.NewValue("My Video Editor video"),
 		Resolution:   nullable.NewValue(types.V1AiVideoEditorCreateBodyResolutionEnum720p),
 		StartSeconds: nullable.NewValue(0.0),
