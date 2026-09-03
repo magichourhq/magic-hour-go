@@ -20,6 +20,7 @@ type V1TextToVideoCreateBodyResolutionEnum string
 
 const (
 	V1TextToVideoCreateBodyResolutionEnum1080p V1TextToVideoCreateBodyResolutionEnum = "1080p"
+	V1TextToVideoCreateBodyResolutionEnum360p  V1TextToVideoCreateBodyResolutionEnum = "360p"
 	V1TextToVideoCreateBodyResolutionEnum480p  V1TextToVideoCreateBodyResolutionEnum = "480p"
 	V1TextToVideoCreateBodyResolutionEnum4k    V1TextToVideoCreateBodyResolutionEnum = "4k"
 	V1TextToVideoCreateBodyResolutionEnum720p  V1TextToVideoCreateBodyResolutionEnum = "720p"
