@@ -106,7 +106,7 @@ Id: "cuid-example",
 ImageCount: 1,
 Name: nullable.NewValue("Example Name"),
 Status: V1ImageProjectsGetResponseStatusEnumComplete,
-TotalFrameCost: 5,
+TotalFrameCost: 123,
 Type: "AI_IMAGE",
 }
 ```

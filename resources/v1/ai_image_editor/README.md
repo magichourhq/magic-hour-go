@@ -72,7 +72,7 @@ func main() {
 ```go
 V1AiImageEditorCreateResponse {
 CreditsCharged: 50,
-FrameCost: 50,
+FrameCost: 123,
 Id: "cuid-example",
 }
 ```

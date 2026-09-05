@@ -66,7 +66,7 @@ func main() {
 ```go
 V1AiTalkingPhotoCreateResponse {
 CreditsCharged: 450,
-EstimatedFrameCost: 450,
+EstimatedFrameCost: 123,
 Id: "cuid-example",
 }
 ```

@@ -58,7 +58,7 @@ func main() {
 ```go
 V1AiClothesChangerCreateResponse {
 CreditsCharged: 25,
-FrameCost: 25,
+FrameCost: 123,
 Id: "cuid-example",
 }
 ```

@@ -66,7 +66,7 @@ func main() {
 ```go
 V1AiImageGeneratorCreateResponse {
 CreditsCharged: 5,
-FrameCost: 5,
+FrameCost: 123,
 Id: "cuid-example",
 }
 ```

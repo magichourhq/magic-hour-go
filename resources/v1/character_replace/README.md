@@ -94,7 +94,7 @@ func main() {
 ```go
 V1CharacterReplaceCreateResponse {
 CreditsCharged: 450,
-EstimatedFrameCost: 450,
+EstimatedFrameCost: 123,
 Id: "cuid-example",
 }
 ```

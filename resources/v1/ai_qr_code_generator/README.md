@@ -56,7 +56,7 @@ func main() {
 ```go
 V1AiQrCodeGeneratorCreateResponse {
 CreditsCharged: 0,
-FrameCost: 0,
+FrameCost: 123,
 Id: "cuid-example",
 }
 ```

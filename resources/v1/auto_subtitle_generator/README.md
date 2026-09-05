@@ -62,7 +62,7 @@ func main() {
 ```go
 V1AutoSubtitleGeneratorCreateResponse {
 CreditsCharged: 450,
-EstimatedFrameCost: 450,
+EstimatedFrameCost: 123,
 Id: "cuid-example",
 }
 ```
