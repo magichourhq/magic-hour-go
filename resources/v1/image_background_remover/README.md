@@ -56,7 +56,7 @@ func main() {
 ```go
 V1ImageBackgroundRemoverCreateResponse {
 CreditsCharged: 5,
-FrameCost: 5,
+FrameCost: 123,
 Id: "cuid-example",
 }
 ```

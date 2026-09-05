@@ -54,7 +54,7 @@ func main() {
 ```go
 V1PhotoColorizerCreateResponse {
 CreditsCharged: 10,
-FrameCost: 10,
+FrameCost: 123,
 Id: "cuid-example",
 }
 ```

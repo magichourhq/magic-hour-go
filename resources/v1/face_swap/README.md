@@ -103,7 +103,7 @@ func main() {
 ```go
 V1FaceSwapCreateResponse {
 CreditsCharged: 450,
-EstimatedFrameCost: 450,
+EstimatedFrameCost: 123,
 Id: "cuid-example",
 }
 ```

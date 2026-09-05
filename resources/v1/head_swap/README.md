@@ -58,7 +58,7 @@ func main() {
 ```go
 V1HeadSwapCreateResponse {
 CreditsCharged: 10,
-FrameCost: 10,
+FrameCost: 123,
 Id: "cuid-example",
 }
 ```

@@ -113,7 +113,7 @@ Id: "cuid-example",
 Name: nullable.NewValue("Example Name"),
 StartSeconds: 0.0,
 Status: V1VideoProjectsGetResponseStatusEnumComplete,
-TotalFrameCost: 450,
+TotalFrameCost: 123,
 Type: "FACE_SWAP",
 Width: 512,
 }
