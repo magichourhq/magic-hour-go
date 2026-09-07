@@ -1,5 +1,5 @@
 {
-  "id": "cd5213e6-cfb9-4d62-9ef6-f152d858bf6d",
+  "id": "5d97610a-5011-4b27-b2c1-35626e1d2f1c",
   "tracked_paths": [
     {
       "editable": true,
@@ -64,6 +64,18 @@
     {
       "editable": true,
       "path": "resources/v1/README.md"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/account/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/account/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/account/request_types.go"
     },
     {
       "editable": true,
@@ -471,6 +483,10 @@
     },
     {
       "editable": false,
+      "path": "tests/v1_account/resource_client_test.go"
+    },
+    {
+      "editable": false,
       "path": "tests/v1_ai_clothes_changer/resource_client_test.go"
     },
     {
@@ -596,6 +612,34 @@
     {
       "editable": false,
       "path": "tests/v1_video_to_video/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_account_list_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_account_list_response_subscription.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_account_list_response_subscription_billing_interval_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_account_list_response_subscription_discount.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_account_list_response_subscription_price.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_account_list_response_subscription_status_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_account_list_response_tier_enum.go"
     },
     {
       "editable": false,
