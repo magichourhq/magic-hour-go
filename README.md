@@ -34,6 +34,10 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 ## Module Documentation and Snippets
 
+### [V1.Account](resources/v1/account/README.md)
+
+- [list](resources/v1/account/README.md#list) - Get account details
+
 ### [V1.AiClothesChanger](resources/v1/ai_clothes_changer/README.md)
 
 - [create](resources/v1/ai_clothes_changer/README.md#create) - AI Clothes Changer
