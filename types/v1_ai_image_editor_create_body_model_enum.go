@@ -14,6 +14,11 @@ package types
 //   - Available for tiers: creator, pro, business
 //   - Max additional input images: 9
 //
+// - `gpt-image-2.5-flare` - from 100 credits/image
+//   - Supported resolutions: 640px, 1k, 2k, 4k
+//   - Available for tiers: creator, pro, business
+//   - Max additional input images: 9
+//
 // - `nano-banana` - from 50 credits/image
 //   - Supported resolutions: 640px, 1k
 //   - Available for tiers: creator, pro, business
@@ -59,6 +64,7 @@ const (
 	V1AiImageEditorCreateBodyModelEnumDefault         V1AiImageEditorCreateBodyModelEnum = "default"
 	V1AiImageEditorCreateBodyModelEnumFlux2Klein      V1AiImageEditorCreateBodyModelEnum = "flux-2-klein"
 	V1AiImageEditorCreateBodyModelEnumGptImage2       V1AiImageEditorCreateBodyModelEnum = "gpt-image-2"
+	V1AiImageEditorCreateBodyModelEnumGptImage25Flare V1AiImageEditorCreateBodyModelEnum = "gpt-image-2.5-flare"
 	V1AiImageEditorCreateBodyModelEnumNanoBanana      V1AiImageEditorCreateBodyModelEnum = "nano-banana"
 	V1AiImageEditorCreateBodyModelEnumNanoBanana2     V1AiImageEditorCreateBodyModelEnum = "nano-banana-2"
 	V1AiImageEditorCreateBodyModelEnumNanoBanana2Lite V1AiImageEditorCreateBodyModelEnum = "nano-banana-2-lite"
