@@ -24,6 +24,11 @@ package types
 //   - Available for tiers: creator, pro, business
 //   - Image count allowed: 1, 2, 3, 4
 //
+// - `krea-2` - from 10 credits/image
+//   - Supported resolutions: 640px, 1k
+//   - Available for tiers: free, creator, pro, business
+//   - Image count allowed: 1
+//
 // - `nano-banana` - from 50 credits/image
 //   - Supported resolutions: 640px, 1k
 //   - Available for tiers: creator, pro, business
@@ -69,6 +74,7 @@ const (
 	V1AiImageGeneratorCreateBodyModelEnumFluxSchnell     V1AiImageGeneratorCreateBodyModelEnum = "flux-schnell"
 	V1AiImageGeneratorCreateBodyModelEnumGptImage2       V1AiImageGeneratorCreateBodyModelEnum = "gpt-image-2"
 	V1AiImageGeneratorCreateBodyModelEnumGptImage25Flare V1AiImageGeneratorCreateBodyModelEnum = "gpt-image-2.5-flare"
+	V1AiImageGeneratorCreateBodyModelEnumKrea2           V1AiImageGeneratorCreateBodyModelEnum = "krea-2"
 	V1AiImageGeneratorCreateBodyModelEnumNanoBanana      V1AiImageGeneratorCreateBodyModelEnum = "nano-banana"
 	V1AiImageGeneratorCreateBodyModelEnumNanoBanana2     V1AiImageGeneratorCreateBodyModelEnum = "nano-banana-2"
 	V1AiImageGeneratorCreateBodyModelEnumNanoBanana2Lite V1AiImageGeneratorCreateBodyModelEnum = "nano-banana-2-lite"

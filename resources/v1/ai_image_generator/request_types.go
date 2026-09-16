@@ -31,6 +31,10 @@ type CreateRequest struct {
 	//   - Supported resolutions: 640px, 1k, 2k, 4k
 	//   - Available for tiers: creator, pro, business
 	//   - Image count allowed: 1, 2, 3, 4
+	// - `krea-2` - from 10 credits/image
+	//   - Supported resolutions: 640px, 1k
+	//   - Available for tiers: free, creator, pro, business
+	//   - Image count allowed: 1
 	// - `nano-banana` - from 50 credits/image
 	//   - Supported resolutions: 640px, 1k
 	//   - Available for tiers: creator, pro, business
@@ -84,6 +88,7 @@ type CreateRequest struct {
 	// - `flux-schnell` - 640px, 1k, 2k
 	// - `gpt-image-2` - 640px, 1k, 2k, 4k
 	// - `gpt-image-2.5-flare` - 640px, 1k, 2k, 4k
+	// - `krea-2` - 640px, 1k
 	// - `nano-banana` - 640px, 1k
 	// - `nano-banana-2` - 640px, 1k, 2k, 4k
 	// - `nano-banana-2-lite` - 640px, 1k
