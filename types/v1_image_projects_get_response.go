@@ -35,6 +35,6 @@ type V1ImageProjectsGetResponse struct {
 	Status V1ImageProjectsGetResponseStatusEnum `json:"status"`
 	// Deprecated: Previously represented the number of frames (original name of our credit system) used for image generation. Use 'credits_charged' instead.
 	TotalFrameCost int `json:"total_frame_cost"`
-	// The type of the image project. Possible values are FACE_EDITOR, AI_IMAGE_EDITOR, AI_SELFIE, AI_HEADSHOT, AI_INFLUENCER, AI_IMAGE, AI_MEME, CLOTHES_CHANGER, BACKGROUND_REMOVER, FACE_SWAP, IMAGE_UPSCALER, IMAGE_ENHANCER, AI_GIF, QR_CODE, PHOTO_EDITOR, PHOTO_COLORIZER, IMAGE_COLOR_GRADER, HEAD_SWAP, BODY_SWAP, STORYBOARD, IMAGE_EXPANDER
+	// The type of the image project. Possible values are FACE_EDITOR, AI_IMAGE_EDITOR, GENERATIVE_FILL, AI_SELFIE, AI_HEADSHOT, AI_INFLUENCER, AI_IMAGE, AI_MEME, CLOTHES_CHANGER, BACKGROUND_REMOVER, FACE_SWAP, IMAGE_UPSCALER, IMAGE_ENHANCER, AI_GIF, QR_CODE, PHOTO_EDITOR, PHOTO_COLORIZER, IMAGE_COLOR_GRADER, HEAD_SWAP, BODY_SWAP, STORYBOARD, IMAGE_EXPANDER
 	Type string `json:"type"`
 }
