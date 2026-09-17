@@ -22,6 +22,7 @@ type V1ImageToVideoCreateBodyAssets struct {
 	// * **`veo3.1`**: Supports 720p, 1080p. Requires a duration of 8 seconds or less.
 	// * **`veo3.1-lite`**: Supports 720p, 1080p. Requires a duration of 8 seconds or less.
 	// * **`wan-2.2`**: Not supported
+	// * **`wan-3.0`**: Supports 480p, 720p, 1080p.
 	//
 	EndImageFilePath nullable.Nullable[string] `json:"end_image_file_path,omitempty"`
 	// The path of the image file. This value is either

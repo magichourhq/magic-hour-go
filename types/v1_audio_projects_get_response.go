@@ -31,6 +31,6 @@ type V1AudioProjectsGetResponse struct {
 	//
 	// **Note:** `rendering`, `complete`, and `error` have matching webhook events; `canceled` does not - a canceled job emits no webhook event, so poll this endpoint to detect cancellation.
 	Status V1AudioProjectsGetResponseStatusEnum `json:"status"`
-	// The type of the audio project. Possible values are AUDIO_TRANSLATOR, VOICE_GENERATOR, VOICE_CHANGER, VOICE_CLONER, VIDEO_TO_AUDIO, MUSIC_GENERATOR
+	// The type of the audio project. Possible values are AUDIO_TRANSLATOR, VOICE_GENERATOR, VOICE_CHANGER, VOICE_CLONER, VIDEO_TO_AUDIO, MUSIC_GENERATOR, SOUND_EFFECT_GENERATOR
 	Type string `json:"type"`
 }

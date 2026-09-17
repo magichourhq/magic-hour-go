@@ -1,5 +1,5 @@
 {
-  "id": "77d33e04-024e-490c-909f-00f249502dab",
+  "id": "28e4fc5d-30d9-4114-9d4d-3db2507e25aa",
   "tracked_paths": [
     {
       "editable": true,
@@ -447,6 +447,18 @@
     },
     {
       "editable": true,
+      "path": "resources/v1/saved_items/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/saved_items/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/saved_items/request_types.go"
+    },
+    {
+      "editable": true,
       "path": "resources/v1/text_to_video/README.md"
     },
     {
@@ -600,6 +612,10 @@
     {
       "editable": false,
       "path": "tests/v1_photo_colorizer/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_saved_items/resource_client_test.go"
     },
     {
       "editable": false,
@@ -1240,6 +1256,30 @@
     {
       "editable": false,
       "path": "types/v1_photo_colorizer_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_saved_items_list_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_saved_items_list_response_items_item.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_saved_items_list_response_items_item_assets_item.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_saved_items_list_response_items_item_assets_item_media_kind_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_saved_items_list_response_items_item_type_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_saved_items_list_type_enum.go"
     },
     {
       "editable": false,

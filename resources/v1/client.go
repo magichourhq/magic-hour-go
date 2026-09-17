@@ -34,6 +34,7 @@ import (
 	image_to_video "github.com/magichourhq/magic-hour-go/resources/v1/image_to_video"
 	lip_sync "github.com/magichourhq/magic-hour-go/resources/v1/lip_sync"
 	photo_colorizer "github.com/magichourhq/magic-hour-go/resources/v1/photo_colorizer"
+	saved_items "github.com/magichourhq/magic-hour-go/resources/v1/saved_items"
 	text_to_video "github.com/magichourhq/magic-hour-go/resources/v1/text_to_video"
 	video_projects "github.com/magichourhq/magic-hour-go/resources/v1/video_projects"
 	video_to_video "github.com/magichourhq/magic-hour-go/resources/v1/video_to_video"
@@ -46,6 +47,7 @@ type Client struct {
 	VideoProjects          *video_projects.Client
 	Account                *account.Client
 	FaceDetection          *face_detection.Client
+	SavedItems             *saved_items.Client
 	AiClothesChanger       *ai_clothes_changer.Client
 	AiFaceEditor           *ai_face_editor.Client
 	AiGifGenerator         *ai_gif_generator.Client
@@ -86,6 +88,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 		VideoProjects:          video_projects.NewClient(coreClient),
 		Account:                account.NewClient(coreClient),
 		FaceDetection:          face_detection.NewClient(coreClient),
+		SavedItems:             saved_items.NewClient(coreClient),
 		AiClothesChanger:       ai_clothes_changer.NewClient(coreClient),
 		AiFaceEditor:           ai_face_editor.NewClient(coreClient),
 		AiGifGenerator:         ai_gif_generator.NewClient(coreClient),

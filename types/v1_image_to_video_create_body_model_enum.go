@@ -17,6 +17,7 @@ package types
 // * `veo3.1`: Best for romantic interactions and expressive action, with realistic detail.
 // * `veo3.1-lite`: Balanced realism and audio at a lower cost than Veo 3.1.
 // * `wan-2.2`: Best for physical motion, action, and camera movement.
+// * `wan-3.0`: High-quality video with native audio, long clips, and end-frame control.
 //
 // If you specify the deprecated model value that includes the `-audio` suffix, this will be the same as included `audio` as `true`.
 type V1ImageToVideoCreateBodyModelEnum string
@@ -43,4 +44,5 @@ const (
 	V1ImageToVideoCreateBodyModelEnumVeo31Audio     V1ImageToVideoCreateBodyModelEnum = "veo3.1-audio"
 	V1ImageToVideoCreateBodyModelEnumVeo31Lite      V1ImageToVideoCreateBodyModelEnum = "veo3.1-lite"
 	V1ImageToVideoCreateBodyModelEnumWan22          V1ImageToVideoCreateBodyModelEnum = "wan-2.2"
+	V1ImageToVideoCreateBodyModelEnumWan30          V1ImageToVideoCreateBodyModelEnum = "wan-3.0"
 )

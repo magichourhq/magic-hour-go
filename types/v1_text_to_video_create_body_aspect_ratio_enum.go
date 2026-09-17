@@ -16,6 +16,7 @@ package types
 // * **`veo3.1`**: Supports 9:16, 16:9.
 // * **`veo3.1-lite`**: Supports 9:16, 16:9.
 // * **`wan-2.2`**: Supports 9:16, 16:9, 1:1.
+// * **`wan-3.0`**: Supports 16:9, 9:16, 1:1.
 type V1TextToVideoCreateBodyAspectRatioEnum string
 
 const (
