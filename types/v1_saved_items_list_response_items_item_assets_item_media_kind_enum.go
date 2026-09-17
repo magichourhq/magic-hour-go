@@ -1,0 +1,10 @@
+package types
+
+// Media type of the asset.
+type V1SavedItemsListResponseItemsItemAssetsItemMediaKindEnum string
+
+const (
+	V1SavedItemsListResponseItemsItemAssetsItemMediaKindEnumAudio V1SavedItemsListResponseItemsItemAssetsItemMediaKindEnum = "AUDIO"
+	V1SavedItemsListResponseItemsItemAssetsItemMediaKindEnumImage V1SavedItemsListResponseItemsItemAssetsItemMediaKindEnum = "IMAGE"
+	V1SavedItemsListResponseItemsItemAssetsItemMediaKindEnumVideo V1SavedItemsListResponseItemsItemAssetsItemMediaKindEnum = "VIDEO"
+)

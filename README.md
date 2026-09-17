@@ -157,6 +157,10 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 - [create](resources/v1/photo_colorizer/README.md#create) - Photo Colorizer
 
+### [V1.SavedItems](resources/v1/saved_items/README.md)
+
+- [list](resources/v1/saved_items/README.md#list) - List saved items
+
 ### [V1.TextToVideo](resources/v1/text_to_video/README.md)
 
 - [create](resources/v1/text_to_video/README.md#create) - Text-to-Video
