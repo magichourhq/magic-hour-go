@@ -23,7 +23,13 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Model:       nullable.NewValue(types.V1TextToVideoCreateBodyModelEnumKling30),
 		Name:        nullable.NewValue("My Text To Video video"),
 		Orientation: nullable.NewValue(types.V1TextToVideoCreateBodyOrientationEnumLandscape),
-		Resolution:  nullable.NewValue(types.V1TextToVideoCreateBodyResolutionEnum720p),
+		References: nullable.NewValue([]types.V1TextToVideoCreateBodyReferencesItem{
+			types.V1TextToVideoCreateBodyReferencesItem{
+				FilePath: "string",
+				Name:     "string",
+			},
+		}),
+		Resolution: nullable.NewValue(types.V1TextToVideoCreateBodyResolutionEnum720p),
 		Style: types.V1TextToVideoCreateBodyStyle{
 			Prompt:      "a dog running",
 			QualityMode: nullable.NewValue(types.V1TextToVideoCreateBodyStyleQualityModeEnumQuick),

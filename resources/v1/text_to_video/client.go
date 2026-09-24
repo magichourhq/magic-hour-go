@@ -65,6 +65,7 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 		Model:       request.Model,
 		Name:        request.Name,
 		Orientation: request.Orientation,
+		References:  request.References,
 		Resolution:  request.Resolution,
 		EndSeconds:  request.EndSeconds,
 		Style:       request.Style,
