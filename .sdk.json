@@ -1,5 +1,5 @@
 {
-  "id": "28e4fc5d-30d9-4114-9d4d-3db2507e25aa",
+  "id": "1b88d7d0-fc75-4543-8e90-be91fcbdb8bb",
   "tracked_paths": [
     {
       "editable": true,
@@ -1296,6 +1296,10 @@
     {
       "editable": false,
       "path": "types/v1_text_to_video_create_body_orientation_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_text_to_video_create_body_references_item.go"
     },
     {
       "editable": false,
