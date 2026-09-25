@@ -22,7 +22,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Model:       nullable.NewValue(types.V1AiImageGeneratorCreateBodyModelEnumDefault),
 		Name:        nullable.NewValue("My Ai Image image"),
 		Orientation: nullable.NewValue(types.V1AiImageGeneratorCreateBodyOrientationEnumLandscape),
-		Resolution:  nullable.NewValue(types.V1AiImageGeneratorCreateBodyResolutionEnumAuto),
+		Resolution:  nullable.NewValue(types.V1AiImageGeneratorCreateBodyResolutionEnum1k),
 		Style: types.V1AiImageGeneratorCreateBodyStyle{
 			Prompt:      "Cool image",
 			QualityMode: nullable.NewValue(types.V1AiImageGeneratorCreateBodyStyleQualityModeEnumPro),

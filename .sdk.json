@@ -1,5 +1,5 @@
 {
-  "id": "1b88d7d0-fc75-4543-8e90-be91fcbdb8bb",
+  "id": "1481ca4e-2ef7-40a1-982d-b0cbec16cc68",
   "tracked_paths": [
     {
       "editable": true,
@@ -208,6 +208,18 @@
     {
       "editable": false,
       "path": "resources/v1/ai_video_editor/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/ai_video_translator/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_video_translator/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_video_translator/request_types.go"
     },
     {
       "editable": true,
@@ -540,6 +552,10 @@
     {
       "editable": false,
       "path": "tests/v1_ai_video_editor/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_ai_video_translator/resource_client_test.go"
     },
     {
       "editable": false,
@@ -884,6 +900,26 @@
     {
       "editable": false,
       "path": "types/v1_ai_video_editor_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_video_translator_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_video_translator_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_video_translator_create_body_resolution_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_video_translator_create_body_target_language_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_video_translator_create_response.go"
     },
     {
       "editable": false,
