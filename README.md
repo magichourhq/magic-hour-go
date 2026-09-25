@@ -82,6 +82,10 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 - [create](resources/v1/ai_video_editor/README.md#create) - AI Video Editor
 
+### [V1.AiVideoTranslator](resources/v1/ai_video_translator/README.md)
+
+- [create](resources/v1/ai_video_translator/README.md#create) - AI Video Translator
+
 ### [V1.AiVoiceCloner](resources/v1/ai_voice_cloner/README.md)
 
 - [create](resources/v1/ai_voice_cloner/README.md#create) - AI Voice Cloner

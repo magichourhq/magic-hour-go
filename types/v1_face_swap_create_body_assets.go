@@ -9,8 +9,8 @@ type V1FaceSwapCreateBodyAssets struct {
 	// This is the array of face mappings used for multiple face swap. The value is required if `face_swap_mode` is `individual-faces`.
 	FaceMappings nullable.Nullable[[]V1FaceSwapCreateBodyAssetsFaceMappingsItem] `json:"face_mappings,omitempty"`
 	// Choose how to swap faces:
-	// **all-faces** (recommended) — swap all detected faces using one source image (`source_file_path` required)
-	// +- **individual-faces** — specify exact mappings using `face_mappings`
+	// - **all-faces** (recommended) — swap all detected faces using one source image (`source_file_path` required)
+	// - **individual-faces** — specify exact mappings using `face_mappings`
 	FaceSwapMode nullable.Nullable[V1FaceSwapCreateBodyAssetsFaceSwapModeEnum] `json:"face_swap_mode,omitempty"`
 	// The path of the input image with the face to be swapped.  The value is required if `face_swap_mode` is `all-faces`.
 	//
