@@ -60,6 +60,7 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	// Prep body
 	reqBodyBuf := &bytes.Buffer{}
 	reqBody, err := json.Marshal(types.V1CharacterReplaceCreateBody{
+		Model:        request.Model,
 		Name:         request.Name,
 		Resolution:   request.Resolution,
 		StartSeconds: request.StartSeconds,

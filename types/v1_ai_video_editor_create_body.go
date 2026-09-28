@@ -8,7 +8,7 @@ import (
 type V1AiVideoEditorCreateBody struct {
 	// Provide the assets for video editing.
 	Assets V1AiVideoEditorCreateBodyAssets `json:"assets"`
-	// End time of your clip in seconds. Must be greater than `start_seconds`. Minimum duration depends on model: `gemini-omni-1.1`: 3s, LTX 2.5: 0.5s. Maximum duration depends on model: `gemini-omni-1.1`: 10s, LTX 2.5: 45s.
+	// End time of your clip in seconds. Must be greater than `start_seconds`. Minimum duration depends on model: `gemini-omni-1.1`: 3s, LTX 2.5: 0.5s. Maximum duration depends on model: `gemini-omni-1.1`: 10s, LTX 2.5: 20s.
 	EndSeconds float64 `json:"end_seconds"`
 	// Editing model. Defaults to LTX 2.5 for free tier and `gemini-omni-1.1` for paid. `gemini-omni` is deprecated; use `gemini-omni-1.1` instead.
 	Model nullable.Nullable[V1AiVideoEditorCreateBodyModelEnum] `json:"model,omitempty"`
