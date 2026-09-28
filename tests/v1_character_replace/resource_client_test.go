@@ -22,6 +22,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			VideoFilePath: "api-assets/id/1234.mp4",
 		},
 		EndSeconds:   15.0,
+		Model:        nullable.NewValue(types.V1CharacterReplaceCreateBodyModelEnumWanAnimate),
 		Name:         nullable.NewValue("My Character Replace video"),
 		Resolution:   nullable.NewValue(types.V1CharacterReplaceCreateBodyResolutionEnum720p),
 		StartSeconds: nullable.NewValue(0.0),
