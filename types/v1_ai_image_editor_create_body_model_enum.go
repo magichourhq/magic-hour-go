@@ -49,6 +49,11 @@ package types
 //   - Available for tiers: free, creator, pro, business
 //   - Max additional input images: 2
 //
+// - `qwen-image-2.1` - from 10 credits/image
+//   - Supported resolutions: 640px, 1k, 2k
+//   - Available for tiers: free, creator, pro, business
+//   - Max additional input images: 2
+//
 // - `seedream-v4` - from 40 credits/image
 //   - Supported resolutions: 640px, 1k, 2k, 4k
 //   - Available for tiers: creator, pro, business
@@ -76,6 +81,7 @@ const (
 	V1AiImageEditorCreateBodyModelEnumNanoBanana2Lite V1AiImageEditorCreateBodyModelEnum = "nano-banana-2-lite"
 	V1AiImageEditorCreateBodyModelEnumNanoBananaPro   V1AiImageEditorCreateBodyModelEnum = "nano-banana-pro"
 	V1AiImageEditorCreateBodyModelEnumQwenEdit        V1AiImageEditorCreateBodyModelEnum = "qwen-edit"
+	V1AiImageEditorCreateBodyModelEnumQwenImage21     V1AiImageEditorCreateBodyModelEnum = "qwen-image-2.1"
 	V1AiImageEditorCreateBodyModelEnumSeedreamV4      V1AiImageEditorCreateBodyModelEnum = "seedream-v4"
 	V1AiImageEditorCreateBodyModelEnumSeedreamV45     V1AiImageEditorCreateBodyModelEnum = "seedream-v4.5"
 	V1AiImageEditorCreateBodyModelEnumSeedreamV5Pro   V1AiImageEditorCreateBodyModelEnum = "seedream-v5-pro"
