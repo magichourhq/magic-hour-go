@@ -12,7 +12,7 @@ type V1AiTalkingPhotoCreateBody struct {
 	EndSeconds float64 `json:"end_seconds"`
 	// Constrains the larger dimension (height or width) of the output video. Allows you to set a lower resolution than your plan's maximum if desired. The value is capped by your plan's max resolution.
 	MaxResolution nullable.Nullable[int] `json:"max_resolution,omitempty"`
-	// Give your image a custom name for easy identification.
+	// Give your video a custom name for easy identification.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// The start time of the input audio in seconds. Maximum clip length depends on style.generation_mode: realistic 300s, prompted 45s.
 	StartSeconds float64 `json:"start_seconds"`
