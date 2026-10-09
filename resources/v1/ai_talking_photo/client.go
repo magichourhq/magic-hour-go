@@ -26,7 +26,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 
 // AI Talking Photo
 //
-// Create a talking photo from an image and audio or text input.
+// Create a talking photo video from an image and an audio file.
 //
 // POST /v1/ai-talking-photo
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiTalkingPhotoCreateResponse, error) {

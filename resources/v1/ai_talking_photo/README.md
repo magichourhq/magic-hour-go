@@ -4,7 +4,7 @@
 
 ### AI Talking Photo <a name="create"></a>
 
-Create a talking photo from an image and audio or text input.
+Create a talking photo video from an image and an audio file.
 
 **API Endpoint**: `POST /v1/ai-talking-photo`
 
@@ -18,7 +18,7 @@ Create a talking photo from an image and audio or text input.
 | `EndSeconds`        |    ✓     | The end time of the input audio in seconds. Maximum clip length depends on style.generation_mode: realistic 300s, prompted 45s.                                                                                                                                                                                                                                                                                | `15.0`                                                                                                                             |
 | `StartSeconds`      |    ✓     | The start time of the input audio in seconds. Maximum clip length depends on style.generation_mode: realistic 300s, prompted 45s.                                                                                                                                                                                                                                                                              | `0.0`                                                                                                                              |
 | `MaxResolution`     |    ✗     | Constrains the larger dimension (height or width) of the output video. Allows you to set a lower resolution than your plan's maximum if desired. The value is capped by your plan's max resolution.                                                                                                                                                                                                            | `1024`                                                                                                                             |
-| `Name`              |    ✗     | Give your image a custom name for easy identification.                                                                                                                                                                                                                                                                                                                                                         | `"My Talking Photo image"`                                                                                                         |
+| `Name`              |    ✗     | Give your video a custom name for easy identification.                                                                                                                                                                                                                                                                                                                                                         | `"My Talking Photo video"`                                                                                                         |
 | `Style`             |    ✗     | Attributes used to dictate the style of the output                                                                                                                                                                                                                                                                                                                                                             | `V1AiTalkingPhotoCreateBodyStyle {GenerationMode: nullable.NewValue(V1AiTalkingPhotoCreateBodyStyleGenerationModeEnumRealistic),}` |
 | `└─ GenerationMode` |    ✗     | Controls overall motion style. * `realistic` - Maintains likeness well, high quality, and reliable. * `prompted` - Slightly lower likeness; allows option to prompt scene. **Deprecated values (maintained for backward compatibility):** * `pro` - Deprecated: use `realistic` * `standard` - Deprecated: use `prompted` * `stable` - Deprecated: use `realistic` * `expressive` - Deprecated: use `prompted` | `V1AiTalkingPhotoCreateBodyStyleGenerationModeEnumRealistic`                                                                       |
 | `└─ Intensity`      |    ✗     | Note: this value is only applicable when generation_mode is `expressive`. The value can include up to 2 decimal places. * Lower values yield more stability but can suppress mouth movement. * Higher values increase motion and expressiveness, with a higher risk of distortion.                                                                                                                             | `123.0`                                                                                                                            |
@@ -49,7 +49,7 @@ func main() {
 		},
 		EndSeconds:    15.0,
 		MaxResolution: nullable.NewValue(1024),
-		Name:          nullable.NewValue("My Talking Photo image"),
+		Name:          nullable.NewValue("My Talking Photo video"),
 		StartSeconds:  0.0,
 	})
 }

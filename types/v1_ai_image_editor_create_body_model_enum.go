@@ -39,6 +39,11 @@ package types
 //   - Available for tiers: creator, pro, business
 //   - Max additional input images: 9
 //
+// - `nano-banana-2.1` - from 50 credits/image
+//   - Supported resolutions: 640px, 1k, 2k, 4k
+//   - Available for tiers: creator, pro, business
+//   - Max additional input images: 9
+//
 // - `nano-banana-pro` - from 150 credits/image
 //   - Supported resolutions: 1k, 2k, 4k
 //   - Available for tiers: creator, pro, business
@@ -79,6 +84,7 @@ const (
 	V1AiImageEditorCreateBodyModelEnumNanoBanana      V1AiImageEditorCreateBodyModelEnum = "nano-banana"
 	V1AiImageEditorCreateBodyModelEnumNanoBanana2     V1AiImageEditorCreateBodyModelEnum = "nano-banana-2"
 	V1AiImageEditorCreateBodyModelEnumNanoBanana2Lite V1AiImageEditorCreateBodyModelEnum = "nano-banana-2-lite"
+	V1AiImageEditorCreateBodyModelEnumNanoBanana21    V1AiImageEditorCreateBodyModelEnum = "nano-banana-2.1"
 	V1AiImageEditorCreateBodyModelEnumNanoBananaPro   V1AiImageEditorCreateBodyModelEnum = "nano-banana-pro"
 	V1AiImageEditorCreateBodyModelEnumQwenEdit        V1AiImageEditorCreateBodyModelEnum = "qwen-edit"
 	V1AiImageEditorCreateBodyModelEnumQwenImage21     V1AiImageEditorCreateBodyModelEnum = "qwen-image-2.1"

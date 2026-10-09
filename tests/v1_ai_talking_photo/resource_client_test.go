@@ -23,7 +23,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		},
 		EndSeconds:    15.0,
 		MaxResolution: nullable.NewValue(1024),
-		Name:          nullable.NewValue("My Talking Photo image"),
+		Name:          nullable.NewValue("My Talking Photo video"),
 		StartSeconds:  0.0,
 		Style: nullable.NewValue(types.V1AiTalkingPhotoCreateBodyStyle{
 			GenerationMode: nullable.NewValue(types.V1AiTalkingPhotoCreateBodyStyleGenerationModeEnumRealistic),
