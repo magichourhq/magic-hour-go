@@ -38,6 +38,7 @@ Edit facial features of an image using AI. Each edit costs 1 frame. The height/w
 package main
 
 import (
+	"fmt"
 	os "os"
 
 	sdk "github.com/magichourhq/magic-hour-go/client"
@@ -73,6 +74,11 @@ func main() {
 			MouthSmile:              nullable.NewValue(0.0),
 		},
 	})
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
+	fmt.Println(res.Id)
 }
 ```
 
