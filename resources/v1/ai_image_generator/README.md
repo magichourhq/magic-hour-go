@@ -29,6 +29,7 @@ Create an AI image with advanced model selection and quality controls.
 package main
 
 import (
+	"fmt"
 	os "os"
 
 	sdk "github.com/magichourhq/magic-hour-go/client"
@@ -44,14 +45,19 @@ func main() {
 	res, err := client.V1.AiImageGenerator.Create(ai_image_generator.CreateRequest{
 		AspectRatio: nullable.NewValue(types.V1AiImageGeneratorCreateBodyAspectRatioEnum11),
 		ImageCount:  1,
-		Model:       nullable.NewValue(types.V1AiImageGeneratorCreateBodyModelEnumDefault),
+		Model:       nullable.NewValue(types.V1AiImageGeneratorCreateBodyModelEnumZImageTurbo),
 		Name:        nullable.NewValue("My Ai Image image"),
-		Resolution:  nullable.NewValue(types.V1AiImageGeneratorCreateBodyResolutionEnum1k),
+		Resolution:  nullable.NewValue(types.V1AiImageGeneratorCreateBodyResolutionEnum640px),
 		Style: types.V1AiImageGeneratorCreateBodyStyle{
 			Prompt: "Cool image",
 			Tool:   nullable.NewValue(types.V1AiImageGeneratorCreateBodyStyleToolEnumAiAnimeGenerator),
 		},
 	})
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
+	fmt.Println(res.Id)
 }
 ```
 
@@ -66,7 +72,7 @@ func main() {
 ```go
 V1AiImageGeneratorCreateResponse {
 CreditsCharged: 5,
-FrameCost: 123,
+FrameCost: 5,
 Id: "cuid-example",
 }
 ```
