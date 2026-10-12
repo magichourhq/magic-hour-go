@@ -15,7 +15,7 @@ Swap a person into a scene image using Nano Banana 2 Lite (640px/1k) or Nano Ban
 | `Assets`            |    ✓     | Person image and scene image for body swap                                                                                                                                                                                                                                                                                                                                 | `V1BodySwapCreateBodyAssets {PersonFilePath: "api-assets/id/1234.png",SceneFilePath: "api-assets/id/5678.png",}` |
 | `└─ PersonFilePath` |    ✓     | Image of the person to place into the scene. This value is either - a direct URL to the video file - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls). See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details. | `"api-assets/id/1234.png"`                                                                                       |
 | `└─ SceneFilePath`  |    ✓     | Original scene image (background). This value is either - a direct URL to the video file - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls). See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details.           | `"api-assets/id/5678.png"`                                                                                       |
-| `Resolution`        |    ✓     | Output resolution. Determines credits charged for the run.                                                                                                                                                                                                                                                                                                                 | `V1BodySwapCreateBodyResolutionEnum1k`                                                                           |
+| `Resolution`        |    ✓     | Output resolution. Determines credits charged for the run.                                                                                                                                                                                                                                                                                                                 | `V1BodySwapCreateBodyResolutionEnum640px`                                                                        |
 | `Name`              |    ✗     | Give your image a custom name for easy identification.                                                                                                                                                                                                                                                                                                                     | `"My Body Swap image"`                                                                                           |
 
 #### Example Snippet
@@ -42,7 +42,7 @@ func main() {
 			SceneFilePath:  "api-assets/id/5678.png",
 		},
 		Name:       nullable.NewValue("My Body Swap image"),
-		Resolution: types.V1BodySwapCreateBodyResolutionEnum1k,
+		Resolution: types.V1BodySwapCreateBodyResolutionEnum640px,
 	})
 }
 ```

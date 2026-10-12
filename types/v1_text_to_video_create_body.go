@@ -80,8 +80,17 @@ type V1TextToVideoCreateBody struct {
 	// Give your video a custom name for easy identification.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// Deprecated. Use `aspect_ratio` instead.
-	Orientation nullable.Nullable[V1TextToVideoCreateBodyOrientationEnum]  `json:"orientation,omitempty"`
-	References  nullable.Nullable[[]V1TextToVideoCreateBodyReferencesItem] `json:"references,omitempty"`
+	Orientation nullable.Nullable[V1TextToVideoCreateBodyOrientationEnum] `json:"orientation,omitempty"`
+	// Reference media for video generation. Name references without @ and refer to them as @name in style.prompt. Maximum 10 references total.
+	//
+	// Supported models and reference media:
+	// * **`kling-3.0`**: Supports images, videos.
+	// * **`minimax-h3`**: Supports images, videos, audio.
+	// * **`seedance-2.0`**: Supports images, videos, audio.
+	// * **`seedance-2.0-mini`**: Supports images, videos, audio.
+	// * **`seedance-2.5`**: Supports images, videos, audio.
+	// * **`wan-3.0`**: Supports images, videos, audio.
+	References nullable.Nullable[[]V1TextToVideoCreateBodyReferencesItem] `json:"references,omitempty"`
 	// Controls the output video resolution. Defaults to `720p` on paid tiers and `480p` on free tiers.
 	//
 	// * **`gemini-omni-1.1`**: Supports 360p, 720p, 1080p, 4k.

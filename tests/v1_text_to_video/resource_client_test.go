@@ -20,16 +20,16 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		AspectRatio: nullable.NewValue(types.V1TextToVideoCreateBodyAspectRatioEnum169),
 		Audio:       nullable.NewValue(true),
 		EndSeconds:  5.0,
-		Model:       nullable.NewValue(types.V1TextToVideoCreateBodyModelEnumKling30),
+		Model:       nullable.NewValue(types.V1TextToVideoCreateBodyModelEnumLtx25),
 		Name:        nullable.NewValue("My Text To Video video"),
 		Orientation: nullable.NewValue(types.V1TextToVideoCreateBodyOrientationEnumLandscape),
 		References: nullable.NewValue([]types.V1TextToVideoCreateBodyReferencesItem{
 			types.V1TextToVideoCreateBodyReferencesItem{
-				FilePath: "string",
-				Name:     "string",
+				FilePath: "api-assets/id/1234.png",
+				Name:     "hero",
 			},
 		}),
-		Resolution: nullable.NewValue(types.V1TextToVideoCreateBodyResolutionEnum720p),
+		Resolution: nullable.NewValue(types.V1TextToVideoCreateBodyResolutionEnum480p),
 		Style: types.V1TextToVideoCreateBodyStyle{
 			Prompt:      "a dog running",
 			QualityMode: nullable.NewValue(types.V1TextToVideoCreateBodyStyleQualityModeEnumQuick),

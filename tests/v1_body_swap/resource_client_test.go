@@ -22,7 +22,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			SceneFilePath:  "api-assets/id/5678.png",
 		},
 		Name:       nullable.NewValue("My Body Swap image"),
-		Resolution: types.V1BodySwapCreateBodyResolutionEnum1k,
+		Resolution: types.V1BodySwapCreateBodyResolutionEnum640px,
 	})
 
 	if err != nil {

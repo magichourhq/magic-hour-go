@@ -21,9 +21,9 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			AudioFilePath: "api-assets/id/1234.mp3",
 			ImageFilePath: nullable.NewValue("api-assets/id/1234.png"),
 		},
-		EndSeconds:   15.0,
+		EndSeconds:   5.0,
 		Name:         nullable.NewValue("My Audio To Video video"),
-		Resolution:   nullable.NewValue(types.V1AudioToVideoCreateBodyResolutionEnum720p),
+		Resolution:   nullable.NewValue(types.V1AudioToVideoCreateBodyResolutionEnum480p),
 		StartSeconds: nullable.NewValue(0.0),
 		Style: nullable.NewValue(types.V1AudioToVideoCreateBodyStyle{
 			Prompt: nullable.NewValue("Car driving through a city"),

@@ -102,7 +102,7 @@ Url: "https://videos.magichour.ai/id/output.mp4",
 },
 },
 Enabled: true,
-EndSeconds: 15.0,
+EndSeconds: 5.0,
 Error: nullable.NewValue(V1VideoProjectsGetResponseError {
 Code: "no_source_face",
 Message: "Please use an image with a detectable face",

@@ -20,9 +20,9 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Assets: types.V1AiVideoTranslatorCreateBodyAssets{
 			VideoFilePath: "api-assets/id/1234.mp4",
 		},
-		EndSeconds:     15.0,
+		EndSeconds:     5.0,
 		Name:           nullable.NewValue("My Video Translator video"),
-		Resolution:     nullable.NewValue(types.V1AiVideoTranslatorCreateBodyResolutionEnum720p),
+		Resolution:     nullable.NewValue(types.V1AiVideoTranslatorCreateBodyResolutionEnum480p),
 		StartSeconds:   nullable.NewValue(0.0),
 		TargetLanguage: types.V1AiVideoTranslatorCreateBodyTargetLanguageEnumSpanish,
 	})

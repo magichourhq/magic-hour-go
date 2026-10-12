@@ -24,8 +24,8 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		ScaleFactor: 2.0,
 		Style: nullable.NewValue(types.V1AiImageUpscalerCreateBodyStyle{
 			Enhancement: nullable.NewValue(types.V1AiImageUpscalerCreateBodyStyleEnhancementEnumBalanced),
-			Mode:        nullable.NewValue(types.V1AiImageUpscalerCreateBodyStyleModeEnumBalanced),
-			Prompt:      nullable.NewValue("string"),
+			Mode:        nullable.NewValue(types.V1AiImageUpscalerCreateBodyStyleModeEnumPreserve),
+			Prompt:      nullable.NewValue("Enhance fine details and keep the image natural"),
 		}),
 	})
 

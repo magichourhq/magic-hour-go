@@ -19,10 +19,10 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 	res, err := client.V1.AiImageGenerator.Create(ai_image_generator.CreateRequest{
 		AspectRatio: nullable.NewValue(types.V1AiImageGeneratorCreateBodyAspectRatioEnum11),
 		ImageCount:  1,
-		Model:       nullable.NewValue(types.V1AiImageGeneratorCreateBodyModelEnumDefault),
+		Model:       nullable.NewValue(types.V1AiImageGeneratorCreateBodyModelEnumZImageTurbo),
 		Name:        nullable.NewValue("My Ai Image image"),
 		Orientation: nullable.NewValue(types.V1AiImageGeneratorCreateBodyOrientationEnumLandscape),
-		Resolution:  nullable.NewValue(types.V1AiImageGeneratorCreateBodyResolutionEnum1k),
+		Resolution:  nullable.NewValue(types.V1AiImageGeneratorCreateBodyResolutionEnum640px),
 		Style: types.V1AiImageGeneratorCreateBodyStyle{
 			Prompt:      "Cool image",
 			QualityMode: nullable.NewValue(types.V1AiImageGeneratorCreateBodyStyleQualityModeEnumPro),
