@@ -20,7 +20,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Assets: types.V1AutoSubtitleGeneratorCreateBodyAssets{
 			VideoFilePath: "api-assets/id/1234.mp4",
 		},
-		EndSeconds:   15.0,
+		EndSeconds:   5.0,
 		Name:         nullable.NewValue("My Auto Subtitle video"),
 		StartSeconds: 0.0,
 		Style: types.V1AutoSubtitleGeneratorCreateBodyStyle{
@@ -35,7 +35,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 				TextColor:            nullable.NewValue("#FFFFFF"),
 				VerticalPosition:     nullable.NewValue("bottom"),
 			}),
-			Template: nullable.NewValue(types.V1AutoSubtitleGeneratorCreateBodyStyleTemplateEnumCinematic),
+			Template: nullable.NewValue(types.V1AutoSubtitleGeneratorCreateBodyStyleTemplateEnumKaraoke),
 		},
 	})
 

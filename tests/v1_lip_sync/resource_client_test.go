@@ -23,7 +23,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			VideoSource:   types.V1LipSyncCreateBodyAssetsVideoSourceEnumFile,
 			YoutubeUrl:    nullable.NewValue("http://www.example.com"),
 		},
-		EndSeconds:   15.0,
+		EndSeconds:   5.0,
 		Height:       nullable.NewValue(123),
 		MaxFpsLimit:  nullable.NewValue(12.0),
 		Name:         nullable.NewValue("My Lip Sync video"),

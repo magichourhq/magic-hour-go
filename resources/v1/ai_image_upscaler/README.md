@@ -16,10 +16,10 @@ Upscale your image using AI. Each 2x upscale costs 50 credits for balanced/creat
 | `└─ ImageFilePath` |    ✓     | The image to upscale. This value is either - a direct URL to the video file - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls). See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details. . The maximum input image size is 4096x4096px. | `"api-assets/id/1234.png"`                                                                                      |
 | `ScaleFactor`      |    ✓     | How much to scale the image. Must be either 2 or 4. Note: 4x upscale is only available on Creator, Pro, or Business tier.                                                                                                                                                                                                                                                                          | `2.0`                                                                                                           |
 | `Name`             |    ✗     | Give your image a custom name for easy identification.                                                                                                                                                                                                                                                                                                                                             | `"My Image Upscaler image"`                                                                                     |
-| `Style`            |    ✗     | Style settings for the upscale. Use `mode` (`"preserve"`, `"balanced"`, or `"creative"`). Defaults to `"balanced"`.                                                                                                                                                                                                                                                                                | `V1AiImageUpscalerCreateBodyStyle {Mode: nullable.NewValue(V1AiImageUpscalerCreateBodyStyleModeEnumBalanced),}` |
+| `Style`            |    ✗     | Style settings for the upscale. Use `mode` (`"preserve"`, `"balanced"`, or `"creative"`). Defaults to `"balanced"`.                                                                                                                                                                                                                                                                                | `V1AiImageUpscalerCreateBodyStyle {Mode: nullable.NewValue(V1AiImageUpscalerCreateBodyStyleModeEnumPreserve),}` |
 | `└─ Enhancement`   |    ✗     | Deprecated: use `mode` instead. `"Resemblance"` maps to `"preserve"`. `"Balanced"` and `"Creative"` map to the same-named modes.                                                                                                                                                                                                                                                                   | `V1AiImageUpscalerCreateBodyStyleEnhancementEnumBalanced`                                                       |
-| `└─ Mode`          |    ✗     | The upscaling mode. `"preserve"` uses the fast pro pipeline (1× credit multiplier). `"balanced"` and `"creative"` use the creative pipeline (2× credit multiplier). `"pro"` is deprecated and maps to `"preserve"`. Defaults to `"balanced"`.                                                                                                                                                      | `V1AiImageUpscalerCreateBodyStyleModeEnumBalanced`                                                              |
-| `└─ Prompt`        |    ✗     | A prompt to guide the final image. Only used when mode is `creative`.                                                                                                                                                                                                                                                                                                                              | `"string"`                                                                                                      |
+| `└─ Mode`          |    ✗     | The upscaling mode. `"preserve"` uses the fast pro pipeline (1× credit multiplier). `"balanced"` and `"creative"` use the creative pipeline (2× credit multiplier). `"pro"` is deprecated and maps to `"preserve"`. Defaults to `"balanced"`.                                                                                                                                                      | `V1AiImageUpscalerCreateBodyStyleModeEnumPreserve`                                                              |
+| `└─ Prompt`        |    ✗     | A prompt to guide the final image. Only used when mode is `creative`.                                                                                                                                                                                                                                                                                                                              | `"Enhance fine details and keep the image natural"`                                                             |
 
 #### Example Snippet
 
@@ -45,6 +45,9 @@ func main() {
 		},
 		Name:        nullable.NewValue("My Image Upscaler image"),
 		ScaleFactor: 2.0,
+		Style: nullable.NewValue(types.V1AiImageUpscalerCreateBodyStyle{
+			Mode: nullable.NewValue(types.V1AiImageUpscalerCreateBodyStyleModeEnumPreserve),
+		}),
 	})
 }
 ```
@@ -59,7 +62,7 @@ func main() {
 
 ```go
 V1AiImageUpscalerCreateResponse {
-CreditsCharged: 50,
+CreditsCharged: 25,
 FrameCost: 123,
 Id: "cuid-example",
 }

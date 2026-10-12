@@ -21,10 +21,10 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			ImageFilePath: "api-assets/id/5678.png",
 			VideoFilePath: "api-assets/id/1234.mp4",
 		},
-		EndSeconds:   15.0,
+		EndSeconds:   5.0,
 		Model:        nullable.NewValue(types.V1CharacterReplaceCreateBodyModelEnumWanAnimate),
 		Name:         nullable.NewValue("My Character Replace video"),
-		Resolution:   nullable.NewValue(types.V1CharacterReplaceCreateBodyResolutionEnum720p),
+		Resolution:   nullable.NewValue(types.V1CharacterReplaceCreateBodyResolutionEnum480p),
 		StartSeconds: nullable.NewValue(0.0),
 		Style: nullable.NewValue(types.V1CharacterReplaceCreateBodyStyle{
 			Mode: nullable.NewValue(types.V1CharacterReplaceCreateBodyStyleModeEnumReplace),

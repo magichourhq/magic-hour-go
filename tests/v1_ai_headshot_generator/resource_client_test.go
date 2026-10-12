@@ -22,7 +22,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		},
 		Name: nullable.NewValue("My Ai Headshot image"),
 		Style: nullable.NewValue(types.V1AiHeadshotGeneratorCreateBodyStyle{
-			Prompt: nullable.NewValue("string"),
+			Prompt: nullable.NewValue("Professional studio headshot with soft lighting and a neutral background"),
 		}),
 	})
 

@@ -21,14 +21,14 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			AudioFilePath: "api-assets/id/1234.mp3",
 			ImageFilePath: "api-assets/id/1234.png",
 		},
-		EndSeconds:    15.0,
-		MaxResolution: nullable.NewValue(1024),
+		EndSeconds:    5.0,
+		MaxResolution: nullable.NewValue(512),
 		Name:          nullable.NewValue("My Talking Photo video"),
 		StartSeconds:  0.0,
 		Style: nullable.NewValue(types.V1AiTalkingPhotoCreateBodyStyle{
 			GenerationMode: nullable.NewValue(types.V1AiTalkingPhotoCreateBodyStyleGenerationModeEnumRealistic),
 			Intensity:      nullable.NewValue(123.45),
-			Prompt:         nullable.NewValue("string"),
+			Prompt:         nullable.NewValue("A person smiling and speaking naturally to the camera"),
 		}),
 	})
 

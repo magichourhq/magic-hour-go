@@ -21,9 +21,9 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			VideoFilePath: "api-assets/id/1234.mp4",
 		},
 		EndSeconds:   5.0,
-		Model:        nullable.NewValue(types.V1AiVideoEditorCreateBodyModelEnumGeminiOmni11),
+		Model:        nullable.NewValue(types.V1AiVideoEditorCreateBodyModelEnumLtx25),
 		Name:         nullable.NewValue("My Video Editor video"),
-		Resolution:   nullable.NewValue(types.V1AiVideoEditorCreateBodyResolutionEnum720p),
+		Resolution:   nullable.NewValue(types.V1AiVideoEditorCreateBodyResolutionEnum480p),
 		StartSeconds: nullable.NewValue(0.0),
 		Style: types.V1AiVideoEditorCreateBodyStyle{
 			Prompt: "Change the car color to blue",
