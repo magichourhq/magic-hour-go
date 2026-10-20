@@ -41,6 +41,7 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	reqBody, err := json.Marshal(types.V1AiTalkingPhotoCreateBody{
 		MaxResolution: request.MaxResolution,
 		Name:          request.Name,
+		Resolution:    request.Resolution,
 		Style:         request.Style,
 		Assets:        request.Assets,
 		EndSeconds:    request.EndSeconds,

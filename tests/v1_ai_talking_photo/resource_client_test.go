@@ -22,8 +22,9 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			ImageFilePath: "api-assets/id/1234.png",
 		},
 		EndSeconds:    5.0,
-		MaxResolution: nullable.NewValue(512),
+		MaxResolution: nullable.NewValue(123),
 		Name:          nullable.NewValue("My Talking Photo video"),
+		Resolution:    nullable.NewValue(types.V1AiTalkingPhotoCreateBodyResolutionEnum480p),
 		StartSeconds:  0.0,
 		Style: nullable.NewValue(types.V1AiTalkingPhotoCreateBodyStyle{
 			GenerationMode: nullable.NewValue(types.V1AiTalkingPhotoCreateBodyStyleGenerationModeEnumRealistic),

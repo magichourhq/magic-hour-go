@@ -78,6 +78,10 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 - [create](resources/v1/ai_talking_photo/README.md#create) - AI Talking Photo
 
+### [V1.AiUgcAd](resources/v1/ai_ugc_ad/README.md)
+
+- [create](resources/v1/ai_ugc_ad/README.md#create) - AI UGC Ad Generator
+
 ### [V1.AiVideoEditor](resources/v1/ai_video_editor/README.md)
 
 - [create](resources/v1/ai_video_editor/README.md#create) - AI Video Editor
