@@ -10,6 +10,7 @@ package types
 // * `minimax-h3`: Great for reference-driven clips with native audio and longer durations.
 // * `seedance-1.5`: Best for smooth, consistent motion with an end frame.
 // * `seedance-2.0`: Best for reference-led clips with precise subject control.
+// * `seedance-2.0-fast`: Fast reference-led clips with consistent motion and audio.
 // * `seedance-2.0-mini`: Faster reference-led clips with consistent motion and audio.
 // * `seedance-2.5`: Best for premium realism, detail, and natural motion.
 // * `veo3.1`: Best for romantic interactions and expressive action, with realistic detail.
@@ -35,6 +36,7 @@ const (
 	V1TextToVideoCreateBodyModelEnumSeedance       V1TextToVideoCreateBodyModelEnum = "seedance"
 	V1TextToVideoCreateBodyModelEnumSeedance15     V1TextToVideoCreateBodyModelEnum = "seedance-1.5"
 	V1TextToVideoCreateBodyModelEnumSeedance20     V1TextToVideoCreateBodyModelEnum = "seedance-2.0"
+	V1TextToVideoCreateBodyModelEnumSeedance20Fast V1TextToVideoCreateBodyModelEnum = "seedance-2.0-fast"
 	V1TextToVideoCreateBodyModelEnumSeedance20Mini V1TextToVideoCreateBodyModelEnum = "seedance-2.0-mini"
 	V1TextToVideoCreateBodyModelEnumSeedance25     V1TextToVideoCreateBodyModelEnum = "seedance-2.5"
 	V1TextToVideoCreateBodyModelEnumSora2          V1TextToVideoCreateBodyModelEnum = "sora-2"
