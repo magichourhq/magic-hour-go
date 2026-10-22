@@ -1,5 +1,5 @@
 {
-  "id": "d786c9f9-ad12-4d30-ab2f-edbe3aee1480",
+  "id": "1e67c5ba-231e-4571-afd9-ff81af7ce0f6",
   "tracked_paths": [
     {
       "editable": true,
@@ -175,6 +175,18 @@
     },
     {
       "editable": true,
+      "path": "resources/v1/ai_music_generator/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_music_generator/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_music_generator/request_types.go"
+    },
+    {
+      "editable": true,
       "path": "resources/v1/ai_qr_code_generator/README.md"
     },
     {
@@ -232,6 +244,18 @@
     {
       "editable": false,
       "path": "resources/v1/ai_video_translator/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/ai_video_upscaler/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_video_upscaler/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/ai_video_upscaler/request_types.go"
     },
     {
       "editable": true,
@@ -555,6 +579,10 @@
     },
     {
       "editable": false,
+      "path": "tests/v1_ai_music_generator/resource_client_test.go"
+    },
+    {
+      "editable": false,
       "path": "tests/v1_ai_qr_code_generator/resource_client_test.go"
     },
     {
@@ -572,6 +600,10 @@
     {
       "editable": false,
       "path": "tests/v1_ai_video_translator/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_ai_video_upscaler/resource_client_test.go"
     },
     {
       "editable": false,
@@ -863,6 +895,18 @@
     },
     {
       "editable": false,
+      "path": "types/v1_ai_music_generator_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_music_generator_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_music_generator_create_response.go"
+    },
+    {
+      "editable": false,
       "path": "types/v1_ai_qr_code_generator_create_body.go"
     },
     {
@@ -960,6 +1004,22 @@
     {
       "editable": false,
       "path": "types/v1_ai_video_translator_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_video_upscaler_create_body.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_video_upscaler_create_body_assets.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_video_upscaler_create_body_resolution_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_video_upscaler_create_response.go"
     },
     {
       "editable": false,

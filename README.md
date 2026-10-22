@@ -70,6 +70,10 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 - [create](resources/v1/ai_meme_generator/README.md#create) - AI Meme Generator
 
+### [V1.AiMusicGenerator](resources/v1/ai_music_generator/README.md)
+
+- [create](resources/v1/ai_music_generator/README.md#create) - AI Music Generator
+
 ### [V1.AiQrCodeGenerator](resources/v1/ai_qr_code_generator/README.md)
 
 - [create](resources/v1/ai_qr_code_generator/README.md#create) - AI QR Code Generator
@@ -89,6 +93,10 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 ### [V1.AiVideoTranslator](resources/v1/ai_video_translator/README.md)
 
 - [create](resources/v1/ai_video_translator/README.md#create) - AI Video Translator
+
+### [V1.AiVideoUpscaler](resources/v1/ai_video_upscaler/README.md)
+
+- [create](resources/v1/ai_video_upscaler/README.md#create) - AI Video Upscaler
 
 ### [V1.AiVoiceCloner](resources/v1/ai_voice_cloner/README.md)
 

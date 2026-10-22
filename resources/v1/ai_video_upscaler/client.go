@@ -1,0 +1,119 @@
+package ai_video_upscaler
+
+import (
+	bytes "bytes"
+	json "encoding/json"
+	io "io"
+	http "net/http"
+
+	sdkcore "github.com/magichourhq/magic-hour-go/core"
+	types "github.com/magichourhq/magic-hour-go/types"
+)
+
+type Client struct {
+	coreClient *sdkcore.CoreClient
+}
+type RequestModifier = func(req *http.Request) error
+
+// Instantiate a new resource client
+func NewClient(coreClient *sdkcore.CoreClient) *Client {
+	client := Client{
+		coreClient: coreClient,
+	}
+
+	return &client
+}
+
+// AI Video Upscaler
+//
+// **What this API does**
+//
+// Create the same Video Upscaler you can make in the browser, but programmatically, so you can automate it, run it at scale, or connect it to your own app or workflow.
+//
+// **Good for**
+// - Automation and batch processing
+// - Adding video upscaler into apps, pipelines, or tools
+//
+// **How it works (3 steps)**
+// 1) Upload your inputs (video, image, or audio) with [Generate Upload URLs](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls) and copy the `file_path`.
+// 2) Send a request to create a video upscaler job with the basic fields.
+// 3) Check the job status until it's `complete`, then download the result from `downloads`.
+//
+// **Key options**
+// - Inputs: usually a file, sometimes a YouTube link, depending on project type
+// - Resolution: output size and plan requirements vary by workflow and model. Some workflows derive output size from the input video.
+// - Extra fields: e.g. `face_swap_mode`, `start_seconds`/`end_seconds`, or a text prompt
+//
+// **Cost**
+// Credits are charged when the job is queued (`credits_charged` in the response). Tools billed per frame charge an estimate and settle to the frames that actually render once the job finishes; tools billed per second charge the final amount upfront. Failed jobs are refunded.
+//
+// For detailed examples, see the [product page](https://magichour.ai/products/video-upscaler).
+//
+// POST /v1/ai-video-upscaler
+func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1AiVideoUpscalerCreateResponse, error) {
+	// URL formatting
+	targetUrl, err := c.coreClient.BuildURL("/v1/" + "ai-video-upscaler")
+	if err != nil {
+		return types.V1AiVideoUpscalerCreateResponse{}, err
+	}
+
+	// Prep body
+	reqBodyBuf := &bytes.Buffer{}
+	reqBody, err := json.Marshal(types.V1AiVideoUpscalerCreateBody{
+		Name:         request.Name,
+		StartSeconds: request.StartSeconds,
+		Assets:       request.Assets,
+		EndSeconds:   request.EndSeconds,
+		Resolution:   request.Resolution,
+	})
+	if err != nil {
+		return types.V1AiVideoUpscalerCreateResponse{}, err
+	}
+	reqBodyBuf = bytes.NewBuffer([]byte(reqBody))
+
+	// Init request
+	req, err := http.NewRequest("POST", targetUrl.String(), reqBodyBuf)
+	if err != nil {
+		return types.V1AiVideoUpscalerCreateResponse{}, err
+	}
+
+	// Add headers
+	req.Header.Add("x-sideko-sdk-language", "Go")
+	req.Header.Add("Content-Type", "application/json")
+
+	// Add auth
+	err = c.coreClient.AddAuth(req, "bearerAuth")
+	if err != nil {
+		return types.V1AiVideoUpscalerCreateResponse{}, err
+	}
+
+	// Add base client & request level modifiers
+	if err := c.coreClient.ApplyModifiers(req, reqModifiers); err != nil {
+		return types.V1AiVideoUpscalerCreateResponse{}, err
+	}
+
+	// Dispatch request
+	resp, err := c.coreClient.HttpClient.Do(req)
+	if err != nil {
+		return types.V1AiVideoUpscalerCreateResponse{}, err
+	}
+
+	// Check status
+	if resp.StatusCode >= 300 {
+		return types.V1AiVideoUpscalerCreateResponse{}, sdkcore.NewApiError(*req, *resp)
+	}
+
+	// Handle response
+	defer resp.Body.Close()
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return types.V1AiVideoUpscalerCreateResponse{}, err
+	}
+	var bodyData types.V1AiVideoUpscalerCreateResponse
+	err = json.Unmarshal(body, &bodyData)
+	if err != nil {
+		return types.V1AiVideoUpscalerCreateResponse{}, err
+	}
+	return bodyData, nil
+
+}
