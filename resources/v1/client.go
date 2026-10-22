@@ -13,11 +13,13 @@ import (
 	ai_image_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_image_generator"
 	ai_image_upscaler "github.com/magichourhq/magic-hour-go/resources/v1/ai_image_upscaler"
 	ai_meme_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_meme_generator"
+	ai_music_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_music_generator"
 	ai_qr_code_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_qr_code_generator"
 	ai_talking_photo "github.com/magichourhq/magic-hour-go/resources/v1/ai_talking_photo"
 	ai_ugc_ad "github.com/magichourhq/magic-hour-go/resources/v1/ai_ugc_ad"
 	ai_video_editor "github.com/magichourhq/magic-hour-go/resources/v1/ai_video_editor"
 	ai_video_translator "github.com/magichourhq/magic-hour-go/resources/v1/ai_video_translator"
+	ai_video_upscaler "github.com/magichourhq/magic-hour-go/resources/v1/ai_video_upscaler"
 	ai_voice_cloner "github.com/magichourhq/magic-hour-go/resources/v1/ai_voice_cloner"
 	ai_voice_generator "github.com/magichourhq/magic-hour-go/resources/v1/ai_voice_generator"
 	animation "github.com/magichourhq/magic-hour-go/resources/v1/animation"
@@ -58,11 +60,13 @@ type Client struct {
 	AiImageGenerator       *ai_image_generator.Client
 	AiImageUpscaler        *ai_image_upscaler.Client
 	AiMemeGenerator        *ai_meme_generator.Client
+	AiMusicGenerator       *ai_music_generator.Client
 	AiQrCodeGenerator      *ai_qr_code_generator.Client
 	AiTalkingPhoto         *ai_talking_photo.Client
 	AiUgcAd                *ai_ugc_ad.Client
 	AiVideoEditor          *ai_video_editor.Client
 	AiVideoTranslator      *ai_video_translator.Client
+	AiVideoUpscaler        *ai_video_upscaler.Client
 	AiVoiceCloner          *ai_voice_cloner.Client
 	AiVoiceGenerator       *ai_voice_generator.Client
 	Animation              *animation.Client
@@ -101,11 +105,13 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 		AiImageGenerator:       ai_image_generator.NewClient(coreClient),
 		AiImageUpscaler:        ai_image_upscaler.NewClient(coreClient),
 		AiMemeGenerator:        ai_meme_generator.NewClient(coreClient),
+		AiMusicGenerator:       ai_music_generator.NewClient(coreClient),
 		AiQrCodeGenerator:      ai_qr_code_generator.NewClient(coreClient),
 		AiTalkingPhoto:         ai_talking_photo.NewClient(coreClient),
 		AiUgcAd:                ai_ugc_ad.NewClient(coreClient),
 		AiVideoEditor:          ai_video_editor.NewClient(coreClient),
 		AiVideoTranslator:      ai_video_translator.NewClient(coreClient),
+		AiVideoUpscaler:        ai_video_upscaler.NewClient(coreClient),
 		AiVoiceCloner:          ai_voice_cloner.NewClient(coreClient),
 		AiVoiceGenerator:       ai_voice_generator.NewClient(coreClient),
 		Animation:              animation.NewClient(coreClient),
