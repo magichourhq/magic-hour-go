@@ -7,7 +7,7 @@ import (
 // Provide the assets for clothes changer
 type V1AiClothesChangerCreateBodyAssets struct {
 	// The image of the outfit. This value is either
-	// - a direct URL to the video file
+	// - a direct URL to the file. The URL path must end in a supported file extension.
 	// - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).
 	//
 	// See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details.
@@ -20,7 +20,7 @@ type V1AiClothesChangerCreateBodyAssets struct {
 	// * `entire_outfit` - for entire outfit
 	GarmentType nullable.Nullable[V1AiClothesChangerCreateBodyAssetsGarmentTypeEnum] `json:"garment_type,omitempty"`
 	// The image with the person. This value is either
-	// - a direct URL to the video file
+	// - a direct URL to the file. The URL path must end in a supported file extension.
 	// - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).
 	//
 	// See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details.

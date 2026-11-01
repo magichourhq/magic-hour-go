@@ -8,7 +8,7 @@ import (
 type V1AiTalkingPhotoCreateBody struct {
 	// Provide the assets for creating a talking photo
 	Assets V1AiTalkingPhotoCreateBodyAssets `json:"assets"`
-	// The end time of the input audio in seconds. Maximum clip length depends on style.generation_mode: realistic 300s, prompted 45s.
+	// The end time of the input audio in seconds. Maximum clip length depends on style.generation_mode: realistic 300s, prompted 60s.
 	EndSeconds float64 `json:"end_seconds"`
 	// Deprecated: use `resolution`. Still accepted as a larger-dimension cap, limited by your plan. Ignored when `resolution` is provided.
 	//
@@ -20,7 +20,7 @@ type V1AiTalkingPhotoCreateBody struct {
 	Name nullable.Nullable[string] `json:"name,omitempty"`
 	// Output preset. Overrides `max_resolution`. Defaults to 480p in prompted mode; realistic mode uses the mapped plan maximum.
 	Resolution nullable.Nullable[V1AiTalkingPhotoCreateBodyResolutionEnum] `json:"resolution,omitempty"`
-	// The start time of the input audio in seconds. Maximum clip length depends on style.generation_mode: realistic 300s, prompted 45s.
+	// The start time of the input audio in seconds. Maximum clip length depends on style.generation_mode: realistic 300s, prompted 60s.
 	StartSeconds float64 `json:"start_seconds"`
 	// Attributes used to dictate the style of the output
 	Style nullable.Nullable[V1AiTalkingPhotoCreateBodyStyle] `json:"style,omitempty"`

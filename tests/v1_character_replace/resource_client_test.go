@@ -35,6 +35,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 					TimeSeconds: 2.5,
 				},
 			}),
+			Prompt:        nullable.NewValue("string"),
 			SelectionMode: nullable.NewValue(types.V1CharacterReplaceCreateBodyStyleSelectionModeEnumAuto),
 		}),
 	})
