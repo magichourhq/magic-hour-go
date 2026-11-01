@@ -7,7 +7,7 @@ import (
 // Provide the assets for animation.
 type V1AnimationCreateBodyAssets struct {
 	// The path of the input audio. This field is required if `audio_source` is `file`. This value is either
-	// - a direct URL to the video file
+	// - a direct URL to the file. The URL path must end in a supported file extension.
 	// - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).
 	//
 	// See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details.
@@ -16,7 +16,7 @@ type V1AnimationCreateBodyAssets struct {
 	// Optionally add an audio source if you'd like to incorporate audio into your video
 	AudioSource V1AnimationCreateBodyAssetsAudioSourceEnum `json:"audio_source"`
 	// An initial image to use a the first frame of the video. This value is either
-	// - a direct URL to the video file
+	// - a direct URL to the file. The URL path must end in a supported file extension.
 	// - `file_path` field from the response of the [upload urls API](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls).
 	//
 	// See the [file upload guide](https://docs.magichour.ai/api-reference/files/generate-asset-upload-urls#input-file) for details.
