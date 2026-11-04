@@ -4,7 +4,7 @@
 
 ### AI Headshot Generator <a name="create"></a>
 
-Create an AI headshot. Each headshot costs 50 credits.
+Create a 4:5 AI headshot. Each headshot costs 50 credits.
 
 **API Endpoint**: `POST /v1/ai-headshot-generator`
 
