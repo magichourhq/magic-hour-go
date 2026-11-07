@@ -18,13 +18,15 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 	)
 	res, err := client.V1.VideoToVideo.Create(video_to_video.CreateRequest{
 		Assets: types.V1VideoToVideoCreateBodyAssets{
-			VideoFilePath: nullable.NewValue("api-assets/id/1234.mp4"),
-			VideoSource:   types.V1VideoToVideoCreateBodyAssetsVideoSourceEnumFile,
-			YoutubeUrl:    nullable.NewValue("http://www.example.com"),
+			InitialImagePath: nullable.NewValue("api-assets/id/reference.png"),
+			VideoFilePath:    nullable.NewValue("api-assets/id/1234.mp4"),
+			VideoSource:      types.V1VideoToVideoCreateBodyAssetsVideoSourceEnumFile,
+			YoutubeUrl:       nullable.NewValue("http://www.example.com"),
 		},
 		EndSeconds:    5.0,
+		Fps:           nullable.NewValue(30.0),
 		FpsResolution: nullable.NewValue(types.V1VideoToVideoCreateBodyFpsResolutionEnumHalf),
-		Height:        nullable.NewValue(123),
+		Height:        nullable.NewValue(704),
 		Name:          nullable.NewValue("My Video To Video video"),
 		StartSeconds:  0.0,
 		Style: types.V1VideoToVideoCreateBodyStyle{
@@ -34,7 +36,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			PromptType: nullable.NewValue(types.V1VideoToVideoCreateBodyStylePromptTypeEnumDefault),
 			Version:    nullable.NewValue(types.V1VideoToVideoCreateBodyStyleVersionEnumDefault),
 		},
-		Width: nullable.NewValue(123),
+		Width: nullable.NewValue(1024),
 	})
 
 	if err != nil {

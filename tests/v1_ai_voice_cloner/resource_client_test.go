@@ -22,7 +22,9 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		},
 		Name: nullable.NewValue("My Voice Cloner audio"),
 		Style: types.V1AiVoiceClonerCreateBodyStyle{
-			Prompt: "Hello, this is my cloned voice.",
+			Language: nullable.NewValue(types.V1AiVoiceClonerCreateBodyStyleLanguageEnumSpanish),
+			Prompt:   "Hello, this is my cloned voice.",
+			Speed:    nullable.NewValue(1.15),
 		},
 	})
 

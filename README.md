@@ -190,4 +190,8 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 
 - [create](resources/v1/video_to_video/README.md#create) - Video-to-Video
 
+### [V1.Voices](resources/v1/voices/README.md)
+
+- [list](resources/v1/voices/README.md#list) - List voices
+
 <!-- MODULE DOCS END -->

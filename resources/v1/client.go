@@ -42,6 +42,7 @@ import (
 	text_to_video "github.com/magichourhq/magic-hour-go/resources/v1/text_to_video"
 	video_projects "github.com/magichourhq/magic-hour-go/resources/v1/video_projects"
 	video_to_video "github.com/magichourhq/magic-hour-go/resources/v1/video_to_video"
+	voices "github.com/magichourhq/magic-hour-go/resources/v1/voices"
 )
 
 type Client struct {
@@ -52,6 +53,7 @@ type Client struct {
 	Account                *account.Client
 	FaceDetection          *face_detection.Client
 	SavedItems             *saved_items.Client
+	Voices                 *voices.Client
 	AiClothesChanger       *ai_clothes_changer.Client
 	AiFaceEditor           *ai_face_editor.Client
 	AiGifGenerator         *ai_gif_generator.Client
@@ -97,6 +99,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 		Account:                account.NewClient(coreClient),
 		FaceDetection:          face_detection.NewClient(coreClient),
 		SavedItems:             saved_items.NewClient(coreClient),
+		Voices:                 voices.NewClient(coreClient),
 		AiClothesChanger:       ai_clothes_changer.NewClient(coreClient),
 		AiFaceEditor:           ai_face_editor.NewClient(coreClient),
 		AiGifGenerator:         ai_gif_generator.NewClient(coreClient),
