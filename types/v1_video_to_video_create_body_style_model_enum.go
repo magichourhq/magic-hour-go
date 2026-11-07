@@ -10,7 +10,7 @@ type V1VideoToVideoCreateBodyStyleModelEnum string
 const (
 	V1VideoToVideoCreateBodyStyleModelEnum3dAnime         V1VideoToVideoCreateBodyStyleModelEnum = "3D Anime"
 	V1VideoToVideoCreateBodyStyleModelEnumAbsoluteReality V1VideoToVideoCreateBodyStyleModelEnum = "Absolute Reality"
-	V1VideoToVideoCreateBodyStyleModelEnumDefault         V1VideoToVideoCreateBodyStyleModelEnum = "Default"
+	V1VideoToVideoCreateBodyStyleModelEnumDefaultV3       V1VideoToVideoCreateBodyStyleModelEnum = "Default"
 	V1VideoToVideoCreateBodyStyleModelEnumDreamshaper     V1VideoToVideoCreateBodyStyleModelEnum = "Dreamshaper"
 	V1VideoToVideoCreateBodyStyleModelEnumFlat2dAnime     V1VideoToVideoCreateBodyStyleModelEnum = "Flat 2D Anime"
 	V1VideoToVideoCreateBodyStyleModelEnumKaywaii         V1VideoToVideoCreateBodyStyleModelEnum = "Kaywaii"
