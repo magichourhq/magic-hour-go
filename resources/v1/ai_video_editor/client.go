@@ -62,6 +62,7 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	reqBody, err := json.Marshal(types.V1AiVideoEditorCreateBody{
 		Model:        request.Model,
 		Name:         request.Name,
+		References:   request.References,
 		Resolution:   request.Resolution,
 		StartSeconds: request.StartSeconds,
 		Assets:       request.Assets,

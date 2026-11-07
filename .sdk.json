@@ -1,5 +1,5 @@
 {
-  "id": "50c8da43-8a96-4109-ab5b-07f578799558",
+  "id": "ff778bf5-7387-4ab2-92d1-5bad827bd267",
   "tracked_paths": [
     {
       "editable": true,
@@ -542,6 +542,18 @@
       "path": "resources/v1/video_to_video/request_types.go"
     },
     {
+      "editable": true,
+      "path": "resources/v1/voices/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/voices/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/voices/request_types.go"
+    },
+    {
       "editable": false,
       "path": "tests/v1_account/resource_client_test.go"
     },
@@ -692,6 +704,10 @@
     {
       "editable": false,
       "path": "tests/v1_video_to_video/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_voices/resource_client_test.go"
     },
     {
       "editable": false,
@@ -975,6 +991,10 @@
     },
     {
       "editable": false,
+      "path": "types/v1_ai_video_editor_create_body_references_item.go"
+    },
+    {
+      "editable": false,
       "path": "types/v1_ai_video_editor_create_body_resolution_enum.go"
     },
     {
@@ -1035,6 +1055,10 @@
     },
     {
       "editable": false,
+      "path": "types/v1_ai_voice_cloner_create_body_style_language_enum.go"
+    },
+    {
+      "editable": false,
       "path": "types/v1_ai_voice_cloner_create_response.go"
     },
     {
@@ -1044,6 +1068,10 @@
     {
       "editable": false,
       "path": "types/v1_ai_voice_generator_create_body_style.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_ai_voice_generator_create_body_style_language_enum.go"
     },
     {
       "editable": false,
@@ -1212,6 +1240,10 @@
     {
       "editable": false,
       "path": "types/v1_face_detection_get_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_face_detection_get_response_error.go"
     },
     {
       "editable": false,
@@ -1516,6 +1548,14 @@
     {
       "editable": false,
       "path": "types/v1_video_to_video_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_voices_list_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_voices_list_response_voices_item.go"
     }
   ]
 }

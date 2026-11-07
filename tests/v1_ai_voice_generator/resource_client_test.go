@@ -19,7 +19,9 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 	res, err := client.V1.AiVoiceGenerator.Create(ai_voice_generator.CreateRequest{
 		Name: nullable.NewValue("My Voice Generator audio"),
 		Style: types.V1AiVoiceGeneratorCreateBodyStyle{
+			Language:  nullable.NewValue(types.V1AiVoiceGeneratorCreateBodyStyleLanguageEnumSpanish),
 			Prompt:    "Hello, how are you?",
+			Speed:     nullable.NewValue(1.15),
 			VoiceName: types.V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumElonMusk,
 		},
 	})

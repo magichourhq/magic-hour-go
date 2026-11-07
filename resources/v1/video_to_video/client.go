@@ -49,6 +49,12 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 //
 // For detailed examples, see the [product page](https://magichour.ai/products/video-to-video).
 //
+// V3 request example (upload both assets first):
+// ```json
+// {"start_seconds":0,"end_seconds":2,"width":1024,"height":704,"fps":30,"fps_resolution":"HALF","style":{"art_style":"Studio Ghibli","version":"v3","model":"default"},"assets":{"video_source":"file","video_file_path":"api-assets/id/video.mp4","initial_image_path":"api-assets/id/reference.png"}}
+// ```
+// V3 supports up to 1,200 output frames for square videos and 800 otherwise.
+//
 // POST /v1/video-to-video
 func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) (types.V1VideoToVideoCreateResponse, error) {
 	// URL formatting
@@ -60,6 +66,7 @@ func (c *Client) Create(request CreateRequest, reqModifiers ...RequestModifier) 
 	// Prep body
 	reqBodyBuf := &bytes.Buffer{}
 	reqBody, err := json.Marshal(types.V1VideoToVideoCreateBody{
+		Fps:           request.Fps,
 		FpsResolution: request.FpsResolution,
 		Height:        request.Height,
 		Name:          request.Name,

@@ -20,9 +20,15 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Assets: types.V1AiVideoEditorCreateBodyAssets{
 			VideoFilePath: "api-assets/id/1234.mp4",
 		},
-		EndSeconds:   5.0,
-		Model:        nullable.NewValue(types.V1AiVideoEditorCreateBodyModelEnumLtx25),
-		Name:         nullable.NewValue("My Video Editor video"),
+		EndSeconds: 5.0,
+		Model:      nullable.NewValue(types.V1AiVideoEditorCreateBodyModelEnumLtx25),
+		Name:       nullable.NewValue("My Video Editor video"),
+		References: nullable.NewValue([]types.V1AiVideoEditorCreateBodyReferencesItem{
+			types.V1AiVideoEditorCreateBodyReferencesItem{
+				FilePath: "api-assets/id/1234.png",
+				Name:     "hero",
+			},
+		}),
 		Resolution:   nullable.NewValue(types.V1AiVideoEditorCreateBodyResolutionEnum480p),
 		StartSeconds: nullable.NewValue(0.0),
 		Style: types.V1AiVideoEditorCreateBodyStyle{

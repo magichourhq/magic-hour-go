@@ -15,7 +15,11 @@ type CreateRequest struct {
 	Model nullable.Nullable[types.V1AiVideoEditorCreateBodyModelEnum] `json:"model,omitempty"`
 	// Give your video a custom name for easy identification.
 	Name nullable.Nullable[string] `json:"name,omitempty"`
-	// Output resolution. Defaults to `480p` for free tier and `720p` for paid. Supported per model: `gemini-omni-1.1`: 720p, 1080p; `wan-3.0`: 480p, 720p, 1080p; `ltx-2.5`: 480p, 720p, 1080p.
+	// Name references without @ and refer to them as @name in style.prompt. Names must be unique, ignoring case. Maximum 10 references total. Omit for no references.
+	//
+	// Reference images for gemini-omni-1.1, wan-3.0, gemini-omni.
+	References nullable.Nullable[[]types.V1AiVideoEditorCreateBodyReferencesItem] `json:"references,omitempty"`
+	// Output resolution. Defaults to `480p` for free tier and `720p` for paid. Supported per model: `gemini-omni-1.1`: 360p, 720p, 1080p, 4k; `wan-3.0`: 480p, 720p, 1080p; `ltx-2.5`: 480p, 720p, 1080p.
 	Resolution nullable.Nullable[types.V1AiVideoEditorCreateBodyResolutionEnum] `json:"resolution,omitempty"`
 	// Start time of your clip (seconds). Must be ≥ 0.
 	StartSeconds nullable.Nullable[float64]           `json:"start_seconds,omitempty"`
