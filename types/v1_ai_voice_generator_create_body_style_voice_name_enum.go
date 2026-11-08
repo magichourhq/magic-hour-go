@@ -622,7 +622,6 @@ const (
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumJillValentine              V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Jill Valentine"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumJimCarrey                  V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Jim Carrey"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumJimHalpert                 V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Jim Halpert"
-	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumJimiHendrix                V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Jimi Hendrix"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumJimin                      V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Jimin"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumJimmyCarter                V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Jimmy Carter"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumJimmyFallon                V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Jimmy Fallon"
