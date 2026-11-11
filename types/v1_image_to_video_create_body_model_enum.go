@@ -3,7 +3,7 @@ package types
 // The AI model to use for video generation.
 //
 // * `default`: uses our currently recommended model for general use. For paid tiers, defaults to `kling-3.0`. For free tiers, it defaults to `ltx-2.5`.
-// * `gemini-omni-1.1`: Best for precise short clips, first/last frames, and high-resolution output.
+// * `gemini-omni-1.2`: Best for precise clips up to 15s, references, and high-resolution output.
 // * `kling-2.6`: Best for action, motion blur, and controlled camera moves.
 // * `kling-3.0`: Best for cinematic stories, references, and optional audio.
 // * `kling-4.0`: Create cinematic videos with image and video references and optional audio.
@@ -25,6 +25,7 @@ type V1ImageToVideoCreateBodyModelEnum string
 const (
 	V1ImageToVideoCreateBodyModelEnumDefault        V1ImageToVideoCreateBodyModelEnum = "default"
 	V1ImageToVideoCreateBodyModelEnumGeminiOmni11   V1ImageToVideoCreateBodyModelEnum = "gemini-omni-1.1"
+	V1ImageToVideoCreateBodyModelEnumGeminiOmni12   V1ImageToVideoCreateBodyModelEnum = "gemini-omni-1.2"
 	V1ImageToVideoCreateBodyModelEnumKling16        V1ImageToVideoCreateBodyModelEnum = "kling-1.6"
 	V1ImageToVideoCreateBodyModelEnumKling25        V1ImageToVideoCreateBodyModelEnum = "kling-2.5"
 	V1ImageToVideoCreateBodyModelEnumKling25Audio   V1ImageToVideoCreateBodyModelEnum = "kling-2.5-audio"
