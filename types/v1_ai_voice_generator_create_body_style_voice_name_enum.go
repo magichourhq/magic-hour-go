@@ -102,7 +102,6 @@ const (
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumBtsJungkook                V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "BTS Jungkook"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumBabarAzam                  V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Babar Azam"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumBabyYodaGrogu              V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Baby Yoda (Grogu)"
-	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumBadBunny                   V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Bad Bunny"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumBakugoKatsuki              V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Bakugo Katsuki"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumBamMargera                 V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Bam Margera"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumBarackObama                V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Barack Obama"

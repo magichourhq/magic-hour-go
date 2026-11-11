@@ -6,7 +6,7 @@ import (
 
 // V1TextToVideoCreateBody
 type V1TextToVideoCreateBody struct {
-	// Provide `aspect_ratio` to set the video’s aspect ratio. Determines the aspect ratio of the output video.
+	// Determines the aspect ratio of the output video.
 	//
 	// * **`gemini-omni-1.2`**: Supports 16:9, 9:16.
 	// * **`kling-2.6`**: Supports 9:16, 16:9, 1:1.
@@ -66,7 +66,7 @@ type V1TextToVideoCreateBody struct {
 	EndSeconds float64 `json:"end_seconds"`
 	// The AI model to use for video generation.
 	//
-	// * `default`: uses our currently recommended model for general use. For paid tiers, defaults to `kling-3.0`. For free tiers, it defaults to `ltx-2.5`.
+	// * `default`: automatically selects a model based on subscription tier, resolution and duration.
 	// * `gemini-omni-1.2`: Best for precise clips up to 15s, references, and high-resolution output.
 	// * `kling-2.6`: Best for action, motion blur, and controlled camera moves.
 	// * `kling-3.0`: Best for cinematic stories, references, and optional audio.
