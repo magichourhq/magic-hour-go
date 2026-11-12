@@ -21,7 +21,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			BodyFilePath: "api-assets/id/1234.png",
 			HeadFilePath: "api-assets/id/5678.png",
 		},
-		MaxResolution: nullable.NewValue(1024),
+		MaxResolution: nullable.NewValue(512),
 		Name:          nullable.NewValue("My Head Swap image"),
 	})
 

@@ -21,8 +21,8 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 			ImageFilePath: "api-assets/id/image.jpg",
 		},
 		EndSeconds: 4.0,
-		Model:      nullable.NewValue(types.V1AiUgcAdCreateBodyModelEnumKling30),
-		Resolution: nullable.NewValue(types.V1AiUgcAdCreateBodyResolutionEnum1080p),
+		Model:      nullable.NewValue(types.V1AiUgcAdCreateBodyModelEnumLtx25),
+		Resolution: nullable.NewValue(types.V1AiUgcAdCreateBodyResolutionEnum480p),
 		Script:     "Meet your new everyday essential.",
 	})
 
