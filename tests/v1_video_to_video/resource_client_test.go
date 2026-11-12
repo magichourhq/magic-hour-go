@@ -30,7 +30,7 @@ func TestCreate200SuccessAllParams(t *testing.T) {
 		Name:          nullable.NewValue("My Video To Video video"),
 		StartSeconds:  0.0,
 		Style: types.V1VideoToVideoCreateBodyStyle{
-			ArtStyle:   types.V1VideoToVideoCreateBodyStyleArtStyleEnumMinecraft,
+			ArtStyle:   types.V1VideoToVideoCreateBodyStyleArtStyleEnum3dRender,
 			Model:      nullable.NewValue(types.V1VideoToVideoCreateBodyStyleModelEnumDefault),
 			Prompt:     nullable.NewValue("A cinematic scene with warm lighting"),
 			PromptType: nullable.NewValue(types.V1VideoToVideoCreateBodyStylePromptTypeEnumDefault),
