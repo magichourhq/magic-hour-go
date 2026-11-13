@@ -21,7 +21,7 @@ type V1AiUgcAdCreateBody struct {
 	Resolution nullable.Nullable[V1AiUgcAdCreateBodyResolutionEnum] `json:"resolution,omitempty"`
 	// The words the actor should speak. Character limits apply after trimming:
 	// * kling-3.0: 2304 characters.
-	// * ltx-2.5: 1804 characters.
+	// * ltx-2.5: 3804 characters.
 	// * veo3.1: 2500 characters.
 	// LTX and Kling dialogue wrappers count toward their model prompt limit.
 	Script               string                 `json:"script"`
