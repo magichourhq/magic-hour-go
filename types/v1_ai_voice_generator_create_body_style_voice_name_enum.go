@@ -597,7 +597,6 @@ const (
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumJasonSegel                 V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Jason Segel"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumJasonStatham               V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Jason Statham"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumJasonVoorhees              V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Jason Voorhees"
-	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumJayZ                       V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Jay-Z"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumJaysonTatum                V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Jayson Tatum"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumJeffBezos                  V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Jeff Bezos"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumJeffGoldblum               V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Jeff Goldblum"

@@ -7,7 +7,7 @@ import (
 
 // CreateRequest
 type CreateRequest struct {
-	// The aspect ratio of the output image(s). If not specified, defaults to `auto`.
+	// The aspect ratio of the output image(s). If not specified, defaults to `auto`. Ignored for `krea-2` and `flux-2-klein` when an input image is provided; the output keeps the source image's aspect ratio.
 	AspectRatio nullable.Nullable[types.V1AiImageEditorCreateBodyAspectRatioEnum] `json:"aspect_ratio,omitempty"`
 	// Provide the assets for image edit
 	Assets types.V1AiImageEditorCreateBodyAssets `json:"assets"`
