@@ -395,7 +395,6 @@ const (
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumEnriqueIglesias            V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Enrique Iglesias"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumErenJaeger                 V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Eren Jaeger"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumEricCartman                V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Eric Cartman"
-	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumEricClapton                V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Eric Clapton"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumErlingHaaland              V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Erling Haaland"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumErnieHudson                V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Ernie Hudson"
 	V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnumErzaScarlet                V1AiVoiceGeneratorCreateBodyStyleVoiceNameEnum = "Erza Scarlet"
