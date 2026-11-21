@@ -20,6 +20,10 @@ type V1AiImageEditorCreateBody struct {
 	//   - Supported resolutions: 640px, 1k, 2k
 	//   - Available for tiers: free, creator, pro, business
 	//   - Max additional input images: 5
+	// - `flux-3-klein` - from 5 credits/image
+	//   - Supported resolutions: 640px, 1k, 2k
+	//   - Available for tiers: free, creator, pro, business
+	//   - Max additional input images: 1
 	// - `gpt-image-2` - from 50 credits/image
 	//   - Supported resolutions: 640px, 1k, 2k, 4k
 	//   - Available for tiers: creator, pro, business
@@ -87,6 +91,7 @@ type V1AiImageEditorCreateBody struct {
 	//
 	// **Per-model support:**
 	// - `flux-2-klein` - 640px, 1k, 2k
+	// - `flux-3-klein` - 640px, 1k, 2k
 	// - `gpt-image-2` - 640px, 1k, 2k, 4k
 	// - `gpt-image-2.5-flare` - 640px, 1k, 2k, 4k
 	// - `krea-2` - 640px, 1k
