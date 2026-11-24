@@ -6,11 +6,13 @@ import (
 	http "net/http"
 
 	sdkcore "github.com/magichourhq/magic-hour-go/core"
+	checkout "github.com/magichourhq/magic-hour-go/resources/v1/account/checkout"
 	types "github.com/magichourhq/magic-hour-go/types"
 )
 
 type Client struct {
 	coreClient *sdkcore.CoreClient
+	Checkout   *checkout.Client
 }
 type RequestModifier = func(req *http.Request) error
 
@@ -18,6 +20,7 @@ type RequestModifier = func(req *http.Request) error
 func NewClient(coreClient *sdkcore.CoreClient) *Client {
 	client := Client{
 		coreClient: coreClient,
+		Checkout:   checkout.NewClient(coreClient),
 	}
 
 	return &client
