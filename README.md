@@ -32,6 +32,23 @@ client := sdk.NewClient(sdk.WithBearerAuth("my api key"))
 > [!WARNING]
 > Any API call that renders a video will utilize frames in your account.
 
+## Idempotent Requests
+
+Project create endpoints accept an `Idempotency-Key` header, so you can safely retry a request without creating or paying for a second project. Repeating a key within 24 hours returns the original project. Keys are shared across your account, so use a new key, such as a UUID, for each project.
+
+```go
+res, err := client.V1.AiImageGenerator.Create(
+	ai_image_generator.CreateRequest{
+		ImageCount: 1,
+		Style:      types.V1AiImageGeneratorCreateBodyStyle{Prompt: "Cool image"},
+	},
+	func(req *http.Request) error {
+		req.Header.Set("Idempotency-Key", "5f3c1b9e-8a41-4a0e-9d3e-2f6a1c7b9e10")
+		return nil
+	},
+)
+```
+
 ## Module Documentation and Snippets
 
 ### [V1.Account](resources/v1/account/README.md)
