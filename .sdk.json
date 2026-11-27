@@ -1,5 +1,5 @@
 {
-  "id": "773ee083-ed24-4a62-a990-bfcf1b0a9cfa",
+  "id": "ac14a193-2d25-428c-966b-eb7f864b9ca6",
   "tracked_paths": [
     {
       "editable": true,
@@ -371,6 +371,30 @@
     },
     {
       "editable": true,
+      "path": "resources/v1/estimate/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/estimate/client.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/estimate/image/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/estimate/image/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/estimate/image/request_types.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/estimate/request_types.go"
+    },
+    {
+      "editable": true,
       "path": "resources/v1/face_detection/README.md"
     },
     {
@@ -667,6 +691,10 @@
     },
     {
       "editable": false,
+      "path": "tests/v1_estimate_image/resource_client_test.go"
+    },
+    {
+      "editable": false,
       "path": "tests/v1_face_detection/resource_client_test.go"
     },
     {
@@ -740,6 +768,14 @@
     {
       "editable": false,
       "path": "types/v1_account_list_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_account_list_response_auto_reload.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_account_list_response_auto_reload_status_enum.go"
     },
     {
       "editable": false,
@@ -1252,6 +1288,14 @@
     {
       "editable": false,
       "path": "types/v1_character_replace_create_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_estimate_image_list_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_estimate_image_list_tool_enum.go"
     },
     {
       "editable": false,

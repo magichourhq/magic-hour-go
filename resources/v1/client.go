@@ -28,6 +28,7 @@ import (
 	auto_subtitle_generator "github.com/magichourhq/magic-hour-go/resources/v1/auto_subtitle_generator"
 	body_swap "github.com/magichourhq/magic-hour-go/resources/v1/body_swap"
 	character_replace "github.com/magichourhq/magic-hour-go/resources/v1/character_replace"
+	estimate "github.com/magichourhq/magic-hour-go/resources/v1/estimate"
 	face_detection "github.com/magichourhq/magic-hour-go/resources/v1/face_detection"
 	face_swap "github.com/magichourhq/magic-hour-go/resources/v1/face_swap"
 	face_swap_photo "github.com/magichourhq/magic-hour-go/resources/v1/face_swap_photo"
@@ -51,6 +52,7 @@ type Client struct {
 	ImageProjects          *image_projects.Client
 	VideoProjects          *video_projects.Client
 	Account                *account.Client
+	Estimate               *estimate.Client
 	FaceDetection          *face_detection.Client
 	SavedItems             *saved_items.Client
 	Voices                 *voices.Client
@@ -97,6 +99,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 		ImageProjects:          image_projects.NewClient(coreClient),
 		VideoProjects:          video_projects.NewClient(coreClient),
 		Account:                account.NewClient(coreClient),
+		Estimate:               estimate.NewClient(coreClient),
 		FaceDetection:          face_detection.NewClient(coreClient),
 		SavedItems:             saved_items.NewClient(coreClient),
 		Voices:                 voices.NewClient(coreClient),

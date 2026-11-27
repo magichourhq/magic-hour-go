@@ -37,6 +37,9 @@ func main() {
 
 ```go
 V1AccountListResponse {
+AutoReload: V1AccountListResponseAutoReload {
+Status: V1AccountListResponseAutoReloadStatusEnumActive,
+},
 Credits: 12500,
 Email: nullable.NewValue("user@example.com"),
 Id: "cuid-example",
