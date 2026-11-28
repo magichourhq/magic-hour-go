@@ -6,6 +6,7 @@ import (
 
 // V1AccountListResponse
 type V1AccountListResponse struct {
+	AutoReload V1AccountListResponseAutoReload `json:"auto_reload"`
 	// Credits currently available to spend. Includes subscription credits and any purchased credit packs.
 	Credits int `json:"credits"`
 	// Email address of the account.
