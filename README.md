@@ -152,9 +152,17 @@ res, err := client.V1.AiImageGenerator.Create(
 
 - [create](resources/v1/character_replace/README.md#create) - Character Replace
 
+### [V1.Estimate.Audio](resources/v1/estimate/audio/README.md)
+
+- [list](resources/v1/estimate/audio/README.md#list) - Estimate audio credits
+
 ### [V1.Estimate.Image](resources/v1/estimate/image/README.md)
 
 - [list](resources/v1/estimate/image/README.md#list) - Estimate image credits
+
+### [V1.Estimate.Video](resources/v1/estimate/video/README.md)
+
+- [list](resources/v1/estimate/video/README.md#list) - Estimate video credits
 
 ### [V1.FaceDetection](resources/v1/face_detection/README.md)
 
