@@ -1,5 +1,5 @@
 {
-  "id": "ac14a193-2d25-428c-966b-eb7f864b9ca6",
+  "id": "d4aa67cf-fbca-492e-978a-75eef93750cb",
   "tracked_paths": [
     {
       "editable": true,
@@ -374,6 +374,18 @@
       "path": "resources/v1/estimate/README.md"
     },
     {
+      "editable": true,
+      "path": "resources/v1/estimate/audio/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/estimate/audio/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/estimate/audio/request_types.go"
+    },
+    {
       "editable": false,
       "path": "resources/v1/estimate/client.go"
     },
@@ -392,6 +404,18 @@
     {
       "editable": false,
       "path": "resources/v1/estimate/request_types.go"
+    },
+    {
+      "editable": true,
+      "path": "resources/v1/estimate/video/README.md"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/estimate/video/client.go"
+    },
+    {
+      "editable": false,
+      "path": "resources/v1/estimate/video/request_types.go"
     },
     {
       "editable": true,
@@ -691,7 +715,15 @@
     },
     {
       "editable": false,
+      "path": "tests/v1_estimate_audio/resource_client_test.go"
+    },
+    {
+      "editable": false,
       "path": "tests/v1_estimate_image/resource_client_test.go"
+    },
+    {
+      "editable": false,
+      "path": "tests/v1_estimate_video/resource_client_test.go"
     },
     {
       "editable": false,
@@ -1291,11 +1323,27 @@
     },
     {
       "editable": false,
+      "path": "types/v1_estimate_audio_list_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_estimate_audio_list_tool_enum.go"
+    },
+    {
+      "editable": false,
       "path": "types/v1_estimate_image_list_response.go"
     },
     {
       "editable": false,
       "path": "types/v1_estimate_image_list_tool_enum.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_estimate_video_list_response.go"
+    },
+    {
+      "editable": false,
+      "path": "types/v1_estimate_video_list_tool_enum.go"
     },
     {
       "editable": false,
