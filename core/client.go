@@ -66,6 +66,9 @@ func (c *CoreClient) BuildURL(path string, serviceName ...string) (*url.URL, err
 }
 
 func (c *CoreClient) ApplyModifiers(req *http.Request, modifiers []RequestModifier) error {
+	if req.Header.Get("X-MagicHour-Source") == "" {
+		req.Header.Set("X-MagicHour-Source", "sdk-go")
+	}
 	// apply client-level modifier
 	for _, clientMod := range c.Modifiers {
 		if err := clientMod(req); err != nil {
